@@ -12,7 +12,7 @@
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
-\language american
+\language british
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -82,7 +82,7 @@
 \paragraph_indentation 0mm
 \is_math_indent 0
 \math_numbering_side default
-\quotes_style english
+\quotes_style british
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 1
@@ -189,23 +189,9 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -225,6 +211,46 @@ Scope
 
 \begin_layout Section
 Definitions, Acronyms, Abbreviations
+\end_layout
+
+\begin_layout Subsection
+Definitions
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Violation
+\emph default
+: illegal behavior executed by the Offender 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "subsec:Actors"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Report:
+\emph default
+ information regarding a single violation, sent by a Registered User 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "subsec:Actors"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ through SafeStreets
 \end_layout
 
 \begin_layout Section
@@ -257,6 +283,13 @@ User characteristics
 
 \begin_layout Subsection
 Actors
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Actors"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -269,7 +302,7 @@ Visitor / Unregistered User:
 \begin_inset Newline newline
 \end_inset
 
-He can only view a brief explaination of the application's functions and
+He can only view a brief explanation of the application's functions and
  proceed with the registration.
 \end_layout
 
@@ -286,27 +319,9 @@ User / Registered User
 
 He can log to his user account though the application to access all of the
  functionalities it provides to normal users without particular permissions.
- This means he can send a violation 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Manage the 
-\begin_inset Quotes eld
-\end_inset
-
-violation
-\begin_inset Quotes erd
-\end_inset
-
- definition carefully
-\end_layout
-
-\end_inset
-
- and view its previous violations, view information on streets with the
- most violations.
- He can't view violations submitted by other users.
+ This means he can send a violation report and view its previous violations,
+ view information on streets with the most reports.
+ He can't view reports submitted by other users.
 \end_layout
 
 \begin_layout Itemize
@@ -315,7 +330,11 @@ violation
 Administrator:
 \emph default
  SafeStreets employee whose role is to manually manage user accounts (for
- example by assigning or removing roles and permissions)
+ example by assigning or removing roles and permissions).
+\begin_inset Newline newline
+\end_inset
+
+They can access a dedicated web backend to carry out these operations.
 \end_layout
 
 \begin_layout Itemize
@@ -325,15 +344,21 @@ Officers / Authority:
 \emph default
  police officer or other type of municipality employee involved with SafeStreets
 ' activity.
- He can indipendently sign up for an account and request its Officer permissions
- to be granted aftwerwards by an Administrator.
- Alternatively, the municipality can ask Safestreets to make an Administrator
+ He can independently sign up for an account through the application, and
+ request its Officer permissions to be granted by an Administrator in a
+ second moment.
+ Alternatively, the municipality can ask SafeStreets to make an Administrator
  create its account with relevant permissions already set.
 \begin_inset Newline newline
 \end_inset
 
-He can everything a Registered Users is allowed to do, and can search violations
- sent by all users.
+Besides being able to use every feature offered to Registered Users through
+ the mobile application, he can also view reports sent by any user.
+\begin_inset Newline newline
+\end_inset
+
+Authorities can also access a web backend provided by SafeStreets to easily
+ browse the whole reports dataset and get statistical data about it.
  
 \begin_inset Note Note
 status open
@@ -352,11 +377,59 @@ Can view sender data?
 \emph on
 Municipality:
 \emph default
- 
+ entity represented by the local authorities, which provides data through
+ API endpoints and receives data form SafeStreets through different API
+ endpoints.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Offender:
+\emph default
+ a person who is responsible for a violation, for example the person who
+ parked their car in a forbidden area or exceeded the speed limit while
+ driving.
 \end_layout
 
 \begin_layout Section
 Assumptions, dependencies and constraints
+\end_layout
+
+\begin_layout Standard
+asdddddddddddddddddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddd
+dddddddddddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddddddd
+dddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddddddddddddddd
+dddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddddddddddddddddddddddd
+dddaasdddddddddddddddddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdd
+dddddddddddddddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddd
+dddddddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddddddddddd
+dddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddddddddddddddddddd
+dddddddaasdddddddddddddddddddddddddddddddddaasddddddddddddddddddddddddddddddddda
+asdddddddddddddddddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddd
+dddddddddddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddddddd
+dddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddddddddddddddd
+dddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddddddddddddddddddddddd
+dddaasdddddddddddddddddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdd
+dddddddddddddddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddd
+dddddddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddddddddddd
+dddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddddddddddddddddddd
+dddddddaasdddddddddddddddddddddddddddddddddaasddddddddddddddddddddddddddddddddda
+asdddddddddddddddddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddd
+dddddddddddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddddddd
+dddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddddddddddddddd
+dddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddddddddddddddddddddddd
+dddaasdddddddddddddddddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdd
+dddddddddddddddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddd
+dddddddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddddddddddd
+dddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddddddddddddddddddd
+dddddddaasdddddddddddddddddddddddddddddddddaasddddddddddddddddddddddddddddddddda
+asdddddddddddddddddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddd
+dddddddddddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddddddd
+dddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddddddddddddddd
+dddddddddddaasdddddddddddddddddddddddddddddddddaasdddddddddddddddddddddddddddddd
+dddaasdddddddddddddddddddddddddddddddddaasdddddddddddddddddddddddddddddddddaasdd
+ddddddddddddddddddddddddddddddda
 \end_layout
 
 \begin_layout Part
