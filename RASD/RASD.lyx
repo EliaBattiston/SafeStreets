@@ -82,7 +82,7 @@
 \paragraph_indentation 0mm
 \is_math_indent 0
 \math_numbering_side default
-\quotes_style british
+\quotes_style english
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 1
@@ -252,7 +252,7 @@ noprefix "false"
 \begin_layout Itemize
 
 \emph on
-Report:
+Violation report / Report:
 \emph default
  information regarding a single violation, sent by a Registered User 
 \begin_inset CommandInset ref
@@ -408,6 +408,125 @@ Offender:
 
 \begin_layout Section
 Assumptions, dependencies and constraints
+\end_layout
+
+\begin_layout Subsection
+Assumptions and dependencies
+\end_layout
+
+\begin_layout Standard
+Because of ambiguities in the specification of requirements, it's necessary
+ to make some assumptions on the correct interpretation of the customer's
+ needs.
+\end_layout
+
+\begin_layout Subsubsection
+Assumptions
+\end_layout
+
+\begin_layout Enumerate
+Users needs to be registered in order to send a violation report
+\end_layout
+
+\begin_layout Enumerate
+Registration is carried out by providing identification data of the user,
+ such as _____
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+what data?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+At registration, a SafeStreets account is created for the new user.
+ He can log in it by providing his email or username, and the password he
+ chose.
+\begin_inset Newline newline
+\end_inset
+
+SafeStreets should never have access to the plaintext password.
+ It has to be hashed in a secure way on the client's machine to be consecutively
+ sent to the server.
+\end_layout
+
+\begin_layout Enumerate
+To assure confidentiality, any data sent between SafeStreets and the user
+ on a public network have to be encrypted.
+\end_layout
+
+\begin_layout Enumerate
+Every type of account in the system starts with basic permissions, on top
+ of which an Administrator can assign roles such as 
+\begin_inset Quotes eld
+\end_inset
+
+Officer
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "subsec:Actors"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+The municipality offers retrieval of accident information through a REST
+ API
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Public?
+\end_layout
+
+\end_inset
+
+.
+ SafeStreets has to obtain permissions to access it and credentials to do
+ so.
+\end_layout
+
+\begin_layout Enumerate
+The municipality created a REST API for traffic tickets generation from
+ the information sent by SafeStreets.
+\end_layout
+
+\begin_layout Enumerate
+Reports can only be sent with photos taken directly from the camera, and
+ not by uploading an image, in order to avoid fake reports and to be sure
+ temporal data is correct.
+ This implies only devices with cameras can be used with SafeStreets.
+\end_layout
+
+\begin_layout Enumerate
+Since the system has to automatically detect the user's location when he's
+ filing a report.
+ This implies only devices with GPS can be used with SafeStreets.
+\end_layout
+
+\begin_layout Enumerate
+Because of assumptions 8 & 9, we assume the main component of the SafeStreets
+ system only has to be developed as a mobile application.
+\begin_inset Newline newline
+\end_inset
+
+Remaining components such as the administrative console and functions reserved
+ to municipalities can be implemented as web applications to maximize accessibil
+ity and compatibility across devices.
 \end_layout
 
 \begin_layout Part
