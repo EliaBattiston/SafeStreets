@@ -636,6 +636,10 @@ Administrative and municipality web backends
 Web browser supporting HTML5, CSS3 and JavaScript
 \end_layout
 
+\begin_layout Itemize
+Internet connection
+\end_layout
+
 \end_deeper
 \begin_layout Subsubsection
 Interfaces to other applications
