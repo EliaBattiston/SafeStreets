@@ -267,15 +267,6 @@ noprefix "false"
  through SafeStreets
 \end_layout
 
-\begin_layout Itemize
-
-\emph on
-Central system
-\emph default
-: SafeStreet server which elaborates the reports and communicates to municipalit
-y through custom APIs
-\end_layout
-
 \begin_layout Section
 Revision history
 \end_layout
@@ -360,21 +351,8 @@ Users who notice a violation are granted to notice it to authorities using
 \end_layout
 
 \begin_layout Standard
-Before permanently saving reports in SafeStreets database, the central systems
- verifies that inserted data are coherent with reality, verifying that the
- picture has not been altered, eventually converting the plate picture into
- a plate number and verifying that this number corresponds to an existing
- plate of a circulating car (this last check is made via the municipality
- API).
- In case of fake recognition or invalid plate number, the report is rejected
- and the user is notified of the rejection.
- In case of multiple reports sent by the same user and sequentially rejected,
- a notice will be sent to officers.
-\end_layout
-
-\begin_layout Standard
 Registered violations will be notified to authorities, who then proceed
- to check offenders, or elaborated via the function explained in a while.
+ to check offenders.
 \end_layout
 
 \begin_layout Subsection
@@ -411,30 +389,7 @@ The central SafeStreet system acquires data from the municipality via the
  quantity of reports arriving from that area).
  The system will grant authorities access to the elaborated data and possible
  correcting maneuvers, such as the positioning of barriers to separate the
- vehicle part of the road from the pedestrian one, with suggestions given
- coherently with the type of notifications received.
-\end_layout
-
-\begin_layout Standard
-Alerts will be automatically sent to authorities in case of new unsafe areas
- elaborated from the system or in case of reception of a large number of
- reports regarding the same vehicle and/or area (the number of reports over
- which an alert is sent is decided with the authorities and corrected with
- the starting of the service).
-\end_layout
-
-\begin_layout Subsection
-Automatic check generation
-\end_layout
-
-\begin_layout Standard
-Data sent by users and verified by the central system will be forwarded
- to municipality via the provided API (always using HTTPS and TLS encryption)
- to be processed for the generation of tickets.
- The municipality system will then provide informations about issued and
- paid tickets, to be used by the central system to build statistics about
- efficiency, effectiveness and precision of SafeStreet product and about
- the most ticketed drivers and cars.
+ vehicle part of the road from the pedestrian one, with .
 \end_layout
 
 \begin_layout Section
