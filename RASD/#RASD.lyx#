@@ -521,12 +521,6 @@ Since the system has to automatically detect the user's location when he's
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset CommandInset label
-LatexCommand label
-name "enu:Assumption10"
-
-\end_inset
-
 Because of assumptions 8 & 9, we assume the main component of the SafeStreets
  system only has to be developed as a mobile application.
 \begin_inset Newline newline
@@ -562,8 +556,8 @@ ts, and allow this use before completing the registration process.
 \end_layout
 
 \begin_layout Itemize
-SafeStreets has to provide users a way to review and eventually request
- the deletion of any data about him on the service's databases.
+SafeStreets has to provide users a way to delete all of its data retained
+ by the service.
 \end_layout
 
 \begin_layout Standard
@@ -582,17 +576,7 @@ Hardware limitations
 \end_layout
 
 \begin_layout Itemize
-Mobile application (4.1.1.
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "enu:Assumption10"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-)
+Mobile application
 \end_layout
 
 \begin_deeper
@@ -601,7 +585,7 @@ Android or iOS operating system
 \end_layout
 
 \begin_layout Itemize
-Internet connection (mobile data plan or Wi-Fi)
+Internet connection (mobile data plan or WiFi)
 \end_layout
 
 \begin_layout Itemize
@@ -636,7 +620,7 @@ Interaction with the municipality's system will be handled completely by
  the aforementioned authority with the creation of REST APIs to which SafeStreet
 s will perform request to obtain or provide data.
  In other words, SafeStreets will always act as a client in the communication
- between the systems.
+ betw
 \end_layout
 
 \begin_layout Part
