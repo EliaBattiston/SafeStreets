@@ -431,20 +431,34 @@ Users needs to be registered in order to send a violation report
 \end_layout
 
 \begin_layout Enumerate
-Registration is carried out by providing identification data of the user,
- such as _____
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-what data?
+Registration is carried out by providing identification data of the user.
+ Since the report of violations can lead to the generation of a traffic
+ ticket against the offender, we have to provide a strong identification
+ of the person who filed the report:
 \end_layout
 
-\end_inset
-
-
+\begin_deeper
+\begin_layout Itemize
+First name
 \end_layout
 
+\begin_layout Itemize
+Last name
+\end_layout
+
+\begin_layout Itemize
+Fiscal code
+\end_layout
+
+\begin_layout Itemize
+ID photo
+\end_layout
+
+\begin_layout Itemize
+Email address
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
 At registration, a SafeStreets account is created for the new user.
  He can log in it by providing his email or username, and the password he
@@ -503,7 +517,7 @@ Public?
 \end_layout
 
 \begin_layout Enumerate
-The municipality created a REST API for traffic tickets generation from
+The municipality creates a REST API for traffic tickets generation from
  the information sent by SafeStreets.
 \end_layout
 
