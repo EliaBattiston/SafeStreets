@@ -120,6 +120,20 @@
 \end_layout
 
 \begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -585,19 +599,21 @@ Domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[D2] Location data in reports is precise enough to detect street name and
- a rough estimation of the nearest civic number
+[D2] Location data in reports is precise enough to detect the name of the
+ street where the violation took place and a rough estimation of the nearest
+ civic number
 \end_layout
 
 \begin_layout Itemize
-[D3] A subset (or all) of the images provided with the report are enough
- to recognize the offender's car and visually verify the violation took
- place
+[D3] A subset (or all) of the images provided with the report are sufficient
+ to recognize the offender's car and visually verify which the violation
+ took place
 \end_layout
 
 \begin_layout Itemize
 [D4] It's always possibile for authorities to identify the offender either
- by its appearance in a photo or by searching the license plate
+ by its appearance in a photo or by ownership of the vehicle through the
+ license plate
 \end_layout
 
 \begin_layout Itemize
