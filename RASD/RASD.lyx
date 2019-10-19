@@ -35,6 +35,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize default
 \spacing single
 \use_hyperref true
@@ -99,34 +100,46 @@
 
 \begin_body
 
-\begin_layout Title
-\paragraph_spacing other 0.6
+\begin_layout Standard
+\paragraph_spacing double
+\align right
 \begin_inset Graphics
 	filename Images/PoliMi.svg
-	width 40text%
+	width 30text%
 
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset space ~
 \end_inset
 
 
-\begin_inset Newline newline
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+newpage
+\backslash
+relax
+\end_layout
+
 \end_inset
 
 
-\begin_inset space ~
-\end_inset
+\end_layout
 
-
-\begin_inset Newline newline
-\end_inset
-
+\begin_layout Title
 SafeStreets - RASD
 \begin_inset Newline newline
 \end_inset
@@ -406,6 +419,18 @@ Offender:
  a person who is responsible for a violation, for example the person who
  parked their car in a forbidden area or exceeded the speed limit while
  driving.
+ If no information about the specific person who caused the violation si
+ present, the owner of the offending vehicle is considered to be the offender.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Car / Vehicle:
+\emph default
+ the offender's vehicle who caused the violation.
+ The violation can occur both while it's parked (with or without physical
+ presence of the offender) or while it's being driven by the offender.
 \end_layout
 
 \begin_layout Section
@@ -553,6 +578,31 @@ ity and compatibility across devices.
 
 \begin_layout Subsubsection
 Domain assumptions
+\end_layout
+
+\begin_layout Itemize
+[D1] User's identification data is correct and verified
+\end_layout
+
+\begin_layout Itemize
+[D2] Location data in reports is precise enough to detect street name and
+ a rough estimation of the nearest civic number
+\end_layout
+
+\begin_layout Itemize
+[D3] A subset (or all) of the images provided with the report are enough
+ to recognize the offender's car and visually verify the violation took
+ place
+\end_layout
+
+\begin_layout Itemize
+[D4] It's always possibile for authorities to identify the offender either
+ by its appearance in a photo or by searching the license plate
+\end_layout
+
+\begin_layout Itemize
+[D5] User's reports are good willed and do not contain fake information
+ on purpose
 \end_layout
 
 \begin_layout Subsection
