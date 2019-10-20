@@ -321,73 +321,9 @@ Goals
 \end_layout
 
 \begin_layout Enumerate
-Allow citizens to register providing basic information that certifies their
- identities and become certified users;
+Allow citizens to register providing their ___________fisca
 \end_layout
 
-\begin_layout Enumerate
-Allow authorities to register through a verification procedure.
- Enable them the access to our APIs;
-\end_layout
-
-\begin_layout Enumerate
-Enable certified users to:
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-post new traffic or parking violations;
-\end_layout
-
-\begin_layout Enumerate
-see shared posts from the community;
-\end_layout
-
-\begin_layout Enumerate
-comment on a post;
-\end_layout
-
-\begin_layout Enumerate
-update informations about a post.
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Enable authorities to:
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-access all certified users services;
-\end_layout
-
-\begin_layout Enumerate
-access all our authorities only services;
-\end_layout
-
-\begin_layout Enumerate
-...
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Enable system managers to:
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-certify authorities;
-\end_layout
-
-\begin_layout Enumerate
-block or remove users;
-\end_layout
-
-\begin_layout Enumerate
-pause the visibility of a post.
-\end_layout
-
-\end_deeper
 \begin_layout Section
 Definitions, Acronyms, Abbreviations
 \end_layout
