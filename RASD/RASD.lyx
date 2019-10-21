@@ -270,10 +270,10 @@ noprefix "false"
 \begin_layout Itemize
 
 \emph on
-Central system
+Server:
 \emph default
-: SafeStreet server which elaborates the reports and communicates to municipalit
-y through custom APIs
+ SafeStreet server which elaborates the reports and communicates to municipality
+ through custom APIs
 \end_layout
 
 \begin_layout Section
@@ -303,18 +303,17 @@ The product, built from scratch, will use the geolocation systems embedded
  It won't be possible to manually load photos and position to avoid fake
  reports.
  All connections will be handled via HTTPS requests with TLS encryption,
- to ensure that reports arrive from the sender to the central system with
- no external manipulation and no external access by non-authorized personnel;
- this also grants GDPR accompliance.
- Data will be saved in an external-hosted database as long as the central
- server for data elaboration; privacy will be granted by the maintainer
- of the servers.
+ to ensure that reports arrive from the sender to the server with no external
+ manipulation and no external access by non-authorized personnel; this also
+ grants GDPR accompliance.
+ The database and the server will be externally hosted; privacy will be
+ granted by the maintainer of the servers.
 \end_layout
 
 \begin_layout Standard
-The systems dialogates with the municipality services via custom API designed
- for SafeStreet for acquiring informations about occured incidents (with
- the aim of crossing informations and analyze potentially unsafe or dangerous
+The systems dialogues with the municipality services via custom API designed
+ for SafeStreets for acquiring informations about occurred incidents (with
+ the aim of crossing informations and analyse potentially unsafe or dangerous
  areas to be noticed to the municipality) and sending report informations
  to the automatic checking system of the municipality.
 \end_layout
@@ -326,7 +325,7 @@ Product functions
 \begin_layout Standard
 To explicit all the possibilities that will and won't be offered by the
  system, in the following paragraphs all the available functions are listed
- and punctually analyzed.
+ and punctually analysed.
  The aim of the explanation is to line up an unambiguous description of
  what the system is expected to do and what users can or can't do, in addition
  to covering the goals listed here.
@@ -360,12 +359,11 @@ Users who notice a violation are granted to notice it to authorities using
 \end_layout
 
 \begin_layout Standard
-Before permanently saving reports in SafeStreets database, the central systems
- verifies that inserted data are coherent with reality, verifying that the
- picture has not been altered, eventually converting the plate picture into
- a plate number and verifying that this number corresponds to an existing
- plate of a circulating car (this last check is made via the municipality
- API).
+Before permanently saving reports in SafeStreets database, the server verifies
+ that inserted data are coherent with reality, verifying that the picture
+ has not been altered, eventually converting the plate picture into a plate
+ number and verifying that this number corresponds to an existing plate
+ of a circulating car (this last check is made via the municipality API).
  In case of fake recognition or invalid plate number, the report is rejected
  and the user is notified of the rejection.
  In case of multiple reports sent by the same user and sequentially rejected,
@@ -382,10 +380,10 @@ Data visualization
 \end_layout
 
 \begin_layout Standard
-The systems allow registered users to access to analyzed and anonimyzed
+The systems allow registered users to access to analysed and anonymized
  data about the distribution of the reports over the selected area, presented
- in form of a map with highlighted areas in graded colors, from less-reported
- areas to highly-reported areas (from green to red); users ha ve the possibility
+ in form of a map with highlighted areas in graded colours, from less-reported
+ areas to highly-reported areas (from green to red); users have the possibility
  to zoom in and out in the map, having as upper limit the city in the whole
  and lower limit of detail a single street (it won't be possible to visualize
  details about the distribution of reports along a single street.
@@ -403,12 +401,12 @@ Data analysis and notification
 \end_layout
 
 \begin_layout Standard
-The central SafeStreet system acquires data from the municipality via the
- granted APIs to be crossed with the data from the reports; the result will
- be then automatically analyzed from the system itself to verify possible
- unsafe or even dangerous areas of the city (the level of dangerousness
- is directly connected to the category of violation of each report and the
- quantity of reports arriving from that area).
+The SafeStreet server acquires data from the municipality via the granted
+ APIs to be crossed with the data from the reports; the result will be then
+ automatically analyzed from the system itself to verify possible unsafe
+ or even dangerous areas of the city (the level of dangerousness is directly
+ connected to the category of violation of each report and the quantity
+ of reports arriving from that area).
  The system will grant authorities access to the elaborated data and possible
  correcting maneuvers, such as the positioning of barriers to separate the
  vehicle part of the road from the pedestrian one, with suggestions given
@@ -428,13 +426,13 @@ Automatic check generation
 \end_layout
 
 \begin_layout Standard
-Data sent by users and verified by the central system will be forwarded
- to municipality via the provided API (always using HTTPS and TLS encryption)
- to be processed for the generation of tickets.
+Data sent by users and verified by the server will be forwarded to municipality
+ via the provided API (always using HTTPS and TLS encryption) to be processed
+ for the generation of tickets.
  The municipality system will then provide informations about issued and
- paid tickets, to be used by the central system to build statistics about
- efficiency, effectiveness and precision of SafeStreet product and about
- the most ticketed drivers and cars.
+ paid tickets, to be used by the server to build statistics about efficiency,
+ effectiveness and precision of SafeStreet product and about the most ticketed
+ drivers and cars.
 \end_layout
 
 \begin_layout Section
