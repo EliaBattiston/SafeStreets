@@ -347,6 +347,13 @@ Instead there are already multiple municipality systems that we can integrate,
 
 \begin_layout Subsection
 Goals
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Goals"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Enumerate
@@ -522,17 +529,17 @@ To explicit all the possibilities that will and won't be offered by the
  and punctually analysed.
  The aim of the explanation is to line up an unambiguous description of
  what the system is expected to do and what users can or can't do, in addition
- to covering the goals listed here.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Insert reference to Goals paragraph
-\end_layout
+ to covering the goals listed in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Goals"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Subsection
