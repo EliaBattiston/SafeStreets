@@ -222,11 +222,11 @@ Purpose
 \begin_layout Standard
 This RASD is the Requirement Analysis and Specification Document of the
  project SafeStreets.
- Objectives of this document are to fully analyze and describe the customer
+ Objectives of this document are to fully analyse and describe the customer
  prospective, represent the system in terms of its requirements, describe
  the solution adopted in terms of its use cases and show the constraints
  and the limit of this community tool.
- The addressees of this document are developers working on the implmentation
+ The addressees of this document are developers working on the implementation
  of the solution.
 \end_layout
 
@@ -256,7 +256,7 @@ The service’ll be served through a mobile application where users can post
  new violations and see the ones shared by others.
  A shared picture comes with the metadata provided by the smartphone (like:
  time, place, meteorological conditions...) and with valuable information given
- by the user whom can describe the accident and attach any kind of usefull
+ by the user whom can describe the accident and attach any kind of useful
  information he can.
  More pictures of the same accident will be connected crossing the spacial
  and time information so that more viewing angles will be available.
@@ -264,7 +264,7 @@ The service’ll be served through a mobile application where users can post
 
 \begin_layout Standard
 To ensure the chain of custody, the backend infrastructure will run an AI
- algorithm to ensure the quality of the data given (eg.
+ algorithm to ensure the quality of the data given (e.g.
  no edited picture) before posting them.
  
 \end_layout
@@ -274,14 +274,14 @@ The Authorities has access to all the data provide by the users, plus:
 \end_layout
 
 \begin_layout Itemize
-API to cross their informations with SafeStreet ones.
+API to cross their informations with SafeStreets ones.
  Thanks to AI algorithms, they’ll get suggestions from the system on ways
  the municipality can improve the safety of the streets, data accessible
  directly from their dashboard;
 \end_layout
 
 \begin_layout Itemize
-API for generating automatic traffic tikets from the data collected;
+API for generating automatic traffic tickets from the data collected;
 \end_layout
 
 \begin_layout Itemize
@@ -289,9 +289,9 @@ Maps of the less safe roads in the city;
 \end_layout
 
 \begin_layout Itemize
-Veicles that comit the most violations (use eg.: the municipality can cross
+Vehicles that commit the most violations (use e.g.: the municipality can cross
  this data with the list of new entered veichles in the city or check a
- veichle if it’s often in violation);
+ vehicle if it’s often in violation);
 \end_layout
 
 \begin_layout Itemize
@@ -304,13 +304,13 @@ Current systems
 
 \begin_layout Standard
 There’s no automatic system for sharing violations as SafeStreets.
- A citizen has to take call the autorities if it sees one.
+ A citizen has to take call the authorities if it sees one.
  
 \end_layout
 
 \begin_layout Standard
 Instead there are already multiple municipality systems that we can integrate,
- for the automatic tickets or the municipality information retrivial.
+ for the automatic tickets or the municipality information retrieval.
  We opted to open the municipality to our API so they can choose to interact
  with the data and services we provide.
  
