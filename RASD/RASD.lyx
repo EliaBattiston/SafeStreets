@@ -401,10 +401,6 @@ access all certified users services;
 access all our authorities only services;
 \end_layout
 
-\begin_layout Enumerate
-...
-\end_layout
-
 \end_deeper
 \begin_layout Enumerate
 Enable system managers to:
@@ -487,6 +483,13 @@ Reference documents
 
 \begin_layout Section
 Document structure
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Part
@@ -1039,6 +1042,13 @@ s will perform request to obtain or provide data.
  between the systems.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Part
 Specific requirements
 \end_layout
@@ -1109,6 +1119,13 @@ Maintainability
 
 \begin_layout Subsection
 Portability
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Part
