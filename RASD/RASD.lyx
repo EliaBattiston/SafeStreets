@@ -473,6 +473,70 @@ Server:
  through custom APIs
 \end_layout
 
+\begin_layout Subsection
+Acronyms
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+GDPR:
+\emph default
+ General Data Protection Regulation
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+API:
+\emph default
+ Application Programming Interface
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+GPS:
+\emph default
+ Global Positioning System
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+UI:
+\emph default
+ User Interface
+\end_layout
+
+\begin_layout Subsection
+Abbreviations
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+[Gn]:
+\emph default
+ goal 
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+[Dn]:
+\emph default
+ domain assumption 
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Revision history
 \end_layout
@@ -1130,6 +1194,13 @@ Portability
 
 \begin_layout Part
 Formal analysis using Alloy
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Part
