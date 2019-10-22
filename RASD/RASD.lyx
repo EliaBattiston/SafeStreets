@@ -541,6 +541,18 @@ Abbreviations
 Revision history
 \end_layout
 
+\begin_layout Itemize
+
+\emph on
+Version 1.0:
+\begin_inset Newline newline
+\end_inset
+
+
+\emph default
+Initial release
+\end_layout
+
 \begin_layout Section
 Reference documents
 \end_layout
