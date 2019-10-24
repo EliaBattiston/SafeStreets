@@ -1137,6 +1137,33 @@ External Interface Requirements
 User interfaces
 \end_layout
 
+\begin_layout Subsubsection
+Navigation in the mobile application
+\end_layout
+
+\begin_layout Standard
+The application will use an intuitive 
+\emph on
+Master-Detail
+\emph default
+ structure: the navigation between functions will be achieved with a side
+ menu, summoned by dragging from the left side of the screen or by tapping
+ on the 
+\emph on
+burger menu
+\emph default
+ icon in pages from where it is available.
+\end_layout
+
+\begin_layout Subsubsection
+Mobile application mockups
+\end_layout
+
+\begin_layout Standard
+The following designs represent the approximate layout of the information
+ presented to users in the SafeStreets mobile application.
+\end_layout
+
 \begin_layout Standard
 \begin_inset Box Frameless
 position "t"
@@ -1278,61 +1305,6 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Images/UI/RegistrationComplete.svg
-	scale 90
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Registration completion
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "49col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
-
-\begin_layout Plain Layout
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
 	filename Images/UI/DetailPage.svg
 	scale 90
 
@@ -1361,9 +1333,6 @@ Detail page
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Box Frameless
 position "t"
 hor_pos "c"
@@ -1403,7 +1372,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Report (default page)
+Report (default master page)
 \end_layout
 
 \end_inset
