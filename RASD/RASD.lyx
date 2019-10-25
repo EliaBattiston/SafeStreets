@@ -319,7 +319,7 @@ Maps of the less safe roads in the city;
 
 \begin_layout Itemize
 Vehicles that commit the most violations (use e.g.: the municipality can cross
- this data with the list of new entered veichles in the city or check a
+ this data with the list of new entered vehicles in the city or check a
  vehicle if it’s often in violation);
 \end_layout
 
@@ -469,8 +469,8 @@ noprefix "false"
 \emph on
 Server:
 \emph default
- SafeStreet server which elaborates the reports and communicates to municipality
- through custom APIs
+ SafeStreets server which elaborates the reports and communicates to municipalit
+y through custom APIs
 \end_layout
 
 \begin_layout Subsection
@@ -585,7 +585,7 @@ The product, built from scratch, will use the geolocation systems embedded
  All connections will be handled via HTTPS requests with TLS encryption,
  to ensure that reports arrive from the sender to the server with no external
  manipulation and no external access by non-authorized personnel; this also
- grants GDPR accompliance.
+ grants GDPR compliance.
  The database and the server will be externally hosted; privacy will be
  granted by the maintainer of the servers.
 \end_layout
@@ -672,7 +672,7 @@ The systems allow registered users to access to analysed and anonymized
 \begin_layout Standard
 In addition to registered users, officers will have the possibility to visualize
  the distribution of the reports with no lower bound, in addition to the
- visualitazion of the full list of reports without anonimizations and the
+ visualization of the full list of reports without anonymization and the
  list of the most reported cars.
 \end_layout
 
@@ -681,9 +681,9 @@ Data analysis and notification
 \end_layout
 
 \begin_layout Standard
-The SafeStreet server acquires data from the municipality via the granted
+The SafeStreets server acquires data from the municipality via the granted
  APIs to be crossed with the data from the reports; the result will be then
- automatically analyzed from the system itself to verify possible unsafe
+ automatically analysed from the system itself to verify possible unsafe
  or even dangerous areas of the city (the level of dangerousness is directly
  connected to the category of violation of each report and the quantity
  of reports arriving from that area).
@@ -711,7 +711,7 @@ Data sent by users and verified by the server will be forwarded to municipality
  for the generation of tickets.
  The municipality system will then provide informations about issued and
  paid tickets, to be used by the server to build statistics about efficiency,
- effectiveness and precision of SafeStreet product and about the most ticketed
+ effectiveness and precision of SafeStreets product and about the most ticketed
  drivers and cars.
 \end_layout
 
@@ -828,7 +828,7 @@ Offender:
  a person who is responsible for a violation, for example the person who
  parked their car in a forbidden area or exceeded the speed limit while
  driving.
- If no information about the specific person who caused the violation si
+ If no information about the specific person who caused the violation is
  present, the owner of the offending vehicle is considered to be the offender.
 \end_layout
 
@@ -1006,7 +1006,7 @@ Domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[D4] It's always possibile for authorities to identify the offender either
+[D4] It's always possible for authorities to identify the offender either
  by its appearance in a photo or by ownership of the vehicle through the
  license plate
 \end_layout
@@ -1491,6 +1491,131 @@ Street safety
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Navigation in the web backend
+\end_layout
+
+\begin_layout Standard
+The backend interface will be very basic, by showing relevant data through
+ tables.
+ Administrators and authorities can choose different functionalities through
+ the left sidebar.
+\end_layout
+
+\begin_layout Subsubsection
+Web backend mockups
+\end_layout
+
+\begin_layout Standard
+The following designs represent the approximate layout of the information
+ presented to administrators and authorities in the SafeStreets web backend.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/UI/Login.png
+	lyxscale 20
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Login page
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/UI/Accounts.png
+	lyxscale 20
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Accounts control page, only usable by administrators
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/UI/PastReports.png
+	lyxscale 20
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Reports control page, usable by both administrators and authorities
 \end_layout
 
 \end_inset
