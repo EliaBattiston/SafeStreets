@@ -1,4 +1,4 @@
-# Safestreets - <sub><sup>Software Engineering 2 project A.Y. 2019/20</sup></sub>
+# SafeStreets - <sub><sup>Software Engineering 2 project A.Y. 2019/20</sup></sub>
 
 ## Group members
 - ###   10522850    Aspesi Andrea ([@AndreaAspesiPoli](https://github.com/AndreaAspesiPoli))<br>andrea.aspesi@mail.polimi.it

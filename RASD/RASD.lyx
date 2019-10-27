@@ -154,6 +154,16 @@ relax
 \end_layout
 
 \begin_layout Title
+\begin_inset Graphics
+	filename Images/SafeStreetsLogo.svg
+	width 20text%
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
 SafeStreets - RASD
 \begin_inset Newline newline
 \end_inset
@@ -934,6 +944,12 @@ noprefix "false"
 \end_layout
 
 \begin_layout Enumerate
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:Assumption6"
+
+\end_inset
+
 The municipality offers retrieval of accident information through a REST
  API
 \begin_inset Note Note
@@ -951,6 +967,12 @@ Public?
 \end_layout
 
 \begin_layout Enumerate
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:Assumption7"
+
+\end_inset
+
 The municipality creates a REST API for traffic tickets generation from
  the information sent by SafeStreets.
 \end_layout
@@ -1001,8 +1023,8 @@ Domain assumptions
 
 \begin_layout Itemize
 [D3] A subset (or all) of the images provided with the report are sufficient
- to recognize the offender's car and visually verify which the violation
- took place
+ to recognize the offender's car (by extracting its license plate number
+ with OCR algorithms) and visually verify which the violation took place
 \end_layout
 
 \begin_layout Itemize
@@ -1014,6 +1036,11 @@ Domain assumptions
 \begin_layout Itemize
 [D5] User's reports are good willed and do not contain fake information
  on purpose
+\end_layout
+
+\begin_layout Itemize
+[D6] People who want to become SafeStreets users have an Italian fiscal
+ code or can request one
 \end_layout
 
 \begin_layout Subsection
@@ -1102,22 +1129,6 @@ Internet connection
 \end_layout
 
 \end_deeper
-\begin_layout Subsubsection
-Interfaces to other applications
-\end_layout
-
-\begin_layout Standard
-No interface to other applications is planned for this release of SafeStreets.
-\end_layout
-
-\begin_layout Standard
-Interaction with the municipality's system will be handled completely by
- the aforementioned authority with the creation of REST APIs to which SafeStreet
-s will perform request to obtain or provide data.
- In other words, SafeStreets will always act as a client in the communication
- between the systems.
-\end_layout
-
 \begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
@@ -1628,16 +1639,88 @@ Reports control page, usable by both administrators and authorities
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/UI/UnsafeAreas.png
+	lyxscale 20
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Unsafe area warnings and suggestions, usable by both administrators and
+ authorities
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Hardware interfaces
+\end_layout
+
+\begin_layout Standard
+The system does not provide hardware interfaces.
 \end_layout
 
 \begin_layout Subsection
 Software interfaces
 \end_layout
 
-\begin_layout Subsection
-Communication interfaces
+\begin_layout Standard
+No software interface for other applications is planned for this release
+ of SafeStreets.
+\end_layout
+
+\begin_layout Standard
+Interaction with the municipality's system will be handled completely by
+ authorities with the creation of REST APIs to which SafeStreets will perform
+ request to obtain or provide data, as explained in (10.1.1.
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:Assumption6"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:Assumption7"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+In other words, SafeStreets will always act as a client in the communication
+ between the systems.
 \end_layout
 
 \begin_layout Section
