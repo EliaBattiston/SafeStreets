@@ -80,7 +80,7 @@
 \rightmargin 2cm
 \bottommargin 2cm
 \secnumdepth 3
-\tocdepth 1
+\tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation 0mm
 \is_math_indent 0
@@ -367,56 +367,61 @@ name "subsec:Goals"
 \end_layout
 
 \begin_layout Itemize
-[G3] Enable certified users to:
+Enable certified users to:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-[G3.1] post new traffic or parking violations;
+[G3] report new traffic or parking violations;
 \end_layout
 
 \begin_layout Itemize
-[G3.2] see shared posts from the community;
+[G4] see his own past reports;
 \end_layout
 
 \begin_layout Itemize
-[G3.3] comment on a post;
-\end_layout
-
-\begin_layout Itemize
-[G3.4] update informations about a post.
+[G5] access map with most reported streets.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-[G4] Enable authorities to:
+Enable authorities to:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-[G4.1] access all certified users services;
+[G6] access all certified users services;
 \end_layout
 
 \begin_layout Itemize
-[G4.2] access all our authorities only services;
+[G7] access to all report data (including data about the user who created
+ it);
+\end_layout
+
+\begin_layout Itemize
+[G8] export report data to their own systems to generate tickets;
+\end_layout
+
+\begin_layout Itemize
+[G9] access to data analysis results with suggestions.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-[G5] Enable system managers to:
+Enable administrators to:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-[G5.1] certify authorities;
+[G10] certify authorities;
 \end_layout
 
 \begin_layout Itemize
-[G5.2] block or remove users;
+[G11] block or remove users;
 \end_layout
 
 \begin_layout Itemize
-[G5.3] pause the visibility of a post.
+[G12] assign roles to users.
 \end_layout
 
 \end_deeper
@@ -1151,6 +1156,769 @@ Communication interfaces
 
 \begin_layout Section
 Functional requirements
+\end_layout
+
+\begin_layout Subsection
+User
+\end_layout
+
+\begin_layout Subsubsection
+
+\series bold
+\emph on
+Scenarios
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Scenario 1
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Gianluca lives in a crowded street in Milan and often in the early morning,
+ when he goes out to work, he finds neighbours' cars parked in double lane
+ near his garage, so that every time Gianluca risks to score the car.
+ Gianluca registered on SafeStreets, so from now on every time he finds
+ a double parked car he will send a report and the car owners will be checked,
+ discouraging double park in the area and allowing Gianluca to save money
+ from the auto body mechanic.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\emph on
+Scenario 2
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Mario is a registered SafeStreets user and lives in a farmstead near Voghera.
+ He usually drives to Milan with his wife and his two little children to
+ visit the city and wants to know in which areas he can park and safely
+ arrive to the location he chose for the trip.
+ Thanks to SafeStreets Mario can check out which streets have the highest
+ reportings for double parking, red light offenses and unsafe driving, so
+ that he can avoid those areas and arrive to the destination without worries
+ about his family safety.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Use case diagrams
+\end_layout
+
+\begin_layout Subsubsection
+Use cases
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="middle" width="80col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Sign up
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Actor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Visitor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Entry conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The visitor installed the application on his device and opens it.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Events flow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Enumerate
+The user chooses the Sign Up option.
+\end_layout
+
+\begin_layout Enumerate
+The user fills in all the fields.
+\end_layout
+
+\begin_layout Enumerate
+The user provides a photo of his identification document.
+\end_layout
+
+\begin_layout Enumerate
+The user hits the Sign Up button.
+\end_layout
+
+\begin_layout Enumerate
+The system saves the data.
+\end_layout
+
+\begin_layout Enumerate
+The administrator validates user's data and accepts the registration.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exit conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The visitor becomes a registered user and can access SafeStreets functionalities.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exceptions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Itemize
+The user is already registered: the app notifies the user to contact an
+ administrator to retrieve the password.
+\end_layout
+
+\begin_layout Itemize
+The administrator refuses the registration: the system sends an e-mail to
+ the visitor to notify the refusal and eventual motivations.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="middle" width="80col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Login
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Actor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Registered user
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Entry conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Itemize
+The user installed the application on his device and opens it
+\end_layout
+
+\begin_layout Itemize
+The user has already completed the 
+\begin_inset Quotes eld
+\end_inset
+
+Sign up
+\begin_inset Quotes erd
+\end_inset
+
+ activity
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Events flow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Enumerate
+The user fills the Username and Password fields with his credentials.
+\end_layout
+
+\begin_layout Enumerate
+The user hits the Login button.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exit conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Login is completed, the user is prompted to the main activity page.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exceptions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Itemize
+The user insert wrong credentials: the system shows a notification and suggests
+ to contact an administrator to retrieve the username and/or password.
+\end_layout
+
+\begin_layout Itemize
+The user is not registered: for security reasons the system prompts the
+ same alert for the Wrong credentials exception.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="middle" width="80col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Create a report
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Actor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Registered user
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Entry conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The user has already completed the 
+\begin_inset Quotes eld
+\end_inset
+
+Login
+\begin_inset Quotes erd
+\end_inset
+
+ activity.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Events flow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Enumerate
+The user selects the 
+\begin_inset Quotes eld
+\end_inset
+
+Report
+\begin_inset Quotes erd
+\end_inset
+
+ oprion in the application
+\end_layout
+
+\begin_layout Enumerate
+The user fills in all the fields.
+\end_layout
+
+\begin_layout Enumerate
+The user make at least one photo of the violation.
+\end_layout
+
+\begin_layout Enumerate
+The user hits the 
+\begin_inset Quotes eld
+\end_inset
+
+Send Report
+\begin_inset Quotes erd
+\end_inset
+
+ button.
+\end_layout
+
+\begin_layout Enumerate
+The system saves the report and the attached photo(s) in the database.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exit conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The report is sent to the system and will be take in charge from the first
+ free Officer.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exceptions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Itemize
+Some or all of the fileds are not filled / no photo has been provided: the
+ system prompts the user a notification and asks for a data filling.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="middle" width="80col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Actor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Entry conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Events flow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exit conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exceptions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
