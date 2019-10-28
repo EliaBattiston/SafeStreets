@@ -1372,6 +1372,11 @@ Exceptions
 \begin_inset Text
 
 \begin_layout Itemize
+Some or all of the fileds are not filled / no photo has been provided: the
+ system prompts the user a notification and asks for a data filling.
+\end_layout
+
+\begin_layout Itemize
 The user is already registered: the app notifies the user to contact an
  administrator to retrieve the password.
 \end_layout
@@ -1684,7 +1689,7 @@ Report
 \begin_inset Quotes erd
 \end_inset
 
- oprion in the application
+ option in the application menu.
 \end_layout
 
 \begin_layout Enumerate
@@ -1799,6 +1804,8 @@ Name
 
 \begin_layout Plain Layout
 
+\series bold
+See past reports
 \end_layout
 
 \end_inset
@@ -1820,7 +1827,7 @@ Actor
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Registered user
 \end_layout
 
 \end_inset
@@ -1842,7 +1849,15 @@ Entry conditions
 \begin_inset Text
 
 \begin_layout Plain Layout
+The user has already completed the 
+\begin_inset Quotes eld
+\end_inset
 
+Login
+\begin_inset Quotes erd
+\end_inset
+
+ activity.
 \end_layout
 
 \end_inset
@@ -1863,8 +1878,20 @@ Events flow
 <cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Plain Layout
+\begin_layout Enumerate
+The user selects the 
+\begin_inset Quotes eld
+\end_inset
 
+Past reports
+\begin_inset Quotes erd
+\end_inset
+
+ in the application menu.
+\end_layout
+
+\begin_layout Enumerate
+The system retrieves the data about user's past sent reports.
 \end_layout
 
 \end_inset
@@ -1886,7 +1913,201 @@ Exit conditions
 \begin_inset Text
 
 \begin_layout Plain Layout
+The application shows a list of user's past sent reports.
+\end_layout
 
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exceptions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Itemize
+The user has no past reports: the application shows an empty page with 
+\begin_inset Quotes eld
+\end_inset
+
+No past reports found
+\begin_inset Quotes erd
+\end_inset
+
+ notification in the middle.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="middle" width="80col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+See Street Safety
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Actor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Registered user
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Entry conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The user has already completed the 
+\begin_inset Quotes eld
+\end_inset
+
+Login
+\begin_inset Quotes erd
+\end_inset
+
+ activity.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Events flow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Enumerate
+The user selects the 
+\begin_inset Quotes eld
+\end_inset
+
+Street safety
+\begin_inset Quotes erd
+\end_inset
+
+ in the application menu.
+\end_layout
+
+\begin_layout Enumerate
+The system generates a map highlighting the streets with safety issues,
+ with different colors based on the safeness of the street.
+\end_layout
+
+\begin_layout Enumerate
+The user clicks over a highlighted street.
+\end_layout
+
+\begin_layout Enumerate
+The application shows a popup with all the statistics and details of the
+ clicked street.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exit conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The application shows the map and allow the user to interact with it.
 \end_layout
 
 \end_inset
@@ -1908,6 +2129,1974 @@ Exceptions
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\backslash
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Authority
+\end_layout
+
+\begin_layout Subsubsection
+Scenarios
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Scenario 3
+\begin_inset Newline newline
+\end_inset
+
+
+\emph default
+Milan municipality has decided to adopt SafeStreets to increase street safety
+ and encourage active citizenship.
+ Traffic policemen's Officer in chief registers over SafeStreets platform
+ and requests an authority access.
+ After receiving the accesses, he decides to start monitoring reports received
+ throught the system, noticing that lots of people signed up and started
+ sending reports; moreover almost the totality of the reports are well-made
+ and correctly categorised.
+ The chief is very pleased of this system and congratulates with the municipalit
+y for the great choice.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Scenario 4
+\emph default
+
+\begin_inset Newline newline
+\end_inset
+
+After two months of continuous use of the platform, the Officer in chief
+ decides to analyze the data retrieved by the platform and to verify if
+ the suggestions elaborated by the system effectively answers to real necessitie
+s.
+ He decides to investigate a small area in the 
+\begin_inset Quotes eld
+\end_inset
+
+Study City
+\begin_inset Quotes erd
+\end_inset
+
+ area of the city, already known to the municipality for the large number
+ of bike-car accidents.
+ The Chief already presented a suggestion to the municipality to build a
+ bike-only lane on the road to limit the number of accidents, but the street
+ is full of parkings and barriers can't be built.
+ After focusing on the area, he remaines astonished reading the area suggestions
+: the system, in addition to noticing the large number of accidents reported,
+ signaled a very high number of reports for red light offenses related to
+ the traffic light at the end of the streets, with a suggestion of substituting
+ it with a roundabout; for the system, the roundabout will also reduce the
+ number of accidents, because cars won't be in hurry to cross the intersection
+ with the green light, reducing the average speed.
+ The Chief brings this suggestions to the major office and probably road
+ works will start in a few days.
+\end_layout
+
+\begin_layout Subsubsection
+Use case diagrams
+\end_layout
+
+\begin_layout Subsubsection
+Use cases
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="middle" width="80col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Sign up
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Actor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Authority, not already registered
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Entry conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The authority installed the application on his device and opens it / the
+ authority opens SafeStreets website from a computer brower.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Events flow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Enumerate
+The authority chooses the Sign Up option.
+\end_layout
+
+\begin_layout Enumerate
+The authority fills in all the fields.
+\end_layout
+
+\begin_layout Enumerate
+The authority provides a photo of his identification document.
+\end_layout
+
+\begin_layout Enumerate
+The authority hits the Sign Up button.
+\end_layout
+
+\begin_layout Enumerate
+The system saves the data.
+\end_layout
+
+\begin_layout Enumerate
+The administrator validates user's data and accepts the registration.
+\end_layout
+
+\begin_layout Enumerate
+The user notifies the administrator he is an authority (providing coherent
+ documentation) and asks for authority access.
+\end_layout
+
+\begin_layout Enumerate
+The administrator validates authority's data and upgrades the account.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exit conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The authority has access to the system with specific permits.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exceptions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Itemize
+Some or all of the fileds are not filled / no photo has been provided: the
+ system prompts the user a notification and asks for a data filling.
+\end_layout
+
+\begin_layout Itemize
+The user is already registered: the app notifies the user to contact an
+ administrator to retrieve the password.
+\end_layout
+
+\begin_layout Itemize
+The administrator refuses the registration (for basic or authority access):
+ the system sends an e-mail to the user to notify the refusal and eventual
+ motivations.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="middle" width="80col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Login to website
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Actor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Registered user
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Entry conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Itemize
+The officer opens SafeStreets website within a browser.
+\end_layout
+
+\begin_layout Itemize
+The officer has already completed the 
+\begin_inset Quotes eld
+\end_inset
+
+Sign up
+\begin_inset Quotes erd
+\end_inset
+
+ activity
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Events flow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Enumerate
+The user fills the E-mail address and Password fields with his credentials.
+\end_layout
+
+\begin_layout Enumerate
+The user hits the Login button.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exit conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Login is completed, the user is prompted to the main activity website page.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exceptions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Itemize
+The user insert wrong credentials: the system shows a notification and suggests
+ to contact an administrator to retrieve the e-mail address and/or password.
+\end_layout
+
+\begin_layout Itemize
+The user is not registered: for security reasons the system prompts the
+ same alert for the Wrong credentials exception.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\emph on
+Login, Create a report, See past reports 
+\emph default
+and 
+\emph on
+See Street safety
+\emph default
+ activities are not reported, as equal to the User ones.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="middle" width="80col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Access reports data
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Actor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Officer
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Entry conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The officer has already completed the 
+\begin_inset Quotes eld
+\end_inset
+
+Login to website
+\begin_inset Quotes erd
+\end_inset
+
+ activity.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Events flow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Enumerate
+The officer selects the 
+\begin_inset Quotes eld
+\end_inset
+
+Consult reports
+\begin_inset Quotes erd
+\end_inset
+
+ in the website menu.
+\end_layout
+
+\begin_layout Enumerate
+The system retrieves the data about sent reports.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exit conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The website shows all reports made by users and allows the officer to filter
+ data and to download report photos.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exceptions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Itemize
+There are no reports: the application shows an empty page with 
+\begin_inset Quotes eld
+\end_inset
+
+No reports found
+\begin_inset Quotes erd
+\end_inset
+
+ notification in the middle.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="middle" width="80col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Access analyzed data
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Actor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Officer, municipality
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Entry conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The officer has already completed the 
+\begin_inset Quotes eld
+\end_inset
+
+Login to website
+\begin_inset Quotes erd
+\end_inset
+
+ activity.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Events flow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Enumerate
+The officer selects the 
+\begin_inset Quotes eld
+\end_inset
+
+Consult analyzed data
+\begin_inset Quotes erd
+\end_inset
+
+ in the website menu.
+\end_layout
+
+\begin_layout Enumerate
+The system retrieves the analyzed data, organized for urgency.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exit conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The website shows the analyzed data, with acquired problems and elaborated
+ suggestions.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exceptions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\backslash
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Administrator
+\end_layout
+
+\begin_layout Subsubsection
+Scenarios
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Scenario 5
+\begin_inset Newline newline
+\end_inset
+
+
+\emph default
+Luigi is the system administrator for SafeStreets.
+ He receives a notification for registration validation by a new user; after
+ logging in to the website platform, he opens the new user request and,
+ after verifying that the fiscal code provided matches with the one reported
+ on the document in the photo, grants the new user access to the platform.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Scenario 6
+\begin_inset Newline newline
+\end_inset
+
+
+\emph default
+Luigi receives a notification from the municipality about a user who continues
+ to send fake reports about double parkings, with the request of deleting
+ the user from the system.
+ Luigi, to be sure not to re-grant access to the user in case the latter
+ tries to sign up again to the system, suspends the user instead of deleting
+ the account, so that no access is given and moreover the user couldn't
+ sign up again, because the fiscal code is already registered.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Scenario 7
+\begin_inset Newline newline
+\end_inset
+
+
+\emph default
+Luigi receives an officer activation request from a new user, who declared
+ to be an agent of the local traffic police.
+ After the confirmation from the municipality that the person is effectively
+ an agent, Luigi grants him the Officer access.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Scenario 8
+\begin_inset Newline newline
+\end_inset
+
+
+\emph default
+SafeStreets administration receives a formal request from the municipality
+ to activate an account for each agent of the traffic police, attaching
+ to the requet the complete list of data needed for the registration.
+ Administration forwards the request to Luigi, who creates the requested
+ accounts and sends an e-amil to each agent with the personal temporary
+ access credentials.
+\end_layout
+
+\begin_layout Subsubsection
+Use case diagrams
+\end_layout
+
+\begin_layout Subsubsection
+Use cases
+\end_layout
+
+\begin_layout Standard
+The 
+\emph on
+Create a report, See past reports 
+\emph default
+and 
+\emph on
+See Street safety
+\emph default
+ activities are not reported, as equal to the User ones.
+ The 
+\emph on
+Login to website
+\emph default
+ activity is not reported, as equal to the Autority one.
+\end_layout
+
+\begin_layout Standard
+There is no 
+\emph on
+Sign up
+\emph default
+ activity for Administrators because such accounts are created with the
+ system initial instantiation directly by SafeStreets.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="middle" width="80col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Registration validation (basic user)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Actor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Administrator
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Entry conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The administrator has already completed the 
+\begin_inset Quotes eld
+\end_inset
+
+Login to website
+\begin_inset Quotes erd
+\end_inset
+
+ activity.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Events flow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Enumerate
+The administrator selects the 
+\begin_inset Quotes eld
+\end_inset
+
+Accounts control
+\begin_inset Quotes erd
+\end_inset
+
+ in the website menu.
+\end_layout
+
+\begin_layout Enumerate
+The administrator selects the user to validate.
+\end_layout
+
+\begin_layout Enumerate
+The administrator checks for information correctness (compared to the provided
+ identification document photo).
+\end_layout
+
+\begin_layout Enumerate
+The administrator validates the user.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exit conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The user obtains the base access.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exceptions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Itemize
+No registered users: the website shows an empty page with 
+\begin_inset Quotes eld
+\end_inset
+
+No users found
+\begin_inset Quotes erd
+\end_inset
+
+ notification in the middle.
+\end_layout
+
+\begin_layout Itemize
+User data not correct: the administrator refuses the validation clicking
+ on 
+\begin_inset Quotes eld
+\end_inset
+
+Refuse
+\begin_inset Quotes erd
+\end_inset
+
+ button.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="middle" width="80col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Registration validation (authority access request)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Actor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Administrator
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Entry conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The administrator has already completed the 
+\begin_inset Quotes eld
+\end_inset
+
+Login to website
+\begin_inset Quotes erd
+\end_inset
+
+ activity.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Events flow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Enumerate
+The administrator selects the 
+\begin_inset Quotes eld
+\end_inset
+
+Accounts control
+\begin_inset Quotes erd
+\end_inset
+
+ in the website menu.
+\end_layout
+
+\begin_layout Enumerate
+The administrator selects the user to validate and notices the Officer access
+ request.
+\end_layout
+
+\begin_layout Enumerate
+The administrator checks for information correctness (compared to the provided
+ identification document photo).
+\end_layout
+
+\begin_layout Enumerate
+The administrator verifies the identity of the user and the effective access
+ permission asking to the municipality.
+\end_layout
+
+\begin_layout Enumerate
+The administrator validates the user.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exit conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The user obtains the base access.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exceptions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Itemize
+No registered users: the website shows an empty page with 
+\begin_inset Quotes eld
+\end_inset
+
+No users found
+\begin_inset Quotes erd
+\end_inset
+
+ notification in the middle.
+\end_layout
+
+\begin_layout Itemize
+User data not correct: the administrator refuses the validation clicking
+ on 
+\begin_inset Quotes eld
+\end_inset
+
+Refuse
+\begin_inset Quotes erd
+\end_inset
+
+ button.
+\end_layout
+
+\begin_layout Itemize
+User not identified from municipality: the administrator refuses the validation
+ and notices the user to the police office for fake declaration clicking
+ on 
+\begin_inset Quotes eld
+\end_inset
+
+Refuse and notice
+\begin_inset Quotes erd
+\end_inset
+
+ button.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="middle" width="80col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Authority registration request
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Actor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Administration, municipality
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Entry conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Itemize
+The administrator has already completed the 
+\begin_inset Quotes eld
+\end_inset
+
+Login to website
+\begin_inset Quotes erd
+\end_inset
+
+ activity.
+\end_layout
+
+\begin_layout Itemize
+The administrator receives a formal request from the municipality requesting
+ the activation of one or more accounts
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Events flow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Enumerate
+The administrator selects the 
+\begin_inset Quotes eld
+\end_inset
+
+Accounts control
+\begin_inset Quotes erd
+\end_inset
+
+ in the website menu.
+\end_layout
+
+\begin_layout Enumerate
+For each account to be created, the administrator clicks on 
+\begin_inset Quotes eld
+\end_inset
+
+New Officer account
+\begin_inset Quotes erd
+\end_inset
+
+ button, fills in all the fields and finally hits the 
+\begin_inset Quotes eld
+\end_inset
+
+Save
+\begin_inset Quotes erd
+\end_inset
+
+ button.
+\end_layout
+
+\begin_layout Enumerate
+The system sends an e-mail for each new account with the first access credential
+s.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exit conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Requested accounts have been created and new officers can login.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exceptions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Itemize
+Missing data for one or more accounts: the administrator asks the municipality
+ for missing data.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="middle" width="80col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+User suspension
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Actor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Administrator, municipality or authority
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Entry conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Itemize
+The administrator has already completed the 
+\begin_inset Quotes eld
+\end_inset
+
+Login to website
+\begin_inset Quotes erd
+\end_inset
+
+ activity.
+\end_layout
+
+\begin_layout Itemize
+The administrator receives a formal suspension/cancellation request from
+ the municipality /autohrity
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Events flow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Enumerate
+The administrator selects the 
+\begin_inset Quotes eld
+\end_inset
+
+Accounts control
+\begin_inset Quotes erd
+\end_inset
+
+ in the website menu.
+\end_layout
+
+\begin_layout Enumerate
+The administrator selects the user to be suspended.
+\end_layout
+
+\begin_layout Enumerate
+The administrator clicks on 
+\begin_inset Quotes eld
+\end_inset
+
+Suspend
+\begin_inset Quotes erd
+\end_inset
+
+ button and confirms o the displayed popup.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exit conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The selected user cannot access the service as long as his account is suspended.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exceptions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\backslash
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing double
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="middle" width="80col%">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+User rehabilitation
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Actor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Administrator, municipality or authority
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Entry conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Itemize
+The administrator has already completed the 
+\begin_inset Quotes eld
+\end_inset
+
+Login to website
+\begin_inset Quotes erd
+\end_inset
+
+ activity.
+\end_layout
+
+\begin_layout Itemize
+The administrator receives a formal rehabilitation request from the municipality
+ /autohrity
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Events flow
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Enumerate
+The administrator selects the 
+\begin_inset Quotes eld
+\end_inset
+
+Accounts control
+\begin_inset Quotes erd
+\end_inset
+
+ in the website menu.
+\end_layout
+
+\begin_layout Enumerate
+The administrator selects the user to be rehabilited.
+\end_layout
+
+\begin_layout Enumerate
+The administrator clicks on 
+\begin_inset Quotes eld
+\end_inset
+
+Rehabilit
+\begin_inset Quotes erd
+\end_inset
+
+ button and confirms o the displayed popup.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exit conditions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+The selected user can access the service as before the suspension.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Exceptions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\backslash
 
 \end_layout
 
