@@ -1159,6 +1159,25 @@ Functional requirements
 \end_layout
 
 \begin_layout Subsection
+Visitor
+\end_layout
+
+\begin_layout Standard
+Here it is reported only the use case diagram of the sign-up activity; the
+ activity for each category of actors is described in the sections below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/UseCaseDiagrams/Visitor.png
+	lyxscale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 User
 \end_layout
 
@@ -2144,6 +2163,10 @@ Exceptions
 
 \end_layout
 
+\begin_layout Subsubsection
+Sequence diagrams
+\end_layout
+
 \begin_layout Subsection
 Authority
 \end_layout
@@ -2975,6 +2998,10 @@ Exceptions
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+Sequence diagrams
 \end_layout
 
 \begin_layout Subsection
@@ -4108,6 +4135,10 @@ Exceptions
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+Sequence diagrams
 \end_layout
 
 \begin_layout Section
