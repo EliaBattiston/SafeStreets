@@ -319,7 +319,7 @@ Maps of the less safe roads in the city;
 
 \begin_layout Itemize
 Vehicles that commit the most violations (use e.g.: the municipality can cross
- this data with the list of new entered veichles in the city or check a
+ this data with the list of new entered vehicles in the city or check a
  vehicle if it’s often in violation);
 \end_layout
 
@@ -438,7 +438,7 @@ Definitions
 \emph on
 Violation
 \emph default
-: illegal behavior executed by the Offender 
+: illegal behaviour executed by the Offender 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "subsec:Actors"
@@ -474,8 +474,8 @@ noprefix "false"
 \emph on
 Server:
 \emph default
- SafeStreet server which elaborates the reports and communicates to municipality
- through custom APIs
+ SafeStreets server which elaborates the reports and communicates to municipalit
+y through custom APIs
 \end_layout
 
 \begin_layout Subsection
@@ -512,6 +512,14 @@ GPS:
 UI:
 \emph default
  User Interface
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+ID:
+\emph default
+ Identification Document
 \end_layout
 
 \begin_layout Subsection
@@ -590,7 +598,7 @@ The product, built from scratch, will use the geolocation systems embedded
  All connections will be handled via HTTPS requests with TLS encryption,
  to ensure that reports arrive from the sender to the server with no external
  manipulation and no external access by non-authorized personnel; this also
- grants GDPR accompliance.
+ grants GDPR compliance.
  The database and the server will be externally hosted; privacy will be
  granted by the maintainer of the servers.
 \end_layout
@@ -677,7 +685,7 @@ The systems allow registered users to access to analysed and anonymized
 \begin_layout Standard
 In addition to registered users, officers will have the possibility to visualize
  the distribution of the reports with no lower bound, in addition to the
- visualitazion of the full list of reports without anonimizations and the
+ visualization of the full list of reports without anonymization and the
  list of the most reported cars.
 \end_layout
 
@@ -686,16 +694,16 @@ Data analysis and notification
 \end_layout
 
 \begin_layout Standard
-The SafeStreet server acquires data from the municipality via the granted
+The SafeStreets server acquires data from the municipality via the granted
  APIs to be crossed with the data from the reports; the result will be then
- automatically analyzed from the system itself to verify possible unsafe
+ automatically analysed from the system itself to verify possible unsafe
  or even dangerous areas of the city (the level of dangerousness is directly
  connected to the category of violation of each report and the quantity
  of reports arriving from that area).
  The system will grant authorities access to the elaborated data and possible
- correcting maneuvers, such as the positioning of barriers to separate the
- vehicle part of the road from the pedestrian one, with suggestions given
- coherently with the type of notifications received.
+ correcting manoeuvrers, such as the positioning of barriers to separate
+ the vehicle part of the road from the pedestrian one, with suggestions
+ given coherently with the type of notifications received.
 \end_layout
 
 \begin_layout Standard
@@ -716,7 +724,7 @@ Data sent by users and verified by the server will be forwarded to municipality
  for the generation of tickets.
  The municipality system will then provide informations about issued and
  paid tickets, to be used by the server to build statistics about efficiency,
- effectiveness and precision of SafeStreet product and about the most ticketed
+ effectiveness and precision of SafeStreets product and about the most ticketed
  drivers and cars.
 \end_layout
 
@@ -833,7 +841,7 @@ Offender:
  a person who is responsible for a violation, for example the person who
  parked their car in a forbidden area or exceeded the speed limit while
  driving.
- If no information about the specific person who caused the violation si
+ If no information about the specific person who caused the violation is
  present, the owner of the offending vehicle is considered to be the offender.
 \end_layout
 
@@ -1011,7 +1019,7 @@ Domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[D4] It's always possibile for authorities to identify the offender either
+[D4] It's always possible for authorities to identify the offender either
  by its appearance in a photo or by ownership of the vehicle through the
  license plate
 \end_layout
@@ -1392,7 +1400,7 @@ Exceptions
 \begin_inset Text
 
 \begin_layout Itemize
-Some or all of the fileds are not filled / no photo has been provided: the
+Some or all of the fields are not filled / no photo has been provided: the
  system prompts the user a notification and asks for a data filling.
 \end_layout
 
@@ -1778,7 +1786,7 @@ Exceptions
 \begin_inset Text
 
 \begin_layout Itemize
-Some or all of the fileds are not filled / no photo has been provided: the
+Some or all of the fields are not filled / no photo has been provided: the
  system prompts the user a notification and asks for a data filling.
 \end_layout
 
@@ -2096,7 +2104,7 @@ Street safety
 
 \begin_layout Enumerate
 The system generates a map highlighting the streets with safety issues,
- with different colors based on the safeness of the street.
+ with different colours based on the safeness of the street.
 \end_layout
 
 \begin_layout Enumerate
@@ -2168,6 +2176,57 @@ Exceptions
 Sequence diagrams
 \end_layout
 
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/SequenceDiagrams/SignUp_User.svg
+	lyxscale 10
+	height 50pheight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/SequenceDiagrams/Login.svg
+	lyxscale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/SequenceDiagrams/Create_Report.svg
+	lyxscale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/SequenceDiagrams/See_Past_Reports.svg
+	lyxscale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/SequenceDiagrams/See_Street_Safety.svg
+	lyxscale 10
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Authority
 \end_layout
@@ -2190,7 +2249,7 @@ Milan municipality has decided to adopt SafeStreets to increase street safety
  Traffic policemen's Officer in chief registers over SafeStreets platform
  and requests an authority access.
  After receiving the accesses, he decides to start monitoring reports received
- throught the system, noticing that lots of people signed up and started
+ through the system, noticing that lots of people signed up and started
  sending reports; moreover almost the totality of the reports are well-made
  and correctly categorised.
  The chief is very pleased of this system and congratulates with the municipalit
@@ -2207,7 +2266,7 @@ Scenario 4
 \end_inset
 
 After two months of continuous use of the platform, the Officer in chief
- decides to analyze the data retrieved by the platform and to verify if
+ decides to analyse the data retrieved by the platform and to verify if
  the suggestions elaborated by the system effectively answers to real necessitie
 s.
  He decides to investigate a small area in the 
@@ -2223,8 +2282,8 @@ Study City
  The Chief already presented a suggestion to the municipality to build a
  bike-only lane on the road to limit the number of accidents, but the street
  is full of parkings and barriers can't be built.
- After focusing on the area, he remaines astonished reading the area suggestions
-: the system, in addition to noticing the large number of accidents reported,
+ After focusing on the area, he remains astonished reading the area suggestions:
+ the system, in addition to noticing the large number of accidents reported,
  signaled a very high number of reports for red light offenses related to
  the traffic light at the end of the streets, with a suggestion of substituting
  it with a roundabout; for the system, the roundabout will also reduce the
@@ -2320,7 +2379,7 @@ Entry conditions
 
 \begin_layout Plain Layout
 The authority installed the application on his device and opens it / the
- authority opens SafeStreets website from a computer brower.
+ authority opens SafeStreets website from a computer browser.
 \end_layout
 
 \end_inset
@@ -2855,7 +2914,7 @@ Name
 \begin_layout Plain Layout
 
 \series bold
-Access analyzed data
+Access analysed data
 \end_layout
 
 \end_inset
@@ -3005,6 +3064,46 @@ Exceptions
 Sequence diagrams
 \end_layout
 
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/SequenceDiagrams/SignUp_Officer.svg
+	lyxscale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/SequenceDiagrams/Login_Website.svg
+	lyxscale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/SequenceDiagrams/Access_Reports_Data.svg
+	lyxscale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/SequenceDiagrams/Access_Analyzed_Data.svg
+	lyxscale 10
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Administrator
 \end_layout
@@ -3073,9 +3172,9 @@ Scenario 8
 \emph default
 SafeStreets administration receives a formal request from the municipality
  to activate an account for each agent of the traffic police, attaching
- to the requet the complete list of data needed for the registration.
+ to the request the complete list of data needed for the registration.
  Administration forwards the request to Luigi, who creates the requested
- accounts and sends an e-amil to each agent with the personal temporary
+ accounts and sends an e-mail to each agent with the personal temporary
  access credentials.
 \end_layout
 
@@ -3101,7 +3200,7 @@ See Street safety
 \emph on
 Login to website
 \emph default
- activity is not reported, as equal to the Autority one.
+ activity is not reported, as equal to the Authority one.
 \end_layout
 
 \begin_layout Standard
@@ -3365,7 +3464,7 @@ Registration validation (authority access request)
 \begin_layout Plain Layout
 
 \emph on
-Actor
+Actors
 \end_layout
 
 \end_inset
@@ -3374,7 +3473,7 @@ Actor
 \begin_inset Text
 
 \begin_layout Plain Layout
-Administrator
+Administrator, municipality
 \end_layout
 
 \end_inset
@@ -3838,7 +3937,7 @@ Login to website
 
 \begin_layout Itemize
 The administrator receives a formal suspension/cancellation request from
- the municipality /autohrity
+ the municipality /authority
 \end_layout
 
 \end_inset
@@ -4033,7 +4132,7 @@ Login to website
 
 \begin_layout Itemize
 The administrator receives a formal rehabilitation request from the municipality
- /autohrity
+ /authority
 \end_layout
 
 \end_inset
@@ -4067,7 +4166,7 @@ Accounts control
 \end_layout
 
 \begin_layout Enumerate
-The administrator selects the user to be rehabilited.
+The administrator selects the user to be rehabilitated.
 \end_layout
 
 \begin_layout Enumerate
@@ -4142,6 +4241,46 @@ Exceptions
 Sequence diagrams
 \end_layout
 
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/SequenceDiagrams/Registration_Validation_User.svg
+	lyxscale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/SequenceDiagrams/Registration_Validation_Officer.svg
+	lyxscale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/SequenceDiagrams/Authority_Registration_Request.svg
+	lyxscale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/SequenceDiagrams/User_Suspension_Rehabilitation.svg
+	lyxscale 10
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Requirements
 \end_layout
@@ -4169,7 +4308,7 @@ Requirements
 \end_layout
 
 \begin_layout Itemize
-[D1] User's identication data is correct and verified.
+[D1] User's identification data is correct and verified.
 \end_layout
 
 \begin_layout Subsubsection
@@ -4206,7 +4345,7 @@ Requirements
 \end_layout
 
 \begin_layout Itemize
-[D1] User's identication data is correct and verified.
+[D1] User's identification data is correct and verified.
 \end_layout
 
 \begin_layout Subsubsection
@@ -4322,7 +4461,7 @@ Requirements
 \end_layout
 
 \begin_layout Itemize
-[R13] The municipality and/or the autorities use the provided APIs.
+[R13] The municipality and/or the authorities use the provided APIs.
 \end_layout
 
 \begin_layout Standard
@@ -4345,7 +4484,7 @@ Requirements
 \end_layout
 
 \begin_layout Itemize
-[D4] It's always possibile for authorities to identify the offender either
+[D4] It's always possible for authorities to identify the offender either
  by its appearance in a photo or by ownership of the vehicle through the
  license plate
 \end_layout
@@ -4380,7 +4519,7 @@ Requirements
 
 \begin_layout Itemize
 [R14] The administrator has a computer with Internet access, is able to
- login to the system and hasthe possibility to use an official communication
+ login to the system and has the possibility to use an official communication
  channel with the municipality.
 \end_layout
 
@@ -4418,7 +4557,7 @@ s.
 \end_layout
 
 \begin_layout Itemize
-[R17] The administrator has received a signup request from the authorities
+[R17] The administrator has received a sign-up request from the authorities
  and/or from the municipality.
 \end_layout
 
@@ -4429,8 +4568,8 @@ Performance requirements
 \begin_layout Standard
 The application should be light and fluid for a good user experience on
  all kind of supported device.
- The background data retrivial such as GPS loading, image upload or post
- download, has to take place in advance (eg.: update GPS data while taking
+ The background data retrieval such as GPS loading, image upload or post
+ download, has to take place in advance (e.g..: update GPS data while taking
  the picture, not after; preload the next #x posts; ecc.).
 \end_layout
 
@@ -4454,7 +4593,7 @@ The app won't make blocking requests such as for the upload of a picture,
 
 \begin_layout Itemize
 The AI algorithm responsible for the quality of the pictures has to run
- on devices only if dedicated hardware provided; otherwhise or on our servers.
+ on devices only if dedicated hardware provided; otherwise or on our servers.
 \end_layout
 
 \begin_layout Section
@@ -4474,7 +4613,7 @@ SafeStreets will be developed keeping a strict division between what the
 
 \begin_layout Standard
 The iOS application will be compliant with the App Store Guidelines, as
- of the date of this documenent, described here: 
+ of the date of this document, described here: 
 \begin_inset Flex URL
 status open
 
@@ -4490,7 +4629,7 @@ https://developer.apple.com/app-store/review/guidelines/
 
 \begin_layout Standard
 The Android application will be compliant with the Play Store Guidelines,
- as of the date of this documenent, described here: 
+ as of the date of this document, described here: 
 \begin_inset Flex URL
 status open
 
@@ -4595,9 +4734,9 @@ The frontend, built using Xamarin Forms needs to be written only once for
 \begin_layout Standard
 Building RestFull APIs for the Server-to-Application communication with
  PHP allow us to deploy small components with great speed (compared for
- eg.
+ e.g..
  to solutions based on Java Tomcat) and the possibility to choose the OS
- (compared for eg.
+ (compared for e.g..
  to solutions based on ASPX with .NET only available on Windows Server).
 \end_layout
 

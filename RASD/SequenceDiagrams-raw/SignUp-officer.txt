@@ -1,0 +1,85 @@
+title Sign up (authority)
+actor Visitor
+activate Visitor
+Visitor->SafeStreets:Open application
+activate SafeStreets
+Visitor<--SafeStreets:Prompts login page
+deactivate SafeStreets
+Visitor->SafeStreets: Click "Sign up"
+activate SafeStreets
+Visitor<--SafeStreets:Prompts Sign up page
+deactivate SafeStreets
+
+loop complete == false
+Visitor->Visitor: Fill form
+activate Visitor
+space 
+deactivate Visitor
+Visitor->SafeStreets:Click "Sign Up" button
+activate SafeStreets
+SafeStreets->SafeStreets:Save data for admin validation
+
+alt Valid data
+Visitor<--SafeStreets:[complete = true]\nSign up successful
+deactivate SafeStreets
+
+else Existing user
+activate SafeStreets
+Visitor<--SafeStreets:[complete = false]\nUser already registered
+deactivate SafeStreets
+end
+end
+deactivate Visitor
+
+actor Administrator
+activate Administrator
+Administrator->SafeStreets:Open website
+activate SafeStreets
+Administrator<--SafeStreets:Prompts login page
+deactivate SafeStreets
+Administrator->SafeStreets: Make login
+activate SafeStreets
+Administrator<--SafeStreets:Prompts main page
+deactivate SafeStreets
+Administrator->SafeStreets: Click "Accounts control" button
+activate SafeStreets
+Administrator<--SafeStreets:Prompts Accounts control page
+deactivate SafeStreets
+Administrator->SafeStreets:Clicks on new account
+activate SafeStreets
+Administrator<--SafeStreets:Prompts new account page
+deactivate SafeStreets
+Administrator->Administrator:Check for information\ncorrectness
+activate Administrator
+space 
+deactivate Administrator
+
+actor Municipality
+Administrator->Municipality:Check for belonging of applicant \nto traffic police
+activate Municipality
+Administrator<--Municipality:Belonging answer
+deactivate Municipality
+
+alt Data are correct, belonging confirmed
+Administrator->SafeStreets:Allow officer access
+activate SafeStreets
+SafeStreets->SafeStreets:Save data
+SafeStreets->Visitor:Registration confirmation\ne-mail
+Administrator<--SafeStreets:Process completed
+deactivate SafeStreets
+else Incorrect data
+Administrator->SafeStreets:Deny user access
+activate SafeStreets
+SafeStreets->Visitor:Registration error\nnotification
+Administrator<--SafeStreets:Process terminated
+deactivate SafeStreets
+else Belonging not confirmed
+Administrator->SafeStreets:Deny user access
+activate SafeStreets
+SafeStreets->Visitor:Not belonging error\nnotification
+Administrator<--SafeStreets:Process terminated
+deactivate SafeStreets
+Administrator->Municipality:Fake access trial notification
+end
+
+deactivate Administrator

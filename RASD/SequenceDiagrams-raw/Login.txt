@@ -1,0 +1,28 @@
+title Login
+actor Registered user
+activate Registered user
+Registered user->SafeStreets:Open application
+activate SafeStreets
+Registered user<--SafeStreets:Prompts login page
+deactivate SafeStreets
+
+
+loop complete == false
+Registered user->Registered user: Fill form
+activate Registered user
+space 
+deactivate Registered user
+Registered user->SafeStreets:Click "Login" button
+activate SafeStreets
+SafeStreets->SafeStreets:Check data
+
+alt Valid credentials
+Registered user<--SafeStreets:[complete = true]\nPrompts to main page
+deactivate SafeStreets
+
+else Invalid credentials
+activate SafeStreets
+Registered user<--SafeStreets:[complete = false]\nCredentials not valid
+deactivate SafeStreets
+end
+end

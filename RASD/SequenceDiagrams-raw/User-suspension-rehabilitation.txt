@@ -1,0 +1,24 @@
+title User suspension / rehabilitation
+actor Municipality
+actor Administrator
+activate Municipality
+
+Municipality->Administrator:Send formal request for account\nsuspension/rehabilitation
+activate Administrator
+Administrator->SafeStreets:Clicks "Accounts control" button
+activate SafeStreets
+Administrator<--SafeStreets:Prompts Accounts control page
+deactivate SafeStreets
+
+Administrator->SafeStreets:Selects user
+activate SafeStreets
+Administrator<--SafeStreets:Prompts User page
+deactivate SafeStreets
+
+Administrator->SafeStreets:Clicks "Suspend/Rehabilit" button
+activate SafeStreets
+Administrator<--SafeStreets:Prompts Accounts control page
+deactivate SafeStreets
+
+Administrator-->Municipality:Suspension/rehabilitation confirmation
+deactivate Administrator

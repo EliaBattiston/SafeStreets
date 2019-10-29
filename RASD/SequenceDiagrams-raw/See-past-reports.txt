@@ -1,0 +1,14 @@
+title See past reports
+actor Registered user
+activate Registered user
+Registered user->SafeStreets:Clicks "Past reports" button
+activate SafeStreets
+
+alt Presence of past reports
+Registered user<--SafeStreets:Prompts past reports\nlist page
+deactivate SafeStreets
+else No past reports found
+activate SafeStreets
+Registered user<--SafeStreets:No past reports found\nnotification
+deactivate SafeStreets
+end

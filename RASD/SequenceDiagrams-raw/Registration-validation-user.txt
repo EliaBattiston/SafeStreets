@@ -1,0 +1,37 @@
+title Registration validation (basic user)
+actor Administrator
+activate Administrator
+Administrator->SafeStreets:Clicks "Accounts control" button
+activate SafeStreets
+
+alt No users found
+Administrator<--SafeStreets:Prompts "No users found" notification
+deactivate SafeStreets
+else
+activate SafeStreets
+Administrator<--SafeStreets:Prompts Accounts control page
+deactivate SafeStreets
+
+loop 
+Administrator->SafeStreets:Selects user to be validated
+activate SafeStreets
+Administrator<--SafeStreets:Prompts selected user page
+deactivate SafeStreets
+Administrator->Administrator:Check data correctness\ncompared to ID
+activate Administrator
+space 
+deactivate Administrator
+
+alt Correct data
+Administrator->SafeStreets:Clicks "Validate" button
+activate SafeStreets
+SafeStreets->SafeStreets:Save data
+deactivate SafeStreets
+else Incorrect data
+Administrator->SafeStreets:Clicks "Refuse" button
+activate SafeStreets
+SafeStreets->SafeStreets:Save data
+deactivate SafeStreets
+end
+end
+end
