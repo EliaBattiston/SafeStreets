@@ -2177,10 +2177,11 @@ Sequence diagrams
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/SignUp_User.svg
 	lyxscale 10
-	height 50pheight%
+	scale 29
 
 \end_inset
 
@@ -2188,19 +2189,68 @@ Sequence diagrams
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "49col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/Login.svg
 	lyxscale 10
+	scale 29
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "49col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/Create_Report.svg
 	lyxscale 10
+	scale 29
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -2208,19 +2258,68 @@ Sequence diagrams
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "49col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/See_Past_Reports.svg
 	lyxscale 10
+	scale 29
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "49col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/See_Street_Safety.svg
 	lyxscale 10
+	scale 29
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -3065,9 +3164,11 @@ Sequence diagrams
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/SignUp_Officer.svg
 	lyxscale 10
+	scale 29
 
 \end_inset
 
@@ -3075,9 +3176,11 @@ Sequence diagrams
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/Login_Website.svg
 	lyxscale 10
+	scale 29
 
 \end_inset
 
@@ -3085,19 +3188,68 @@ Sequence diagrams
 \end_layout
 
 \begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "49col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/Access_Reports_Data.svg
 	lyxscale 10
+	scale 29
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "49col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/Access_Analyzed_Data.svg
 	lyxscale 10
+	scale 29
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -4242,9 +4394,11 @@ Sequence diagrams
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/Registration_Validation_User.svg
 	lyxscale 10
+	scale 29
 
 \end_inset
 
@@ -4252,9 +4406,11 @@ Sequence diagrams
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/Registration_Validation_Officer.svg
 	lyxscale 10
+	scale 29
 
 \end_inset
 
@@ -4262,9 +4418,11 @@ Sequence diagrams
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/Authority_Registration_Request.svg
 	lyxscale 10
+	scale 29
 
 \end_inset
 
@@ -4272,9 +4430,11 @@ Sequence diagrams
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/User_Suspension_Rehabilitation.svg
 	lyxscale 10
+	scale 29
 
 \end_inset
 
