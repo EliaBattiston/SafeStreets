@@ -1176,10 +1176,11 @@ Here it is reported only the use case diagram of the sign-up activity; the
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset Graphics
-	filename Images/UseCaseDiagrams/Visitor.png
+	filename Images/UseCaseDiagrams/VisitorUseCase.svg
 	lyxscale 10
-	width 100col%
+	scale 60
 
 \end_inset
 
@@ -1237,7 +1238,19 @@ Mario is a registered SafeStreets user and lives in a farmstead near Voghera.
 
 \end_deeper
 \begin_layout Subsubsection
-Use case diagrams
+Use case diagram
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/UseCaseDiagrams/UserUseCase.svg
+	lyxscale 10
+	scale 60
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -2393,7 +2406,19 @@ Study City
 \end_layout
 
 \begin_layout Subsubsection
-Use case diagrams
+Use case diagram
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/UseCaseDiagrams/OfficerUseCase.svg
+	lyxscale 10
+	scale 60
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -3331,7 +3356,19 @@ SafeStreets administration receives a formal request from the municipality
 \end_layout
 
 \begin_layout Subsubsection
-Use case diagrams
+Use case diagram
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/UseCaseDiagrams/AdministratorUseCase.svg
+	lyxscale 10
+	scale 60
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection

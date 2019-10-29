@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="671px" height="321px" viewBox="0 0 671 321" enable-background="new 0 0 671 321" xml:space="preserve">
+<path fill="none" d="z"/>
+<g>
+	<path pointer-events="none" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" d="M0,0h130v25l-10,15H0V0z"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M130,0h540v320H0V40"/>
+	<g>
+		<text transform="matrix(1 0 0 1 24.1504 24.5)" enable-background="new    "><tspan x="0" y="0" font-family="'ArialMT'" font-size="12">use case </tspan><tspan x="51.363" y="0" font-family="'Arial-BoldMT'" font-size="12">visitor</tspan></text>
+	</g>
+	<rect x="146" y="30" pointer-events="none" fill="#FFFFFF" stroke="#000000" width="350" height="260"/>
+	<g>
+		<text transform="matrix(1 0 0 1 289.1494 48.5)" font-family="'ArialMT'" font-size="12">SafeStreets</text>
+	</g>
+	<ellipse pointer-events="none" fill="#FFFFFF" stroke="#000000" cx="321" cy="115" rx="87.5" ry="35"/>
+	<g transform="translate(280.5,106.5)">
+		<text transform="matrix(1 0 0 1 1.3193 12)" font-family="'ArialMT'" font-size="12">Sign Up (user)</text>
+	</g>
+	<ellipse pointer-events="none" fill="#FFFFFF" stroke="#000000" cx="321" cy="225" rx="87.5" ry="35"/>
+	<g transform="translate(270.5,216.5)">
+		<text transform="matrix(1 0 0 1 0.9785 12)" font-family="'ArialMT'" font-size="12">Sign Up (authority)</text>
+	</g>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M75,160h87v-45h65.63"/>
+	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M232.88,115l-7,3.5l1.75-3.5l-1.75-3.5L232.88,115z"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M75,160h87v65h65.63"/>
+	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M232.88,225l-7,3.5l1.75-3.5l-1.75-3.5L232.88,225z"/>
+	<ellipse pointer-events="none" fill="#FFFFFF" stroke="#000000" cx="75" cy="137.5" rx="7.5" ry="7.5"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M75,145v25 M75,150H60 M75,150h15 M75,170
+		l-15,20 M75,170l15,20"/>
+	<g>
+		<rect x="58" y="199" fill="#FFFFFF" width="36" height="15"/>
+		<text transform="matrix(1 0 0 1 57.9385 208.5)" font-family="'ArialMT'" font-size="12">Visitor</text>
+	</g>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M607,115H415.37"/>
+	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M410.12,115l7-3.5l-1.75,3.5l1.75,3.5L410.12,115z"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M607,115H460v85h-70.63"/>
+	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M384.12,200l7-3.5l-1.75,3.5l1.75,3.5L384.12,200z"/>
+	<ellipse pointer-events="none" fill="#FFFFFF" stroke="#000000" cx="607" cy="92.5" rx="7.5" ry="7.5"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M607,100v25 M607,105h-15 M607,105h15
+		 M607,125l-15,20 M607,125l15,20"/>
+	<g>
+		<rect x="570" y="154" fill="#FFFFFF" width="75" height="15"/>
+		<text transform="matrix(1 0 0 1 571.1563 163.5)" font-family="'ArialMT'" font-size="12">Administrator</text>
+	</g>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M607,225H415.37"/>
+	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M410.12,225l7-3.5l-1.75,3.5l1.75,3.5L410.12,225z"/>
+	<ellipse pointer-events="none" fill="#FFFFFF" stroke="#000000" cx="607" cy="202.5" rx="7.5" ry="7.5"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M607,210v25 M607,215h-15 M607,215h15
+		 M607,235l-15,20 M607,235l15,20"/>
+	<g>
+		<rect x="575" y="264" fill="#FFFFFF" width="65" height="15"/>
+		<text transform="matrix(1 0 0 1 575.1553 273.5)" font-family="'ArialMT'" font-size="12">Municipality</text>
+	</g>
+</g>
+<path fill="none" d="z"/>
+</svg>
