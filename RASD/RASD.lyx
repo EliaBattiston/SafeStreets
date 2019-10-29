@@ -1171,6 +1171,7 @@ Here it is reported only the use case diagram of the sign-up activity; the
 \begin_inset Graphics
 	filename Images/UseCaseDiagrams/Visitor.png
 	lyxscale 10
+	width 100col%
 
 \end_inset
 
@@ -4139,6 +4140,286 @@ Exceptions
 
 \begin_layout Subsubsection
 Sequence diagrams
+\end_layout
+
+\begin_layout Subsection
+Requirements
+\end_layout
+
+\begin_layout Subsubsection
+[G1] Allow citizens to register providing basic information that certifies
+ their identities and become certified users
+\end_layout
+
+\begin_layout Itemize
+[R1] Every citizen that wants to register has a valid identification document
+ and a smartphone with GPS and camera.
+\end_layout
+
+\begin_layout Itemize
+[R2] Every citizen that wants to register has a valid e-mail address and
+ can access to incoming e-mails.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+[D1] User's identication data is correct and verified.
+\end_layout
+
+\begin_layout Subsubsection
+[G2] Allow authorities to register through a verification procedure.
+ Enable them the access to our APIs
+\end_layout
+
+\begin_layout Itemize
+[R1] Every citizen that wants to register has a valid identification document
+ and a smartphone with GPS and camera.
+\end_layout
+
+\begin_layout Itemize
+[R2] Every citizen that wants to register has a valid e-mail address and
+ can access to incoming e-mails.
+\end_layout
+
+\begin_layout Itemize
+[R3] Every officer that wants to register is authorized by the municipality
+ to register.
+\end_layout
+
+\begin_layout Itemize
+[R4] The municipality allows SafeStreets administrator to verify the belonging
+ of the requesting officer to the traffic police (via an automated system
+ or sending an official request).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+[D1] User's identication data is correct and verified.
+\end_layout
+
+\begin_layout Subsubsection
+[G3] Enable certified users to report new traffic or parking violations
+\end_layout
+
+\begin_layout Itemize
+[R5] The user has his smartphone with him, is able to login in the application
+ and is not suspended.
+\end_layout
+
+\begin_layout Itemize
+[R6] The user's smartphone has Internet connection enabled and functioning.
+\end_layout
+
+\begin_layout Itemize
+[R7] The user's smartphone has GPS enabled and functioning.
+\end_layout
+
+\begin_layout Itemize
+[R8] The user is able to take at least one picture of the violation and
+ to choose correctly of which kind of violation he is reporting.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+[D2] Location data in reports is precise enough to detect the name of the
+ street where the violation took place and a rough estimation of the nearest
+ civic number.
+\end_layout
+
+\begin_layout Itemize
+[D3] A subset (or all) of the images provided with the report are sufficient
+ to recognize the offender's car and visually verify which the violation
+ took place.
+\end_layout
+
+\begin_layout Itemize
+[D5] User's reports are good willed and do not contain fake information
+ on purpose.
+\end_layout
+
+\begin_layout Subsubsection
+[G4] Enable certified users to see his own past reports
+\end_layout
+
+\begin_layout Itemize
+[R5] The user has his smartphone with him, is able to login in the application
+ and is not suspended.
+\end_layout
+
+\begin_layout Itemize
+[R6] The user's smartphone has Internet connection enabled and functioning.
+\end_layout
+
+\begin_layout Itemize
+[R9] The user has already made at least a report.
+\end_layout
+
+\begin_layout Subsubsection
+[G5] Enable certified users to access map with most reported streets
+\end_layout
+
+\begin_layout Itemize
+[R5] The user has his smartphone with him, is able to login in the application
+ and is not suspended.
+\end_layout
+
+\begin_layout Itemize
+[R6] The user's smartphone has Internet connection enabled and functioning.
+\end_layout
+
+\begin_layout Itemize
+[R10] There is at least one report in the system.
+\end_layout
+
+\begin_layout Subsubsection
+[G6] Enable authorities to access all certified users services
+\end_layout
+
+\begin_layout Itemize
+[R11] The officer access has the same base functions of the user access,
+ plus specific ones.
+\end_layout
+
+\begin_layout Subsubsection
+[G7] Enable authorities to access to all report data (including data about
+ the user who created it)
+\end_layout
+
+\begin_layout Itemize
+[R10] There is at least one report in the system.
+\end_layout
+
+\begin_layout Itemize
+[R12] The officer has a computer with Internet access and is able to login
+ to the system.
+\end_layout
+
+\begin_layout Subsubsection
+[G8] Enable authorities to export report data to their own systems to generate
+ tickets
+\end_layout
+
+\begin_layout Itemize
+[R10] There is at least one report in the system.
+\end_layout
+
+\begin_layout Itemize
+[R13] The municipality and/or the autorities use the provided APIs.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+[D2] Location data in reports is precise enough to detect the name of the
+ street where the violation took place and a rough estimation of the nearest
+ civic number
+\end_layout
+
+\begin_layout Itemize
+[D3] A subset (or all) of the images provided with the report are sufficient
+ to recognize the offender's car and visually verify which the violation
+ took place
+\end_layout
+
+\begin_layout Itemize
+[D4] It's always possibile for authorities to identify the offender either
+ by its appearance in a photo or by ownership of the vehicle through the
+ license plate
+\end_layout
+
+\begin_layout Subsubsection
+[G9] Enable authorities to access to data analysis results with suggestions
+\end_layout
+
+\begin_layout Itemize
+[R10] There is at least one report in the system.
+\end_layout
+
+\begin_layout Itemize
+[R12] The officer has a computer with Internet access and is able to login
+ to the system.
+\end_layout
+
+\begin_layout Subsubsection
+[G10] Enable administrators to certify authorities
+\end_layout
+
+\begin_layout Itemize
+[R3] Every officer that wants to register is authorized by the municipality
+ to register.
+\end_layout
+
+\begin_layout Itemize
+[R4] The municipality allows SafeStreets administrator to verify the belonging
+ of the requesting officer to the traffic police (via an automated system
+ or sending an official request).
+\end_layout
+
+\begin_layout Itemize
+[R14] The administrator has a computer with Internet access, is able to
+ login to the system and hasthe possibility to use an official communication
+ channel with the municipality.
+\end_layout
+
+\begin_layout Subsubsection
+[G11] Enable administrators to block or remove users
+\end_layout
+
+\begin_layout Itemize
+[R14] The administrator has a computer with Internet access and is able
+ to login to the system.
+\end_layout
+
+\begin_layout Itemize
+[R15] The administrator has the possibility to use an official communication
+ channel with the municipality.
+\end_layout
+
+\begin_layout Itemize
+[R16] The administrator has received a block/removal request from the authoritie
+s.
+\end_layout
+
+\begin_layout Subsubsection
+[G12] Enable administrators to assign roles to users
+\end_layout
+
+\begin_layout Itemize
+[R14] The administrator has a computer with Internet access and is able
+ to login to the system.
+\end_layout
+
+\begin_layout Itemize
+[R15] The administrator has the possibility to use an official communication
+ channel with the municipality.
+\end_layout
+
+\begin_layout Itemize
+[R17] The administrator has received a signup request from the authorities
+ and/or from the municipality.
 \end_layout
 
 \begin_layout Section
