@@ -1,0 +1,28 @@
+title Create a report
+actor Registered user
+activate Registered user
+Registered user->SafeStreets:Clicks "Report" button
+activate SafeStreets
+Registered user<--SafeStreets:Prompts Report page
+deactivate SafeStreets
+
+
+loop complete == false
+Registered user->Registered user: Fill form and take photos
+activate Registered user
+space 
+deactivate Registered user
+Registered user->SafeStreets:Click "Send Report" button
+activate SafeStreets
+SafeStreets->SafeStreets:Checks data
+
+alt Missing fields
+SafeStreets<--Registered user:[complete = false]\nMissing fields
+else No missing fields
+SafeStreets<--Registered user:[complete = true]\nReport sent
+end
+
+end
+
+SafeStreets->SafeStreets:Saves data
+deactivate SafeStreets

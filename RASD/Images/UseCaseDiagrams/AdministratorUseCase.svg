@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="811px" height="901px" viewBox="0 0 811 901" enable-background="new 0 0 811 901" xml:space="preserve">
+<path fill="none" d="z"/>
+<g>
+	<path pointer-events="none" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" d="M0,0h120v45l-10,15H0V0z"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M120,0h690v900H0V60"/>
+	<g>
+		<text transform="matrix(1 0 0 1 36.4854 27.5)" font-family="'ArialMT'" font-size="12">use case</text>
+		<text transform="matrix(1 0 0 1 25.8213 41.5)" font-family="'Arial-BoldMT'" font-size="12">administrator</text>
+	</g>
+	<rect x="150" y="40" pointer-events="none" fill="#FFFFFF" stroke="#000000" width="520" height="840"/>
+	<g>
+		<text transform="matrix(1 0 0 1 378.1494 58.5)" font-family="'ArialMT'" font-size="12">SafeStreets</text>
+	</g>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M45,430h55V245h70V135h56.63"/>
+	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M231.88,135l-7,3.5l1.75-3.5l-1.75-3.5L231.88,135z"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M45,430h55V245h126.63"/>
+	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M231.88,245l-7,3.5l1.75-3.5l-1.75-3.5L231.88,245z"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M45,430h55V245h70v120h56.63"/>
+	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M231.88,365l-7,3.5l1.75-3.5l-1.75-3.5L231.88,365z"/>
+	<ellipse pointer-events="none" fill="#FFFFFF" stroke="#000000" cx="45" cy="407.5" rx="7.5" ry="7.5"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M45,415v25 M45,420H30 M45,420h15 M45,440
+		l-15,20 M45,440l15,20"/>
+	<g>
+		<rect x="27" y="469" fill="#FFFFFF" width="37" height="15"/>
+		<text transform="matrix(1 0 0 1 26.9395 478.5)" font-family="'ArialMT'" font-size="12">Officer</text>
+	</g>
+	<ellipse pointer-events="none" fill="#FFFFFF" stroke="#000000" cx="540" cy="245" rx="70" ry="35"/>
+	<g>
+		<text transform="matrix(1 0 0 1 524.8193 248.5)" font-family="'ArialMT'" font-size="12">Login</text>
+	</g>
+	<ellipse pointer-events="none" fill="#FFFFFF" stroke="#000000" cx="303" cy="135" rx="70" ry="35"/>
+	<g>
+		<text transform="matrix(1 0 0 1 262.1465 138.5)" font-family="'ArialMT'" font-size="12">Create a report</text>
+	</g>
+	<ellipse pointer-events="none" fill="#FFFFFF" stroke="#000000" cx="303" cy="245" rx="70" ry="35"/>
+	<g>
+		<text transform="matrix(1 0 0 1 258.4756 248.5)" font-family="'ArialMT'" font-size="12">See past reports</text>
+	</g>
+	<ellipse pointer-events="none" fill="#FFFFFF" stroke="#000000" cx="303" cy="365" rx="70" ry="35"/>
+	<g>
+		<text transform="matrix(1 0 0 1 255.4727 368.5)" font-family="'ArialMT'" font-size="12">See Street Safety</text>
+	</g>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3,3" d="M470,245
+		l-95.52-108.32"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M387.21,141.29l-13.47-5.45l3.72,14.05"/>
+	<g>
+		<rect x="385" y="191" fill="#FFFFFF" width="60" height="14"/>
+		<text transform="matrix(1 0 0 1 383.4434 199.8604)" font-family="'ArialMT'" font-size="11">&lt;&lt;include&gt;&gt;</text>
+	</g>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3,3" d="M470,245h-94.76"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M387.12,238.5l-13,6.5l13,6.5"/>
+	<g>
+		<rect x="392" y="249" fill="#FFFFFF" width="60" height="14"/>
+		<text transform="matrix(1 0 0 1 390.2231 258)" font-family="'ArialMT'" font-size="11">&lt;&lt;include&gt;&gt;</text>
+	</g>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3,3" d="M470,245
+		l-95.59,118.26"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M376.82,349.93l-3.12,14.2l13.229-6.02"/>
+	<g>
+		<rect x="400" y="305" fill="#FFFFFF" width="60" height="14"/>
+		<text transform="matrix(1 0 0 1 398.5933 314.1699)" font-family="'ArialMT'" font-size="11">&lt;&lt;include&gt;&gt;</text>
+	</g>
+	<ellipse pointer-events="none" fill="#FFFFFF" stroke="#000000" cx="560" cy="715" rx="70" ry="35"/>
+	<g>
+		<text transform="matrix(1 0 0 1 516.1377 718.5)" font-family="'ArialMT'" font-size="12">Login to website</text>
+	</g>
+	<ellipse pointer-events="none" fill="#FFFFFF" stroke="#000000" cx="303" cy="480" rx="70" ry="35"/>
+	<g>
+		<text transform="matrix(1 0 0 1 243.4668 479.5)" font-family="'ArialMT'" font-size="12">Registration validation</text>
+		<text transform="matrix(1 0 0 1 282.2734 493.5)" font-family="'ArialMT'" font-size="12">(officer)</text>
+	</g>
+	<ellipse pointer-events="none" fill="#FFFFFF" stroke="#000000" cx="303" cy="715" rx="70" ry="35"/>
+	<g>
+		<text transform="matrix(1 0 0 1 243.4668 711.5)" font-family="'ArialMT'" font-size="12">Registration validation</text>
+		<text transform="matrix(1 0 0 1 286.832 725.5)" font-family="'ArialMT'" font-size="12">(user)</text>
+	</g>
+	<ellipse pointer-events="none" fill="#FFFFFF" stroke="#000000" cx="303" cy="835" rx="70" ry="35"/>
+	<g>
+		<text transform="matrix(1 0 0 1 254.4766 834.5)" font-family="'ArialMT'" font-size="12">User suspension /</text>
+		<text transform="matrix(1 0 0 1 268.4775 848.5)" font-family="'ArialMT'" font-size="12">rehabilitation</text>
+	</g>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3,3" d="M490,715L374,482"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M385.11,489.74L373.5,481l-0.03,14.54"/>
+	<g>
+		<rect x="393" y="596" fill="#FFFFFF" width="60" height="14"/>
+		<text transform="matrix(1 0 0 1 391.8833 605.1904)" font-family="'ArialMT'" font-size="11">&lt;&lt;include&gt;&gt;</text>
+	</g>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3,3" d="M490,715H375.24"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M387.12,708.5l-13,6.5l13,6.5"/>
+	<g>
+		<rect x="402" y="719" fill="#FFFFFF" width="60" height="14"/>
+		<text transform="matrix(1 0 0 1 400.2231 728)" font-family="'ArialMT'" font-size="11">&lt;&lt;include&gt;&gt;</text>
+	</g>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3,3" d="M490,715L374.56,833.4
+		"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M378.2,820.35l-4.42,13.851l13.729-4.771"/>
+	<g>
+		<rect x="409" y="776" fill="#FFFFFF" width="60" height="14"/>
+		<text transform="matrix(1 0 0 1 407.7432 785.1299)" font-family="'ArialMT'" font-size="11">&lt;&lt;include&gt;&gt;</text>
+	</g>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M45,430h55v165h70v120h56.63"/>
+	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M231.88,715l-7,3.5l1.75-3.5l-1.75-3.5L231.88,715z"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M45,430h55v165h70V480h56.63"/>
+	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M231.88,480l-7,3.5l1.75-3.5l-1.75-3.5L231.88,480z"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M45,430h55v165h70v240h56.63"/>
+	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M231.88,835l-7,3.5l1.75-3.5l-1.75-3.5L231.88,835z"/>
+	<ellipse pointer-events="none" fill="#FFFFFF" stroke="#000000" cx="303" cy="595" rx="70" ry="35"/>
+	<g>
+		<text transform="matrix(1 0 0 1 247.4746 591.5)" font-family="'ArialMT'" font-size="12">Authority registration</text>
+		<text transform="matrix(1 0 0 1 282.4873 605.5)" font-family="'ArialMT'" font-size="12">request</text>
+	</g>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3,3" d="M490,715L374.56,596.6
+		"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M387.51,600.57L373.78,595.8l4.42,13.851"/>
+	<g>
+		<rect x="395" y="656" fill="#FFFFFF" width="60" height="14"/>
+		<text transform="matrix(1 0 0 1 393.4233 664.8398)" font-family="'ArialMT'" font-size="11">&lt;&lt;include&gt;&gt;</text>
+	</g>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M45,430h55v165h110h16.63"/>
+	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M231.88,595l-7,3.5l1.75-3.5l-1.75-3.5L231.88,595z"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M735,480H379.37"/>
+	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M374.12,480l7-3.5l-1.75,3.5l1.75,3.5L374.12,480z"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M735,480H547v60H352v23.63"/>
+	<path pointer-events="none" stroke="#000000" stroke-miterlimit="10" d="M352,568.88l-3.5-7l3.5,1.75l3.5-1.75L352,568.88z"/>
+	<ellipse pointer-events="none" fill="#FFFFFF" stroke="#000000" cx="735" cy="457.5" rx="7.5" ry="7.5"/>
+	<path pointer-events="none" fill="none" stroke="#000000" stroke-miterlimit="10" d="M735,465v25 M735,470h-15 M735,470h15
+		 M735,490l-15,20 M735,490l15,20"/>
+	<g transform="translate(703.5,515.5)">
+		<text transform="matrix(1 0 0 1 0.6553 12)" font-family="'ArialMT'" font-size="12">Municipality</text>
+	</g>
+</g>
+<path fill="none" d="z"/>
+</svg>

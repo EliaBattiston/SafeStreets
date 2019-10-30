@@ -1,0 +1,16 @@
+title Access reports data
+actor Officer
+activate Officer
+Officer->SafeStreets:Clicks "Consult reports" button
+activate SafeStreets
+
+Officer<--SafeStreets:Prompts Consult reports page
+deactivate SafeStreets
+
+loop
+Officer->SafeStreets:Clicks on report photo link
+activate SafeStreets
+Officer<--SafeStreets:Prompts a popup with photos\nattached to the selected record
+deactivate SafeStreets
+
+end

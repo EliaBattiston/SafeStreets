@@ -1,0 +1,1 @@
+Files in this folder are the raw model of the sequence diagrams designed with sequencediagram.org online tool

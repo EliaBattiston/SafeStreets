@@ -1,0 +1,16 @@
+title See Street Safety
+actor Registered user
+activate Registered user
+Registered user->SafeStreets:Clicks "Street Safety" button
+activate SafeStreets
+
+Registered user<--SafeStreets:Prompts Street Safety page with map
+deactivate SafeStreets
+
+loop
+Registered user->SafeStreets:Clicks on street
+activate SafeStreets
+Registered user<--SafeStreets:Prompts a popup with street details
+deactivate SafeStreets
+
+end

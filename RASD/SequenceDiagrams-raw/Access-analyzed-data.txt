@@ -1,0 +1,8 @@
+title Access analyzed data
+actor Officer
+activate Officer
+Officer->SafeStreets:Clicks "Consult analyzed data" button
+activate SafeStreets
+
+Officer<--SafeStreets:Prompts Consult analyzed data page
+deactivate SafeStreets

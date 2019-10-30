@@ -1,0 +1,34 @@
+title Authority registration request
+actor Municipality
+actor Administrator
+activate Municipality
+
+Municipality->Administrator:Send formal request for\naccount(s) activation
+activate Administrator
+Administrator->SafeStreets:Clicks "Accounts control" button
+activate SafeStreets
+Administrator<--SafeStreets:Prompts Accounts control page
+deactivate SafeStreets
+
+loop Accounts in request
+Administrator->Administrator:Check data completeness
+alt Complete data
+Administrator->SafeStreets:Clicks "New Officer account" button
+activate SafeStreets
+Administrator<--SafeStreets:Prompts New Officer account page
+deactivate SafeStreets
+Administrator->Administrator:Fills the form with received data
+activate Administrator
+space 
+deactivate Administrator
+Administrator->SafeStreets:Clicks "Save" button
+activate SafeStreets
+SafeStreets->SafeStreets:Save data
+Administrator<--SafeStreets:Notifies completed procedure
+Administrator->Municipality:Notifies account creation
+deactivate SafeStreets
+else Incomplete data
+Administrator->Municipality:Request for missing\ndata integration
+end
+end
+deactivate Administrator

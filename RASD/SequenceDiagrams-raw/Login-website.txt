@@ -1,0 +1,28 @@
+title Login to website
+actor Officer
+activate Officer
+Officer->SafeStreets:Open website
+activate SafeStreets
+Officer<--SafeStreets:Prompts login page
+deactivate SafeStreets
+
+
+loop complete == false
+Officer->Officer: Fill form
+activate Officer
+space 
+deactivate Officer
+Officer->SafeStreets:Click "Login" button
+activate SafeStreets
+SafeStreets->SafeStreets:Check data
+
+alt Valid credentials
+Officer<--SafeStreets:[complete = true]\nPrompts to main page
+deactivate SafeStreets
+
+else Invalid credentials
+activate SafeStreets
+Officer<--SafeStreets:[complete = false]\nCredentials not valid
+deactivate SafeStreets
+end
+end
