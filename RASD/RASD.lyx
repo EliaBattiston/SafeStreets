@@ -843,11 +843,11 @@ Enable certified users to:
 \end_layout
 
 \begin_layout Itemize
-[G4] see his own past reports;
+[G4] see their own past reports;
 \end_layout
 
 \begin_layout Itemize
-[G5] access map with most reported streets.
+[G5] access the map showing the most reported streets.
 \end_layout
 
 \end_deeper
@@ -5756,12 +5756,11 @@ Requirements
 
 \begin_layout Itemize
 [R1] Every citizen that wants to register has a valid identification document
- and a smartphone with GPS and camera.
+ and a smartphone (with GPS and camera systems).
 \end_layout
 
 \begin_layout Itemize
-[R2] Every citizen that wants to register has a valid e-mail address and
- can access to incoming e-mails.
+[R2] Every citizen that wants to register owns a valid e-mail address.
 \end_layout
 
 \begin_layout Standard
@@ -5776,8 +5775,7 @@ Requirements
 \end_layout
 
 \begin_layout Subsubsection
-[G2] Allow authorities to register through a verification procedure.
- Enable them the access to our APIs
+[G2] Allow authorities to register through a verification procedure
 \end_layout
 
 \begin_layout Itemize
@@ -5830,8 +5828,7 @@ Requirements
 \end_layout
 
 \begin_layout Itemize
-[R8] The user is able to take at least one picture of the violation and
- to choose correctly of which kind of violation he is reporting.
+[R8] The user is able to take at least one picture of the violation.
 \end_layout
 
 \begin_layout Standard
@@ -5843,14 +5840,12 @@ Requirements
 
 \begin_layout Itemize
 [D2] Location data in reports is precise enough to detect the name of the
- street where the violation took place and a rough estimation of the nearest
- civic number.
+ street where the violation took place.
 \end_layout
 
 \begin_layout Itemize
-[D3] A subset (or all) of the images provided with the report are sufficient
- to recognize the offender's car and visually verify which the violation
- took place.
+[D3] One or more of the images provided with the report lets recognize the
+ offender's car and where the violation took place.
 \end_layout
 
 \begin_layout Itemize
@@ -5859,7 +5854,7 @@ Requirements
 \end_layout
 
 \begin_layout Subsubsection
-[G4] Enable certified users to see his own past reports
+[G4] Enable certified users to see their own past reports
 \end_layout
 
 \begin_layout Itemize
@@ -5876,7 +5871,8 @@ Requirements
 \end_layout
 
 \begin_layout Subsubsection
-[G5] Enable certified users to access map with most reported streets
+[G5] Enable certified users to access the map showing the most reported
+ streets
 \end_layout
 
 \begin_layout Itemize
@@ -5897,7 +5893,7 @@ Requirements
 \end_layout
 
 \begin_layout Itemize
-[R11] The officer access has the same base functions of the user access,
+[R11] The officer access has the same base functions of the basic user access,
  plus specific ones.
 \end_layout
 
@@ -6749,8 +6745,18 @@ The mobile application will be available on the PlayStore (Android) and
 \end_layout
 
 \begin_layout Standard
-The APIs endpoints will be available through a dedicated section in the
- App for all our Municipality users.
+The WebApp will be available before or at the same time as the mobile applicatio
+n.
+\end_layout
+
+\begin_layout Standard
+The AWS SLA guarantees an uptime of more than 99% of the time on the servers
+ adopted by SafeStreets.
+\end_layout
+
+\begin_layout Standard
+The reliability of the service is also granted by the automatic testing
+ executed on every update of the infrastructure (both frontend and backend).
 \end_layout
 
 \begin_layout Subsection
