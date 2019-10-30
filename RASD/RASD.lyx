@@ -826,67 +826,67 @@ name "subsec:Goals"
 
 \end_layout
 
-\begin_layout Enumerate
-Allow citizens to register providing basic information that certifies their
- identities and become certified users;
+\begin_layout Itemize
+[G1] Allow citizens to register providing basic information that certifies
+ their identities and become certified users;
 \end_layout
 
-\begin_layout Enumerate
-Allow authorities to register through a verification procedure.
+\begin_layout Itemize
+[G2] Allow authorities to register through a verification procedure.
  Enable them the access to our APIs;
 \end_layout
 
-\begin_layout Enumerate
-Enable certified users to:
+\begin_layout Itemize
+[G3] Enable certified users to:
 \end_layout
 
 \begin_deeper
-\begin_layout Enumerate
-post new traffic or parking violations;
+\begin_layout Itemize
+[G3.1] post new traffic or parking violations;
 \end_layout
 
-\begin_layout Enumerate
-see shared posts from the community;
+\begin_layout Itemize
+[G3.2] see shared posts from the community;
 \end_layout
 
-\begin_layout Enumerate
-comment on a post;
+\begin_layout Itemize
+[G3.3] comment on a post;
 \end_layout
 
-\begin_layout Enumerate
-update informations about a post.
+\begin_layout Itemize
+[G3.4] update informations about a post.
 \end_layout
 
 \end_deeper
-\begin_layout Enumerate
-Enable authorities to:
+\begin_layout Itemize
+[G4] Enable authorities to:
 \end_layout
 
 \begin_deeper
-\begin_layout Enumerate
-access all certified users services;
+\begin_layout Itemize
+[G4.1] access all certified users services;
 \end_layout
 
-\begin_layout Enumerate
-access all our authorities only services;
+\begin_layout Itemize
+[G4.2] access all our authorities only services;
 \end_layout
 
 \end_deeper
-\begin_layout Enumerate
-Enable system managers to:
+\begin_layout Itemize
+[G5] Enable system managers to:
 \end_layout
 
 \begin_deeper
-\begin_layout Enumerate
-certify authorities;
+\begin_layout Itemize
+[G5.1] certify authorities;
 \end_layout
 
-\begin_layout Enumerate
-block or remove users;
+\begin_layout Itemize
+[G5.2] block or remove users;
 \end_layout
 
-\begin_layout Enumerate
-pause the visibility of a post.
+\begin_layout Itemize
+[G5.3] pause the visibility of a post.
 \end_layout
 
 \end_deeper
@@ -2267,6 +2267,37 @@ Functional requirements
 Performance requirements
 \end_layout
 
+\begin_layout Standard
+The application should be light and fluid for a good user experience on
+ all kind of supported device.
+ The background data retrivial such as GPS loading, image upload or post
+ download, has to take place in advance (eg.: update GPS data while taking
+ the picture, not after; preload the next #x posts; ecc.).
+\end_layout
+
+\begin_layout Standard
+In addition:
+\end_layout
+
+\begin_layout Itemize
+There are no limits to the number of simultaneously connected users;
+\end_layout
+
+\begin_layout Itemize
+Latency must be stable for different amount of users load and under a reasonable
+ time;
+\end_layout
+
+\begin_layout Itemize
+The app won't make blocking requests such as for the upload of a picture,
+ these kind of requests needs to run in background;
+\end_layout
+
+\begin_layout Itemize
+The AI algorithm responsible for the quality of the pictures has to run
+ on devices only if dedicated hardware provided; otherwhise or on our servers.
+\end_layout
+
 \begin_layout Section
 Design constraints
 \end_layout
@@ -2275,12 +2306,65 @@ Design constraints
 Standards compliance
 \end_layout
 
+\begin_layout Standard
+SafeStreets will be developed keeping a strict division between what the
+ backend and what the frontend will do.
+ RestFull APIs will be implemented to allow reliable HTTPS connections between
+ the servers and the applications.
+\end_layout
+
+\begin_layout Standard
+The iOS application will be compliant with the App Store Guidelines, as
+ of the date of this documenent, described here: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developer.apple.com/app-store/review/guidelines/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The Android application will be compliant with the Play Store Guidelines,
+ as of the date of this documenent, described here: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://play.google.com/about/developer-content-policy/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Subsection
 Hardware limitations
 \end_layout
 
+\begin_layout Standard
+The mobile application needs access to: the geolocation service, the camera
+ and an internet connection.
+ No other hardware limitations should be in act.
+\end_layout
+
 \begin_layout Subsection
 Any other constraint
+\end_layout
+
+\begin_layout Standard
+iOS requires at least the OS version named iOS 9.1.
+\end_layout
+
+\begin_layout Standard
+Android requires at least the OS version named Android 6.0 Marshmallow.
 \end_layout
 
 \begin_layout Section
@@ -2291,20 +2375,71 @@ Software system attributes
 Reliability
 \end_layout
 
+\begin_layout Standard
+SafeStreets should be always accessible.
+ A reasonable 99+% uptime of the APIs should be certified by the used cloud
+ service.
+\end_layout
+
 \begin_layout Subsection
 Availability
+\end_layout
+
+\begin_layout Standard
+The mobile application will be available on the PlayStore (Android) and
+ on the AppStore (iOS) simultaneously.
+\end_layout
+
+\begin_layout Standard
+The APIs endpoints will be available through a dedicated section in the
+ App for all our Municipality users.
 \end_layout
 
 \begin_layout Subsection
 Security
 \end_layout
 
+\begin_layout Standard
+AI will be entrusted for the data quality.
+\end_layout
+
+\begin_layout Standard
+The transport security will be provided through the use of HTTPS.
+\end_layout
+
+\begin_layout Standard
+The CIA will be provided by the Cloud host of our databases.
+\end_layout
+
 \begin_layout Subsection
 Maintainability
 \end_layout
 
+\begin_layout Standard
+The software infrastructure will be developed using consolidated technologies
+ such as PHP and SQL for the backend and Xamarin Forms for the frontend.
+\end_layout
+
 \begin_layout Subsection
 Portability
+\end_layout
+
+\begin_layout Standard
+The frontend, built using Xamarin Forms needs to be written only once for
+ both the platforms.
+ This will decrease the time spent on the mobile application side up to
+ 35%.
+ Xamarin forms also supports build for Windows, Mac and Tizen; platforms
+ that we can target if requested.
+\end_layout
+
+\begin_layout Standard
+Building RestFull APIs for the Server-to-Application communication with
+ PHP allow us to deploy small components with great speed (compared for
+ eg.
+ to solutions based on Java Tomcat) and the possibility to choose the OS
+ (compared for eg.
+ to solutions based on ASPX with .NET only available on Windows Server).
 \end_layout
 
 \begin_layout Standard
