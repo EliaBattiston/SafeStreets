@@ -266,7 +266,7 @@ This RASD is the Requirement Analysis and Specification Document of the
  the solution adopted in terms of its use cases and show the constraints
  and the limit of this community tool.
  The addressees of this document are developers working on the implementation
- of the solution.
+ of the solution and the customer.
 \end_layout
 
 \begin_layout Section
@@ -287,40 +287,40 @@ SafeStreets is a community service that aims to provide the users of the
 \begin_layout Standard
 The goal is to raise awareness in drivers that driving and parking can make
  other's life harder.
- With a little effort instead, they can makes it easier.
+ With a little effort, instead, it can be made easier.
 \end_layout
 
 \begin_layout Standard
-The service’ll be served through a mobile application where users can post
- new violations and see the ones shared by others.
- A shared picture comes with the metadata provided by the smartphone (like:
- time, place, meteorological conditions...) and with valuable information given
- by the user whom can describe the accident and attach any kind of useful
- information he can.
- More pictures of the same accident will be connected crossing the spacial
+The service will be served through a mobile application where users can
+ report new violations and see the ones they reported before.
+ Every attached picture comes with the metadata provided by the smartphone
+ (like: time, position...) and with valuable information given by the user
+ whom can describe the violation.
+ More pictures of the same violation will be connected crossing the spacial
  and time information so that more viewing angles will be available.
 \end_layout
 
 \begin_layout Standard
 To ensure the chain of custody, the backend infrastructure will run an AI
  algorithm to ensure the quality of the data given (e.g.
- no edited picture) before posting them.
+ no edited picture) before considerting them valuable.
  
 \end_layout
 
 \begin_layout Standard
-The Authorities has access to all the data provide by the users, plus: 
+Authorities have access to all the data provided by the users, plus: 
 \end_layout
 
 \begin_layout Itemize
-API to cross their informations with SafeStreets ones.
- Thanks to AI algorithms, they’ll get suggestions from the system on ways
- the municipality can improve the safety of the streets, data accessible
- directly from their dashboard;
+Suggestions from the system on ways the municipality can improve the safety
+ of the streets, directly from their dashboard.
+ These are computed by crossing SafeStreets reports with the municipality
+ accident and traffic tickets data;
 \end_layout
 
 \begin_layout Itemize
-API for generating automatic traffic tickets from the data collected;
+Automatic acquisition of reports to produce traffic tickets from the data
+ collected;
 \end_layout
 
 \begin_layout Itemize
@@ -328,13 +328,8 @@ Maps of the less safe roads in the city;
 \end_layout
 
 \begin_layout Itemize
-Vehicles that commit the most violations (use e.g.: the municipality can cross
- this data with the list of new entered vehicles in the city or check a
- vehicle if it’s often in violation);
-\end_layout
-
-\begin_layout Itemize
-Get statistics for their municipality.
+Vehicles that commit the most violations and other tatistics for their municipal
+ity.
 \end_layout
 
 \begin_layout Subsubsection
@@ -396,7 +391,7 @@ Controller
 \begin_inset Text
 
 \begin_layout Plain Layout
-Occurrance of a violation
+Occurrence of a violation
 \end_layout
 
 \end_inset
@@ -425,7 +420,7 @@ World
 \begin_inset Text
 
 \begin_layout Plain Layout
-Occurrance of an accident
+Occurrence of an accident
 \end_layout
 
 \end_inset
@@ -802,16 +797,18 @@ Current systems
 \end_layout
 
 \begin_layout Standard
-There’s no automatic system for sharing violations as SafeStreets.
- A citizen has to take call the authorities if it sees one.
+Currently, there is no automatic system for sharing violations like the
+ one proposed by SafeStreets.
+ The citizen has to directly contact the authorities if it sees one.
  
 \end_layout
 
 \begin_layout Standard
-Instead there are already multiple municipality systems that we can integrate,
- for the automatic tickets or the municipality information retrieval.
- We opted to open the municipality to our API so they can choose to interact
- with the data and services we provide.
+On the other hand there are already multiple municipality systems that we
+ can integrate with for automatic tickets creation and municipality information
+ retrieval.
+ We opted to fully cooperate with the municipality's API so that they can
+ interact with data we provide.
  
 \end_layout
 
@@ -833,7 +830,7 @@ name "subsec:Goals"
 
 \begin_layout Itemize
 [G2] Allow authorities to register through a verification procedure.
- Enable them the access to our APIs;
+ Enable them to access our APIs;
 \end_layout
 
 \begin_layout Itemize
@@ -864,16 +861,15 @@ Enable authorities to:
 \end_layout
 
 \begin_layout Itemize
-[G7] access to all report data (including data about the user who created
- it);
+[G7] access all report data (including data about the user who created it);
 \end_layout
 
 \begin_layout Itemize
-[G8] export report data to their own systems to generate tickets;
+[G8] acquire report data in their own systems to generate tickets;
 \end_layout
 
 \begin_layout Itemize
-[G9] access to data analysis results with suggestions.
+[G9] access data analysis results with suggestions.
 \end_layout
 
 \end_deeper
@@ -1133,28 +1129,35 @@ Overall description
 
 \begin_layout Section
 Product perspective
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Product-perspective"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 The product, built from scratch, will use the geolocation systems embedded
- in the smartphones to acquire data about the position of the violation
- and the smartphone camera for plate and violation pictures.
- It won't be possible to manually load photos and position to avoid fake
- reports.
+ in smartphones to acquire data about the position of violation, and the
+ smartphone's camera for license plate and violation pictures.
+ It won't be possible to manually upload photos and manually insert positions
+ to avoid fake reports.
  All connections will be handled via HTTPS requests with TLS encryption,
- to ensure that reports arrive from the sender to the server with no external
- manipulation and no external access by non-authorized personnel; this also
- grants GDPR compliance.
+ to ensure all the reports arrive from the sender to the server with no
+ external manipulation and no external access by non-authorized personnel;
+ this also assures GDPR compliance.
  The database and the server will be externally hosted; privacy will be
  granted by the maintainer of the servers.
 \end_layout
 
 \begin_layout Standard
-The systems dialogues with the municipality services via custom API designed
- for SafeStreets for acquiring informations about occurred incidents (with
- the aim of crossing informations and analyse potentially unsafe or dangerous
- areas to be noticed to the municipality) and sending report informations
- to the automatic checking system of the municipality.
+The systems dialogues with the municipality services using its API to acquire
+ information about occurred accidents (with the aim of information crossing
+ analysis of potentially unsafe or dangerous areas to be notified to the
+ municipality) and to send report information to the automatic ticketing
+ system of the municipality.
 \end_layout
 
 \begin_layout Section
@@ -1185,33 +1188,50 @@ Violation reporting
 \end_layout
 
 \begin_layout Standard
-Users who notice a violation are granted to notice it to authorities using
- SafeStreets app, via the compilation of a small form inside the app and
- attaching to it pictures of the violation and of the plate number; data
- about time and position will be automatically taken from local time (acquired
- via the Internet connection) and the built-in GPS of the smartphone.
- As already said in the Product perspective and fully explained in the Hardware
- constraints section, devices which are not equipped with a camera, GPS
- sensor or a functioning Internet connection won't be able to notify violations,
- due to the necessity to grant the correctness of the informations and the
- effective presence of a real violation.
+Users who notice a violation are granted the possibility to notify it to
+ authorities using the SafeStreets app, via the compilation of a small form
+ and attachment of pictures of violation and plate number.
+ Data about time and position will be automatically taken from local time
+ (acquired through the Internet connection) and the built-in GPS.
+ As already said in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Product-perspective"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and fully explained in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Hardware-limitations"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, devices which are not equipped with a camera, GPS sensor or a functioning
+ Internet connection won't be able to notify violations.
 \end_layout
 
 \begin_layout Standard
 Before permanently saving reports in SafeStreets database, the server verifies
- that inserted data are coherent with reality, verifying that the picture
- has not been altered, eventually converting the plate picture into a plate
- number and verifying that this number corresponds to an existing plate
- of a circulating car (this last check is made via the municipality API).
- In case of fake recognition or invalid plate number, the report is rejected
+ that inserted data is coherent with reality, verifying that the picture
+ has not been altered, eventually converting the license plate picture into
+ a plate number and verifying that this number corresponds to the license
+ plate of a circulating car (this last check is made using the municipality
+ API).
+ In case of fake reporting or invalid plate number, the report is rejected
  and the user is notified of the rejection.
  In case of multiple reports sent by the same user and sequentially rejected,
  a notice will be sent to officers.
 \end_layout
 
 \begin_layout Standard
-Registered violations will be notified to authorities, who then proceed
- to check offenders, or elaborated via the function explained in a while.
+Registered violations will be notified to authorities.
 \end_layout
 
 \begin_layout Subsection
@@ -1219,13 +1239,14 @@ Data visualization
 \end_layout
 
 \begin_layout Standard
-The systems allow registered users to access to analysed and anonymized
- data about the distribution of the reports over the selected area, presented
- in form of a map with highlighted areas in graded colours, from less-reported
- areas to highly-reported areas (from green to red); users have the possibility
- to zoom in and out in the map, having as upper limit the city in the whole
- and lower limit of detail a single street (it won't be possible to visualize
- details about the distribution of reports along a single street.
+The systems allows registered users to access analysed and anonymized data
+ about the distribution of the reports over the selected area, presented
+ in the form of a map with highlighted areas in graded colours, from less-report
+ed areas to highly-reported areas (from green to red).
+ Users have the possibility to zoom in and out in the map, having as upper
+ limit the city in the whole and lower limit of detail a single street (it
+ won't be possible to visualize details about the distribution of reports
+ along a single street.
 \end_layout
 
 \begin_layout Standard
@@ -1240,13 +1261,16 @@ Data analysis and notification
 \end_layout
 
 \begin_layout Standard
-The SafeStreets server acquires data from the municipality via the granted
- APIs to be crossed with the data from the reports; the result will be then
- automatically analysed from the system itself to verify possible unsafe
- or even dangerous areas of the city (the level of dangerousness is directly
- connected to the category of violation of each report and the quantity
- of reports arriving from that area).
- The system will grant authorities access to the elaborated data and possible
+The SafeStreets server acquires data from the municipality through the granted
+ APIs to be crossed with the data from the reports; the result will be automatic
+ally analysed from the system itself to verify possible unsafe or even dangerous
+ areas of the city (the level of dangerousness is directly connected to
+ the category of violation of each report and the quantity of reports from
+ that area).
+\end_layout
+
+\begin_layout Standard
+The system will grant authorities access to the elaborated data and possible
  correcting manoeuvrers, such as the positioning of barriers to separate
  the vehicle part of the road from the pedestrian one, with suggestions
  given coherently with the type of notifications received.
@@ -1265,13 +1289,12 @@ Automatic check generation
 \end_layout
 
 \begin_layout Standard
-Data sent by users and verified by the server will be forwarded to municipality
- via the provided API (always using HTTPS and TLS encryption) to be processed
+Data sent by users and verified by the server will be forwarded to the municipal
+ity via the provided API (always using HTTPS and TLS encryption) to be processed
  for the generation of tickets.
  The municipality system will then provide informations about issued and
  paid tickets, to be used by the server to build statistics about efficiency,
- effectiveness and precision of SafeStreets product and about the most ticketed
- drivers and cars.
+ effectiveness and precision of the SafeStreets product.
 \end_layout
 
 \begin_layout Section
@@ -2281,8 +2304,18 @@ Visitor
 \end_layout
 
 \begin_layout Standard
-Here it is reported only the use case diagram of the sign-up activity; the
- activity for each category of actors is described in the sections below.
+For visitors, only the use case diagram of the sign-up activity is included;
+ the activity for each category of actors is described in the sections below.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Why not the table here? It's under user: wrong
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2316,13 +2349,14 @@ Scenario 1
 
 \begin_deeper
 \begin_layout Standard
-Gianluca lives in a crowded street in Milan and often in the early morning,
- when he goes out to work, he finds neighbours' cars parked in double lane
- near his garage, so that every time Gianluca risks to score the car.
- Gianluca registered on SafeStreets, so from now on every time he finds
- a double parked car he will send a report and the car owners will be checked,
- discouraging double park in the area and allowing Gianluca to save money
- from the auto body mechanic.
+Gianluca lives in a crowded street in Milan and he often finds double parked
+ neighbours' cars near the garage when he goes out to work.
+ Every time this happens, Gianluca risks to score the car while driving
+ it out.
+ Gianluca registered to SafeStreets so that, from now on, every time he
+ finds a double parked car he will send a report and the car owners will
+ be checked, discouraging double parking in the area and allowing Gianluca
+ to save money from the auto body mechanic.
  
 \end_layout
 
@@ -2337,12 +2371,12 @@ Scenario 2
 \begin_layout Standard
 Mario is a registered SafeStreets user and lives in a farmstead near Voghera.
  He usually drives to Milan with his wife and his two little children to
- visit the city and wants to know in which areas he can park and safely
- arrive to the location he chose for the trip.
- Thanks to SafeStreets Mario can check out which streets have the highest
- reportings for double parking, red light offenses and unsafe driving, so
- that he can avoid those areas and arrive to the destination without worries
- about his family safety.
+ visit the city and wants to know in which areas he can safely park near
+ the location he chose for the trip.
+ Thanks to SafeStreets, Mario can check out which streets have the highest
+ reporting for double parking, red light offences and unsafe driving, so
+ that he can avoid those areas and arrive to its destination without worries
+ about his family's safety.
  
 \end_layout
 
@@ -2368,7 +2402,15 @@ Use cases
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing double
+\paragraph_spacing onehalf
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
@@ -2548,6 +2590,7 @@ The administrator refuses the registration: the system sends an e-mail to
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Formula $\ $
 \end_inset
 
@@ -2555,7 +2598,15 @@ The administrator refuses the registration: the system sends an e-mail to
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing double
+\paragraph_spacing onehalf
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
@@ -2726,6 +2777,7 @@ The user is not registered: for security reasons the system prompts the
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Formula $\ $
 \end_inset
 
@@ -2733,7 +2785,15 @@ The user is not registered: for security reasons the system prompts the
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing double
+\paragraph_spacing onehalf
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
@@ -2886,7 +2946,7 @@ Exit conditions
 \begin_inset Text
 
 \begin_layout Plain Layout
-The report is sent to the system and will be take in charge from the first
+The report is sent to the system and will be taken care of by the first
  free Officer.
 \end_layout
 
@@ -2924,6 +2984,7 @@ Some or all of the fields are not filled / no photo has been provided: the
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Formula $\ $
 \end_inset
 
@@ -2931,7 +2992,15 @@ Some or all of the fields are not filled / no photo has been provided: the
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing double
+\paragraph_spacing onehalf
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
@@ -3064,7 +3133,7 @@ Exit conditions
 \begin_inset Text
 
 \begin_layout Plain Layout
-The application shows a list of user's past sent reports.
+The application shows a list of the user's past sent reports.
 \end_layout
 
 \end_inset
@@ -3108,6 +3177,7 @@ No past reports found
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Formula $\ $
 \end_inset
 
@@ -3115,7 +3185,15 @@ No past reports found
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing double
+\paragraph_spacing onehalf
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
@@ -3258,7 +3336,7 @@ Exit conditions
 \begin_inset Text
 
 \begin_layout Plain Layout
-The application shows the map and allow the user to interact with it.
+The application shows the map and allows the user to interact with it.
 \end_layout
 
 \end_inset
@@ -3468,7 +3546,7 @@ Scenario 3
 \emph default
 Milan municipality has decided to adopt SafeStreets to increase street safety
  and encourage active citizenship.
- Traffic policemen's Officer in chief registers over SafeStreets platform
+ Traffic policemen's chief officer registers over the SafeStreets platform
  and requests an authority access.
  After receiving the accesses, he decides to start monitoring reports received
  through the system, noticing that lots of people signed up and started
@@ -3487,32 +3565,30 @@ Scenario 4
 \begin_inset Newline newline
 \end_inset
 
-After two months of continuous use of the platform, the Officer in chief
- decides to analyse the data retrieved by the platform and to verify if
- the suggestions elaborated by the system effectively answers to real necessitie
-s.
+After two months of continuous use of the platform, the chief officer decides
+ to analyse the data retrieved by the platform and to verify if the suggestions
+ elaborated by the system effectively answer real necessities.
  He decides to investigate a small area in the 
 \begin_inset Quotes eld
 \end_inset
 
-Study City
+college town
 \begin_inset Quotes erd
 \end_inset
 
  area of the city, already known to the municipality for the large number
  of bike-car accidents.
- The Chief already presented a suggestion to the municipality to build a
+ The chief already presented a suggestion to the municipality to build a
  bike-only lane on the road to limit the number of accidents, but the street
- is full of parkings and barriers can't be built.
- After focusing on the area, he remains astonished reading the area suggestions:
- the system, in addition to noticing the large number of accidents reported,
- signaled a very high number of reports for red light offenses related to
- the traffic light at the end of the streets, with a suggestion of substituting
- it with a roundabout; for the system, the roundabout will also reduce the
- number of accidents, because cars won't be in hurry to cross the intersection
- with the green light, reducing the average speed.
- The Chief brings this suggestions to the major office and probably road
- works will start in a few days.
+ is full of parking spots and barriers can't be built.
+ After focusing on the area, he remains astonished after having read suggestions
+ for the area: the system, in addition to noticing the large number of accidents
+ reported, showed a very high number of reports for red light offences at
+ the crossroad at the end of the street, with a suggestion of substituting
+ it with a roundabout.
+ The system says the roundabout will also reduce the number of accidents,
+ because cars won't be in hurry to cross the intersection, reducing the
+ average speed.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3536,6 +3612,7 @@ Use cases
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Formula $\ $
 \end_inset
 
@@ -3543,7 +3620,7 @@ Use cases
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing double
+\paragraph_spacing onehalf
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
@@ -3708,7 +3785,7 @@ Exceptions
 \begin_inset Text
 
 \begin_layout Itemize
-Some or all of the fileds are not filled / no photo has been provided: the
+Some or all of the fields are not filled / no photo has been provided: the
  system prompts the user a notification and asks for a data filling.
 \end_layout
 
@@ -3734,6 +3811,7 @@ The administrator refuses the registration (for basic or authority access):
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Formula $\ $
 \end_inset
 
@@ -3741,7 +3819,15 @@ The administrator refuses the registration (for basic or authority access):
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing double
+\paragraph_spacing onehalf
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
@@ -3912,6 +3998,7 @@ The user is not registered: for security reasons the system prompts the
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Formula $\ $
 \end_inset
 
@@ -3919,6 +4006,15 @@ The user is not registered: for security reasons the system prompts the
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
 The 
 \emph on
 Login, Create a report, See past reports 
@@ -3931,6 +4027,7 @@ See Street safety
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Formula $\ $
 \end_inset
 
@@ -3938,7 +4035,15 @@ See Street safety
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing double
+\paragraph_spacing onehalf
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
@@ -4116,6 +4221,7 @@ No reports found
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Formula $\ $
 \end_inset
 
@@ -4123,7 +4229,15 @@ No reports found
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing double
+\paragraph_spacing onehalf
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
@@ -4226,7 +4340,7 @@ The officer selects the
 \begin_inset Quotes eld
 \end_inset
 
-Consult analyzed data
+Consult analysed data
 \begin_inset Quotes erd
 \end_inset
 
@@ -4234,7 +4348,7 @@ Consult analyzed data
 \end_layout
 
 \begin_layout Enumerate
-The system retrieves the analyzed data, organized for urgency.
+The system retrieves the analysed data, organized for urgency.
 \end_layout
 
 \end_inset
@@ -4256,7 +4370,7 @@ Exit conditions
 \begin_inset Text
 
 \begin_layout Plain Layout
-The website shows the analyzed data, with acquired problems and elaborated
+The website shows the analysed data, with acquired problems and elaborated
  suggestions.
 \end_layout
 
@@ -4408,11 +4522,11 @@ Scenario 5
 
 
 \emph default
-Luigi is the system administrator for SafeStreets.
- He receives a notification for registration validation by a new user; after
- logging in to the website platform, he opens the new user request and,
- after verifying that the fiscal code provided matches with the one reported
- on the document in the photo, grants the new user access to the platform.
+Luigi is the system administrator of SafeStreets.
+ He receives a notification for registration validation by a new user.
+ After logging to the website, he opens the new user request and, after
+ verifying that the provided fiscal code matches with the one reported on
+ the document in the photo, grants the new user access to the platform.
 \end_layout
 
 \begin_layout Itemize
@@ -4424,13 +4538,14 @@ Scenario 6
 
 
 \emph default
-Luigi receives a notification from the municipality about a user who continues
- to send fake reports about double parkings, with the request of deleting
+Luigi receives a notification from the municipality about a user who continuousl
+y sends fake reports about double parking, with the request of deleting
  the user from the system.
  Luigi, to be sure not to re-grant access to the user in case the latter
- tries to sign up again to the system, suspends the user instead of deleting
- the account, so that no access is given and moreover the user couldn't
- sign up again, because the fiscal code is already registered.
+ tries to sign up again, suspends the user instead of deleting the account.
+ This way he won't be able to access its account.
+ Moreover, he won't be able to sign up again since his fiscal code is already
+ registered.
 \end_layout
 
 \begin_layout Itemize
@@ -4444,8 +4559,8 @@ Scenario 7
 \emph default
 Luigi receives an officer activation request from a new user, who declared
  to be an agent of the local traffic police.
- After the confirmation from the municipality that the person is effectively
- an agent, Luigi grants him the Officer access.
+ After receiving a confirmation of its identity from the municipality, Luigi
+ grants him the Officer access.
 \end_layout
 
 \begin_layout Itemize
@@ -4459,10 +4574,9 @@ Scenario 8
 \emph default
 SafeStreets administration receives a formal request from the municipality
  to activate an account for each agent of the traffic police, attaching
- to the request the complete list of data needed for the registration.
- Administration forwards the request to Luigi, who creates the requested
- accounts and sends an e-mail to each agent with the personal temporary
- access credentials.
+ the complete list of data needed for the registration to the request.
+ The administration forwards the request to Luigi, who creates the requested
+ accounts and sends an e-mail to each agent with temporary access credentials.
 \end_layout
 
 \begin_layout Subsubsection
@@ -4512,6 +4626,7 @@ Sign up
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Formula $\ $
 \end_inset
 
@@ -4519,7 +4634,15 @@ Sign up
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing double
+\paragraph_spacing onehalf
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
@@ -4718,6 +4841,7 @@ Refuse
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Formula $\ $
 \end_inset
 
@@ -4725,7 +4849,15 @@ Refuse
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing double
+\paragraph_spacing onehalf
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
@@ -4944,6 +5076,7 @@ Refuse and notice
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Formula $\ $
 \end_inset
 
@@ -4951,7 +5084,15 @@ Refuse and notice
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing double
+\paragraph_spacing onehalf
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
@@ -5147,6 +5288,7 @@ Missing data for one or more accounts: the administrator asks the municipality
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Formula $\ $
 \end_inset
 
@@ -5154,7 +5296,15 @@ Missing data for one or more accounts: the administrator asks the municipality
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing double
+\paragraph_spacing onehalf
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
@@ -5281,7 +5431,7 @@ Suspend
 \begin_inset Quotes erd
 \end_inset
 
- button and confirms o the displayed popup.
+ button and confirms the displayed popup.
 \end_layout
 
 \end_inset
@@ -5341,6 +5491,7 @@ Exceptions
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Formula $\ $
 \end_inset
 
@@ -5348,7 +5499,15 @@ Exceptions
 \end_layout
 
 \begin_layout Standard
-\paragraph_spacing double
+\paragraph_spacing onehalf
+\begin_inset Formula $\ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
@@ -5471,11 +5630,11 @@ The administrator clicks on
 \begin_inset Quotes eld
 \end_inset
 
-Rehabilit
+Rehabilitate
 \begin_inset Quotes erd
 \end_inset
 
- button and confirms o the displayed popup.
+ button and confirms the displayed popup.
 \end_layout
 
 \end_inset
@@ -5497,7 +5656,7 @@ Exit conditions
 \begin_inset Text
 
 \begin_layout Plain Layout
-The selected user can access the service as before the suspension.
+The selected user can access the service as it could before the suspension.
 \end_layout
 
 \end_inset
@@ -5757,7 +5916,7 @@ Requirements
 \end_layout
 
 \begin_layout Subsubsection
-[G8] Enable authorities to export report data to their own systems to generate
+[G8] Enable authorities to acquire report data in their own systems to generate
  tickets
 \end_layout
 
@@ -5865,7 +6024,7 @@ s.
  and/or from the municipality.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection
 
 \series bold
 \emph on
@@ -5873,6 +6032,7 @@ Traceability Matrix
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing onehalf
 \begin_inset Tabular
 <lyxtabular version="3" rows="18" columns="3">
 <features tabularvalignment="middle">
@@ -6461,8 +6621,9 @@ Performance requirements
 The application should be light and fluid for a good user experience on
  all kind of supported device.
  The background data retrieval such as GPS loading, image upload or post
- download, has to take place in advance (e.g..: update GPS data while taking
- the picture, not after; preload the next #x posts; ecc.).
+ download, has to take place in advance (e.g.
+ update GPS data while taking the picture, not after; preload the next #x
+ posts; ecc.).
 \end_layout
 
 \begin_layout Standard
@@ -6499,7 +6660,7 @@ Standards compliance
 \begin_layout Standard
 SafeStreets will be developed keeping a strict division between what the
  backend and what the frontend will do.
- RestFull APIs will be implemented to allow reliable HTTPS connections between
+ RESTful APIs will be implemented to allow reliable HTTPS connections between
  the servers and the applications.
 \end_layout
 
@@ -6537,6 +6698,13 @@ https://play.google.com/about/developer-content-policy/
 
 \begin_layout Subsection
 Hardware limitations
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Hardware-limitations"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6624,9 +6792,8 @@ The frontend, built using Xamarin Forms needs to be written only once for
 \end_layout
 
 \begin_layout Standard
-Building RestFull APIs for the Server-to-Application communication with
- PHP allow us to deploy small components with great speed (compared for
- e.g..
+Building RESTful APIs for the Server-to-Application communication with PHP
+ allow us to deploy small components with great speed (compared for e.g..
  to solutions based on Java Tomcat) and the possibility to choose the OS
  (compared for e.g..
  to solutions based on ASPX with .NET only available on Windows Server).
