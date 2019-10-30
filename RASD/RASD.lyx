@@ -829,8 +829,7 @@ name "subsec:Goals"
 \end_layout
 
 \begin_layout Itemize
-[G2] Allow authorities to register through a verification procedure.
- Enable them to access our APIs;
+[G2] Allow authorities to register through a verification procedure;
 \end_layout
 
 \begin_layout Itemize
@@ -6731,8 +6730,7 @@ Reliability
 
 \begin_layout Standard
 SafeStreets should be always accessible.
- A reasonable 99+% uptime of the APIs should be certified by the used cloud
- service.
+ A 99+% uptime of the APIs is certified by the used cloud service, AWS.
 \end_layout
 
 \begin_layout Subsection
@@ -6814,6 +6812,277 @@ Building RESTful APIs for the Server-to-Application communication with PHP
 
 \begin_layout Part
 Formal analysis using Alloy
+\end_layout
+
+\begin_layout Section
+Alloy
+\end_layout
+
+\begin_layout Subsection
+Signatures
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+open util/time
+\end_layout
+
+\begin_layout Plain Layout
+
+open util/integer
+\end_layout
+
+\begin_layout Plain Layout
+
+open util/boolean
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Coord{
+\end_layout
+
+\begin_layout Plain Layout
+
+	lat: one Int,
+\end_layout
+
+\begin_layout Plain Layout
+
+	lon: one Int
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig User {
+\end_layout
+
+\begin_layout Plain Layout
+
+	userId: one String,
+\end_layout
+
+\begin_layout Plain Layout
+
+	email: one String,
+\end_layout
+
+\begin_layout Plain Layout
+
+	blocked: Bool one -> Time
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Report{
+\end_layout
+
+\begin_layout Plain Layout
+
+	reportId: one String,
+\end_layout
+
+\begin_layout Plain Layout
+
+	reporter: one User,
+\end_layout
+
+\begin_layout Plain Layout
+
+	date: one Time,
+\end_layout
+
+\begin_layout Plain Layout
+
+	position: one Coord,
+\end_layout
+
+\begin_layout Plain Layout
+
+	licensePlate: one String
+\end_layout
+
+\begin_layout Plain Layout
+
+}{
+\end_layout
+
+\begin_layout Plain Layout
+
+	licensePlate != 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Authority{
+\end_layout
+
+\begin_layout Plain Layout
+
+	auth: one User,
+\end_layout
+
+\begin_layout Plain Layout
+
+	city: one String
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Facts
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+fact uniqueUserId{
+\end_layout
+
+\begin_layout Plain Layout
+
+	no disjoint u1, u2: User | u1.userId = u2.userId
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fact uniqueUserEmail{
+\end_layout
+
+\begin_layout Plain Layout
+
+	no disjoint u1, u2: User | u1.email = u2.email
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Dynamic model
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+pred hasReporter [r: Report]{
+\end_layout
+
+\begin_layout Plain Layout
+
+	#r.reporter = 1
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Results
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+run ...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Proof of Consistency
+\end_layout
+
+\begin_layout Subsubsection
+Generated World
 \end_layout
 
 \begin_layout Standard
