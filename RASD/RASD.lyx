@@ -303,7 +303,7 @@ The service will be served through a mobile application where users can
 \begin_layout Standard
 To ensure the chain of custody, the backend infrastructure will run an AI
  algorithm to ensure the quality of the data given (e.g.
- no edited picture) before considerting them valuable.
+ no edited picture) before considering them valuable.
  
 \end_layout
 
@@ -328,8 +328,8 @@ Maps of the less safe roads in the city;
 \end_layout
 
 \begin_layout Itemize
-Vehicles that commit the most violations and other tatistics for their municipal
-ity.
+Vehicles that commit the most violations and other statistics for their
+ municipality.
 \end_layout
 
 \begin_layout Subsubsection
@@ -987,6 +987,10 @@ ID:
  Identification Document
 \end_layout
 
+\begin_layout Itemize
+SLA: Service Level Agreement
+\end_layout
+
 \begin_layout Subsection
 Abbreviations
 \end_layout
@@ -1593,9 +1597,8 @@ Domain assumptions
 \end_layout
 
 \begin_layout Itemize
-[D3] A subset (or all) of the images provided with the report are sufficient
- to recognize the offender's car (by extracting its license plate number
- with OCR algorithms) and visually verify which the violation took place
+[D3] One or more of the images provided with the report are sufficient to
+ recognize the offender's car and visually verify which violation took place
 \end_layout
 
 \begin_layout Itemize
@@ -5779,12 +5782,11 @@ Requirements
 
 \begin_layout Itemize
 [R1] Every citizen that wants to register has a valid identification document
- and a smartphone with GPS and camera.
+ and a smartphone (with GPS and camera systems).
 \end_layout
 
 \begin_layout Itemize
-[R2] Every citizen that wants to register has a valid e-mail address and
- can access to incoming e-mails.
+[R2] Every citizen that wants to register owns a valid e-mail address.
 \end_layout
 
 \begin_layout Itemize
@@ -5827,7 +5829,8 @@ Requirements
 \end_layout
 
 \begin_layout Itemize
-[R8] The user is able to take at least one picture of the violation.
+[R8] The user is able to take at least one picture of the violation to correctly
+ choose the type of violation he is reporting.
 \end_layout
 
 \begin_layout Standard
@@ -5839,12 +5842,13 @@ Requirements
 
 \begin_layout Itemize
 [D2] Location data in reports is precise enough to detect the name of the
- street where the violation took place.
+ street where the violation took place and a rough estimation of the nearest
+ civic number.
 \end_layout
 
 \begin_layout Itemize
-[D3] One or more of the images provided with the report lets recognize the
- offender's car and where the violation took place.
+[D3] One or more of the images provided with the report are sufficient to
+ recognize the offender's car and visually verify which violation took place.
 \end_layout
 
 \begin_layout Itemize
@@ -5937,9 +5941,8 @@ Requirements
 \end_layout
 
 \begin_layout Itemize
-[D3] A subset (or all) of the images provided with the report are sufficient
- to recognize the offender's car and visually verify which the violation
- took place
+[D3] One or more of the images provided with the report are sufficient to
+ recognize the offender's car and visually verify which violation took place
 \end_layout
 
 \begin_layout Itemize
