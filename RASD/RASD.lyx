@@ -6887,7 +6887,17 @@ sig User {
 
 \begin_layout Plain Layout
 
-	blocked: Bool one -> Time
+	created: one Time,
+\end_layout
+
+\begin_layout Plain Layout
+
+	blocked: Bool one,
+\end_layout
+
+\begin_layout Plain Layout
+
+	blockedDate: one Time
 \end_layout
 
 \begin_layout Plain Layout
@@ -6926,25 +6936,61 @@ sig Report{
 
 \begin_layout Plain Layout
 
-	licensePlate: one String
+	street: one String,
 \end_layout
 
 \begin_layout Plain Layout
 
-}{
+	streetNumber: one String,
 \end_layout
 
 \begin_layout Plain Layout
 
-	licensePlate != 
-\begin_inset Quotes eld
-\end_inset
+	licensePlate: one String,
+\end_layout
 
+\begin_layout Plain Layout
 
-\begin_inset Quotes erd
-\end_inset
+	area: one AreaOfCompetence,
+\end_layout
 
+\begin_layout Plain Layout
 
+	confirmed: Bool one,
+\end_layout
+
+\begin_layout Plain Layout
+
+	confirmedTime: one Time
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig AreaOfCompetence{
+\end_layout
+
+\begin_layout Plain Layout
+
+	name: one String,
+\end_layout
+
+\begin_layout Plain Layout
+
+	city: one String,
+\end_layout
+
+\begin_layout Plain Layout
+
+	region: one String
 \end_layout
 
 \begin_layout Plain Layout
@@ -6968,7 +7014,12 @@ sig Authority{
 
 \begin_layout Plain Layout
 
-	city: one String
+	officeCity: one String,
+\end_layout
+
+\begin_layout Plain Layout
+
+	area: one AreaOfCompetence
 \end_layout
 
 \begin_layout Plain Layout
@@ -7024,6 +7075,175 @@ fact uniqueUserEmail{
 }
 \end_layout
 
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fact uniqueReportId{
+\end_layout
+
+\begin_layout Plain Layout
+
+	no disjoint r1,r2:Report | r1.reportId = r2.reportId 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fact realCoord{ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	all c:Coord | c.lat > (-90) and c.lon < 90 and c.lon > (-180) and c.lon < 180
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+--each area has at least one authority
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+--each authority can control multiple cities within a region 
+\end_layout
+
+\begin_layout Plain Layout
+
+/*fact uniqueRegionForAuthority{ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	some disjoint a1, a2: AreaOfCompetence |  
+\end_layout
+
+\begin_layout Plain Layout
+
+}*/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/*fact confirmedAfterDone{ 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	all r:Report | r.confirmed = true  => (r.confirmedTime > r.date) 
+\end_layout
+
+\begin_layout Plain Layout
+
+}*/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+--no multiple reports for a single accident by the same user
+\end_layout
+
+\begin_layout Plain Layout
+
+fact uniqueUserReport{
+\end_layout
+
+\begin_layout Plain Layout
+
+	no disjoint r1, r2:Report |
+\end_layout
+
+\begin_layout Plain Layout
+
+		r1.licensePlate = r2.licensePlate and
+\end_layout
+
+\begin_layout Plain Layout
+
+		r1.reporter = r2.reporter and 
+\end_layout
+
+\begin_layout Plain Layout
+
+		r1.date = r2.date
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+--but multiple users can report a single accident
+\end_layout
+
+\begin_layout Plain Layout
+
+/*fact uniqueUserReport{
+\end_layout
+
+\begin_layout Plain Layout
+
+	some disjoint r1, r2:Report |
+\end_layout
+
+\begin_layout Plain Layout
+
+		r1.licensePlate = r2.licensePlate and
+\end_layout
+
+\begin_layout Plain Layout
+
+		r1.reporter = r2.reporter and 
+\end_layout
+
+\begin_layout Plain Layout
+
+		r1.date = r2.date
+\end_layout
+
+\begin_layout Plain Layout
+
+}*/
+\end_layout
+
 \end_inset
 
 
@@ -7046,6 +7266,79 @@ pred hasReporter [r: Report]{
 \begin_layout Plain Layout
 
 	#r.reporter = 1
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/*pred reportAnAccident[r:Report, u:User]{
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}*/
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* pred confirmReport[r:Report, a:Authority]{
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+} */
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* pred assignAreaOfCompetence[auth: Authority, area: AreaOfCompetence]{
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+} */
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+assert someoneReports{
+\end_layout
+
+\begin_layout Plain Layout
+
+	some u: User, r:Report | r.reporter = u 
 \end_layout
 
 \begin_layout Plain Layout
