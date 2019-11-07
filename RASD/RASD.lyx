@@ -6843,17 +6843,59 @@ open util/boolean
 
 \begin_layout Plain Layout
 
-pred show {
+--------------------------------------------------------------------------------
+----Data types
 \end_layout
 
 \begin_layout Plain Layout
 
-	#User > 1
 \end_layout
 
 \begin_layout Plain Layout
 
-	#Report > 0
+--Representing time as integer allows us to make comparisons
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Time{
+\end_layout
+
+\begin_layout Plain Layout
+
+    --The unix time is a format for representing time as the number of seconds
+ passed
+\end_layout
+
+\begin_layout Plain Layout
+
+    --from the 1st of January 1970 and is widely used format for storing
+ time data in
+\end_layout
+
+\begin_layout Plain Layout
+
+    --databases 
+\end_layout
+
+\begin_layout Plain Layout
+
+    unixTime: one Int
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	unixTime >= 0
 \end_layout
 
 \begin_layout Plain Layout
@@ -6867,67 +6909,7 @@ pred show {
 
 \begin_layout Plain Layout
 
-run show for 2
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
---Representing time as integer allows us to make comparisons 
-\end_layout
-
-\begin_layout Plain Layout
-
-sig Time{     
-\end_layout
-
-\begin_layout Plain Layout
-
-	--The unix time is a format for representing time as the number of seconds
- passed     
-\end_layout
-
-\begin_layout Plain Layout
-
-	--from the 1st of January 1970 and is widely used format for storing time
- data in     
-\end_layout
-
-\begin_layout Plain Layout
-
-	--databases      
-\end_layout
-
-\begin_layout Plain Layout
-
-	unixTime: one Int 
-\end_layout
-
-\begin_layout Plain Layout
-
-} {
-\end_layout
-
-\begin_layout Plain Layout
-
-	unixTime >= 0 
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-one sig Never extends Time {} 
+one sig Never extends Time {}
 \end_layout
 
 \begin_layout Plain Layout
@@ -6960,7 +6942,7 @@ sig Username {}
 
 \begin_layout Plain Layout
 
---Avoid spawning useless instances not associated with any entity 
+--Avoid spawning useless instances not associated with any entity
 \end_layout
 
 \begin_layout Plain Layout
@@ -6975,7 +6957,7 @@ fact validUsername{
 
 \begin_layout Plain Layout
 
-	one us: User | us.username = u 
+	one us: User | us.username = u
 \end_layout
 
 \begin_layout Plain Layout
@@ -6998,12 +6980,12 @@ sig Email {}
 
 \begin_layout Plain Layout
 
---Avoid spawning useless instances not associated with any entity 
+--Avoid spawning useless instances not associated with any entity
 \end_layout
 
 \begin_layout Plain Layout
 
-fact validEmail{ 	
+fact validEmail{
 \end_layout
 
 \begin_layout Plain Layout
@@ -7013,7 +6995,7 @@ fact validEmail{
 
 \begin_layout Plain Layout
 
-	one us: User | us.email = e 
+	one us: User | us.email = e
 \end_layout
 
 \begin_layout Plain Layout
@@ -7145,19 +7127,9 @@ fact validLicensePlate{
 }
 \end_layout
 
-\end_inset
-
+\begin_layout Plain Layout
 
 \end_layout
-
-\begin_layout Subsection
-Signatures
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
 
 \begin_layout Plain Layout
 
@@ -7179,9 +7151,19 @@ sig Coord{
 }
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
+
+\begin_layout Subsection
+Data
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Plain Layout
 
@@ -7399,6 +7381,11 @@ sig Report{
 
 \begin_layout Plain Layout
 
+	acknowledgedBy: one Authority
+\end_layout
+
+\begin_layout Plain Layout
+
 }
 \end_layout
 
@@ -7438,12 +7425,12 @@ status open
 
 \begin_layout Plain Layout
 
-fact uniqueUserId{
+fact uniqueUsername{
 \end_layout
 
 \begin_layout Plain Layout
 
-	no disjoint u1, u2: User | u1.userId = u2.userId
+	no disj u1, u2: User | u1.username = u2.username
 \end_layout
 
 \begin_layout Plain Layout
@@ -7462,7 +7449,7 @@ fact uniqueUserEmail{
 
 \begin_layout Plain Layout
 
-	no disjoint u1, u2: User | u1.email = u2.email
+	no disj u1, u2: User | u1.email = u2.email
 \end_layout
 
 \begin_layout Plain Layout
@@ -7500,7 +7487,7 @@ fact uniqueReportId{
 
 \begin_layout Plain Layout
 
-	no disjoint r1,r2:Report | r1.reportId = r2.reportId 
+	no disj r1, r2:Report | r1.reportId = r2.reportId 
 \end_layout
 
 \begin_layout Plain Layout
@@ -7514,13 +7501,32 @@ fact uniqueReportId{
 
 \begin_layout Plain Layout
 
-fact realCoord{ 	
+--No multiple reports for a single accident by the same user
 \end_layout
 
 \begin_layout Plain Layout
 
-	all c:Coord | c.lat > (-90) and c.lon < 90 and c.lon > (-180) and c.lon < 180
- 
+fact uniqueUserReport{
+\end_layout
+
+\begin_layout Plain Layout
+
+	no disj r1, r2: Report |
+\end_layout
+
+\begin_layout Plain Layout
+
+		r1.licensePlate = r2.licensePlate and
+\end_layout
+
+\begin_layout Plain Layout
+
+		r1.reporter = r2.reporter and 
+\end_layout
+
+\begin_layout Plain Layout
+
+		r1.date = r2.date
 \end_layout
 
 \begin_layout Plain Layout
@@ -7669,6 +7675,30 @@ fact uniqueUserReport{
 }
 \end_layout
 
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fact someReportsAsBeenAcknowledged{
+\end_layout
+
+\begin_layout Plain Layout
+
+	some r:Report, a:Authority |
+\end_layout
+
+\begin_layout Plain Layout
+
+		r.acknowledgedBy = a
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
 \end_inset
 
 
@@ -7734,12 +7764,22 @@ status open
 
 \begin_layout Plain Layout
 
-pred hasReporter [r: Report]{
+pred show
 \end_layout
 
 \begin_layout Plain Layout
 
-	#r.reporter = 1
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	#User = 2
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Report > 1
 \end_layout
 
 \begin_layout Plain Layout
@@ -7753,7 +7793,12 @@ pred hasReporter [r: Report]{
 
 \begin_layout Plain Layout
 
-pred isUserAllowedToReport[u: User] {
+pred isUserAllowedToReport[u: User]
+\end_layout
+
+\begin_layout Plain Layout
+
+{
 \end_layout
 
 \begin_layout Plain Layout
@@ -7772,7 +7817,22 @@ pred isUserAllowedToReport[u: User] {
 
 \begin_layout Plain Layout
 
-/*pred reportAnAccident[r:Report, u:User]{
+--A normal user reports an Accidents
+\end_layout
+
+\begin_layout Plain Layout
+
+pred reportAnAccident[r:Report, u:User]{
+\end_layout
+
+\begin_layout Plain Layout
+
+	--precondition
+\end_layout
+
+\begin_layout Plain Layout
+
+	isUserAllowedToReport[u]
 \end_layout
 
 \begin_layout Plain Layout
@@ -7781,7 +7841,32 @@ pred isUserAllowedToReport[u: User] {
 
 \begin_layout Plain Layout
 
-}*/
+	r.reporter = u
+\end_layout
+
+\begin_layout Plain Layout
+
+	--The user was not an Authority nor an Admin
+\end_layout
+
+\begin_layout Plain Layout
+
+	all a: Authority, b: Administrator |
+\end_layout
+
+\begin_layout Plain Layout
+
+		a != u and
+\end_layout
+
+\begin_layout Plain Layout
+
+		b != u
+\end_layout
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \begin_layout Plain Layout
@@ -7790,7 +7875,17 @@ pred isUserAllowedToReport[u: User] {
 
 \begin_layout Plain Layout
 
-/* pred confirmReport[r:Report, a:Authority]{
+pred multipleReportsSameVehicle[ r1,r2:Report]{
+\end_layout
+
+\begin_layout Plain Layout
+
+	r1.licensePlate = r2.licensePlate
+\end_layout
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \begin_layout Plain Layout
@@ -7799,7 +7894,22 @@ pred isUserAllowedToReport[u: User] {
 
 \begin_layout Plain Layout
 
-} */
+pred isUserAllowedToAcknowledge[u:User]{
+\end_layout
+
+\begin_layout Plain Layout
+
+	one a:Authority |
+\end_layout
+
+\begin_layout Plain Layout
+
+		a = u
+\end_layout
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \begin_layout Plain Layout
@@ -7808,30 +7918,17 @@ pred isUserAllowedToReport[u: User] {
 
 \begin_layout Plain Layout
 
-/* pred assignAreaOfCompetence[auth: Authority, area: AreaOfCompetence]{
+pred acknowledgeReport[r:Report, u:User]{
 \end_layout
 
 \begin_layout Plain Layout
 
+	isUserAllowedToAcknowledge[u]
 \end_layout
 
 \begin_layout Plain Layout
 
-} */
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-assert someoneReports{
-\end_layout
-
-\begin_layout Plain Layout
-
-	some u: User, r:Report | r.reporter = u 
+	r.acknowledgedBy = u
 \end_layout
 
 \begin_layout Plain Layout
@@ -7855,7 +7952,32 @@ status open
 
 \begin_layout Plain Layout
 
-run ...
+run show for 2
+\end_layout
+
+\begin_layout Plain Layout
+
+run isUserAllowedToReport for 4
+\end_layout
+
+\begin_layout Plain Layout
+
+run reportAnAccident for 10
+\end_layout
+
+\begin_layout Plain Layout
+
+run multipleReportsSameVehicle for 10
+\end_layout
+
+\begin_layout Plain Layout
+
+run isUserAllowedToAcknowledge for 3
+\end_layout
+
+\begin_layout Plain Layout
+
+run acknowledgeReport for 4
 \end_layout
 
 \end_inset
@@ -7867,8 +7989,32 @@ run ...
 Proof of Consistency
 \end_layout
 
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/Alloy/results.png
+	lyxscale 35
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Generated World
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/Alloy/genWorld.png
+	lyxscale 35
+	scale 35
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
