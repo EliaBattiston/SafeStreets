@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1051.126px" height="846px" viewBox="9.5 229 1051.126 846" enable-background="new 9.5 229 1051.126 846"
+	 xml:space="preserve">
+<g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="922.391" y="426.5" opacity="0.2" fill="#C0C0C0" enable-background="new    " width="203.835" height="162"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="915.391" y="419.5" fill="#FFFFFF" width="203.835" height="162"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M915.391,419.5h203.835v162H915.391V419.5z"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M915.391,444.5h203.835"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M915.391,572.5h203.835"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 1003.585 439)" font-family="'Arial-BoldMT'" font-size="13">User</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 920.3906 462)" font-family="'ArialMT'" font-size="13">-username: String</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 920.3906 477)" font-family="'ArialMT'" font-size="13">-password: String</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 920.3906 492)" font-family="'ArialMT'" font-size="13">-IDphotoPath: String</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 920.3906 507)" font-family="'ArialMT'" font-size="13">-suspended: Boolean</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 920.3906 522)" font-family="'ArialMT'" font-size="13">-accepted: Boolean</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 920.3906 537)" font-family="'ArialMT'" font-size="13">-accepterAdmin: Administrator</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 920.3906 552)" font-family="'ArialMT'" font-size="13">-suspendedTimestamp: DateTime</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 920.3906 567)" font-family="'ArialMT'" font-size="13">-acceptedTimestamp: DateTime</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="978.391" y="282.5" opacity="0.2" fill="#C0C0C0" enable-background="new    " width="74.025" height="87"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="971.391" y="275.5" fill="#FFFFFF" width="74.025" height="87"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M971.391,275.5h74.025v87h-74.025V275.5z"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M971.391,300.5h74.025"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M971.391,353.5h74.025"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 989.4033 295)" font-family="'Arial-BoldItalicMT'" font-size="13">Person</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 976.3906 318)" font-family="'ArialMT'" font-size="13">-fiscalCode</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 976.3906 333)" font-family="'ArialMT'" font-size="13">-firstName</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 976.3906 348)" font-family="'ArialMT'" font-size="13">-lastName</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M1012.391,418.5l-2-55"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="#FFFFFF" d="M1019.543,383.506l-9.152-20.006l-7.675,20.618"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M1019.543,383.506l-9.152-20.006l-7.675,20.618L1019.543,383.506"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="1066.391" y="682.5" opacity="0.2" fill="#C0C0C0" enable-background="new    " width="72.235" height="44"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="1059.391" y="675.5" fill="#FFFFFF" width="72.235" height="44"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M1059.391,675.5h72.235v44h-72.235V675.5z"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M1059.391,700.5h72.235"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M1059.391,710.5h72.235"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 1069.8574 695)" font-family="'Arial-BoldMT'" font-size="13">Authority</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M1086.391,674.5l-37-92"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="#FFFFFF" d="M1064.785,598.216l-15.395-15.716l-0.227,21.999"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M1064.785,598.216l-15.395-15.716l-0.227,21.999L1064.785,598.216"
+			/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="898.391" y="682.5" opacity="0.2" fill="#C0C0C0" enable-background="new    " width="94.23" height="44"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="891.391" y="675.5" fill="#FFFFFF" width="94.23" height="44"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M891.391,675.5h94.23v44h-94.23V675.5z"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M891.391,700.5h94.23"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M891.391,710.5h94.23"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 900.2168 695)" font-family="'Arial-BoldMT'" font-size="13">Administrator</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M947.391,674.5l37-92"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="#FFFFFF" d="M984.617,604.499l-0.227-21.999l-15.395,15.716"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M984.617,604.499l-0.227-21.999l-15.395,15.716L984.617,604.499"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="311" y="367" opacity="0.2" fill="#C0C0C0" enable-background="new    " width="191.477" height="132"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="304" y="360" fill="#FFFFFF" width="191.477" height="132"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M304,360h191.477v132H304V360z"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M304,385h191.477"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M304,483h191.477"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 380.2285 379.5)" font-family="'Arial-BoldMT'" font-size="13">Report</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 309 402.5)" font-family="'ArialMT'" font-size="13">-reportID: String</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 309 417.5)" font-family="'ArialMT'" font-size="13">-timestamp: DateTime</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 309 432.5)" font-family="'ArialMT'" font-size="13">-notes: String</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 309 447.5)" font-family="'ArialMT'" font-size="13">-photoEvidencesPath: String [ ]</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 309 462.5)" font-family="'ArialMT'" font-size="13">-licensePlate: String</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 309 477.5)" font-family="'ArialMT'" font-size="13">-violationType: Violation</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="103" y="607" opacity="0.2" fill="#C0C0C0" enable-background="new    " width="72.235" height="72"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="96" y="600" fill="#FFFFFF" width="72.235" height="72"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M96,600h72.235v72H96V600z"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M96,625h72.235"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M96,663h72.235"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 108.9932 619.5)" font-family="'Arial-BoldMT'" font-size="13">Position</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 101 642.5)" font-family="'ArialMT'" font-size="13">-latitude</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 101 657.5)" font-family="'ArialMT'" font-size="13">-longitude</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M169,607l145-114"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path d="M308.612,502.591L314,493l-10.591,2.972l-6.704,10.626"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M308.612,502.591L314,493l-10.591,2.972l-6.704,10.626
+			L308.612,502.591"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="463" y="583" opacity="0.2" fill="#C0C0C0" enable-background="new    " width="312.532" height="105"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="456" y="576" fill="#FFFFFF" width="312.532" height="105"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M456,576h312.532v105H456V576z"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M456,614h312.532"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 568.9023 593.5)" font-family="'ArialMT'" font-size="13">«enumeration»</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 584.2002 608.5)" font-family="'Arial-BoldMT'" font-size="13">Violations</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 461 631.5)" font-family="'ArialMT'" font-size="13">DoubleParking</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 461 646.5)" font-family="'ArialMT'" font-size="13">Intersection engaging without respectingthe stop halt</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 461 661.5)" font-family="'ArialMT'" font-size="13">Parking on the bycicle lane</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 461 676.5)" font-family="'ArialMT'" font-size="13">.....</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M496,426.5l419.391,79"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M905.589,507.12l10.891-1.546l-8.795-6.608"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3" d="M470,493l86,82"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M545.74,571.033L556,575l-4.45-10.06"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M966.391,582.5l-27,45l-1,47"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M934.398,664.25l3.992,10.25l4.425-10.071"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="335" y="799" opacity="0.2" fill="#C0C0C0" enable-background="new    " width="206.52" height="132"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="328" y="792" fill="#FFFFFF" width="206.52" height="132"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M328,792h206.52v132H328V792z"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M328,817h206.52"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M328,915h206.52"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 395.4912 811.5)" font-family="'Arial-BoldMT'" font-size="13">StreetSafety</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 333 834.5)" font-family="'ArialMT'" font-size="13">-timestamp: DateTime</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 333 849.5)" font-family="'ArialMT'" font-size="13">-ID: String</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 333 864.5)" font-family="'ArialMT'" font-size="13">-suggestion: Suggestion</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 333 879.5)" font-family="'ArialMT'" font-size="13">-mostFrequentViolation: Violations</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 333 894.5)" font-family="'ArialMT'" font-size="13">-severity: Level</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 333 909.5)" font-family="'ArialMT'" font-size="13">-cause: String</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M426,791l-22-298"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M408.946,502.825L404,493l-3.45,10.445"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="199" y="719" opacity="0.2" fill="#C0C0C0" enable-background="new    " width="97.854" height="57"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="192" y="712" fill="#FFFFFF" width="97.854" height="57"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M192,712h97.854v57H192V712z"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M192,737h97.854"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M192,760h97.854"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 203.0029 731.5)" font-family="'Arial-BoldMT'" font-size="13">Traffic tickets</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 197 754.5)" font-family="'ArialMT'" font-size="13">-ticketID: String</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="95" y="831" opacity="0.2" fill="#C0C0C0" enable-background="new    " width="115.933" height="57"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="88" y="824" fill="#FFFFFF" width="115.933" height="57"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M88,824h115.933v57H88V824z"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M88,849h115.933"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M88,872h115.933"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 117.7861 843.5)" font-family="'Arial-BoldMT'" font-size="13">Accidents</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 93 866.5)" font-family="'ArialMT'" font-size="13">-accidentID: String</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M327,856l-122-3"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M215.263,849.042L205,853l10.056,4.458"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M327,794l-38-24"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M299.84,771.868L289,770l6.345,8.986"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M169,672l41,39"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path d="M199.735,707.046L210,711l-4.462-10.055l-11.478-5.108"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M199.735,707.046L210,711l-4.462-10.055l-11.478-5.108
+			L199.735,707.046"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M134,673l9,150"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path d="M138.189,813.107L143,823l3.593-10.396l-4.911-11.563"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M138.189,813.107L143,823l3.593-10.396l-4.911-11.563
+			L138.189,813.107"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3" d="M484,791l86-109"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M567.01,692.586L570,682l-9.6,5.371"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="655" y="791" opacity="0.2" fill="#C0C0C0" enable-background="new    " width="269.869" height="105"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="648" y="784" fill="#FFFFFF" width="269.869" height="105"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M648,784h269.869v105H648V784z"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M648,822h269.869"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 739.5713 801.5)" font-family="'ArialMT'" font-size="13">«enumeration»</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 747.1592 816.5)" font-family="'Arial-BoldMT'" font-size="13">Suggestions</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 653 839.5)" font-family="'ArialMT'" font-size="13">Replace intersection with roundabout</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 653 854.5)" font-family="'ArialMT'" font-size="13">Place traffic lights</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 653 869.5)" font-family="'ArialMT'" font-size="13">Place safety barriers between lane and street</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 653 884.5)" font-family="'ArialMT'" font-size="13">.....</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3" d="M536,851l111-7"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M637.122,848.841L647,844l-10.407-3.563"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="623" y="1031" opacity="0.2" fill="#C0C0C0" enable-background="new    " width="95.729" height="90"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<rect x="616" y="1024" fill="#FFFFFF" width="95.729" height="90"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M616,1024h95.729v90H616V1024z"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M616,1062h95.729"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 620.5 1041.5)" font-family="'ArialMT'" font-size="13">«enumeration»</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 645.0752 1056.5)" font-family="'Arial-BoldMT'" font-size="13">Levels</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 621 1079.5)" font-family="'ArialMT'" font-size="13">High</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 621 1094.5)" font-family="'ArialMT'" font-size="13">Medium</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<g>
+			<text transform="matrix(1 0 0 1 621 1109.5)" font-family="'ArialMT'" font-size="13">Low</text>
+		</g>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" stroke-dasharray="3" d="M505,925l110,100"/>
+	</g>
+	<g transform="translate(-78,-46) scale(1,1)">
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M604.648,1021.278L615,1025l-4.688-9.951"/>
+	</g>
+</g>
+</svg>

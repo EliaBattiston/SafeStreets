@@ -1163,6 +1163,44 @@ The systems dialogues with the municipality services using its API to acquire
  system of the municipality.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/ClassDiagram/classDiagram.svg
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Class diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Product functions
 \end_layout
@@ -6728,34 +6766,25 @@ Software system attributes
 \end_layout
 
 \begin_layout Subsection
-Reliability
+Availability and Reliability
 \end_layout
 
-\begin_layout Standard
-SafeStreets should be always accessible.
- A 99+% uptime of the APIs is certified by the used cloud service, AWS.
+\begin_layout Itemize
+SafeStreets should provide a guarantee of 99+% uptime for its services.
+ This can be guaranteed by using managed cloud services, such as the ones
+ provided by Amazon AWS.
+ The web backend will benefit of the same guarantees since it will be hosted
+ on the same services the system's logic is.
 \end_layout
 
-\begin_layout Subsection
-Availability
+\begin_layout Itemize
+The mobile applications will always be available on the PlayStore (Android)
+ and on the AppStore (iOS) simultaneously.
+ Its functionalities rely on the availability of the private APIs used to
+ communicate with the server.
 \end_layout
 
-\begin_layout Standard
-The mobile application will be available on the PlayStore (Android) and
- on the AppStore (iOS) simultaneously.
-\end_layout
-
-\begin_layout Standard
-The WebApp will be available before or at the same time as the mobile applicatio
-n.
-\end_layout
-
-\begin_layout Standard
-The AWS SLA guarantees an uptime of more than 99% of the time on the servers
- adopted by SafeStreets.
-\end_layout
-
-\begin_layout Standard
+\begin_layout Itemize
 The reliability of the service is also granted by the automatic testing
  executed on every update of the infrastructure (both frontend and backend).
 \end_layout
@@ -6765,15 +6794,32 @@ Security
 \end_layout
 
 \begin_layout Standard
-AI will be entrusted for the data quality.
+Several aspects of the system require a very high level of security both
+ in data storage and transmission over various channels.
 \end_layout
 
-\begin_layout Standard
-The transport security will be provided through the use of HTTPS.
+\begin_layout Itemize
+Since the system will need to manage very sensitive data (user data, traffic
+ tickets and accidents in the municipality), the best solution is to use
+ cloud storage provided by a reputable provider.
+ This assures the provider will keep up with the latest security patches
+ used for the involved technologies.
 \end_layout
 
-\begin_layout Standard
-The CIA will be provided by the Cloud host of our databases.
+\begin_layout Itemize
+Every transfer of data (between applications and the private API, between
+ external APIs such as the municipality ones) will be end-to-end encrypted
+ with state of the art protocols such as HTTPS with TLS 
+\begin_inset Formula $\geq1.2$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+By certifiying SafeStreets' and the municipality's public keys, the system
+ will assure authenticity and integrity of the data on top of making it
+ virtually impossible to understand in case of interception.
 \end_layout
 
 \begin_layout Subsection
@@ -6781,29 +6827,45 @@ Maintainability
 \end_layout
 
 \begin_layout Standard
-The software infrastructure will be developed using consolidated technologies
- such as PHP and SQL for the backend and Xamarin Forms for the frontend.
+The software infrastructure will be developed using consolidated and well
+ documented technologies:
+\end_layout
+
+\begin_layout Itemize
+The main interaction of the on an Apache web server, with MySQL as a database
+ server.
+\end_layout
+
+\begin_layout Itemize
+The Xamarin Framework will be used for the development of the mobile application
+ in order to be able to create both the Android and the iOS version with
+ a single codebase.
+\end_layout
+
+\begin_layout Itemize
+The web backend will be developed using a mature web framework such as Semantic
+ UI.
 \end_layout
 
 \begin_layout Subsection
 Portability
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 The frontend, built using Xamarin Forms needs to be written only once for
  both the platforms.
  This will decrease the time spent on the mobile application side up to
  35%.
- Xamarin forms also supports build for Windows, Mac and Tizen; platforms
+ Xamarin Forms also supports build for Windows, Mac and Tizen; platforms
  that we can target if requested.
 \end_layout
 
-\begin_layout Standard
-Building RESTful APIs for the Server-to-Application communication with PHP
- allow us to deploy small components with great speed (compared for e.g..
- to solutions based on Java Tomcat) and the possibility to choose the OS
- (compared for e.g..
- to solutions based on ASPX with .NET only available on Windows Server).
+\begin_layout Itemize
+Building private RESTful APIs for the Server-to-Application communication
+ with PHP allows the deployment of small components with great speed (compared
+ to solutions based on Java Tomcat, for example) and the possibility to
+ choose the underlying operating system (compared to solutions based on
+ ASPX with .NET, only available on Windows Server).
 \end_layout
 
 \begin_layout Standard
