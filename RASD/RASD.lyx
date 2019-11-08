@@ -6924,18 +6924,13 @@ Alloy
 \end_layout
 
 \begin_layout Subsection
-Signatures
+Data Types
 \end_layout
 
 \begin_layout Standard
 \begin_inset listings
 inline false
 status open
-
-\begin_layout Plain Layout
-
-open util/time
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -6953,17 +6948,49 @@ open util/boolean
 
 \begin_layout Plain Layout
 
-sig Coord{
+--Representing time as integer allows us to make comparisons
 \end_layout
 
 \begin_layout Plain Layout
 
-	lat: one Int,
+sig Time{
 \end_layout
 
 \begin_layout Plain Layout
 
-	lon: one Int
+    --The unix time is a format for representing time as the number of seconds
+ passed
+\end_layout
+
+\begin_layout Plain Layout
+
+    --from the 1st of January 1970 and is widely used format for storing
+ time data in
+\end_layout
+
+\begin_layout Plain Layout
+
+    --databases 
+\end_layout
+
+\begin_layout Plain Layout
+
+    unixTime: one Int
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	unixTime >= 0
 \end_layout
 
 \begin_layout Plain Layout
@@ -6977,22 +7004,430 @@ sig Coord{
 
 \begin_layout Plain Layout
 
-sig User {
+one sig Never extends Time {}
 \end_layout
 
 \begin_layout Plain Layout
 
-	userId: one String,
+{
 \end_layout
 
 \begin_layout Plain Layout
 
-	email: one String,
+	unixTime = 0
 \end_layout
 
 \begin_layout Plain Layout
 
-	blocked: Bool one -> Time
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Username {}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+--Avoid spawning useless instances not associated with any entity
+\end_layout
+
+\begin_layout Plain Layout
+
+fact validUsername{
+\end_layout
+
+\begin_layout Plain Layout
+
+	all u: Username |
+\end_layout
+
+\begin_layout Plain Layout
+
+	one us: User | us.username = u
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Email {}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+--Avoid spawning useless instances not associated with any entity
+\end_layout
+
+\begin_layout Plain Layout
+
+fact validEmail{
+\end_layout
+
+\begin_layout Plain Layout
+
+	all e: Email |
+\end_layout
+
+\begin_layout Plain Layout
+
+	one us: User | us.email = e
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig FiscalCode {}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+--Avoid spawning useless instances not associated with any entity
+\end_layout
+
+\begin_layout Plain Layout
+
+fact validFiscalCode{
+\end_layout
+
+\begin_layout Plain Layout
+
+	all fc: FiscalCode |
+\end_layout
+
+\begin_layout Plain Layout
+
+	one us: User | us.fiscalCode = fc
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Municipality {}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+--Avoid spawning useless instances not associated with any entity
+\end_layout
+
+\begin_layout Plain Layout
+
+fact validMuniciplity{
+\end_layout
+
+\begin_layout Plain Layout
+
+	all m: Municipality |
+\end_layout
+
+\begin_layout Plain Layout
+
+		(one a: Authority | a.officeCity = m)
+\end_layout
+
+\begin_layout Plain Layout
+
+		or
+\end_layout
+
+\begin_layout Plain Layout
+
+		(one r: Report | r.city = m)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig LicensPlate {}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+--Avoid spawning useless instances not associated with any entity
+\end_layout
+
+\begin_layout Plain Layout
+
+fact validLicensePlate{
+\end_layout
+
+\begin_layout Plain Layout
+
+	all lp: LicensPlate |
+\end_layout
+
+\begin_layout Plain Layout
+
+	one r:Report | r.licensePlate = lp
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Coord{
+\end_layout
+
+\begin_layout Plain Layout
+
+	latitude: one Int,
+\end_layout
+
+\begin_layout Plain Layout
+
+	longitude: one Int
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Data
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+abstract sig Person{
+\end_layout
+
+\begin_layout Plain Layout
+
+    fiscalCode: one FiscalCode
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig User extends Person{
+\end_layout
+
+\begin_layout Plain Layout
+
+	username: one Username,
+\end_layout
+
+\begin_layout Plain Layout
+
+	email: one Email,
+\end_layout
+
+\begin_layout Plain Layout
+
+	created: one Time,
+\end_layout
+
+\begin_layout Plain Layout
+
+	blocked: one Bool,
+\end_layout
+
+\begin_layout Plain Layout
+
+	blockedDate: one Time,
+\end_layout
+
+\begin_layout Plain Layout
+
+	accepted: one Bool,
+\end_layout
+
+\begin_layout Plain Layout
+
+	accepterAdmin: lone Administrator
+\end_layout
+
+\begin_layout Plain Layout
+
+}{
+\end_layout
+
+\begin_layout Plain Layout
+
+    --Can't be blocked before being created
+\end_layout
+
+\begin_layout Plain Layout
+
+    (blocked = True) implies (blockedDate.unixTime > created.unixTime)
+\end_layout
+
+\begin_layout Plain Layout
+
+	created != Never
+\end_layout
+
+\begin_layout Plain Layout
+
+	(blockedDate = Never) iff (blocked = False)
+\end_layout
+
+\begin_layout Plain Layout
+
+	(accepted = True) implies (#accepterAdmin = 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Authority extends User{
+\end_layout
+
+\begin_layout Plain Layout
+
+	officeCity: one Municipality
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sig Administrator extends User{}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	accepted = True
+\end_layout
+
+\begin_layout Plain Layout
+
+	accepterAdmin = System
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+one sig DummyFiscalCode extends FiscalCode{}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+one sig System extends Administrator {}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	fiscalCode = DummyFiscalCode
 \end_layout
 
 \begin_layout Plain Layout
@@ -7011,7 +7446,7 @@ sig Report{
 
 \begin_layout Plain Layout
 
-	reportId: one String,
+	reportId: one Int,
 \end_layout
 
 \begin_layout Plain Layout
@@ -7031,25 +7466,17 @@ sig Report{
 
 \begin_layout Plain Layout
 
-	licensePlate: one String
+	licensePlate: one LicensPlate,
 \end_layout
 
 \begin_layout Plain Layout
 
-}{
+	city: one Municipality,
 \end_layout
 
 \begin_layout Plain Layout
 
-	licensePlate != 
-\begin_inset Quotes eld
-\end_inset
-
-
-\begin_inset Quotes erd
-\end_inset
-
-
+	acknowledgedBy: one Authority
 \end_layout
 
 \begin_layout Plain Layout
@@ -7059,21 +7486,17 @@ sig Report{
 
 \begin_layout Plain Layout
 
+{
 \end_layout
 
 \begin_layout Plain Layout
 
-sig Authority{
+	date != Never
 \end_layout
 
 \begin_layout Plain Layout
 
-	auth: one User,
-\end_layout
-
-\begin_layout Plain Layout
-
-	city: one String
+	reporter != System
 \end_layout
 
 \begin_layout Plain Layout
@@ -7097,12 +7520,12 @@ status open
 
 \begin_layout Plain Layout
 
-fact uniqueUserId{
+fact uniqueUsername{
 \end_layout
 
 \begin_layout Plain Layout
 
-	no disjoint u1, u2: User | u1.userId = u2.userId
+	no disj u1, u2: User | u1.username = u2.username
 \end_layout
 
 \begin_layout Plain Layout
@@ -7121,7 +7544,298 @@ fact uniqueUserEmail{
 
 \begin_layout Plain Layout
 
-	no disjoint u1, u2: User | u1.email = u2.email
+	no disj u1, u2: User | u1.email = u2.email
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fact uniqueFiscalCode{
+\end_layout
+
+\begin_layout Plain Layout
+
+    no disj u1, u2: User | u1.fiscalCode = u2.fiscalCode
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+fact uniqueReportId{
+\end_layout
+
+\begin_layout Plain Layout
+
+	no disj r1, r2:Report | r1.reportId = r2.reportId 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+--No multiple reports for a single accident by the same user
+\end_layout
+
+\begin_layout Plain Layout
+
+fact uniqueUserReport{
+\end_layout
+
+\begin_layout Plain Layout
+
+	no disj r1, r2: Report |
+\end_layout
+
+\begin_layout Plain Layout
+
+		r1.licensePlate = r2.licensePlate and
+\end_layout
+
+\begin_layout Plain Layout
+
+		r1.reporter = r2.reporter and 
+\end_layout
+
+\begin_layout Plain Layout
+
+		r1.date = r2.date
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+--A user can't have reports sent after he was blocked
+\end_layout
+
+\begin_layout Plain Layout
+
+fact noReportWhenBlocked{
+\end_layout
+
+\begin_layout Plain Layout
+
+	no r: Report, u: User |
+\end_layout
+
+\begin_layout Plain Layout
+
+		u.blocked = True and
+\end_layout
+
+\begin_layout Plain Layout
+
+		r.date.unixTime >= u.blockedDate.unixTime
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+--A user has been confirmed by an administrator to be able to report
+\end_layout
+
+\begin_layout Plain Layout
+
+fact noReportIfNotAccepted{
+\end_layout
+
+\begin_layout Plain Layout
+
+	no r: Report, u: User |
+\end_layout
+
+\begin_layout Plain Layout
+
+		u.accepted = False and
+\end_layout
+
+\begin_layout Plain Layout
+
+		r.reporter = u
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+--The report has to be sent after the user's registration
+\end_layout
+
+\begin_layout Plain Layout
+
+fact noReportBeforeRegistration{
+\end_layout
+
+\begin_layout Plain Layout
+
+	no r: Report, u: User |
+\end_layout
+
+\begin_layout Plain Layout
+
+		r.date.unixTime < u.created.unixTime and
+\end_layout
+
+\begin_layout Plain Layout
+
+		r.reporter = u
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+--no multiple reports for a single accident by the same user
+\end_layout
+
+\begin_layout Plain Layout
+
+fact uniqueUserReport{
+\end_layout
+
+\begin_layout Plain Layout
+
+	no disjoint r1, r2:Report |
+\end_layout
+
+\begin_layout Plain Layout
+
+		r1.licensePlate = r2.licensePlate and
+\end_layout
+
+\begin_layout Plain Layout
+
+		r1.reporter = r2.reporter and 
+\end_layout
+
+\begin_layout Plain Layout
+
+		r1.date = r2.date
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Assertions
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+--Multiple users can report a single accident
+\end_layout
+
+\begin_layout Plain Layout
+
+assert multipleUsersReports{
+\end_layout
+
+\begin_layout Plain Layout
+
+	some disj r1, r2: Report |
+\end_layout
+
+\begin_layout Plain Layout
+
+		r1.licensePlate = r2.licensePlate and
+\end_layout
+
+\begin_layout Plain Layout
+
+		r1.reporter != r2.reporter and 
+\end_layout
+
+\begin_layout Plain Layout
+
+		r1.date = r2.date
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+assert someReportsHaveBeenAcknowledged{
+\end_layout
+
+\begin_layout Plain Layout
+
+	some r:Report, a:Authority |
+\end_layout
+
+\begin_layout Plain Layout
+
+		r.acknowledgedBy = a
 \end_layout
 
 \begin_layout Plain Layout
@@ -7145,12 +7859,123 @@ status open
 
 \begin_layout Plain Layout
 
-pred hasReporter [r: Report]{
+pred show
 \end_layout
 
 \begin_layout Plain Layout
 
-	#r.reporter = 1
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	#User = 2
+\end_layout
+
+\begin_layout Plain Layout
+
+	#Report > 1
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pred isUserAllowedToReport[u: User]
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    (u.blocked = False) and (u.accepted = True)
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+--A normal user reports an Accidents
+\end_layout
+
+\begin_layout Plain Layout
+
+pred reportAnAccident[r:Report, u:User]{
+\end_layout
+
+\begin_layout Plain Layout
+
+	--precondition
+\end_layout
+
+\begin_layout Plain Layout
+
+	isUserAllowedToReport[u]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	r.reporter = u
+\end_layout
+
+\begin_layout Plain Layout
+
+	--The user was not an Authority nor an Admin
+\end_layout
+
+\begin_layout Plain Layout
+
+	all a: Authority, b: Administrator |
+\end_layout
+
+\begin_layout Plain Layout
+
+		a != u and
+\end_layout
+
+\begin_layout Plain Layout
+
+		b != u
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pred multipleReportsSameVehicle[ r1,r2:Report]{
+\end_layout
+
+\begin_layout Plain Layout
+
+	r1.licensePlate = r2.licensePlate
 \end_layout
 
 \begin_layout Plain Layout
@@ -7174,7 +7999,22 @@ status open
 
 \begin_layout Plain Layout
 
-run ...
+run show for 2
+\end_layout
+
+\begin_layout Plain Layout
+
+run isUserAllowedToReport for 4
+\end_layout
+
+\begin_layout Plain Layout
+
+run reportAnAccident for 10
+\end_layout
+
+\begin_layout Plain Layout
+
+run multipleReportsSameVehicle for 10
 \end_layout
 
 \end_inset
@@ -7186,8 +8026,176 @@ run ...
 Proof of Consistency
 \end_layout
 
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Executing "Run show for 2"
+\end_layout
+
+\begin_layout Plain Layout
+
+Solver=sat4j Bitwidth=4 MaxSeq=2 SkolemDepth=1 Symmetry=20
+\end_layout
+
+\begin_layout Plain Layout
+
+2782 vars.
+ 201 primary vars.
+ 7603 clauses.
+ 469ms.
+\end_layout
+
+\begin_layout Plain Layout
+
+Instance found.
+ Predicate is consistent.
+ 154ms.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Executing "Run isUserAllowedToReport for 4"
+\end_layout
+
+\begin_layout Plain Layout
+
+Solver=sat4j Bitwidth=4 MaxSeq=4 SkolemDepth=1 Symmetry=20
+\end_layout
+
+\begin_layout Plain Layout
+
+8377 vars.
+ 515 primary vars.
+ 21356 clauses.
+ 185ms.
+\end_layout
+
+\begin_layout Plain Layout
+
+Instance found.
+ Predicate is consistent.
+ 151ms.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Executing "Run reportAnAccident for 10"
+\end_layout
+
+\begin_layout Plain Layout
+
+Solver=sat4j Bitwidth=4 MaxSeq=7 SkolemDepth=1 Symmetry=20
+\end_layout
+
+\begin_layout Plain Layout
+
+41886 vars.
+ 2085 primary vars.
+ 104885 clauses.
+ 444ms.
+\end_layout
+
+\begin_layout Plain Layout
+
+Instance found.
+ Predicate is consistent.
+ 783ms.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Executing "Run multipleReportsSameVehicle for 10"
+\end_layout
+
+\begin_layout Plain Layout
+
+Solver=sat4j Bitwidth=4 MaxSeq=7 SkolemDepth=1 Symmetry=20
+\end_layout
+
+\begin_layout Plain Layout
+
+41715 vars.
+ 2085 primary vars.
+ 104841 clauses.
+ 316ms.
+\end_layout
+
+\begin_layout Plain Layout
+
+Instance found.
+ Predicate is consistent.
+ 332ms.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+4 commands were executed.
+ The results are:
+\end_layout
+
+\begin_layout Plain Layout
+
+#1: Instance found.
+ show is consistent.
+\end_layout
+
+\begin_layout Plain Layout
+
+#2: Instance found.
+ isUserAllowedToReport is consistent.
+\end_layout
+
+\begin_layout Plain Layout
+
+#3: Instance found.
+ reportAnAccident is consistent.
+\end_layout
+
+\begin_layout Plain Layout
+
+#4: Instance found.
+ multipleReportsSameVehicle is consistent.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Generated World
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/Alloy/show.png
+	lyxscale 35
+	width 100text%
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
