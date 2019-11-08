@@ -6843,16 +6843,6 @@ open util/boolean
 
 \begin_layout Plain Layout
 
---------------------------------------------------------------------------------
-----Data types
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
 --Representing time as integer allows us to make comparisons
 \end_layout
 
@@ -7730,7 +7720,7 @@ assert multipleUsersReports{
 
 \begin_layout Plain Layout
 
-assert someReportsAsBeenAcknowledged{
+assert someReportsHaveBeenAcknowledged{
 \end_layout
 
 \begin_layout Plain Layout
@@ -7932,11 +7922,155 @@ Proof of Consistency
 \end_layout
 
 \begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename Images/Alloy/results.png
-	lyxscale 35
-	scale 35
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Executing "Run show for 2"
+\end_layout
+
+\begin_layout Plain Layout
+
+Solver=sat4j Bitwidth=4 MaxSeq=2 SkolemDepth=1 Symmetry=20
+\end_layout
+
+\begin_layout Plain Layout
+
+2782 vars.
+ 201 primary vars.
+ 7603 clauses.
+ 469ms.
+\end_layout
+
+\begin_layout Plain Layout
+
+Instance found.
+ Predicate is consistent.
+ 154ms.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Executing "Run isUserAllowedToReport for 4"
+\end_layout
+
+\begin_layout Plain Layout
+
+Solver=sat4j Bitwidth=4 MaxSeq=4 SkolemDepth=1 Symmetry=20
+\end_layout
+
+\begin_layout Plain Layout
+
+8377 vars.
+ 515 primary vars.
+ 21356 clauses.
+ 185ms.
+\end_layout
+
+\begin_layout Plain Layout
+
+Instance found.
+ Predicate is consistent.
+ 151ms.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Executing "Run reportAnAccident for 10"
+\end_layout
+
+\begin_layout Plain Layout
+
+Solver=sat4j Bitwidth=4 MaxSeq=7 SkolemDepth=1 Symmetry=20
+\end_layout
+
+\begin_layout Plain Layout
+
+41886 vars.
+ 2085 primary vars.
+ 104885 clauses.
+ 444ms.
+\end_layout
+
+\begin_layout Plain Layout
+
+Instance found.
+ Predicate is consistent.
+ 783ms.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Executing "Run multipleReportsSameVehicle for 10"
+\end_layout
+
+\begin_layout Plain Layout
+
+Solver=sat4j Bitwidth=4 MaxSeq=7 SkolemDepth=1 Symmetry=20
+\end_layout
+
+\begin_layout Plain Layout
+
+41715 vars.
+ 2085 primary vars.
+ 104841 clauses.
+ 316ms.
+\end_layout
+
+\begin_layout Plain Layout
+
+Instance found.
+ Predicate is consistent.
+ 332ms.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+4 commands were executed.
+ The results are:
+\end_layout
+
+\begin_layout Plain Layout
+
+#1: Instance found.
+ show is consistent.
+\end_layout
+
+\begin_layout Plain Layout
+
+#2: Instance found.
+ isUserAllowedToReport is consistent.
+\end_layout
+
+\begin_layout Plain Layout
+
+#3: Instance found.
+ reportAnAccident is consistent.
+\end_layout
+
+\begin_layout Plain Layout
+
+#4: Instance found.
+ multipleReportsSameVehicle is consistent.
+\end_layout
 
 \end_inset
 
@@ -7952,7 +8086,7 @@ Generated World
 \begin_inset Graphics
 	filename Images/Alloy/show.png
 	lyxscale 35
-	scale 35
+	width 100text%
 
 \end_inset
 
