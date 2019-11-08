@@ -7675,30 +7675,6 @@ fact uniqueUserReport{
 }
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-fact someReportsAsBeenAcknowledged{
-\end_layout
-
-\begin_layout Plain Layout
-
-	some r:Report, a:Authority |
-\end_layout
-
-\begin_layout Plain Layout
-
-		r.acknowledgedBy = a
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
 \end_inset
 
 
@@ -7741,6 +7717,30 @@ assert multipleUsersReports{
 \begin_layout Plain Layout
 
 		r1.date = r2.date
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+assert someReportsAsBeenAcknowledged{
+\end_layout
+
+\begin_layout Plain Layout
+
+	some r:Report, a:Authority |
+\end_layout
+
+\begin_layout Plain Layout
+
+		r.acknowledgedBy = a
 \end_layout
 
 \begin_layout Plain Layout
@@ -7888,54 +7888,6 @@ pred multipleReportsSameVehicle[ r1,r2:Report]{
 }
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-pred isUserAllowedToAcknowledge[u:User]{
-\end_layout
-
-\begin_layout Plain Layout
-
-	one a:Authority |
-\end_layout
-
-\begin_layout Plain Layout
-
-		a = u
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-pred acknowledgeReport[r:Report, u:User]{
-\end_layout
-
-\begin_layout Plain Layout
-
-	isUserAllowedToAcknowledge[u]
-\end_layout
-
-\begin_layout Plain Layout
-
-	r.acknowledgedBy = u
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
 \end_inset
 
 
@@ -7970,16 +7922,6 @@ run reportAnAccident for 10
 run multipleReportsSameVehicle for 10
 \end_layout
 
-\begin_layout Plain Layout
-
-run isUserAllowedToAcknowledge for 3
-\end_layout
-
-\begin_layout Plain Layout
-
-run acknowledgeReport for 4
-\end_layout
-
 \end_inset
 
 
@@ -8008,7 +7950,7 @@ Generated World
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename Images/Alloy/genWorld.png
+	filename Images/Alloy/show.png
 	lyxscale 35
 	scale 35
 
