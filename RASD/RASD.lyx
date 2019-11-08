@@ -6773,7 +6773,12 @@ Availability and Reliability
 SafeStreets should provide a guarantee of 99+% uptime for its services.
  This can be guaranteed by using managed cloud services, such as the ones
  provided by Amazon AWS.
- The web backend will benefit of the same guarantees since it will be hosted
+ The provider masks and manages hardware faults with virtualization and
+ replication for high reliability.
+\begin_inset Newline newline
+\end_inset
+
+The web backend will benefit of the same guarantees since it will be hosted
  on the same services the system's logic is.
 \end_layout
 
@@ -6817,7 +6822,7 @@ Every transfer of data (between applications and the private API, between
 \begin_inset Newline newline
 \end_inset
 
-By certifiying SafeStreets' and the municipality's public keys, the system
+By certifying SafeStreets' and the municipality's public keys, the system
  will assure authenticity and integrity of the data on top of making it
  virtually impossible to understand in case of interception.
 \end_layout
