@@ -2478,14 +2478,6 @@ Use cases
 
 \begin_layout Standard
 \paragraph_spacing onehalf
-\begin_inset Formula $\ $
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features tabularvalignment="middle">
@@ -3684,14 +3676,6 @@ Use case diagram
 
 \begin_layout Subsubsection
 Use cases
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset Formula $\ $
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -6096,19 +6080,10 @@ s.
 \end_layout
 
 \begin_layout Subsubsection
-
-\series bold
-\emph on
 Traceability Matrix
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \paragraph_spacing onehalf
 \align center
 \begin_inset Tabular
@@ -6691,23 +6666,6 @@ Registration validation (officer)
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Traceability Matrix
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Performance requirements
 \end_layout
@@ -6740,8 +6698,9 @@ The app won't make blocking requests such as for the upload of a picture,
 \end_layout
 
 \begin_layout Itemize
-The AI algorithm responsible for the quality of the pictures has to run
- on devices only if dedicated hardware provided; otherwise or on our servers.
+The AI algorithm responsible for the extraction of data from pictures has
+ to run on devices only if dedicated hardware is provided; otherwise it
+ will be run on SafeStreet's servers.
 \end_layout
 
 \begin_layout Section
@@ -6755,8 +6714,8 @@ Standards compliance
 \begin_layout Standard
 SafeStreets will be developed keeping a strict division between what the
  backend and what the frontend will do.
- RESTful APIs will be implemented to allow reliable HTTPS connections between
- the servers and the applications.
+ RESTful APIs will be implemented to allow reliable and secure HTTPS connections
+ between the servers and the applications.
 \end_layout
 
 \begin_layout Standard
@@ -6803,8 +6762,8 @@ name "subsec:Hardware-limitations"
 \end_layout
 
 \begin_layout Standard
-The mobile application needs access to: the geolocation service, the camera
- and an internet connection.
+The mobile application needs access to: geolocation services, camera and
+ an internet connection.
  No other hardware limitations should be in act.
 \end_layout
 
