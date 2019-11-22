@@ -272,6 +272,18 @@ Definitions, Acronyms, Abbreviations
 Revision history
 \end_layout
 
+\begin_layout Itemize
+
+\emph on
+Version 1.0:
+\begin_inset Newline newline
+\end_inset
+
+
+\emph default
+Initial release
+\end_layout
+
 \begin_layout Section
 Reference documents
 \end_layout
@@ -318,6 +330,131 @@ Overview
 
 \begin_layout Section
 Component view
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Components/ClientSideComponents.pdf
+	lyxscale 20
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Client and API components
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Components/ServerSideComponents.pdf
+	lyxscale 20
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+API and Database components
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Components/LogicComponents.pdf
+	lyxscale 20
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Database and Logic components
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+High level component diagram
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Section
