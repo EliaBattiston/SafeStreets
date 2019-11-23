@@ -324,12 +324,186 @@ Component view
 Deployment view
 \end_layout
 
+\begin_layout Standard
+SafeStreets architecture is based on a three-tier architecture:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Presentation Tier
+\series default
+: it's composed by the mobile application and the web application.
+ It's the Tier that directly interacts with the user and that the normal
+ user uses to access all his system functionalities.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Business Logic Tier: 
+\series default
+it handles the business logic.
+ It's composed by the web server Apache and the PHP engine.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+It handles all the RESTful API requests coming from the presentation tier;
+\end_layout
+
+\begin_layout Itemize
+Provides the Web Application hosting;
+\end_layout
+
+\begin_layout Itemize
+It runs the 
+\emph on
+Municipality APIs adapter
+\emph default
+ that handles dedicated municipality features;
+\end_layout
+
+\begin_layout Itemize
+It also runs in batch the 
+\emph on
+Safety&Suggestions engine
+\emph default
+ for data mining.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Data Tier: 
+\series default
+the DataBase server is the data container.
+ On a dedicated virtual machine, it runs:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A RDBMS, used for all the data apart from pictures;
+\end_layout
+
+\begin_layout Itemize
+An FTP server to manage the Pictures uploaded by the users.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+___________________________________________
+\end_layout
+
+\begin_layout Standard
+IMMAGINE QUANDO CONFERMATO 
+\end_layout
+
+\begin_layout Standard
+___________________________________________
+\end_layout
+
+\begin_layout Subsection
+Implementation
+\end_layout
+
+\begin_layout Itemize
+Presentation Tier:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Mobile App: the mobile application will be impemented using the cross platform
+ framework 
+\emph on
+Xamarin Forms
+\emph default
+.
+ With a shared C# codebase it's possible to compile both Android and iOS
+ native applications;
+\end_layout
+
+\begin_layout Itemize
+Web App: the web application is going to be written in HTML, CSS, JS & jQuery.
+ Through an Ajax approach it will gets data from the API server.
+ It will be served throug a secured TLS connection (HTTPS).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Business Logic Tier: running on a virtualized Linux x64 machine, we'll have
+ instances of:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Apache web server: provides http capabilities;
+\end_layout
+
+\begin_layout Itemize
+PHP runtime: runs the APIs php scripts, both all-users-APIs and municipality-API
+s;
+\end_layout
+
+\begin_layout Itemize
+Python: runs the 
+\emph on
+Safety&Suggestions engine.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Data Tier: running on a virtualized Linux x64 machine, we'll have instances
+ of:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+MariaDB: Relational DBMS used for non graphical data, such as users data,
+ reports data and location ones;
+\end_layout
+
+\begin_layout Itemize
+FTP server: used as storage for all the users pictures
+\end_layout
+
+\end_deeper
 \begin_layout Section
-Component interfaces
+Component interfacesand a
 \end_layout
 
 \begin_layout Section
 Selected architectural styles and patterns
+\end_layout
+
+\begin_layout Paragraph
+RESTful architecture
+\end_layout
+
+\begin_layout Paragraph
+Three Tier Client-Server
+\end_layout
+
+\begin_layout Paragraph
+Thin Client
+\end_layout
+
+\begin_layout Paragraph
+Model View Controller
+\end_layout
+
+\begin_layout Paragraph
+Cross Platform
 \end_layout
 
 \begin_layout Section
