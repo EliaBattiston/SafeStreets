@@ -333,25 +333,34 @@ SafeStreets architecture is based on a three-tier architecture:
 \series bold
 Presentation Tier
 \series default
-: it's composed by the mobile application and the web application.
- It's the Tier that directly interacts with the user and that the normal
- user uses to access all his system functionalities.
- 
+: it is composed by the mobile application and the web application.
+ It is the Tier that directly interacts with the user
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Mobile App: used by any user to access all the reporting fetures;
+\end_layout
+
+\begin_layout Itemize
+Web App: used by Administrators (they can manage the accounts) and municipality
+ Officiers (sees reports by users and statistical data).
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 
 \series bold
 Business Logic Tier: 
 \series default
 it handles the business logic.
- It's composed by the web server Apache and the PHP engine.
+ It is composed by the Apache web server and the PHP engine.
  
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-It handles all the RESTful API requests coming from the presentation tier;
+Handles all the RESTful API requests coming from the presentation tier;
 \end_layout
 
 \begin_layout Itemize
@@ -359,7 +368,7 @@ Provides the Web Application hosting;
 \end_layout
 
 \begin_layout Itemize
-It runs the 
+Runs the 
 \emph on
 Municipality APIs adapter
 \emph default
@@ -367,7 +376,7 @@ Municipality APIs adapter
 \end_layout
 
 \begin_layout Itemize
-It also runs in batch the 
+Runs in batch the 
 \emph on
 Safety&Suggestions engine
 \emph default
@@ -402,15 +411,14 @@ An FTP server to manage the Pictures uploaded by the users.
 \end_layout
 
 \begin_layout Standard
-___________________________________________
-\end_layout
+\begin_inset Graphics
+	filename Images/Deployment View.svg
+	lyxscale 45
+	scale 65
 
-\begin_layout Standard
-IMMAGINE QUANDO CONFERMATO 
-\end_layout
+\end_inset
 
-\begin_layout Standard
-___________________________________________
+
 \end_layout
 
 \begin_layout Subsection
@@ -418,6 +426,8 @@ Implementation
 \end_layout
 
 \begin_layout Itemize
+
+\series bold
 Presentation Tier:
 \end_layout
 
@@ -426,58 +436,156 @@ Presentation Tier:
 Mobile App: the mobile application will be impemented using the cross platform
  framework 
 \emph on
-Xamarin Forms
+'Xamarin Forms
 \emph default
-.
+'.
  With a shared C# codebase it's possible to compile both Android and iOS
- native applications;
+ native applications.
+ 
+\begin_inset Newline newline
+\end_inset
+
+It is a faster solution than making two different applications and it gives
+ both the OS the same expirience;
 \end_layout
 
 \begin_layout Itemize
 Web App: the web application is going to be written in HTML, CSS, JS & jQuery.
  Through an Ajax approach it will gets data from the API server.
- It will be served throug a secured TLS connection (HTTPS).
+ 
+\begin_inset Newline newline
+\end_inset
+
+It will be served throug a secured TLS connection (HTTPS) to ensure privacy.
+\begin_inset Newline newline
+\end_inset
+
+A Web Approach has been choosen to provide an always-available and any-platform
+ service.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Business Logic Tier: running on a virtualized Linux x64 machine, we'll have
- instances of:
+
+\series bold
+Business Logic Tier:
+\series default
+ running on a virtualized Linux x64 machine, we'll have instances of:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Apache web server: provides http capabilities;
+Apache web server: provides capabilities to handle http requests over the
+ network;
 \end_layout
 
 \begin_layout Itemize
-PHP runtime: runs the APIs php scripts, both all-users-APIs and municipality-API
-s;
+PHP runtime: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+runs the APIs php scripts, both all-users-APIs and municipality-APIs;
 \end_layout
 
 \begin_layout Itemize
-Python: runs the 
-\emph on
-Safety&Suggestions engine.
+runs the Web Application dynamic pages;
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Data Tier: running on a virtualized Linux x64 machine, we'll have instances
- of:
+Python: runs the 
+\emph on
+Safety&Suggestions engine
+\emph default
+,
+\begin_inset Newline newline
+\end_inset
+
+It has been choosen for its libraries on data mining and geocoding.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Data Tier:
+\series default
+ running on a virtualized Linux x64 machine, we'll have instances of:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 MariaDB: Relational DBMS used for non graphical data, such as users data,
- reports data and location ones;
+ reports data and location ones.
+\begin_inset Newline newline
+\end_inset
+
+The adoption of a Relational Database has been taken to be able to query
+ statistical data to run the 
+\emph on
+Safety&Suggestions engine
+\emph default
+ faster;
 \end_layout
 
 \begin_layout Itemize
-FTP server: used as storage for all the users pictures
+FTP server: used as storage for all the users pictures.
+\begin_inset Newline newline
+\end_inset
+
+The adoption of a different storage practice for pictures has been made
+ because Pictures are BLOBs that have no advantages in being collected in
+ a DB and that can slow it down.
 \end_layout
 
 \end_deeper
+\begin_layout Subsection
+Infrastructure
+\end_layout
+
+\begin_layout Standard
+Our virtualized Linux x64 Machines will be deployed on AWS on EC2 instances.
+ 
+\end_layout
+
+\begin_layout Standard
+Mainteinance costs calculated through the 
+\begin_inset CommandInset href
+LatexCommand href
+name "awstcocalculator.com"
+target "https://awstcocalculator.com/"
+literal "false"
+
+\end_inset
+
+ show up a possible total save of 80% of costs thanks to the use of the
+ AWS platform.
+\end_layout
+
+\begin_layout Standard
+Apart from lower costs, AWS provides elasticity, a SLA of 99.99% and a greater
+ security than other solutions.
+\end_layout
+
+\begin_layout Standard
+Estimations of load and performance made us choose:
+\end_layout
+
+\begin_layout Itemize
+8 v-cpu 32GB ram and 512GB SSD linux machine for the BL Tier;
+\end_layout
+
+\begin_layout Itemize
+8 v-cpu 64GB ram and 2TB SSD (with daily backups) linux machine for the
+ Data Tier.
+\end_layout
+
+\begin_layout Standard
+Thanks to elasticity it will be possible to adapt the servers to the real
+ needs after the release.
+\end_layout
+
 \begin_layout Section
 Component interfacesand a
 \end_layout
@@ -507,7 +615,7 @@ Cross Platform
 \end_layout
 
 \begin_layout Section
-Other design dcisions
+Other design decisions
 \end_layout
 
 \begin_layout Standard
