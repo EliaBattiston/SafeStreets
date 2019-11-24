@@ -1047,6 +1047,18 @@ Version 1.0:
 Initial release
 \end_layout
 
+\begin_layout Itemize
+
+\emph on
+Version 1.0.1
+\emph default
+
+\begin_inset Newline newline
+\end_inset
+
+Sequence diagram graphic fixes
+\end_layout
+
 \begin_layout Section
 Reference documents
 \end_layout
