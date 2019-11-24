@@ -325,6 +325,123 @@ Deployment view
 \end_layout
 
 \begin_layout Section
+Runtime view
+\end_layout
+
+\begin_layout Subsection
+Create a report
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/SequenceDiagrams/CreateReport.svg
+	lyxscale 10
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This sequence diagram explains the backend procedure for handling a report
+ creation.
+ SafeStreets App adds the user ID to the report and sends all informations
+ to the
+\emph on
+ Reports module
+\emph default
+ Mobile application REST API.
+ The latter forwards the informations to the 
+\emph on
+Reports
+\emph default
+ DBMS, which saves the informations about the report and forwards them to
+ the municipality throught the 
+\emph on
+Reports pusher
+\emph default
+ Municipality APIs adapter.
+ If there are missing data pieces in the request, the 
+\emph on
+Reports module
+\emph default
+ doesn't forward the information to the DBMS and generates a notification
+ for missing parameters.
+\end_layout
+
+\begin_layout Subsection
+See past reports
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/SequenceDiagrams/SeePastReports.svg
+	lyxscale 10
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This sequence diagram explains the backend procedure for showing user past
+ sent reports.
+ SafeStreets App adds the user ID to the report and sends all informations
+ to the
+\emph on
+ Reports module
+\emph default
+ Mobile application REST API.
+ The latter forwards the informations to the 
+\emph on
+Reports
+\emph default
+ DBMS, which retrieves the data and send them back in the chain.
+ If no past reports are found, an Empty list notification is created by
+ the DBMS and sent to the user throught the 
+\emph on
+Reports module
+\emph default
+ and SafeStreets App.
+\end_layout
+
+\begin_layout Subsection
+See Street Safety
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/SequenceDiagrams/SeeStreetSafety.svg
+	lyxscale 10
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This sequence diagram explains the backend procedure for showing Street
+ Safety information.
+ SafeStreets App adds the user ID to the report and sends all informations
+ to the
+\emph on
+ Street safety module
+\emph default
+ Mobile application REST API.
+ The latter forwards the informations to the 
+\emph on
+Safety&Suggestions
+\emph default
+ DBMS, which retrieves the data and send them back in the chain.
+ Whenever a street is clicked, a specific request for data concerning that
+ street is sent in the same way for the general information (just adding
+ the street to the request).
+\end_layout
+
+\begin_layout Section
 Component interfaces
 \end_layout
 
