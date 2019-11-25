@@ -594,24 +594,136 @@ Component interfacesand a
 Selected architectural styles and patterns
 \end_layout
 
+\begin_layout Standard
+The adoption of a well know architectural style such as RESTful and three
+ tier (architecture) can be seen throughout all the SDLC (software development
+ lifecycle).
+\end_layout
+
+\begin_layout Standard
+Each of them has been choosen between different options for their advantages
+ in an Agile project management.
+\end_layout
+
 \begin_layout Paragraph
 RESTful architecture
+\end_layout
+
+\begin_layout Standard
+RESTful APIs has been choosen to grant a flexible, but still completely
+ defined, endpoint for all the client-server interactions.
+ The application is going to be built in parallel with the APIs, having
+ a predefined, shared and complete definition of them can grant an easier
+ workload for both the components.
+\end_layout
+
+\begin_layout Standard
+The use of RESTful APIs provides also an easy-to-read implementation of
+ the comunications.
+ The answers for all the APIs come in form of JSON data structures.
+\end_layout
+
+\begin_layout Standard
+Another advantage is the possibility of sharing client-server comunication
+ standard between the Mobile App and the Web App.
+ Third-parties can also get easily access, under predefined constraints,
+ to our APIs and connect them with their systems.
+\end_layout
+
+\begin_layout Standard
+To provide external unwanted behaviours from possible hackers, the APIs
+ are going to be served throug CORS policies only to our Web App.
+\end_layout
+
+\begin_layout Standard
+Other great RESTful advantages are: the stateless operations, the uniform
+ access interface and the definition of a well layered system.
+\end_layout
+
+\begin_layout Standard
+All the request will be served over the HTTPS protocol in order to guarantee
+ the security the user is expecting.
 \end_layout
 
 \begin_layout Paragraph
 Three Tier Client-Server
 \end_layout
 
+\begin_layout Standard
+The Three Tier Architecture is a client-server approach where presentation,
+ business logic and data are divided.
+\end_layout
+
+\begin_layout Standard
+Its key feature is the possibility to divide the data from the logical computati
+on and the user representation, so that different security measures can
+ be implemented to improve the privacy of the user informations.
+\end_layout
+
+\begin_layout Standard
+The complexity of the system has also decreased thanks to the adoption of
+ the three tier approach.
+ It force the developers to work in silos where components have dedicated
+ defined needs and possibilities and can be upgraded seamlessly.
+\end_layout
+
+\begin_layout Paragraph
+RDBMS
+\end_layout
+
+\begin_layout Standard
+The use of relational databases
+\end_layout
+
+\begin_layout Standard
+..........
+\end_layout
+
 \begin_layout Paragraph
 Thin Client
+\end_layout
+
+\begin_layout Standard
+The client is developed to comunicate with the server through the RESTful
+ APIs.
+ A so called 'thin client' approach make the UX faster on old devices where
+ the only bottleneck can be found on the internet connection speed.
+\end_layout
+
+\begin_layout Standard
+........
 \end_layout
 
 \begin_layout Paragraph
 Model View Controller
 \end_layout
 
+\begin_layout Standard
+..........
+\end_layout
+
 \begin_layout Paragraph
 Cross Platform
+\end_layout
+
+\begin_layout Standard
+Developing Mobile Application means creating apps both for iOS and Android.
+ Dedicated applications for each platforms brings to doubling timing, prices
+ and having different design and experiences on the different platformsfor
+ the development.
+\end_layout
+
+\begin_layout Standard
+The adoption of a Cross Platform approach can overcome these obstacles by
+ giving a flexible solution that can be run flawlessly on both platforms
+ leaving us with just a few disadvantages.
+\end_layout
+
+\begin_layout Standard
+The highest disadvantage is usually the presence of a different runtime
+ environment such in case of using the Cordova or the Ionic framework.
+ The adoption of the Xamarin Framework on the other hand doesn't bring this
+ problematic.
 \end_layout
 
 \begin_layout Section
