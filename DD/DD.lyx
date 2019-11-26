@@ -672,11 +672,13 @@ RDBMS
 \end_layout
 
 \begin_layout Standard
-The use of relational databases
+In order to easily manage the users data, with fast and easy-to-implement
+ complex statistical queries, the use of a RDBMS was desirable.
 \end_layout
 
 \begin_layout Standard
-..........
+MariaDB has been choosen because it is open source, widely used and uses
+ the SQL standard language.
 \end_layout
 
 \begin_layout Paragraph
@@ -684,14 +686,19 @@ Thin Client
 \end_layout
 
 \begin_layout Standard
-The client is developed to comunicate with the server through the RESTful
- APIs.
- A so called 'thin client' approach make the UX faster on old devices where
- the only bottleneck can be found on the internet connection speed.
+To create a fast application on both new and old devices, with fast or slow
+ internet connection, has been decided to adopt a so called 'Thin Client'
+ approach.
 \end_layout
 
 \begin_layout Standard
-........
+This approach makes the User Interface faster on old devices and can be
+ acceptable for slow connections to, making the User eXperience enjoyable.
+\end_layout
+
+\begin_layout Standard
+The client is developed to work only as an input/output for all the comunication
+s to the server, where the business logic is deployed.
 \end_layout
 
 \begin_layout Paragraph
@@ -699,7 +706,23 @@ Model View Controller
 \end_layout
 
 \begin_layout Standard
-..........
+The MVC approach has been choosen, for the Applications, to ensure division
+ of objective for each part of the code.
+\end_layout
+
+\begin_layout Standard
+The Model is the component that interacts with the server and retrives the
+ Data through the RESTful APIs.
+\end_layout
+
+\begin_layout Standard
+The View shows the data from the Model to the user, through their devices
+ with the Mobile or the Web Application.
+\end_layout
+
+\begin_layout Standard
+The Control is responsible for handling the user interactions through the
+ View and works to modify the state of both the Model and the View itself.
 \end_layout
 
 \begin_layout Paragraph
