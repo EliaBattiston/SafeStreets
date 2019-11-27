@@ -336,7 +336,7 @@ Create a report
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/CreateReport.svg
 	lyxscale 10
-	scale 70
+	width 100text%
 
 \end_inset
 
@@ -378,7 +378,7 @@ See past reports
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/SeePastReports.svg
 	lyxscale 10
-	scale 70
+	width 100text%
 
 \end_inset
 
@@ -415,7 +415,7 @@ See Street Safety
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/SeeStreetSafety.svg
 	lyxscale 10
-	scale 70
+	width 100text%
 
 \end_inset
 
@@ -445,12 +445,81 @@ Safety&Suggestions
 Component interfaces
 \end_layout
 
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/ComponentInterfaces/AccountsInterface.svg
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/ComponentInterfaces/MobileInterfaces.svg
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename Images/ComponentInterfaces/WebClientInterfaces.svg
+	lyxscale 10
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This diagram shows the main methods belonging to the interfaces of the component
+s.
+\end_layout
+
+\begin_layout Standard
+In particular:
+\end_layout
+
+\begin_layout Itemize
+AccountsAPI interface is the interface for Accounts REST API subsystem,
+ providing all methods needed for signup, login, third person account creation
+ and role changing.
+ The login method is used for both mobile application and web platform.
+\end_layout
+
+\begin_layout Itemize
+MobileApplicationAPI interface is the main backend interface for mobile
+ platform, as it gathers all methods needed for the application functions,
+ such as report sending, past reports view and provisioning of Street Safety
+ elaborated data.
+ It provides all methods from Mobile Application REST API subsystem.
+\end_layout
+
+\begin_layout Itemize
+WebClientAPI interfaces Web Client REST API subsystem to the web application
+ used by Authorities and Administrators.
+ The interface provides methods for accounts, reports and suggestions retrieval.
+ It is important to highlight that the method for accounts data retrieval
+ is in the Web Client interface and not in Accounts to avoid personal data
+ retrieval by common users.
+\end_layout
+
 \begin_layout Section
 Selected architectural styles and patterns
 \end_layout
 
 \begin_layout Section
-Other design dcisions
+Other design decisions
 \end_layout
 
 \begin_layout Standard
