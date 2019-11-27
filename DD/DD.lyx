@@ -548,8 +548,47 @@ Street safety
 
 \end_deeper
 \begin_layout Itemize
-The Web client REST API provides access to features exclusively accessible
- by authorized users
+The 
+\emph on
+Accounts REST API
+\emph default
+ provides transactional operations on user accounts
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+The 
+\emph on
+Registration module
+\emph default
+ manages all steps of the creation of new accounts
+\end_layout
+
+\begin_layout Itemize
+The 
+\emph on
+Login module
+\emph default
+ is contacted when a user wants to authenticate in order to access SafeStreet's
+ services
+\end_layout
+
+\begin_layout Itemize
+The 
+\emph on
+AccountDetails module
+\emph default
+ provides methods to retrieve and change account details, in particular
+ it lets administrator change an account's role
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The 
+\emph on
+Web client REST API
+\emph default
+ provides access to features exclusively accessible by authorized users
 \end_layout
 
 \begin_deeper
@@ -558,7 +597,11 @@ The
 \emph on
 AccountsData 
 \emph default
-module is used to show a list of all users of the system
+module is used to show a list of all users of the system.
+ This component is part of the Web client API rather than the Accounts API
+ to avoid exposing this method to an endpoint which is also accessible to
+ common users, since returned data is highly sensitive (it includes fiscal
+ codes and identification document pictures).
 \end_layout
 
 \begin_layout Itemize
