@@ -358,7 +358,7 @@ This approach guarantees high modularity and inherent security at the same
 \end_layout
 
 \begin_layout Standard
-The abovementioned layers, described in detail in 
+The aforementioned layers, described in detail in 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Component-view"
@@ -926,7 +926,7 @@ Selected architectural styles and patterns
 \end_layout
 
 \begin_layout Section
-Other design dcisions
+Other design decisions
 \end_layout
 
 \begin_layout Standard
@@ -938,6 +938,500 @@ Other design dcisions
 
 \begin_layout Part
 User interface design
+\end_layout
+
+\begin_layout Standard
+User interface mockups for both the mobile application and the web client
+ have been showed and described in section 1.1 of the RASD of this project,
+ and are not reported here for this reason.
+\end_layout
+
+\begin_layout Standard
+The following User Experience diagrams show how the user will be able to
+ navigate pages in both clients.
+\end_layout
+
+\begin_layout Section
+Diagrams
+\end_layout
+
+\begin_layout Subsection
+Mobile application UX diagram
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/UX/MobileUX.pdf
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mobile application UX diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Start-up
+\end_layout
+
+\begin_layout Standard
+While the application is starting, a 
+\emph on
+Splash screen 
+\emph default
+showing its logo is presented to the user until all resources are loaded.
+\end_layout
+
+\begin_layout Standard
+At this point, the application checks local storage for saved credentials
+ and tries to authenticate with them.
+\end_layout
+
+\begin_layout Itemize
+If the process is successful the application skips the 
+\emph on
+Login page 
+\emph default
+and goes to the 
+\emph on
+New report 
+\emph default
+page
+\end_layout
+
+\begin_layout Itemize
+If no previous authentication is found, or if the login attempt with saved
+ credentials fail, the application switches to the Login page
+\end_layout
+
+\begin_layout Subsubsection
+Login
+\end_layout
+
+\begin_layout Standard
+From the 
+\emph on
+Login page
+\emph default
+:
+\end_layout
+
+\begin_layout Itemize
+Registered users can input their credentials to authenticate, or switch
+ to the 
+\emph on
+Credentials recovery page
+\emph default
+ if they forgot their username and/or password
+\end_layout
+
+\begin_layout Itemize
+Unregistered users can go to the 
+\emph on
+Sign up page
+\emph default
+, input all required information and send a registration request
+\end_layout
+
+\begin_layout Subsubsection
+New report
+\end_layout
+
+\begin_layout Standard
+This is the default master page in the master-detail layout, described in
+ the previously cited section of the RASD.
+ All other pages can be accessed by opening the 
+\emph on
+Side menu
+\emph default
+ by dragging from the left side of the screen.
+\end_layout
+
+\begin_layout Standard
+The 
+\emph on
+New report page
+\emph default
+ allows users to fill a form with information regarding a violation and
+ submitting it.
+ After the report is successfully sent, a 
+\emph on
+Report details page
+\emph default
+ with a summary of its content will be displayed.
+ Tapping the 
+\begin_inset Quotes eld
+\end_inset
+
+back button
+\begin_inset Quotes erd
+\end_inset
+
+ will bring the user back to the 
+\emph on
+New report page
+\emph default
+.
+\end_layout
+
+\begin_layout Subsubsection
+Side menu
+\end_layout
+
+\begin_layout Standard
+This is the detail page in the master-detail layout, described in the previously
+ cited section of the RASD.
+\end_layout
+
+\begin_layout Standard
+The 
+\emph on
+Side menu
+\emph default
+ allows the user to navigate between the main functions of the application
+\end_layout
+
+\begin_layout Itemize
+Tapping the 
+\emph on
+
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph default
+Report
+\begin_inset Quotes erd
+\end_inset
+
+ item will open the 
+\emph on
+New report page
+\end_layout
+
+\begin_layout Itemize
+Tapping the 
+\begin_inset Quotes eld
+\end_inset
+
+Past reports
+\begin_inset Quotes erd
+\end_inset
+
+ item will open the 
+\emph on
+Past reports page
+\end_layout
+
+\begin_layout Itemize
+Tapping the 
+\begin_inset Quotes eld
+\end_inset
+
+Street safety
+\begin_inset Quotes erd
+\end_inset
+
+ item will open the 
+\emph on
+Street safety page
+\end_layout
+
+\begin_layout Itemize
+Tapping the 
+\begin_inset Quotes eld
+\end_inset
+
+logout icon
+\begin_inset Quotes erd
+\end_inset
+
+ will clear locally saved credentials and bring the user back to the 
+\emph on
+Login page
+\end_layout
+
+\begin_layout Subsubsection
+Past reports page
+\end_layout
+
+\begin_layout Standard
+The 
+\emph on
+Past reports page
+\emph default
+ consists in a list of brief summaries of previously sent reports from the
+ currently logged in user.
+ Every entry shows the type of violation, location and time of submission
+ (date or time, depending on the fact that the report was submitted in the
+ same day the page is consulted or not).
+\end_layout
+
+\begin_layout Standard
+Tapping on a report opens the 
+\emph on
+Reports details page
+\emph default
+, which shows a more extensive summary of the report's content.
+ Tapping the 
+\begin_inset Quotes eld
+\end_inset
+
+back button
+\begin_inset Quotes erd
+\end_inset
+
+ will bring the user back to the 
+\emph on
+Past reports page
+\emph default
+.
+\end_layout
+
+\begin_layout Subsubsection
+Street safety
+\end_layout
+
+\begin_layout Standard
+The 
+\emph on
+Street safety page
+\emph default
+ consists of a map of the user's surrounding area where the streets are
+ highlighted with different colours depending on the level of safety determined
+ by SafeStreet's algorithms.
+ Tapping on a street will bring up a popup containing more detailed information
+ on relevant events happened in that street.
+\end_layout
+
+\begin_layout Subsection
+Web client UX diagram
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/UX/WebsiteUX.pdf
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Web client UX diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Login
+\end_layout
+
+\begin_layout Standard
+Accessing the web client's URL will bring the user to the 
+\emph on
+Login page
+\emph default
+, consisting of a simple form.
+\end_layout
+
+\begin_layout Itemize
+Registered and privileged users, such as Administrators and Authorities,
+ can insert their credentials and log in to access the 
+\emph on
+Reports page
+\end_layout
+
+\begin_layout Itemize
+Officers or municipality employees who need access to the web client can
+ click the 
+\begin_inset Quotes eld
+\end_inset
+
+Contact us
+\begin_inset Quotes erd
+\end_inset
+
+ link to access the 
+\emph on
+Contact administration page
+\emph default
+, which will provide all information needed to contact SafeStreets n behalf
+ of the municipality to request an institutional account
+\end_layout
+
+\begin_layout Subsubsection
+Reports
+\end_layout
+
+\begin_layout Standard
+The 
+\emph on
+Reports page
+\emph default
+ is the default page for both Administrators and Authorities.
+ It shows a detailed table of every report submitted by the service's users.
+\end_layout
+
+\begin_layout Standard
+From the sidebar of this page, all other functions of the Web client can
+ be accessed.
+\end_layout
+
+\begin_layout Subsubsection
+Sidebar
+\end_layout
+
+\begin_layout Itemize
+Clicking on the 
+\begin_inset Quotes eld
+\end_inset
+
+Accounts
+\begin_inset Quotes erd
+\end_inset
+
+ button (only visible to Administrator users) the 
+\emph on
+Accounts page
+\emph default
+ will open
+\end_layout
+
+\begin_layout Itemize
+Clicking on the 
+\begin_inset Quotes eld
+\end_inset
+
+Reports
+\begin_inset Quotes erd
+\end_inset
+
+ button the 
+\emph on
+Reports page
+\emph default
+ will open
+\end_layout
+
+\begin_layout Itemize
+Clicking on the 
+\begin_inset Quotes eld
+\end_inset
+
+Unsafe areas
+\begin_inset Quotes erd
+\end_inset
+
+ button the 
+\emph on
+Unsafe areas page
+\emph default
+ will open
+\end_layout
+
+\begin_layout Itemize
+Clicking on the 
+\begin_inset Quotes eld
+\end_inset
+
+Log out
+\begin_inset Quotes erd
+\end_inset
+
+ button, the user's authenticated session will be terminated and the 
+\emph on
+Login page
+\emph default
+ will open
+\end_layout
+
+\begin_layout Subsubsection
+Accounts
+\end_layout
+
+\begin_layout Standard
+The 
+\emph on
+Accounts page
+\emph default
+ lets Administrators manage user accounts.
+ From this page,:
+\end_layout
+
+\begin_layout Itemize
+The role and details of each account can be changed
+\end_layout
+
+\begin_layout Itemize
+Registered but not yet approved accounts can be approved
+\end_layout
+
+\begin_layout Itemize
+New users can be administratively created
+\end_layout
+
+\begin_layout Subsubsection
+Unsafe areas
+\end_layout
+
+\begin_layout Standard
+The 
+\emph on
+Unsafe areas page
+\emph default
+ lets privileged users consult a list of suggestions and safety notifications
+ created by the Business logic layer of the system
 \end_layout
 
 \begin_layout Standard
@@ -971,6 +1465,504 @@ Implementation, integration and test plan
 
 \begin_layout Part
 Effort spent
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Part
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Hours
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.
+ Introduction
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.
+ Architectural design
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.
+ User interface design
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.
+ Requirement traceability
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.
+ Implementation, integration and test plan
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Andrea Aspesi's effort spent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Part
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Hours
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.
+ Introduction
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.
+ Architectural design
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.
+ User interface design
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.
+ Requirement traceability
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.
+ Implementation, integration and test plan
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Elia Battiston's effort spent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Part
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Hours
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.
+ Introduction
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.
+ Architectural design
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.
+ User interface design
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.
+ Requirement traceability
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.
+ Implementation, integration and test plan
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Alessandro Carabelli's effort spent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
