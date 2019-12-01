@@ -573,7 +573,7 @@ Estimations of load and performance made us choose:
 \end_layout
 
 \begin_layout Itemize
-8 v-cpu 32GB ram and 512GB SSD linux machine for the BL Tier;
+8 v-cpu 32GB ram and 256GB SSD linux machine for the BL Tier;
 \end_layout
 
 \begin_layout Itemize
@@ -674,11 +674,14 @@ RDBMS
 \begin_layout Standard
 In order to easily manage the users data, with fast and easy-to-implement
  complex statistical queries, the use of a RDBMS was desirable.
+ Using a non relational database could have brought speed improvements and
+ better scaling-up but the flexible data model and the absence of the SQL
+ language would have been an harder obstacle to overcome.
 \end_layout
 
 \begin_layout Standard
-MariaDB has been choosen because it is open source, widely used and uses
- the SQL standard language.
+MariaDB has been choosen as SafeStreets DBMS because it is open source,
+ widely used and uses the SQL standard language.
 \end_layout
 
 \begin_layout Paragraph
@@ -686,19 +689,20 @@ Thin Client
 \end_layout
 
 \begin_layout Standard
-To create a fast application on both new and old devices, with fast or slow
- internet connection, has been decided to adopt a so called 'Thin Client'
- approach.
-\end_layout
-
-\begin_layout Standard
-This approach makes the User Interface faster on old devices and can be
- acceptable for slow connections to, making the User eXperience enjoyable.
+To create a fast mobile application on both new and old devices, with fast
+ or slow internet connection, it has been decided to adopt a so called 'Thin
+ Client' approach.
 \end_layout
 
 \begin_layout Standard
 The client is developed to work only as an input/output for all the comunication
 s to the server, where the business logic is deployed.
+\end_layout
+
+\begin_layout Standard
+This approach makes the User Interface faster on old devices thanks to less
+ logic calculations and can be acceptable for slow connections too, making
+ the User eXperience enjoyable.
 \end_layout
 
 \begin_layout Paragraph
@@ -791,7 +795,11 @@ For each Goal there is one or more requirements to be fulfilled:
 \end_layout
 
 \begin_layout Itemize
-[R1] Every citizen that wants to register has a valid identification document
+
+\series bold
+[R1]
+\series default
+ Every citizen that wants to register has a valid identification document
  and a smartphone (with GPS and camera systems).
 \end_layout
 
@@ -807,7 +815,11 @@ __________: checks the validity of the ID .....
 
 \end_deeper
 \begin_layout Itemize
-[R2] Every citizen that wants to register owns a valid e-mail address.
+
+\series bold
+[R2]
+\series default
+ Every citizen that wants to register owns a valid e-mail address.
 \end_layout
 
 \begin_deeper
@@ -825,7 +837,11 @@ send an email with a verification link to the user, to enable its account
 
 \end_deeper
 \begin_layout Itemize
-[R3] Every officer that wants to register is authorized by the municipality
+
+\series bold
+[R3]
+\series default
+ Every officer that wants to register is authorized by the municipality
  to register.
 \end_layout
 
@@ -837,7 +853,11 @@ ______WebApp: An Administrator can increase the level of a user to the Officer
 
 \end_deeper
 \begin_layout Itemize
-[R4] The municipality allows SafeStreets administrator to verify the belonging
+
+\series bold
+[R4]
+\series default
+ The municipality allows SafeStreets administrator to verify the belonging
  of the requesting officer to the traffic police (via an automated system
  or sending an official request).
 \end_layout
@@ -856,7 +876,11 @@ simile al R3, no?
 
 \end_deeper
 \begin_layout Itemize
-[R5] The user has his smartphone with him, is able to login in the application
+
+\series bold
+[R5]
+\series default
+ The user has his smartphone with him, is able to login in the application
  and is not suspended.
 \end_layout
 
@@ -868,7 +892,11 @@ _____: the login autenticator ensures that the user that tries to log in
 
 \end_deeper
 \begin_layout Itemize
-[R6] The user's smartphone has Internet connection enabled and functioning.
+
+\series bold
+[R6]
+\series default
+ The user's smartphone has Internet connection enabled and functioning.
 \end_layout
 
 \begin_deeper
@@ -881,7 +909,11 @@ ____Mobile App: to check the internet connection, if requests to SafeStreets
 
 \end_deeper
 \begin_layout Itemize
-[R7] The user's smartphone has GPS enabled and functioning.
+
+\series bold
+[R7]
+\series default
+ The user's smartphone has GPS enabled and functioning.
 \end_layout
 
 \begin_deeper
@@ -894,7 +926,11 @@ _____Mobile App: shows a request to the user to enable the GPS access to
 
 \end_deeper
 \begin_layout Itemize
-[R8] The user is able to take at least one picture of the violation to correctly
+
+\series bold
+[R8]
+\series default
+ The user is able to take at least one picture of the violation to correctly
  choose the type of violation he is reporting.
 \end_layout
 
@@ -910,7 +946,11 @@ ______Mobile App: suggest the violation giving the user the possibility
 
 \end_deeper
 \begin_layout Itemize
-[R9] The user has already made at least one report.
+
+\series bold
+[R9]
+\series default
+ The user has already made at least one report.
 \end_layout
 
 \begin_deeper
@@ -920,7 +960,11 @@ ______: counts the number of reports made by a user
 
 \end_deeper
 \begin_layout Itemize
-[R10] There is at least one report in the system.
+
+\series bold
+[R10]
+\series default
+ There is at least one report in the system.
  (
 \series bold
 mi pare uno strano requirement)
@@ -933,7 +977,11 @@ ______: counts the number of reports present in the system
 
 \end_deeper
 \begin_layout Itemize
-[R11] The officer access has the same base functions of the basic user access,
+
+\series bold
+[R11]
+\series default
+ The officer access has the same base functions of the basic user access,
  plus specific ones.
 \end_layout
 
@@ -944,8 +992,12 @@ ______: counts the number of reports present in the system
 
 \end_deeper
 \begin_layout Itemize
-[R12] The officer has a computer with Internet access and is able to login
- to the system.
+
+\series bold
+[R12]
+\series default
+ The officer has a computer with Internet access and is able to login to
+ the system.
 \end_layout
 
 \begin_deeper
@@ -956,7 +1008,11 @@ _____: the login autenticator ensures that the user that tries to log in
 
 \end_deeper
 \begin_layout Itemize
-[R13] The municipality and/or the authorities use the provided APIs.
+
+\series bold
+[R13]
+\series default
+ The municipality and/or the authorities use the provided APIs.
 \end_layout
 
 \begin_deeper
@@ -966,8 +1022,12 @@ _____: the login autenticator ensures that the user that tries to log in
 
 \end_deeper
 \begin_layout Itemize
-[R14] The administrator has a computer with Internet access and is able
- to login to the system.
+
+\series bold
+[R14]
+\series default
+ The administrator has a computer with Internet access and is able to login
+ to the system.
 \end_layout
 
 \begin_deeper
@@ -978,7 +1038,11 @@ _____: the login autenticator ensures that the user that tries to log in
 
 \end_deeper
 \begin_layout Itemize
-[R15] The administrator has the possibility to use an official communication
+
+\series bold
+[R15]
+\series default
+ The administrator has the possibility to use an official communication
  channel with the municipality.
 \end_layout
 
@@ -989,8 +1053,11 @@ ____WebApp: in the contacts page there is the PEC email of the municipality
 
 \end_deeper
 \begin_layout Itemize
-[R16] The administrator has received a block/removal request from the authoritie
-s.
+
+\series bold
+[R16]
+\series default
+ The administrator has received a block/removal request from the authorities.
 \end_layout
 
 \begin_deeper
@@ -1000,8 +1067,12 @@ _______: tracks the block/removal requests from the authorities
 
 \end_deeper
 \begin_layout Itemize
-[R17] The administrator has received a sign-up request from the authorities
- and/or from the municipality.
+
+\series bold
+[R17]
+\series default
+ The administrator has received a sign-up request from the authorities and/or
+ from the municipality.
 \end_layout
 
 \begin_deeper
@@ -1010,10 +1081,6 @@ _______: tracks the signup requests from the authorities/municipality
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-
-\end_layout
-
 \begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
