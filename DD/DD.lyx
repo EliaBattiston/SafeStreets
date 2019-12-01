@@ -776,6 +776,245 @@ Requirements traceability
 \end_layout
 
 \begin_layout Standard
+Objective of the Design Document is to achive, through the development,
+ the goals defined previously in the RASD.
+\end_layout
+
+\begin_layout Standard
+In this part of the DD is defined how each goal is going to be reached throughou
+t the implementation of the different software components of the SafeStreets
+ infrastructure.
+\end_layout
+
+\begin_layout Standard
+For each Goal there is one or more requirements to be fulfilled:
+\end_layout
+
+\begin_layout Itemize
+[R1] Every citizen that wants to register has a valid identification document
+ and a smartphone (with GPS and camera systems).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+_____: In order to access the Mobile Application, the user needs to download
+ it through the App Store or the Play Store
+\end_layout
+
+\begin_layout Itemize
+__________: checks the validity of the ID .....
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[R2] Every citizen that wants to register owns a valid e-mail address.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+_______: the input text field makes a regex to ensure the email is in a
+ valid format (
+\series bold
+il primo è più facile da implementare, possiamo comunque fare entrambi)
+\series default
+ 
+\emph on
+send an email with a verification link to the user, to enable its account
+ he needs to open that link
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[R3] Every officer that wants to register is authorized by the municipality
+ to register.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+______WebApp: An Administrator can increase the level of a user to the Officer
+ position 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[R4] The municipality allows SafeStreets administrator to verify the belonging
+ of the requesting officer to the traffic police (via an automated system
+ or sending an official request).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+_____(
+\series bold
+simile al R3, no?
+\series default
+) WebApp: when a request for an officer account has been received, an automatic
+ email is sent to a dedicated email of the Police with two links.
+ The links send an answer to the Administrator, one is for true police officer,
+ the other is in case of a false account.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[R5] The user has his smartphone with him, is able to login in the application
+ and is not suspended.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+_____: the login autenticator ensures that the user that tries to log in
+ is registered and is not suspended
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[R6] The user's smartphone has Internet connection enabled and functioning.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+____Mobile App: to check the internet connection, if requests to SafeStreets
+ servers are not served, tries to connect to Google.
+ If so the internet connection of the user is working while our systems
+ are down.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[R7] The user's smartphone has GPS enabled and functioning.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+_____Mobile App: shows a request to the user to enable the GPS access to
+ the application.
+ Every time the position is needed, control first that the datas are still
+ accessible to the app and updated.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[R8] The user is able to take at least one picture of the violation to correctly
+ choose the type of violation he is reporting.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+_____Mobile App: the application require the permissions to access the camera
+\end_layout
+
+\begin_layout Itemize
+______Mobile App: suggest the violation giving the user the possibility
+ to choose in a few possible violations
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[R9] The user has already made at least one report.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+______: counts the number of reports made by a user
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[R10] There is at least one report in the system.
+ (
+\series bold
+mi pare uno strano requirement)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+______: counts the number of reports present in the system
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[R11] The officer access has the same base functions of the basic user access,
+ plus specific ones.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+............
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[R12] The officer has a computer with Internet access and is able to login
+ to the system.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+_____: the login autenticator ensures that the user that tries to log in
+ is registered, not suspended and has the officer privileges
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[R13] The municipality and/or the authorities use the provided APIs.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+......
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[R14] The administrator has a computer with Internet access and is able
+ to login to the system.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+_____: the login autenticator ensures that the user that tries to log in
+ is registered, not suspended and has the system administrator privileges
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[R15] The administrator has the possibility to use an official communication
+ channel with the municipality.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+____WebApp: in the contacts page there is the PEC email of the municipality
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[R16] The administrator has received a block/removal request from the authoritie
+s.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+_______: tracks the block/removal requests from the authorities
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+[R17] The administrator has received a sign-up request from the authorities
+ and/or from the municipality.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+_______: tracks the signup requests from the authorities/municipality
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
 
