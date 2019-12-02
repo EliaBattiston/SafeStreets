@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="840.346px" height="308px" viewBox="0 0 840.346 308" enable-background="new 0 0 840.346 308" xml:space="preserve">
+<g transform="translate(-38,-222) scale(1,1)">
+	<rect x="400" y="456" fill="#FFFFFF" width="142.611" height="64"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M400,456h142.611v64H400V456z"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M400,494h142.611"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<g>
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M0,0"/>
+		<text transform="matrix(1 0 0 1 439.1455 473.5)" font-family="'ArialMT'" font-size="13">«interface»</text>
+	</g>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<g>
+		<path d="M0,0"/>
+		<text transform="matrix(1 0 0 1 409.8828 488.5)" font-family="'Arial-BoldMT'" font-size="13">MobileApplicationAPI</text>
+	</g>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<rect x="200" y="232" fill="#FFFFFF" width="555.34" height="64"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M200,232h555.34v64H200V232z"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M200,270h555.34"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<g>
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M0,0"/>
+		<text transform="matrix(1 0 0 1 439.5254 249.5)" font-family="'ArialMT'" font-size="13">«interface»</text>
+	</g>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<g>
+		<path d="M0,0"/>
+		<text transform="matrix(1 0 0 1 436.9956 264.5)" font-family="'Arial-BoldMT'" font-size="13">SendReport</text>
+	</g>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<g>
+		<path d="M0,0"/>
+		<text transform="matrix(1 0 0 1 205 287.5)" font-family="'ArialMT'" font-size="13">+send(userID: String, violation: String, plate: String, position: Location, photos: List&lt;Picture&gt;)</text>
+	</g>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<rect x="48" y="336" fill="#FFFFFF" width="303.424" height="75"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M48,336h310.424v75H48V336z"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M48,374h310.424"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<g>
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M0,0"/>
+		<text transform="matrix(1 0 0 1 167.5513 353.5)" font-family="'ArialMT'" font-size="13">«interface»</text>
+	</g>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<g>
+		<path d="M0,0"/>
+		<text transform="matrix(1 0 0 1 152.3804 368.5)" font-family="'Arial-BoldMT'" font-size="13">SeePastReports</text>
+	</g>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<g>
+		<path d="M0,0"/>
+		<text transform="matrix(1 0 0 1 53 391.5)" font-family="'ArialMT'" font-size="13">+getReportsList(userID: String): List&lt;Report&gt;</text>
+	</g>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<g>
+		<path d="M0,0"/>
+		<text transform="matrix(1 0 0 1 53 406.5)" font-family="'ArialMT'" font-size="13">+getReport(userID: String, reportID: String): Report</text>
+	</g>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<rect x="648" y="336" fill="#FFFFFF" width="220.346" height="75"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M648,336h226.006v75H648V336z"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M648,374h226.006"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<g>
+		<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M0,0"/>
+		<text transform="matrix(1 0 0 1 726.0127 353.5)" font-family="'ArialMT'" font-size="13">«interface»</text>
+	</g>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<g>
+		<path d="M0,0"/>
+		<text transform="matrix(1 0 0 1 711.9268 368.5)" font-family="'Arial-BoldMT'" font-size="13">GetStreetSafety</text>
+	</g>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<g>
+		<path d="M0,0"/>
+		<text transform="matrix(1 0 0 1 653 391.5)" font-family="'ArialMT'" font-size="13">+getData(): String</text>
+	</g>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<g>
+		<path d="M0,0"/>
+		<text transform="matrix(1 0 0 1 653 406.5)" font-family="'ArialMT'" font-size="13">+getStreetData(street: String): String</text>
+	</g>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M399,488H200l-1-76"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<path fill="#FFFFFF" d="M207.686,432.213L199,412l-8.151,20.436"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M207.686,432.213L199,412l-8.151,20.436L207.686,432.213"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M471,455V297"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<path fill="#FFFFFF" d="M479.419,317.325L471,297l-8.419,20.325"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M479.419,317.325L471,297l-8.419,20.325H479.419"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M544,488h216l-1-76"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<path fill="#FFFFFF" d="M767.686,432.213L759,412l-8.15,20.436"/>
+</g>
+<g transform="translate(-38,-222) scale(1,1)">
+	<path fill="none" stroke="#000000" stroke-miterlimit="10" d="M767.686,432.213L759,412l-8.15,20.436L767.686,432.213"/>
+</g>
+</svg>

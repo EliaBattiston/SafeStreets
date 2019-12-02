@@ -1,0 +1,31 @@
+title Create a report
+actor Registered user
+activate Registered user
+Registered user->SafeStreetsApp:SendReport(violation: String, plate: String,\nposition: Location, photos: List<Picture>)
+activate SafeStreetsApp
+SafeStreetsApp->Reports module: ForwardReport(userID: String, violation: String, plate: String,\nposition: Location, photos: List<Picture>)
+activate Reports module
+
+alt Missing fields
+Reports module-->SafeStreetsApp: notificationMissingFields
+deactivate Reports module
+SafeStreetsApp-->Registered user:notificationMissingFields
+deactivate SafeStreetsApp
+
+else No missing fields
+activate SafeStreetsApp
+activate Reports module
+Reports module->Reports database: RegisterReport(userID: String, violation: String, plate: String,\nposition: Location, photos: List<Picture>)
+activate Reports database
+Reports database->Reports database:save_data()
+Reports database->Reports pusher:ForwardMunicipalityReport(userID: String, violation: String\nplate: String, position: Location, photos: List<Picture>)
+activate Reports pusher
+space 
+deactivate Reports pusher
+Reports database-->Reports module: notificationReportSent
+deactivate Reports database
+Reports module-->SafeStreetsApp: notificationReportSent
+deactivate Reports module
+SafeStreetsApp-->Registered user:notificationReportSent
+deactivate SafeStreetsApp
+end

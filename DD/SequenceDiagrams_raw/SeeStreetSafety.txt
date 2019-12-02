@@ -1,0 +1,36 @@
+title See Street Safety
+
+actor Registered user
+activate Registered user
+Registered user->SafeStreetsApp:StreetSafetyRequest()
+activate SafeStreetsApp
+
+SafeStreetsApp->Street safety module:ForwardStreetSafetyRequest(userID: String)
+activate Street safety module
+Street safety module->Safety&Suggestions database:GetStreetSafetyData()
+activate Safety&Suggestions database
+
+Safety&Suggestions database-->Street safety module:Street Safety's data
+deactivate Safety&Suggestions database
+Street safety module-->SafeStreetsApp:Street Safety's data
+deactivate Street safety module
+Registered user<--SafeStreetsApp:Prompts Street Safety page
+deactivate SafeStreetsApp
+
+loop
+Registered user->SafeStreetsApp:StreetSafetyRequest(street: String)
+activate SafeStreetsApp
+
+SafeStreetsApp->Street safety module:ForwardStreetSafetyRequest(userID: String,street: String)
+activate Street safety module
+Street safety module->Safety&Suggestions database:GetStreetSafetyData(street: String)
+activate Safety&Suggestions database
+
+Safety&Suggestions database-->Street safety module:Street Safety's street data
+deactivate Safety&Suggestions database
+Street safety module-->SafeStreetsApp:Street Safety's street data
+deactivate Street safety module
+Registered user<--SafeStreetsApp:Prompts popup with street details
+deactivate SafeStreetsApp
+
+end

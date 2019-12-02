@@ -17,9 +17,9 @@ activate SafeStreets
 SafeStreets->SafeStreets:Checks data
 
 alt Missing fields
-SafeStreets<--Registered user:[complete = false]\nMissing fields
+SafeStreets-->Registered user:[complete = false]\nMissing fields
 else No missing fields
-SafeStreets<--Registered user:[complete = true]\nReport sent
+SafeStreets-->Registered user:[complete = true]\nReport sent
 end
 
 end

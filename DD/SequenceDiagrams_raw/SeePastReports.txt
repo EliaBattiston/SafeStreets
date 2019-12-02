@@ -1,0 +1,31 @@
+title See past reports
+actor Registered user
+activate Registered user
+Registered user->SafeStreetsApp:PastReportsListRequest()
+activate SafeStreetsApp
+
+
+SafeStreetsApp->Reports module:ForwardPastReportsListRequest(userID: String)
+activate Reports module
+Reports module->Reports database:GetUserPastReports(userID: String)
+activate Reports database
+
+alt Presence of past reports
+Reports database-->Reports module:user past reports' data
+deactivate Reports database
+Reports module-->SafeStreetsApp:user past reports' data
+deactivate Reports module
+Registered user<--SafeStreetsApp:Prompts past reports\nlist page
+deactivate SafeStreetsApp
+
+else No past reports found
+activate SafeStreetsApp
+activate Reports module
+activate Reports database
+Reports database-->Reports module:notificationUserEmptyList
+deactivate Reports database
+Reports module-->SafeStreetsApp:notificationUserEmptyList
+deactivate Reports module
+Registered user<--SafeStreetsApp:notificationEmptyList
+deactivate SafeStreetsApp
+end
