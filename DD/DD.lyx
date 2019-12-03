@@ -2055,6 +2055,481 @@ Implementation, integration and test plan
 \end_layout
 
 \begin_layout Standard
+The whole system can be logically divided into subsystem, so that is possible
+ to assign a deployment priority order for development.
+ It is possible to identify these subsystems:
+\end_layout
+
+\begin_layout Itemize
+WebServer
+\end_layout
+
+\begin_layout Itemize
+WebClient
+\end_layout
+
+\begin_layout Itemize
+MobileApplication
+\end_layout
+
+\begin_layout Standard
+WebClient and MobileApplication refers mainly to the end-user application
+ interfaces and does not contain the application logic; for this reason
+ they can be implemented in parallel with the WebServer once the APIs for
+ the services have been formally defined.
+ Because of the user interface primary nature of these subsystems, their
+ testing part will focus only over the communication part with the server.
+ Integration will follow the implementation progresses of the functionalities
+ in the WebServer.
+\end_layout
+
+\begin_layout Standard
+WebServer subsystem instead contains the main logic of the application,
+ with also the DBMS for data storage.
+ It can be implemented incrementally following the feature implementation
+ order described in a while.
+ Once a functionality is fully implemented, the corresponding part of the
+ user interface can be integrated in the system and tested in the whole.
+\end_layout
+
+\begin_layout Standard
+External services such the municipality APIs does not need neither to be
+ implemented nor to be tested, as it is assumed their reliability within
+ the system.
+\end_layout
+
+\begin_layout Standard
+The below table resumes the functionalities of the system in association
+ with their priority level.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Functionality
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Importance for the client
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Implementation difficulty
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Priority level
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Signup and login
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 - High
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Violation reporting
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Low
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 - High
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Own reports history
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Low
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Low
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3 - Low
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Street Safety visualization 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2- Medium
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Account managing
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Medium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Low
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 - High
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Whole reports history
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Low
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Low
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3 - Low
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Unsafe area analisys
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 - Medium
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As shown, the implementation priority level doesn't follow client importance
+ levels or implementation difficulty, because there are key components that
+ need to be fully implemented and tested in order to use the other ones.
+\end_layout
+
+\begin_layout Standard
+The following is the implementation and testing order:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Signup and login
+\series default
+: these functionality has to be the first one to be implemented because
+ all the system relies on the possibility to identify the user and to validate
+ its identity before allowing system usage.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Account managing
+\series default
+: as before said, the system relies on the identification and validation
+ of users; for this reason the account managing functionality is essential
+ both for users and for authorities for system access.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Violation reporting
+\series default
+: because of it is the core functionality of the whole system, the violation
+ reporting is the first active functionality that has to be implemented,
+ in order to allow users starting using the system.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Unsafe area analisys
+\series default
+: this is a core functionality for the municipality, so it has to be implemented
+ as soon as the violation reporting is implemented and tested.
+ For this feature there is also the need to implement the interface with
+ the municipality through its APIs, to retrieve data about the made checks.
+ This is the most complex functionality to be implemented, because it needs
+ some heuristics for data analysis to produce effective suggestions for
+ unsafe areas.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Street Safety visualization
+\series default
+: differently from the precedent functionality, these one is a little easier
+ to implement because collects data only from the internal dataset.
+ However it has a lower importance for the client, so it is implemented
+ after Unsafe area analisys.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Whole reports history
+\series default
+: it is a low importance functionality as it provides only a list of past
+ reports, with only the possibility to visualize it without any other possible
+ action.
+ It has a low implementation difficulty level as it is just a data retrieval.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Own reports history
+\series default
+: as for the whole reports history, it is a low importance functionality.
+ It is implemented after the Whole reports history because it is the same
+ functionality with only a reduction in the retrieved data.
+\end_layout
+
+\begin_layout Standard
+For each functionality, the procedure for full implementation includes the
+ testing and verification phase towards all the implementation phase, so
+ that at the end of the functionality implementation the test part is also
+ ready.
+\end_layout
+
+\begin_layout Standard
+As soon as a functionality is implemented, it has to be integrated in the
+ system and with the previous implemented functionalities, also with dedicated
+ unit tests.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
 
