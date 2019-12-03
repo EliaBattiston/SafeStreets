@@ -2104,6 +2104,13 @@ The below table resumes the functionalities of the system in association
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="8" columns="4">
 <features tabularvalignment="middle">
@@ -2276,7 +2283,7 @@ Low
 \begin_inset Text
 
 \begin_layout Plain Layout
-Street Safety visualization 
+Street Safety visualization
 \end_layout
 
 \end_inset
@@ -2430,6 +2437,15 @@ High
 
 \end_layout
 
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 As shown, the implementation priority level doesn't follow client importance
  levels or implementation difficulty, because there are key components that
@@ -2512,7 +2528,7 @@ Whole reports history
 Own reports history
 \series default
 : as for the whole reports history, it is a low importance functionality.
- It is implemented after the Whole reports history because it is the same
+ It is implemented after the whole reports history because it is the same
  functionality with only a reduction in the retrieved data.
 \end_layout
 
