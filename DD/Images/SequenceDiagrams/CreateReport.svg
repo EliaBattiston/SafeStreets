@@ -1,1 +1,234 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1819" height="886"><defs/><g><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g><rect fill="white" stroke="none" x="0" y="0" width="1819" height="886"/></g><g><text fill="black" stroke="none" font-family="sans-serif" font-size="16.5pt" font-style="normal" font-weight="normal" text-decoration="normal" x="835.9758386654948" y="24.50280495" text-anchor="start" dominant-baseline="alphabetic">Create a report</text></g><g/><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 81.67601649999999 128.80307802049998 L 81.67601649999999 886.7565111404999" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="12.565541,5.445067766666667"/><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 411.57176193333333 128.80307802049998 L 411.57176193333333 886.7565111404999" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="12.565541,5.445067766666667"/><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 858.4675073666667 128.80307802049998 L 858.4675073666667 886.7565111404999" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="12.565541,5.445067766666667"/><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 1306.3632528 128.80307802049998 L 1306.3632528 886.7565111404999" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="12.565541,5.445067766666667"/><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 1738.2589982333334 128.80307802049998 L 1738.2589982333334 886.7565111404999" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="12.565541,5.445067766666667"/></g><g><g><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 90.987082381 59.70516806150002 A 9.311065881 9.311065881 0 1 1 90.98707772546743 59.69585699717086 M 81.67601649999999 69.01623394250002 L 81.67601649999999 88.94518196850002 M 69.914670124 76.20372339450002 L 93.43736287599998 76.20372339450002 M 81.67601649999999 88.94518196850002 L 69.914670124 107.56731373050002 M 81.67601649999999 88.94518196850002 L 93.43736287599998 107.56731373050002" stroke-miterlimit="10" stroke-width="2.7769845610000004" stroke-dasharray=""/></g><g><g/><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="29.67601649999999" y="123.90251703050001" text-anchor="start" dominant-baseline="alphabetic">Registered user</text></g><path fill="none" stroke="none"/><g><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 342.8480663528333 84.69802911050002 L 480.2954575138333 84.69802911050002 L 480.2954575138333 128.8030780205 L 342.8480663528333 128.8030780205 L 342.8480663528333 84.69802911050002 Z" stroke-miterlimit="10" stroke-width="2.613632528" stroke-dasharray=""/></g><g><g/><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="360.57176193333333" y="112.46787472049999" text-anchor="start" dominant-baseline="alphabetic">SafeStreetsApp</text></g><path fill="none" stroke="none"/><g><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 788.7438117861667 84.69802911050002 L 928.1912029471667 84.69802911050002 L 928.1912029471667 128.8030780205 L 788.7438117861667 128.8030780205 L 788.7438117861667 84.69802911050002 Z" stroke-miterlimit="10" stroke-width="2.613632528" stroke-dasharray=""/></g><g><g/><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="806.4675073666667" y="112.46787472049999" text-anchor="start" dominant-baseline="alphabetic">Reports module</text></g><path fill="none" stroke="none"/><g><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 1230.6395572195001 84.69802911050002 L 1382.0869483805002 84.69802911050002 L 1382.0869483805002 128.8030780205 L 1230.6395572195001 128.8030780205 L 1230.6395572195001 84.69802911050002 Z" stroke-miterlimit="10" stroke-width="2.613632528" stroke-dasharray=""/></g><g><g/><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="1248.3632528" y="112.46787472049999" text-anchor="start" dominant-baseline="alphabetic">Reports database</text></g><path fill="none" stroke="none"/><g><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 1670.0353026528335 84.69802911050002 L 1806.4826938138335 84.69802911050002 L 1806.4826938138335 128.8030780205 L 1670.0353026528335 128.8030780205 L 1670.0353026528335 84.69802911050002 Z" stroke-miterlimit="10" stroke-width="2.613632528" stroke-dasharray=""/></g><g><g/><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="1687.7589982333334" y="112.46787472049999" text-anchor="start" dominant-baseline="alphabetic">Reports pusher</text></g></g><g><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 73.50841485 136.97067967049998 L 89.84361814999998 136.97067967049998 L 89.84361814999998 870.4213078404999 L 73.50841485 870.4213078404999 L 73.50841485 136.97067967049998" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 403.40416028333334 199.04445221049997 L 419.73936358333333 199.04445221049997 L 419.73936358333333 396.70041214049996 L 403.40416028333334 396.70041214049996 L 403.40416028333334 199.04445221049997" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 850.2999057166667 261.11822475049996 L 866.6351090166668 261.11822475049996 L 866.6351090166668 350.96184290049996 L 850.2999057166667 350.96184290049996 L 850.2999057166667 261.11822475049996" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 403.40416028333334 440.80546105049996 L 419.73936358333333 440.80546105049996 L 419.73936358333333 805.0804946404999 L 403.40416028333334 805.0804946404999 L 403.40416028333334 440.80546105049996" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 850.2999057166667 440.80546105049996 L 866.6351090166668 440.80546105049996 L 866.6351090166668 759.3419254004999 L 850.2999057166667 759.3419254004999 L 850.2999057166667 440.80546105049996" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 1298.19565115 502.87923359049995 L 1314.53085445 502.87923359049995 L 1314.53085445 713.6033561605 L 1298.19565115 713.6033561605 L 1298.19565115 502.87923359049995" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 1730.0913965833333 627.0267786705 L 1746.4265998833334 627.0267786705 L 1746.4265998833334 667.8647869205 L 1730.0913965833333 667.8647869205 L 1730.0913965833333 627.0267786705" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><g><g><rect fill="white" stroke="none" x="109.17360872166667" y="161.47348462049996" width="274.90056099" height="21.23576429"/></g><g><rect fill="white" stroke="none" x="109.17360872166667" y="177.80868792049995" width="269.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="111.62388921666667" y="176.17516759049994" text-anchor="start" dominant-baseline="alphabetic">SendReport(violation: String, plate: String,</text><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="111.62388921666667" y="192.51037089049993" text-anchor="start" dominant-baseline="alphabetic">position: Location, photos: List&lt;Picture&gt;)</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 89.84361814999998 199.04445221049997 L 400.6816264 199.04445221049997" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><g transform="translate(403.40416028333334,199.04445221049997) translate(-403.40416028333334,-199.04445221049997)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 389.79149086666666 192.23811750216663 L 403.40416028333334 199.04445221049997 L 389.79149086666666 205.8507869188333 Z"/></g></g><g><g><rect fill="white" stroke="none" x="439.0693541549999" y="223.54725716049995" width="391.90056099" height="21.23576429"/></g><g><rect fill="white" stroke="none" x="439.0693541549999" y="239.88246046049994" width="269.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="441.51963464999994" y="238.24894013049993" text-anchor="start" dominant-baseline="alphabetic">ForwardReport(userID: String, violation: String, plate: String,</text><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="441.51963464999994" y="254.58414343049992" text-anchor="start" dominant-baseline="alphabetic">position: Location, photos: List&lt;Picture&gt;)</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 419.73936358333333 261.11822475049996 L 847.5773718333334 261.11822475049996" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><g transform="translate(850.2999057166667,261.11822475049996) translate(-850.2999057166667,-261.11822475049996)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 836.6872363 254.31189004216662 L 850.2999057166667 261.11822475049996 L 836.6872363 267.9245594588333 Z"/></g></g><g><g><rect fill="white" stroke="none" x="554.0693541549999" y="329.72607861049994" width="161.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="556.51963465" y="344.4277615804999" text-anchor="start" dominant-baseline="alphabetic">notificationMissingFields</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 850.2999057166667 350.96184290049996 L 422.46189746666664 350.96184290049996" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="6.53408132"/><g transform="translate(419.73936358333333,350.96184290049996) translate(-419.73936358333333,-350.96184290049996)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 433.352033 344.1555081921666 L 419.73936358333333 350.96184290049996 L 433.352033 357.7681776088333 Z"/></g></g><g><g><rect fill="white" stroke="none" x="165.67360872166668" y="375.46464785049994" width="161.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="168.12388921666667" y="390.1663308204999" text-anchor="start" dominant-baseline="alphabetic">notificationMissingFields</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 403.40416028333334 396.70041214049996 L 92.56615203333331 396.70041214049996" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="6.53408132"/><g transform="translate(89.84361814999998,396.70041214049996) translate(-89.84361814999998,-396.70041214049996)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 103.45628756666665 389.8940774321666 L 89.84361814999998 396.70041214049996 L 103.45628756666665 403.5067468488333 Z"/></g></g><g><g><rect fill="white" stroke="none" x="885.9650995883333" y="465.30826600049994" width="392.90056099" height="21.23576429"/></g><g><rect fill="white" stroke="none" x="885.9650995883333" y="481.64346930049993" width="269.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="888.4153800833333" y="480.0099489704999" text-anchor="start" dominant-baseline="alphabetic">RegisterReport(userID: String, violation: String, plate: String,</text><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="888.4153800833333" y="496.3451522704999" text-anchor="start" dominant-baseline="alphabetic">position: Location, photos: List&lt;Picture&gt;)</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 866.6351090166668 502.87923359049995 L 1295.4731172666666 502.87923359049995" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><g transform="translate(1298.19565115,502.87923359049995) translate(-1298.19565115,-502.87923359049995)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 1284.5829817333333 496.0728988821666 L 1298.19565115 502.87923359049995 L 1284.5829817333333 509.6855682988333 Z"/></g></g><g><g><rect fill="white" stroke="none" x="1333.8608450216668" y="527.3820385404999" width="81.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="1336.3111255166668" y="542.0837215104999" text-anchor="start" dominant-baseline="alphabetic">save_data()</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 1314.53085445 548.6178028305 L 1379.87166765 548.6178028305 L 1379.87166765 564.9530061305 L 1317.2533883333335 564.9530061305" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><g transform="translate(1314.53085445,564.9530061305) translate(-1314.53085445,-564.9530061305)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 1328.1435238666668 558.1466714221666 L 1314.53085445 564.9530061305 L 1328.1435238666668 571.7593408388333 Z"/></g></g><g><g><rect fill="white" stroke="none" x="1333.8608450216668" y="589.4558110805" width="376.90056099" height="21.23576429"/></g><g><rect fill="white" stroke="none" x="1333.8608450216668" y="605.7910143805" width="354.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="1336.3111255166668" y="604.1574940505" text-anchor="start" dominant-baseline="alphabetic">ForwardMunicipalityReport(userID: String, violation: String</text><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="1336.3111255166668" y="620.4926973505" text-anchor="start" dominant-baseline="alphabetic">plate: String, position: Location, photos: List&lt;Picture&gt;)</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 1314.53085445 627.0267786705 L 1727.3688627 627.0267786705" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><g transform="translate(1730.0913965833333,627.0267786705) translate(-1730.0913965833333,-627.0267786705)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 1716.4787271666667 620.2204439621667 L 1730.0913965833333 627.0267786705 L 1716.4787271666667 633.8331133788333 Z"/></g></g><g><g><rect fill="white" stroke="none" x="1008.4650995883333" y="692.3675918705" width="147.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="1010.9153800833333" y="707.0692748404999" text-anchor="start" dominant-baseline="alphabetic">notificationReportSent</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 1298.19565115 713.6033561605 L 869.3576429000001 713.6033561605" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="6.53408132"/><g transform="translate(866.6351090166668,713.6033561605) translate(-866.6351090166668,-713.6033561605)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 880.2477784333335 706.7970214521666 L 866.6351090166668 713.6033561605 L 880.2477784333335 720.4096908688333 Z"/></g></g><g><g><rect fill="white" stroke="none" x="561.0693541549999" y="738.1061611104999" width="147.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="563.51963465" y="752.8078440804999" text-anchor="start" dominant-baseline="alphabetic">notificationReportSent</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 850.2999057166667 759.3419254004999 L 422.46189746666664 759.3419254004999" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="6.53408132"/><g transform="translate(419.73936358333333,759.3419254004999) translate(-419.73936358333333,-759.3419254004999)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 433.352033 752.5355906921666 L 419.73936358333333 759.3419254004999 L 433.352033 766.1482601088333 Z"/></g></g><g><g><rect fill="white" stroke="none" x="172.67360872166668" y="783.8447303504998" width="147.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="175.12388921666667" y="798.5464133204998" text-anchor="start" dominant-baseline="alphabetic">notificationReportSent</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 403.40416028333334 805.0804946404999 L 92.56615203333331 805.0804946404999" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="6.53408132"/><g transform="translate(89.84361814999998,805.0804946404999) translate(-89.84361814999998,-805.0804946404999)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 103.45628756666665 798.2741599321665 L 89.84361814999998 805.0804946404999 L 103.45628756666665 811.8868293488332 Z"/></g></g><g><g/><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 16.33520329999999 285.62102970049995 L 1795.4322097833333 285.62102970049995 L 1795.4322097833333 829.5832995905 L 16.33520329999999 829.5832995905 L 16.33520329999999 285.62102970049995 Z" stroke-miterlimit="10" stroke-width="2.3336004714285714" stroke-dasharray=""/><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 16.33520329999999 285.62102970049995 L 16.33520329999999 305.22327366049996 L 63.00560989999999 305.22327366049996 L 72.80673187999999 295.42215168049995 L 72.80673187999999 285.62102970049995 L 16.33520329999999 285.62102970049995" stroke-miterlimit="10" stroke-width="2.3336004714285714" stroke-dasharray=""/><text fill="black" stroke="none" font-family="sans-serif" font-size="8.8pt" font-style="normal" font-weight="bold" text-decoration="normal" x="32.67040659999999" y="298.6891923405" text-anchor="start" dominant-baseline="alphabetic">alt</text><text fill="black" stroke="none" font-family="sans-serif" font-size="8.8pt" font-style="normal" font-weight="bold" text-decoration="normal" x="89.14193517999999" y="298.6891923405" text-anchor="start" dominant-baseline="alphabetic">[Missing fields]</text><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 16.33520329999999 421.20321709049995 L 1795.4322097833333 421.20321709049995" stroke-miterlimit="10" stroke-width="2.3336004714285714" stroke-dasharray="4.083800825"/></g><g/><text fill="black" stroke="none" font-family="sans-serif" font-size="8.8pt" font-style="normal" font-weight="bold" text-decoration="normal" x="89.14193517999999" y="434.2713797305" text-anchor="start" dominant-baseline="alphabetic">[No missing fields]</text></g><g/></g><g/><g/><g/><g/><g/></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1819px" height="886px" viewBox="0 0 1819 886" enable-background="new 0 0 1819 886" xml:space="preserve">
+<g>
+	<rect fill="#FFFFFF" width="1819" height="886"/>
+</g>
+<g>
+	<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" stroke-dasharray="12.5655,5.4451" d="
+		M81.676,128.803v757.954"/>
+	<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" stroke-dasharray="12.5655,5.4451" d="
+		M411.571,128.803v757.954"/>
+	<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" stroke-dasharray="12.5655,5.4451" d="
+		M858.468,128.803v757.954"/>
+	<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" stroke-dasharray="12.5655,5.4451" d="
+		M1306.363,128.803v757.954"/>
+	<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" stroke-dasharray="12.5655,5.4451" d="
+		M1738.259,128.803v757.954"/>
+</g>
+<g>
+	<g>
+		<path fill="#FFFFFF" stroke="#000000" stroke-width="2.777" stroke-miterlimit="10" d="M90.987,59.705
+			c0.001,5.143-4.166,9.313-9.308,9.314c-5.143,0.002-9.313-4.166-9.314-9.308c-0.001-5.142,4.166-9.312,9.308-9.314
+			c5.139-0.001,9.308,4.16,9.314,9.299 M81.676,69.016v19.929 M69.915,76.204h23.523 M81.676,88.945l-11.761,18.622 M81.676,88.945
+			l11.762,18.622"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 29.6758 123.9023)" font-family="'ArialMT'" font-size="11">Registered user</text>
+	</g>
+	<path d="M0,0"/>
+	<g>
+		<path fill="#FFFFFF" stroke="#000000" stroke-width="2.6136" stroke-miterlimit="10" d="M342.848,84.698h137.448v44.105H342.848
+			V84.698z"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 360.5718 112.4678)" font-family="'ArialMT'" font-size="11">SafeStreetsApp</text>
+	</g>
+	<path d="M0,0"/>
+	<g>
+		<path fill="#FFFFFF" stroke="#000000" stroke-width="2.6136" stroke-miterlimit="10" d="M788.744,84.698h139.447v44.105H788.744
+			V84.698z"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 806.4678 112.4678)" font-family="'ArialMT'" font-size="11">Reports module</text>
+	</g>
+	<path d="M0,0"/>
+	<g>
+		<path fill="#FFFFFF" stroke="#000000" stroke-width="2.6136" stroke-miterlimit="10" d="M1230.64,84.698h151.447v44.105H1230.64
+			V84.698z"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 1248.3633 112.4678)" font-family="'ArialMT'" font-size="11">Reports database</text>
+	</g>
+	<path d="M0,0"/>
+	<g>
+		<path fill="#FFFFFF" stroke="#000000" stroke-width="2.6136" stroke-miterlimit="10" d="M1670.035,84.698h136.447v44.105h-136.447
+			V84.698z"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 1687.7588 112.4678)" font-family="'ArialMT'" font-size="11">Reports pusher</text>
+	</g>
+</g>
+<g>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M73.508,136.971h16.335v733.45H73.508
+		V136.971"/>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M403.404,199.044h16.335V396.7h-16.335
+		V199.044"/>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M850.3,261.118h16.335v89.844H850.3
+		V261.118"/>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M403.404,440.806h16.335V805.08h-16.335
+		V440.806"/>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M850.3,440.806h16.335v318.536H850.3
+		V440.806"/>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M1298.195,502.879h16.336v210.725h-16.336
+		V502.879"/>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M1730.092,627.026h16.335v40.839h-16.335
+		V627.026"/>
+	<g>
+		<g>
+			<rect x="109.174" y="161.474" fill="#FFFFFF" width="274.9" height="21.235"/>
+		</g>
+		<g>
+			<rect x="109.174" y="177.809" fill="#FFFFFF" width="269.9" height="21.236"/>
+		</g>
+		<text transform="matrix(1 0 0 1 111.624 176.1748)" font-family="'ArialMT'" font-size="11">SendReport(violation: String, plate: String,</text>
+		<text transform="matrix(1 0 0 1 111.624 192.5107)" font-family="'ArialMT'" font-size="11">position: Location, photos: List&lt;Picture&gt;)</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M89.844,199.044h310.838"/>
+		<g transform="translate(403.40416028333334,199.04445221049997) translate(-403.40416028333334,-199.04445221049997)">
+			<path d="M389.791,192.238l13.613,6.806l-13.613,6.806V192.238z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="439.069" y="223.547" fill="#FFFFFF" width="391.9" height="21.236"/>
+		</g>
+		<g>
+			<rect x="439.069" y="239.882" fill="#FFFFFF" width="269.9" height="21.236"/>
+		</g>
+		<text transform="matrix(1 0 0 1 441.5195 238.249)" font-family="'ArialMT'" font-size="11">ForwardReport(userID: String, violation: String, plate: String,</text>
+		<text transform="matrix(1 0 0 1 441.5195 254.584)" font-family="'ArialMT'" font-size="11">position: Location, photos: List&lt;Picture&gt;)</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M419.739,261.118h427.838"/>
+		<g transform="translate(850.2999057166667,261.11822475049996) translate(-850.2999057166667,-261.11822475049996)">
+			<path d="M836.688,254.312l13.612,6.806l-13.612,6.807V254.312z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="554.069" y="329.726" fill="#FFFFFF" width="161.9" height="21.236"/>
+		</g>
+		<text transform="matrix(1 0 0 1 556.5195 344.4277)" font-family="'ArialMT'" font-size="11">notificationMissingFields</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" stroke-dasharray="6.5341" d="M850.3,350.962
+			H422.462"/>
+		<g transform="translate(419.73936358333333,350.96184290049996) translate(-419.73936358333333,-350.96184290049996)">
+			<path d="M433.352,344.155l-13.612,6.807l13.612,6.806V344.155z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="165.674" y="375.465" fill="#FFFFFF" width="161.9" height="21.235"/>
+		</g>
+		<text transform="matrix(1 0 0 1 168.124 390.166)" font-family="'ArialMT'" font-size="11">notificationMissingFields</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" stroke-dasharray="6.5341" d="M403.404,396.7
+			H92.566"/>
+		<g transform="translate(89.84361814999998,396.70041214049996) translate(-89.84361814999998,-396.70041214049996)">
+			<path d="M103.456,389.894L89.844,396.7l13.612,6.807V389.894z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="885.965" y="465.309" fill="#FFFFFF" width="392.9" height="21.235"/>
+		</g>
+		<g>
+			<rect x="885.965" y="481.644" fill="#FFFFFF" width="269.9" height="21.235"/>
+		</g>
+		<text transform="matrix(1 0 0 1 888.4155 480.0098)" font-family="'ArialMT'" font-size="11">RegisterReport(userID: String, violation: String, plate: String,</text>
+		<text transform="matrix(1 0 0 1 888.4155 496.3447)" font-family="'ArialMT'" font-size="11">position: Location, photos: List&lt;Picture&gt;)</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M866.635,502.879h428.838"/>
+		<g transform="translate(1298.19565115,502.87923359049995) translate(-1298.19565115,-502.87923359049995)">
+			<path d="M1284.583,496.073l13.612,6.806l-13.612,6.807V496.073z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="1333.861" y="527.382" fill="#FFFFFF" width="81.9" height="21.236"/>
+		</g>
+		<text transform="matrix(1 0 0 1 1336.3105 542.084)" font-family="'ArialMT'" font-size="11">save_data()</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M1314.531,548.618h65.341v16.335h-62.618"/>
+		<g transform="translate(1314.53085445,564.9530061305) translate(-1314.53085445,-564.9530061305)">
+			<path d="M1328.144,558.146l-13.612,6.807l13.612,6.807V558.146z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="1333.861" y="589.456" fill="#FFFFFF" width="376.9" height="21.235"/>
+		</g>
+		<g>
+			<rect x="1333.861" y="605.791" fill="#FFFFFF" width="354.9" height="21.235"/>
+		</g>
+		<text transform="matrix(1 0 0 1 1336.3105 604.1572)" font-family="'ArialMT'" font-size="11">ForwardMunicipalityReport(userID: String, violation: String</text>
+		<text transform="matrix(1 0 0 1 1336.3105 620.4932)" font-family="'ArialMT'" font-size="11">plate: String, position: Location, photos: List&lt;Picture&gt;)</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M1314.531,627.026h412.838"/>
+		<g transform="translate(1730.0913965833333,627.0267786705) translate(-1730.0913965833333,-627.0267786705)">
+			<path d="M1716.479,620.221l13.613,6.806l-13.613,6.807V620.221z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="1008.465" y="692.367" fill="#FFFFFF" width="147.9" height="21.236"/>
+		</g>
+		<text transform="matrix(1 0 0 1 1010.916 707.0693)" font-family="'ArialMT'" font-size="11">notificationReportSent</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" stroke-dasharray="6.5341" d="M1298.195,713.604
+			H869.357"/>
+		<g transform="translate(866.6351090166668,713.6033561605) translate(-866.6351090166668,-713.6033561605)">
+			<path d="M880.248,706.797l-13.613,6.807l13.613,6.806V706.797z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="561.069" y="738.106" fill="#FFFFFF" width="147.9" height="21.235"/>
+		</g>
+		<text transform="matrix(1 0 0 1 563.5195 752.8076)" font-family="'ArialMT'" font-size="11">notificationReportSent</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" stroke-dasharray="6.5341" d="M850.3,759.342
+			H422.462"/>
+		<g transform="translate(419.73936358333333,759.3419254004999) translate(-419.73936358333333,-759.3419254004999)">
+			<path d="M433.352,752.535l-13.612,6.807l13.612,6.807V752.535z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="172.674" y="783.845" fill="#FFFFFF" width="147.9" height="21.235"/>
+		</g>
+		<text transform="matrix(1 0 0 1 175.124 798.5459)" font-family="'ArialMT'" font-size="11">notificationReportSent</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" stroke-dasharray="6.5341" d="M403.404,805.08
+			H92.566"/>
+		<g transform="translate(89.84361814999998,805.0804946404999) translate(-89.84361814999998,-805.0804946404999)">
+			<path d="M103.456,798.274l-13.612,6.806l13.612,6.807V798.274z"/>
+		</g>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="2.3336" stroke-miterlimit="10" d="M16.335,285.621h1779.098v543.962H16.335
+			V285.621z"/>
+		<path fill="#FFFFFF" stroke="#000000" stroke-width="2.3336" stroke-miterlimit="10" d="M16.335,285.621v19.602h46.671
+			l9.801-9.801v-9.801H16.335"/>
+		<text transform="matrix(1 0 0 1 32.6704 298.6895)" font-family="'Arial-BoldMT'" font-size="8.8">alt</text>
+		<text transform="matrix(1 0 0 1 89.1421 298.6895)" font-family="'Arial-BoldMT'" font-size="8.8">[Missing fields]</text>
+		<g>
+			<path fill="none" stroke="#000000" stroke-width="2.3336" stroke-miterlimit="10" stroke-dasharray="4.0838" d="M16.335,421.203
+				h1779.098"/>
+		</g>
+		<text transform="matrix(1 0 0 1 89.1421 434.2715)" font-family="'Arial-BoldMT'" font-size="8.8">[No missing fields]</text>
+	</g>
+</g>
+</svg>

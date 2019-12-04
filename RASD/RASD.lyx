@@ -3458,10 +3458,33 @@ Sequence diagrams
 
 \begin_layout Standard
 \align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/SignUp_User.svg
-	lyxscale 10
 	scale 29
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sign up (user)
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -3485,14 +3508,37 @@ separation "3pt"
 shadowsize "4pt"
 framecolor "black"
 backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/Login.svg
-	lyxscale 10
 	scale 29
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Login (application)
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -3522,10 +3568,33 @@ status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/Create_Report.svg
-	lyxscale 10
 	scale 29
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Create report
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -3558,10 +3627,33 @@ status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/See_Past_Reports.svg
-	lyxscale 10
 	scale 29
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+See past reports
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -3591,10 +3683,33 @@ status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/See_Street_Safety.svg
-	lyxscale 10
 	scale 29
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+See Street Safety
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -3678,7 +3793,6 @@ Use case diagram
 \align center
 \begin_inset Graphics
 	filename Images/UseCaseDiagrams/OfficerUseCase.svg
-	lyxscale 10
 	scale 60
 
 \end_inset
@@ -4485,10 +4599,33 @@ Sequence diagrams
 
 \begin_layout Standard
 \align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/SignUp_Officer.svg
-	lyxscale 10
 	scale 29
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sign up (officer)
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -4497,10 +4634,33 @@ Sequence diagrams
 
 \begin_layout Standard
 \align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/Login_Website.svg
-	lyxscale 10
 	scale 29
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Login (website)
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -4524,14 +4684,37 @@ separation "3pt"
 shadowsize "4pt"
 framecolor "black"
 backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/Access_Reports_Data.svg
-	lyxscale 10
 	scale 29
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Access reports data
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -4561,10 +4744,33 @@ status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/Access_Analyzed_Data.svg
-	lyxscale 10
 	scale 29
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Access analyzed data
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -5770,9 +5976,15 @@ Sequence diagrams
 
 \begin_layout Standard
 \align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/Registration_Validation_User.svg
-	lyxscale 10
 	scale 29
 
 \end_inset
@@ -5780,11 +5992,34 @@ Sequence diagrams
 
 \end_layout
 
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Registration validation (user)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/Registration_Validation_Officer.svg
-	lyxscale 10
 	scale 29
 
 \end_inset
@@ -5792,12 +6027,52 @@ Sequence diagrams
 
 \end_layout
 
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Registration validation (officer)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/Authority_Registration_Request.svg
-	lyxscale 10
 	scale 29
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Authority registration request
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -5806,10 +6081,33 @@ Sequence diagrams
 
 \begin_layout Standard
 \align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/User_Suspension_Rehabilitation.svg
-	lyxscale 10
 	scale 29
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+User suspension / rehabilitation
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 

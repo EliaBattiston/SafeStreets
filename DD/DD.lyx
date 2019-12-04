@@ -1189,10 +1189,34 @@ Create a report
 \end_layout
 
 \begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/CreateReport.svg
-	lyxscale 10
 	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Create report - sequence diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1231,10 +1255,33 @@ See past reports
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/SeePastReports.svg
-	lyxscale 10
 	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+See past reports - sequence diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1268,10 +1315,33 @@ See Street Safety
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/SeeStreetSafety.svg
-	lyxscale 10
 	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+See Street Safety - sequence diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 

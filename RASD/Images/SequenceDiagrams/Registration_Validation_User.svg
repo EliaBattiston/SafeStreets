@@ -1,1 +1,209 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="576" height="1051"><defs/><g><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g><rect fill="white" stroke="none" x="0" y="0" width="576" height="1051"/></g><g><text fill="black" stroke="none" font-family="sans-serif" font-size="16.5pt" font-style="normal" font-weight="normal" text-decoration="normal" x="119.546677225" y="24.50280495" text-anchor="start" dominant-baseline="alphabetic">Registration validation (basic user)</text></g><g/><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 114.3464231 128.80307802049998 L 114.3464231 1051.7420644705003" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="12.565541,5.445067766666667"/><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 424.4097701833333 128.80307802049998 L 424.4097701833333 1051.7420644705003" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="12.565541,5.445067766666667"/></g><g><g><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 123.657488981 59.70516806150002 A 9.311065881 9.311065881 0 1 1 123.65748432546744 59.69585699717086 M 114.3464231 69.01623394250002 L 114.3464231 88.94518196850002 M 102.585076724 76.20372339450002 L 126.10776947599999 76.20372339450002 M 114.3464231 88.94518196850002 L 102.585076724 107.56731373050002 M 114.3464231 88.94518196850002 L 126.10776947599999 107.56731373050002" stroke-miterlimit="10" stroke-width="2.7769845610000004" stroke-dasharray=""/></g><g><g/><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="71.3464231" y="123.90251703050001" text-anchor="start" dominant-baseline="alphabetic">Administrator</text></g><path fill="none" stroke="none"/><g><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 368.1860746028333 84.69802911050002 L 480.6334657638333 84.69802911050002 L 480.6334657638333 128.8030780205 L 368.1860746028333 128.8030780205 L 368.1860746028333 84.69802911050002 Z" stroke-miterlimit="10" stroke-width="2.613632528" stroke-dasharray=""/></g><g><g/><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="385.9097701833333" y="112.46787472049999" text-anchor="start" dominant-baseline="alphabetic">SafeStreets</text></g></g><g><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 106.17882145 136.97067967049998 L 122.51402474999999 136.97067967049998 L 122.51402474999999 1035.4068611705002 L 106.17882145 1035.4068611705002 L 106.17882145 136.97067967049998" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 416.2421685333333 182.70924891049998 L 432.5773718333333 182.70924891049998 L 432.5773718333333 272.5528670605 L 416.2421685333333 272.5528670605 L 416.2421685333333 182.70924891049998" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 416.2421685333333 316.65791597049997 L 432.5773718333333 316.65791597049997 L 432.5773718333333 362.3964852105 L 416.2421685333333 362.3964852105 L 416.2421685333333 316.65791597049997" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 416.2421685333333 452.2401033605 L 432.5773718333333 452.2401033605 L 432.5773718333333 497.9786726005 L 416.2421685333333 497.9786726005 L 416.2421685333333 452.2401033605" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 114.3464231 576.3876484405 L 130.6816264 576.3876484405 L 130.6816264 617.2256566905 L 114.3464231 617.2256566905 L 114.3464231 576.3876484405" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 416.2421685333333 707.0692748405 L 432.5773718333333 707.0692748405 L 432.5773718333333 769.1430473805001 L 416.2421685333333 769.1430473805001 L 416.2421685333333 707.0692748405" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 416.2421685333333 858.9866655305001 L 432.5773718333333 858.9866655305001 L 432.5773718333333 921.0604380705001 L 416.2421685333333 921.0604380705001 L 416.2421685333333 858.9866655305001" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><g><g><rect fill="white" stroke="none" x="163.4278161466667" y="161.4734846205" width="211.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="165.87809664166667" y="176.17516759049997" text-anchor="start" dominant-baseline="alphabetic">Clicks "Accounts control" button</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 122.51402474999999 182.70924891049998 L 413.51963465 182.70924891049998" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><g transform="translate(416.2421685333333,182.70924891049998) translate(-416.2421685333333,-182.70924891049998)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 402.62949911666664 175.90291420216664 L 416.2421685333333 182.70924891049998 L 402.62949911666664 189.51558361883332 Z"/></g></g><g><g><rect fill="white" stroke="none" x="145.9278161466667" y="251.3171027705" width="246.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="148.37809664166667" y="266.0187857405" text-anchor="start" dominant-baseline="alphabetic">Prompts "No users found" notification</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 416.2421685333333 272.5528670605 L 125.23655863333332 272.5528670605" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="6.53408132"/><g transform="translate(122.51402474999999,272.5528670605) translate(-122.51402474999999,-272.5528670605)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 136.12669416666665 265.74653235216664 L 122.51402474999999 272.5528670605 L 136.12669416666665 279.3592017688333 Z"/></g></g><g><g><rect fill="white" stroke="none" x="164.4278161466667" y="341.16072092049995" width="209.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="166.87809664166667" y="355.86240389049993" text-anchor="start" dominant-baseline="alphabetic">Prompts Accounts control page</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 416.2421685333333 362.3964852105 L 125.23655863333332 362.3964852105" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="6.53408132"/><g transform="translate(122.51402474999999,362.3964852105) translate(-122.51402474999999,-362.3964852105)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 136.12669416666665 355.59015050216664 L 122.51402474999999 362.3964852105 L 136.12669416666665 369.2028199188333 Z"/></g></g><g><g><rect fill="white" stroke="none" x="177.4278161466667" y="431.00433907049995" width="183.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="179.87809664166667" y="445.70602204049993" text-anchor="start" dominant-baseline="alphabetic">Selects user to be validated</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 122.51402474999999 452.2401033605 L 413.51963465 452.2401033605" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><g transform="translate(416.2421685333333,452.2401033605) translate(-416.2421685333333,-452.2401033605)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 402.62949911666664 445.43376865216663 L 416.2421685333333 452.2401033605 L 402.62949911666664 459.0464380688333 Z"/></g></g><g><g><rect fill="white" stroke="none" x="174.9278161466667" y="476.74290831049996" width="188.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="177.37809664166667" y="491.44459128049994" text-anchor="start" dominant-baseline="alphabetic">Prompts selected user page</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 416.2421685333333 497.9786726005 L 125.23655863333332 497.9786726005" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray="6.53408132"/><g transform="translate(122.51402474999999,497.9786726005) translate(-122.51402474999999,-497.9786726005)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 136.12669416666665 491.17233789216664 L 122.51402474999999 497.9786726005 L 136.12669416666665 504.7850073088333 Z"/></g></g><g><g><rect fill="white" stroke="none" x="150.01161697166668" y="522.4814775505" width="160.90056099" height="21.23576429"/></g><g><rect fill="white" stroke="none" x="150.01161697166668" y="538.8166808505" width="104.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="152.46189746666667" y="537.1831605205" text-anchor="start" dominant-baseline="alphabetic">Check data correctness</text><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="152.46189746666667" y="553.5183638205" text-anchor="start" dominant-baseline="alphabetic">compared to ID</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 122.51402474999999 560.0524451405 L 196.02243959999998 560.0524451405 L 196.02243959999998 576.3876484405 L 133.40416028333334 576.3876484405" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><g transform="translate(130.6816264,576.3876484405) translate(-130.6816264,-576.3876484405)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 144.29429581666668 569.5813137321667 L 130.6816264 576.3876484405 L 144.29429581666668 583.1939831488334 Z"/></g></g><g><g><rect fill="white" stroke="none" x="192.9278161466667" y="685.8335105505" width="152.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="195.37809664166667" y="700.5351935205" text-anchor="start" dominant-baseline="alphabetic">Clicks "Validate" button</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 122.51402474999999 707.0692748405 L 413.51963465 707.0692748405" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><g transform="translate(416.2421685333333,707.0692748405) translate(-416.2421685333333,-707.0692748405)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 402.62949911666664 700.2629401321667 L 416.2421685333333 707.0692748405 L 402.62949911666664 713.8756095488334 Z"/></g></g><g><g><rect fill="white" stroke="none" x="451.90736240499996" y="731.5720797905001" width="69.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="454.3576429" y="746.2737627605001" text-anchor="start" dominant-baseline="alphabetic">Save data</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 432.5773718333333 752.8078440805001 L 497.9181850333333 752.8078440805001 L 497.9181850333333 769.1430473805001 L 435.2999057166666 769.1430473805001" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><g transform="translate(432.5773718333333,769.1430473805001) translate(-432.5773718333333,-769.1430473805001)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 446.19004125 762.3367126721668 L 432.5773718333333 769.1430473805001 L 446.19004125 775.9493820888334 Z"/></g></g><g><g><rect fill="white" stroke="none" x="194.4278161466667" y="837.7509012405001" width="149.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="196.87809664166667" y="852.4525842105" text-anchor="start" dominant-baseline="alphabetic">Clicks "Refuse" button</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 122.51402474999999 858.9866655305001 L 413.51963465 858.9866655305001" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><g transform="translate(416.2421685333333,858.9866655305001) translate(-416.2421685333333,-858.9866655305001)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 402.62949911666664 852.1803308221668 L 416.2421685333333 858.9866655305001 L 402.62949911666664 865.7930002388334 Z"/></g></g><g><g><rect fill="white" stroke="none" x="451.90736240499996" y="883.4894704805001" width="69.90056099" height="21.23576429"/></g><text fill="black" stroke="none" font-family="sans-serif" font-size="11pt" font-style="normal" font-weight="normal" text-decoration="normal" x="454.3576429" y="898.1911534505001" text-anchor="start" dominant-baseline="alphabetic">Save data</text></g><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 432.5773718333333 904.7252347705002 L 497.9181850333333 904.7252347705002 L 497.9181850333333 921.0604380705001 L 435.2999057166666 921.0604380705001" stroke-miterlimit="10" stroke-width="1.3612669416666667" stroke-dasharray=""/><g transform="translate(432.5773718333333,921.0604380705001) translate(-432.5773718333333,-921.0604380705001)"><path fill="black" stroke="none" paint-order="stroke fill markers" d=" M 446.19004125 914.2541033621668 L 432.5773718333333 921.0604380705001 L 446.19004125 927.8667727788335 Z"/></g></g><g><g/><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 16.335203299999996 207.21205386049996 L 560.19565115 207.21205386049996 L 560.19565115 994.5688529205003 L 16.335203299999996 994.5688529205003 L 16.335203299999996 207.21205386049996 Z" stroke-miterlimit="10" stroke-width="2.3336004714285714" stroke-dasharray=""/><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 16.335203299999996 207.21205386049996 L 16.335203299999996 226.81429782049997 L 63.005609899999996 226.81429782049997 L 72.80673188 217.01317584049997 L 72.80673188 207.21205386049996 L 16.335203299999996 207.21205386049996" stroke-miterlimit="10" stroke-width="2.3336004714285714" stroke-dasharray=""/><text fill="black" stroke="none" font-family="sans-serif" font-size="8.8pt" font-style="normal" font-weight="bold" text-decoration="normal" x="32.67040659999999" y="220.28021650049996" text-anchor="start" dominant-baseline="alphabetic">alt</text><text fill="black" stroke="none" font-family="sans-serif" font-size="8.8pt" font-style="normal" font-weight="bold" text-decoration="normal" x="89.14193518" y="220.28021650049996" text-anchor="start" dominant-baseline="alphabetic">[No users found]</text><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 16.335203299999996 297.05567201049996 L 560.19565115 297.05567201049996" stroke-miterlimit="10" stroke-width="2.3336004714285714" stroke-dasharray="4.083800825"/></g></g><g/><g><g/><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 32.6704066 386.89929016049996 L 543.86044785 386.89929016049996 L 543.86044785 970.0660479705002 L 32.6704066 970.0660479705002 L 32.6704066 386.89929016049996 Z" stroke-miterlimit="10" stroke-width="2.3336004714285714" stroke-dasharray=""/><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 32.6704066 386.89929016049996 L 32.6704066 406.50153412049997 L 89.3408132 406.50153412049997 L 99.14193518 396.70041214049996 L 99.14193518 386.89929016049996 L 32.6704066 386.89929016049996" stroke-miterlimit="10" stroke-width="2.3336004714285714" stroke-dasharray=""/><text fill="black" stroke="none" font-family="sans-serif" font-size="8.8pt" font-style="normal" font-weight="bold" text-decoration="normal" x="49.005609899999996" y="399.9674528005" text-anchor="start" dominant-baseline="alphabetic">loop</text></g><g><g/><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 57.17321155 641.7284616405001 L 527.52524455 641.7284616405001 L 527.52524455 945.5632430205002 L 57.17321155 945.5632430205002 L 57.17321155 641.7284616405001 Z" stroke-miterlimit="10" stroke-width="2.3336004714285714" stroke-dasharray=""/><path fill="white" stroke="black" paint-order="fill stroke markers" d=" M 57.17321155 641.7284616405001 L 57.17321155 661.3307056005001 L 103.84361815 661.3307056005001 L 113.64474013 651.5295836205 L 113.64474013 641.7284616405001 L 57.17321155 641.7284616405001" stroke-miterlimit="10" stroke-width="2.3336004714285714" stroke-dasharray=""/><text fill="black" stroke="none" font-family="sans-serif" font-size="8.8pt" font-style="normal" font-weight="bold" text-decoration="normal" x="73.50841485" y="654.7966242805" text-anchor="start" dominant-baseline="alphabetic">alt</text><text fill="black" stroke="none" font-family="sans-serif" font-size="8.8pt" font-style="normal" font-weight="bold" text-decoration="normal" x="129.97994343" y="654.7966242805" text-anchor="start" dominant-baseline="alphabetic">[Correct data]</text><g><path fill="none" stroke="black" paint-order="fill stroke markers" d=" M 57.17321155 793.6458523305001 L 527.52524455 793.6458523305001" stroke-miterlimit="10" stroke-width="2.3336004714285714" stroke-dasharray="4.083800825"/></g><g/><text fill="black" stroke="none" font-family="sans-serif" font-size="8.8pt" font-style="normal" font-weight="bold" text-decoration="normal" x="129.97994343" y="806.7140149705001" text-anchor="start" dominant-baseline="alphabetic">[Incorrect data]</text></g><g/></g><g/><g/></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="576px" height="1051px" viewBox="0 0 576 1051" enable-background="new 0 0 576 1051" xml:space="preserve">
+<g>
+	<rect fill="#FFFFFF" width="576" height="1051"/>
+</g>
+<g>
+	<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" stroke-dasharray="12.5655,5.4451" d="
+		M114.346,128.803v922.939"/>
+	<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" stroke-dasharray="12.5655,5.4451" d="
+		M424.41,128.803v922.939"/>
+</g>
+<g>
+	<g>
+		<path fill="#FFFFFF" stroke="#000000" stroke-width="2.777" stroke-miterlimit="10" d="M123.658,59.705
+			c-0.003,5.143-4.174,9.309-9.316,9.307c-5.143-0.003-9.309-4.173-9.307-9.316c0.003-5.142,4.173-9.309,9.316-9.306
+			c5.139,0.002,9.304,4.167,9.307,9.306 M114.346,69.016v19.929 M102.585,76.204h23.523 M114.346,88.945l-11.761,18.622
+			 M114.346,88.945l11.762,18.622"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 71.3462 123.9023)" font-family="'ArialMT'" font-size="11">Administrator</text>
+	</g>
+	<path d="M0,0"/>
+	<g>
+		<path fill="#FFFFFF" stroke="#000000" stroke-width="2.6136" stroke-miterlimit="10" d="M368.187,84.698h112.447v44.105H368.187
+			V84.698z"/>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 385.9102 112.4678)" font-family="'ArialMT'" font-size="11">SafeStreets</text>
+	</g>
+</g>
+<g>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M106.179,136.971h16.335v898.437h-16.335
+		V136.971"/>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M416.242,182.709h16.335v89.844h-16.335
+		V182.709"/>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M416.242,316.658h16.335v45.739h-16.335
+		V316.658"/>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M416.242,452.24h16.335v45.738h-16.335
+		V452.24"/>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M114.346,576.388h16.335v40.838h-16.335
+		V576.388"/>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M416.242,707.069h16.335v62.074h-16.335
+		V707.069"/>
+	<path fill="#FFFFFF" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M416.242,858.986h16.335v62.074h-16.335
+		V858.986"/>
+	<g>
+		<g>
+			<rect x="163.428" y="161.474" fill="#FFFFFF" width="211.9" height="21.235"/>
+		</g>
+		<text transform="matrix(1 0 0 1 165.8779 176.1748)" font-family="'ArialMT'" font-size="11">Clicks &quot;Accounts control&quot; button</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M122.514,182.709H413.52"/>
+		<g transform="translate(416.2421685333333,182.70924891049998) translate(-416.2421685333333,-182.70924891049998)">
+			<path d="M402.63,175.903l13.612,6.806l-13.612,6.807V175.903z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="145.928" y="251.317" fill="#FFFFFF" width="246.9" height="21.235"/>
+		</g>
+		<text transform="matrix(1 0 0 1 148.3779 266.0186)" font-family="'ArialMT'" font-size="11">Prompts &quot;No users found&quot; notification</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" stroke-dasharray="6.5341" d="M416.242,272.553
+			H125.236"/>
+		<g transform="translate(122.51402474999999,272.5528670605) translate(-122.51402474999999,-272.5528670605)">
+			<path d="M136.126,265.747l-13.612,6.806l13.612,6.807V265.747z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="164.428" y="341.161" fill="#FFFFFF" width="209.9" height="21.236"/>
+		</g>
+		<text transform="matrix(1 0 0 1 166.8779 355.8623)" font-family="'ArialMT'" font-size="11">Prompts Accounts control page</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" stroke-dasharray="6.5341" d="M416.242,362.396
+			H125.236"/>
+		<g transform="translate(122.51402474999999,362.3964852105) translate(-122.51402474999999,-362.3964852105)">
+			<path d="M136.126,355.59l-13.612,6.806l13.612,6.806V355.59z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="177.428" y="431.004" fill="#FFFFFF" width="183.9" height="21.236"/>
+		</g>
+		<text transform="matrix(1 0 0 1 179.8779 445.7061)" font-family="'ArialMT'" font-size="11">Selects user to be validated</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M122.514,452.24H413.52"/>
+		<g transform="translate(416.2421685333333,452.2401033605) translate(-416.2421685333333,-452.2401033605)">
+			<path d="M402.63,445.434l13.612,6.807l-13.612,6.807V445.434z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="174.928" y="476.743" fill="#FFFFFF" width="188.9" height="21.235"/>
+		</g>
+		<text transform="matrix(1 0 0 1 177.3779 491.4443)" font-family="'ArialMT'" font-size="11">Prompts selected user page</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" stroke-dasharray="6.5341" d="M416.242,497.979
+			H125.236"/>
+		<g transform="translate(122.51402474999999,497.9786726005) translate(-122.51402474999999,-497.9786726005)">
+			<path d="M136.126,491.172l-13.612,6.807l13.612,6.807V491.172z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="150.012" y="522.481" fill="#FFFFFF" width="160.9" height="21.236"/>
+		</g>
+		<g>
+			<rect x="150.012" y="538.816" fill="#FFFFFF" width="104.9" height="21.236"/>
+		</g>
+		<text transform="matrix(1 0 0 1 152.4619 537.1836)" font-family="'ArialMT'" font-size="11">Check data correctness</text>
+		<text transform="matrix(1 0 0 1 152.4619 553.5186)" font-family="'ArialMT'" font-size="11">compared to ID</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M122.514,560.053h73.508v16.335h-62.618"/>
+		<g transform="translate(130.6816264,576.3876484405) translate(-130.6816264,-576.3876484405)">
+			<path d="M144.294,569.581l-13.613,6.807l13.613,6.807V569.581z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="192.928" y="685.833" fill="#FFFFFF" width="152.9" height="21.236"/>
+		</g>
+		<text transform="matrix(1 0 0 1 195.3779 700.5352)" font-family="'ArialMT'" font-size="11">Clicks &quot;Validate&quot; button</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M122.514,707.069H413.52"/>
+		<g transform="translate(416.2421685333333,707.0692748405) translate(-416.2421685333333,-707.0692748405)">
+			<path d="M402.63,700.263l13.612,6.807l-13.612,6.807V700.263z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="451.907" y="731.572" fill="#FFFFFF" width="69.9" height="21.235"/>
+		</g>
+		<text transform="matrix(1 0 0 1 454.3574 746.2734)" font-family="'ArialMT'" font-size="11">Save data</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M432.577,752.808h65.341v16.336H435.3"/>
+		<g transform="translate(432.5773718333333,769.1430473805001) translate(-432.5773718333333,-769.1430473805001)">
+			<path d="M446.19,762.337l-13.613,6.807l13.613,6.806V762.337z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="194.428" y="837.751" fill="#FFFFFF" width="149.9" height="21.235"/>
+		</g>
+		<text transform="matrix(1 0 0 1 196.8779 852.4521)" font-family="'ArialMT'" font-size="11">Clicks &quot;Refuse&quot; button</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M122.514,858.986H413.52"/>
+		<g transform="translate(416.2421685333333,858.9866655305001) translate(-416.2421685333333,-858.9866655305001)">
+			<path d="M402.63,852.181l13.612,6.806l-13.612,6.807V852.181z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<rect x="451.907" y="883.489" fill="#FFFFFF" width="69.9" height="21.236"/>
+		</g>
+		<text transform="matrix(1 0 0 1 454.3574 898.1914)" font-family="'ArialMT'" font-size="11">Save data</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="1.3613" stroke-miterlimit="10" d="M432.577,904.726h65.341v16.335H435.3"/>
+		<g transform="translate(432.5773718333333,921.0604380705001) translate(-432.5773718333333,-921.0604380705001)">
+			<path d="M446.19,914.254l-13.613,6.807l13.613,6.807V914.254z"/>
+		</g>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="2.3336" stroke-miterlimit="10" d="M16.335,207.212h543.86v787.357H16.335
+			V207.212z"/>
+		<path fill="#FFFFFF" stroke="#000000" stroke-width="2.3336" stroke-miterlimit="10" d="M16.335,207.212v19.603h46.671
+			l9.801-9.801v-9.801H16.335"/>
+		<text transform="matrix(1 0 0 1 32.6704 220.2803)" font-family="'Arial-BoldMT'" font-size="8.8">alt</text>
+		<text transform="matrix(1 0 0 1 89.1421 220.2803)" font-family="'Arial-BoldMT'" font-size="8.8">[No users found]</text>
+		<g>
+			<path fill="none" stroke="#000000" stroke-width="2.3336" stroke-miterlimit="10" stroke-dasharray="4.0838" d="M16.335,297.056
+				h543.86"/>
+		</g>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="2.3336" stroke-miterlimit="10" d="M32.67,386.899h511.19v583.167H32.67V386.899
+			z"/>
+		<path fill="#FFFFFF" stroke="#000000" stroke-width="2.3336" stroke-miterlimit="10" d="M32.67,386.899v19.602h56.67l9.801-9.801
+			v-9.801H32.67"/>
+		<text transform="matrix(1 0 0 1 49.0054 399.9678)" font-family="'Arial-BoldMT'" font-size="8.8">loop</text>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="2.3336" stroke-miterlimit="10" d="M57.173,641.729h470.352v303.835H57.173
+			V641.729z"/>
+		<path fill="#FFFFFF" stroke="#000000" stroke-width="2.3336" stroke-miterlimit="10" d="M57.173,641.729v19.603h46.67l9.801-9.802
+			v-9.801H57.173"/>
+		<text transform="matrix(1 0 0 1 73.5083 654.7969)" font-family="'Arial-BoldMT'" font-size="8.8">alt</text>
+		<text transform="matrix(1 0 0 1 129.98 654.7969)" font-family="'Arial-BoldMT'" font-size="8.8">[Correct data]</text>
+		<g>
+			<path fill="none" stroke="#000000" stroke-width="2.3336" stroke-miterlimit="10" stroke-dasharray="4.0838" d="M57.173,793.646
+				h470.352"/>
+		</g>
+		<text transform="matrix(1 0 0 1 129.98 806.7139)" font-family="'Arial-BoldMT'" font-size="8.8">[Incorrect data]</text>
+	</g>
+</g>
+</svg>
