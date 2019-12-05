@@ -1609,8 +1609,8 @@ Data Tier:
 
 \begin_deeper
 \begin_layout Itemize
-MariaDB: Relational DBMS used to store data (apart from pictures) such as
- users data, reports data and location ones.
+Maria DB on Amazon RDS: Relational DBMS used to store data (apart from pictures)
+ such as users data, reports data and location ones.
 \begin_inset Newline newline
 \end_inset
 
@@ -1625,7 +1625,7 @@ Safety&Suggestions engine
 \end_layout
 
 \begin_layout Itemize
-Data Storage: used as storage for all the users pictures.
+Amazon S3: used as storage for all the users pictures.
 \begin_inset Newline newline
 \end_inset
 
@@ -1659,26 +1659,26 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Apart from lower costs, AWS provides elasticity, a SLA of 99.99% and a greater
- security than other solutions.
+Elasticity is achived using the AWS Elastic Load Balancing component.
+\end_layout
+
+\begin_layout Standard
+Other AWS advantages are a SLA of 99.99% and a greater security than other
+ solutions.
 \end_layout
 
 \begin_layout Standard
 Estimations of load and required performance brought to the deploy of the
- following machines:
+ following machine:
 \end_layout
 
 \begin_layout Itemize
 BL Tier: 8 v-cpu 32GB ram and 256GB SSD Linux machine;
 \end_layout
 
-\begin_layout Itemize
-Data Tier: 8 v-cpu 64GB ram and 2TB SSD (with daily backups) Linux machine.
-\end_layout
-
 \begin_layout Standard
-Thanks to elasticity it is possible to adapt the servers to the real needs
- after the release.
+Thanks to the Elastic Load Balancer it is possible to adapt the servers
+ to the real needs after the release.
 \end_layout
 
 \begin_layout Section
@@ -2048,8 +2048,8 @@ In order to easily manage the users data, with fast and easy-to-implement
 \end_layout
 
 \begin_layout Standard
-MariaDB has been chosen as SafeStreets DBMS because it is open source, widely
- used and implements the SQL standard language.
+MariaDB has been chosen as SafeStreets DBMS (on Amazon RDS) because it is
+ open source, widely used and implements the SQL standard language.
 \end_layout
 
 \begin_layout Subsection
