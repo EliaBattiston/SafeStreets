@@ -1310,17 +1310,17 @@ SafeStreets architecture is based on a three-tier architecture:
 Presentation Tier
 \series default
 : it is composed by the mobile application and the web application.
- It is the Tier that directly interacts with the user
+ It is the Tier that directly interacts with the user.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Mobile App: used by any user to access all the reporting fetures;
+Mobile App: used by any user to access the reporting fetures;
 \end_layout
 
 \begin_layout Itemize
 Web App: used by Administrators (they can manage the accounts) and municipality
- Officiers (sees reports by users and statistical data).
+ Officiers (they can see reports by users and statistical data).
 \end_layout
 
 \end_deeper
@@ -1329,14 +1329,14 @@ Web App: used by Administrators (they can manage the accounts) and municipality
 \series bold
 Business Logic Tier: 
 \series default
-it handles the business logic.
- It is composed by the Apache web server and the PHP engine.
- 
+it is composed by the Apache web server, the PHP engine and the Python interpret
+er.
+ It handles the logic on the backend side.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Handles all the RESTful API requests coming from the presentation tier;
+Handles all the RESTful APIs requests coming from the presentation tier;
 \end_layout
 
 \begin_layout Itemize
@@ -1348,7 +1348,7 @@ Runs the
 \emph on
 Municipality APIs adapter
 \emph default
- that handles dedicated municipality features;
+ that handles the dedicated municipality features;
 \end_layout
 
 \begin_layout Itemize
@@ -1365,17 +1365,17 @@ Safety&Suggestions engine
 \series bold
 Data Tier: 
 \series default
-the DataBase server is the data container.
- On a dedicated virtual machine, it runs:
+it is composed by the database and the pictures hosting.
+ It is the container of the data collected from the user.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-A RDBMS, used for all the data apart from pictures;
+A RDBMS used to store the data (apart from pictures);
 \end_layout
 
 \begin_layout Itemize
-An FTP server to manage the Pictures uploaded by the users.
+A Data Storage used to manage the Pictures uploaded by the users.
 \end_layout
 
 \end_deeper
@@ -1416,29 +1416,34 @@ Mobile App: the mobile application will be impemented using the cross platform
 'Xamarin Forms
 \emph default
 '.
- With a shared C# codebase it's possible to compile both Android and iOS
- native applications.
+ The App will be developed using a shared C# codebase that can be compiled
+ both for Android and for iOS native applications.
  
 \begin_inset Newline newline
 \end_inset
 
-It is a faster solution than making two different applications and it gives
- both the OS the same expirience;
+It has been choosen because it has a faster implementation than the making
+ of two different applications while manteining for both the OS the same
+ experience.
 \end_layout
 
 \begin_layout Itemize
-Web App: the web application is going to be written in HTML, CSS, JS & jQuery.
- Through an Ajax approach it will gets data from the API server.
+Web App: the web application is going to be written in PHP, HTML, CSS, JS
+ & jQuery.
+ The data will be served through an Ajax approach, accessing the data from
+ SafeStreets' APIs.
  
 \begin_inset Newline newline
 \end_inset
 
-It will be served throug a secured TLS connection (HTTPS) to ensure privacy.
+It will be served through a secured TLS connection (HTTPS) to ensure privacy
+ on the communication side.
 \begin_inset Newline newline
 \end_inset
 
-A Web Approach has been choosen to provide an always-available and any-platform
- service.
+A Web Approach has been choosen to provide an always-available on any-platform
+ service that can be easily accessed in Offices where there are company
+ PCs .
 \end_layout
 
 \end_deeper
@@ -1447,26 +1452,26 @@ A Web Approach has been choosen to provide an always-available and any-platform
 \series bold
 Business Logic Tier:
 \series default
- running on a virtualized Linux x64 machine, we'll have instances of:
+ on a virtualized Linux x64 machine:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Apache web server: provides capabilities to handle http requests over the
- network;
+Apache web server: provides capabilities to handle HTTPS requests over the
+ network for both the APIs and the Web App.
 \end_layout
 
 \begin_layout Itemize
-PHP runtime: 
+PHP 7.4 runtime: 
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-runs the APIs php scripts, both all-users-APIs and municipality-APIs;
+runs the APIs scripts, both all-users-APIs and municipality-APIs;
 \end_layout
 
 \begin_layout Itemize
-runs the Web Application dynamic pages;
+runs the Web App dynamic pages.
 \end_layout
 
 \end_deeper
@@ -1475,11 +1480,12 @@ Python: runs the
 \emph on
 Safety&Suggestions engine
 \emph default
-,
+.
 \begin_inset Newline newline
 \end_inset
 
-It has been choosen for its libraries on data mining and geocoding.
+It has been choosen for its libraries on data mining, geocoding and image
+ manipulations.
 \end_layout
 
 \end_deeper
@@ -1488,32 +1494,34 @@ It has been choosen for its libraries on data mining and geocoding.
 \series bold
 Data Tier:
 \series default
- running on a virtualized Linux x64 machine, we'll have instances of:
+ on a virtualized Linux x64 machine:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-MariaDB: Relational DBMS used for non graphical data, such as users data,
- reports data and location ones.
+MariaDB: Relational DBMS used to store data (apart from pictures) such as
+ users data, reports data and location ones.
 \begin_inset Newline newline
 \end_inset
 
-The adoption of a Relational Database has been taken to be able to query
- statistical data to run the 
+The adoption of a Relational Database has been choosen based on the type
+ of data processed by SafeStreets.
+ The SQL language is also handy to query statistical data needed by the
+ 
 \emph on
 Safety&Suggestions engine
 \emph default
- faster;
+.
 \end_layout
 
 \begin_layout Itemize
-FTP server: used as storage for all the users pictures.
+Data Storage: used as storage for all the users pictures.
 \begin_inset Newline newline
 \end_inset
 
-The adoption of a different storage practice for pictures has been made
- because Pictures are BLOBs that have no advantages in being collected in
- a DB and that can slow it down.
+Pictures are stored outside the DB because are BLOBs that have no advantages
+ in being collected in a DB and that can slow it down.
+ The DB contains the path to the picture related to an event.
 \end_layout
 
 \end_deeper
@@ -1527,7 +1535,7 @@ Our virtualized Linux x64 Machines will be deployed on AWS on EC2 instances.
 \end_layout
 
 \begin_layout Standard
-Mainteinance costs calculated through the 
+Maintenance costs are calculated through the 
 \begin_inset CommandInset href
 LatexCommand href
 name "awstcocalculator.com"
@@ -1536,8 +1544,8 @@ literal "false"
 
 \end_inset
 
- show up a possible total save of 80% of costs thanks to the use of the
- AWS platform.
+.
+ Using AWS can save up to 80% of costs compared to similar solutions.
 \end_layout
 
 \begin_layout Standard
@@ -1546,21 +1554,21 @@ Apart from lower costs, AWS provides elasticity, a SLA of 99.99% and a greater
 \end_layout
 
 \begin_layout Standard
-Estimations of load and performance made us choose:
+Estimations of load and required performance brought to the deploy of these
+ machines:
 \end_layout
 
 \begin_layout Itemize
-8 v-cpu 32GB ram and 512GB SSD linux machine for the BL Tier;
+BL Tier: 8 v-cpu 32GB ram and 256GB SSD linux machine;
 \end_layout
 
 \begin_layout Itemize
-8 v-cpu 64GB ram and 2TB SSD (with daily backups) linux machine for the
- Data Tier.
+Data Tier: 8 v-cpu 64GB ram and 2TB SSD (with daily backups) linux machine.
 \end_layout
 
 \begin_layout Standard
-Thanks to elasticity it will be possible to adapt the servers to the real
- needs after the release.
+Thanks to elasticity it is possible to adapt the servers to the real needs
+ after the release.
 \end_layout
 
 \begin_layout Section
@@ -1582,6 +1590,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/CreateReport.svg
+	lyxscale 20
 	width 100text%
 
 \end_inset
@@ -1707,6 +1716,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/SeeStreetSafety.svg
+	lyxscale 20
 	width 100text%
 
 \end_inset
@@ -1828,43 +1838,50 @@ Selected architectural styles and patterns
 \end_layout
 
 \begin_layout Standard
-Each of them has been choosen between different options for their advantages
- in an Agile project management.
+The adoption of well know architectural styles such as RESTful and three
+ tier (architecture) can be seen throughout all the SDLC (software development
+ lifecycle).
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
+Each of them has been choosen between different options for their advantages
+ in the Agile project management of SafeStreets.
+\end_layout
+
+\begin_layout Subsection
 RESTful architecture
 \end_layout
 
 \begin_layout Standard
 RESTful APIs has been choosen to grant a flexible, but still completely
  defined, endpoint for all the client-server interactions.
- The application is going to be built in parallel with the APIs, having
- a predefined, shared and complete definition of them can grant an easier
- workload for both the components.
+ The Mobile Application is going to be built in parallel with the APIs so
+ having a predefined, shared and complete definition of them can lead to
+ better results.
 \end_layout
 
 \begin_layout Standard
 The use of RESTful APIs provides also an easy-to-read implementation of
  the comunications.
- The answers for all the APIs come in form of JSON data structures.
+ APIs' responses come in form of JSON data structures.
 \end_layout
 
 \begin_layout Standard
-Another advantage is the possibility of sharing client-server comunication
- standard between the Mobile App and the Web App.
+Another advantage is the sharing of the client-server comunication standard
+ between the Mobile App and the Web App.
  Third-parties can also get easily access, under predefined constraints,
- to our APIs and connect them with their systems.
+ to our APIs in order to connect them with their systems.
 \end_layout
 
 \begin_layout Standard
-To provide external unwanted behaviours from possible hackers, the APIs
- are going to be served throug CORS policies only to our Web App.
+To prevent external unwanted behaviours from possible hackers, the APIs
+ are going to be served through CORS policies only to our Web and Mobile
+ Applications.
 \end_layout
 
 \begin_layout Standard
-Other great RESTful advantages are: the stateless operations, the uniform
- access interface and the definition of a well layered system.
+Other RESTful advantages are the stateless operations, the uniform access
+ interface and the definition of a well layered system.
 \end_layout
 
 \begin_layout Standard
@@ -1872,7 +1889,7 @@ All the request will be served over the HTTPS protocol in order to guarantee
  the security the user is expecting.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsection
 Three Tier Client-Server
 \end_layout
 
@@ -1888,39 +1905,40 @@ on and the user representation, so that different security measures can
 \end_layout
 
 \begin_layout Standard
-The complexity of the system has also decreased thanks to the adoption of
- the three tier approach.
- It force the developers to work in silos where components have dedicated
- defined needs and possibilities and can be upgraded seamlessly.
+It force the developers to work in silos where components have defined interface
+s.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
+The complexity of the system has also decreased thanks to the adoption of
+ the three tier approach.
+\end_layout
+
+\begin_layout Subsection
 RDBMS
 \end_layout
 
 \begin_layout Standard
 In order to easily manage the users data, with fast and easy-to-implement
  complex statistical queries, the use of a RDBMS was desirable.
+ Using a non relational database could have brought better scaling-up but
+ the flexible data model and the absence of the SQL language would have
+ been an harder obstacle to overcome.
 \end_layout
 
 \begin_layout Standard
-MariaDB has been choosen because it is open source, widely used and uses
- the SQL standard language.
+MariaDB has been choosen as SafeStreets DBMS because it is open source,
+ widely used and implements the SQL standard language.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsection
 Thin Client
 \end_layout
 
 \begin_layout Standard
-To create a fast application on both new and old devices, with fast or slow
- internet connection, has been decided to adopt a so called 'Thin Client'
- approach.
-\end_layout
-
-\begin_layout Standard
-This approach makes the User Interface faster on old devices and can be
- acceptable for slow connections to, making the User eXperience enjoyable.
+To create a fast Mobile Application on both new and old devices, with fast
+ or slow internet connection, it has been decided to adopt a so called 'Thin
+ Client' approach.
 \end_layout
 
 \begin_layout Standard
@@ -1928,12 +1946,17 @@ The client is developed to work only as an input/output for all the comunication
 s to the server, where the business logic is deployed.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
+This approach makes the User Interface faster on old devices and is a good
+ option for slow connections too, making the User eXperience enjoyable.
+\end_layout
+
+\begin_layout Subsection
 Model View Controller
 \end_layout
 
 \begin_layout Standard
-The MVC approach has been choosen, for the Applications, to ensure division
+The MVC approach has been choosen, for the Mobile App, to ensure division
  of objective for each part of the code.
 \end_layout
 
@@ -1943,8 +1966,8 @@ The Model is the component that interacts with the server and retrives the
 \end_layout
 
 \begin_layout Standard
-The View shows the data from the Model to the user, through their devices
- with the Mobile or the Web Application.
+The View shows the data from the Model to the user, with native interfaces
+ on both platforms.
 \end_layout
 
 \begin_layout Standard
@@ -1952,28 +1975,22 @@ The Control is responsible for handling the user interactions through the
  View and works to modify the state of both the Model and the View itself.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsection
 Cross Platform
 \end_layout
 
 \begin_layout Standard
-Developing Mobile Application means creating apps both for iOS and Android.
- Dedicated applications for each platforms brings to doubling timing, prices
- and having different design and experiences on the different platformsfor
- the development.
+Developing Mobile Application means creating apps for both iOS and Android.
+ 
 \end_layout
 
 \begin_layout Standard
-The adoption of a Cross Platform approach can overcome these obstacles by
- giving a flexible solution that can be run flawlessly on both platforms
- leaving us with just a few disadvantages.
-\end_layout
-
-\begin_layout Standard
-The highest disadvantage is usually the presence of a different runtime
- environment such in case of using the Cordova or the Ionic framework.
- The adoption of the Xamarin Framework on the other hand doesn't bring this
- problematic.
+Building dedicated applications for each platforms is a good option for
+ big teams.
+ The costraints of the SafeStreets project brought to the adoption of a
+ cross platform approach that could decrease prices and times while giving
+ dedicated UI and experiences on each platform, it is a flexible solution
+ that can run flawlessly on both platforms.
 \end_layout
 
 \begin_layout Section
@@ -2496,6 +2513,358 @@ Unsafe areas page
 Requirements traceability
 \end_layout
 
+\begin_layout Standard
+Objective of the Design Document is to achive, through the development,
+ the goals defined previously in the RASD.
+\end_layout
+
+\begin_layout Standard
+In this part of the DD is defined how each goal is going to be reached throughou
+t the implementation of the different software components of the SafeStreets
+ infrastructure.
+\end_layout
+
+\begin_layout Standard
+For each Goal there is one or more requirements to be fulfilled:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+[R1]
+\series default
+ Every citizen that wants to register has a valid identification document
+ and a smartphone (with GPS and camera systems):
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+Mobile App
+\emph default
+: in order to access the Mobile Application, the user needs to download
+ it through the App Store or the Play Store.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+PHP backend
+\emph default
+: checks the validity of the ID calculating the Fiscal Code.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+[R2]
+\series default
+ Every citizen that wants to register owns a valid e-mail address:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+Mobile&Web App
+\emph default
+: the input text field (using a regex) ensures the email is in a valid format.
+ An automatic email is sent with a verification link to the user, to enable
+ its account, the link has to be opened.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+[R3]
+\series default
+ Every officer that wants to register is authorized by the municipality
+ to register:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+Web App
+\emph default
+: an Administrator can increase the level of a user to the 'Officer Position'.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+[R4]
+\series default
+ The municipality allows SafeStreets administrator to verify the belonging
+ of the requesting officer to the traffic police (via an automated system
+ or sending an official request):
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+Web App
+\emph default
+: when a request for an officer account has been received, an automatic
+ email is sent to a dedicated email address (PEC email) of the Police with
+ a link.
+ In case the link is visited, the validity of the 'Officer Position' is
+ enabled.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+[R5]
+\series default
+ The user has his smartphone with him, is able to login in the application
+ and is not suspended:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+PHP backend
+\emph default
+: the login autenticator ensures that the user that tries to log in is registere
+d and is not suspended.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+[R6]
+\series default
+ The user's smartphone has Internet connection enabled and functioning:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+Mobile App
+\emph default
+: in case requests to SafeStreets servers are not served, the Mobile App
+ tries to connect to Google.
+ If the connection can be established, the internet connection of the user
+ is working while our systems are down.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+[R7]
+\series default
+ The user's smartphone has GPS enabled and functioning:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+Mobile App
+\emph default
+: the Mobile App trigger a request to the user to grant access to the GPS
+ for the application.
+ Every time the position is needed, control first that the data are still
+ accessible to the app and updated.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+[R8]
+\series default
+ The user is able to take at least one picture of the violation to correctly
+ choose the type of violation he is reporting:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+Mobile App
+\emph default
+: the application requires the permissions to access the camera.
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Mobile App
+\emph default
+: suggest a group of possible violations to the user to choose in.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+[R9]
+\series default
+ The user has already made at least one report:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+PHP backend
+\emph default
+: counts the number of reports made by a user.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+[R11]
+\series default
+ The officer access has the same base functions of the basic user access,
+ plus specific ones:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+ALL
+\emph default
+: the officer can access all the normal user's functionalities through the
+ Mobile&Web Apps.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+[R12]
+\series default
+ The officer has a computer with Internet access and is able to login to
+ the system:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+PHP backend
+\emph default
+: the login autenticator ensures that the user that tries to log in is registere
+d, not suspended and has the officer privileges.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+[R13]
+\series default
+ The municipality and/or the authorities use the provided APIs:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+PHP backend
+\emph default
+: the municipality APIs are connected to the PHP backend
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+[R14]
+\series default
+ The administrator has a computer with Internet access and is able to login
+ to the system:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+PHP backend
+\emph default
+: the login autenticator ensures that the user that tries to log in is registere
+d, not suspended and has the system administrator privileges.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+[R15]
+\series default
+ The administrator has the possibility to use an official communication
+ channel with the municipality:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+WebApp
+\emph default
+: in the contacts page, the PEC email of the municipality is provided.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+[R16]
+\series default
+ The administrator has received a block/removal request from the authorities:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+PHP backend
+\emph default
+ 
+\emph on
+/ Web App
+\emph default
+: tracks the block/removal requests coming from the authorities and give
+ the administrator the possibility to change a user status.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+[R17]
+\series default
+ The administrator has received a sign-up request from the authorities and/or
+ from the municipality:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+PHP backend / Web App
+\emph default
+: tracks the signup requests from the authorities/municipality.
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
