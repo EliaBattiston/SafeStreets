@@ -1127,10 +1127,6 @@ Analysis of the system's consistency using Alloy.
 Reporting of the time spent by each team member while redacting the document.
 \end_layout
 
-\begin_layout Enumerate
-References to external resources.
-\end_layout
-
 \begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset

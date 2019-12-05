@@ -260,12 +260,302 @@ Introduction
 Purpose
 \end_layout
 
+\begin_layout Standard
+This DD is the Design Document of the SafeStreets project.
+\end_layout
+
+\begin_layout Standard
+Objectives of this document are to provide a more detailed analysis of the
+ problem than the one outlined in the RASD, while specifying the proposed
+ design and implementation aspects of the final product.
+\end_layout
+
+\begin_layout Standard
+The chosen architecture of the system, the components it is made of and
+ their interactions are completely described with the purpose of guiding
+ the system's development.
+\end_layout
+
+\begin_layout Standard
+The addressees of this document are developers working on the implementation
+ of the solution and the customer.
+\end_layout
+
 \begin_layout Section
 Scope
 \end_layout
 
+\begin_layout Subsection
+Description of the given problem
+\end_layout
+
+\begin_layout Standard
+SafeStreets is a community service that aims to provide the users of the
+ possibility to notify parking and traffic violations.
+ It can be done providing proofs of the accident like pictures.
+ 
+\end_layout
+
+\begin_layout Standard
+The goal is to raise awareness in drivers that driving and parking can make
+ other's life harder.
+ With a little effort, instead, it can be made easier.
+\end_layout
+
+\begin_layout Standard
+The service will be served through a mobile application where users can
+ report new violations and see the ones they reported before.
+ Every attached picture comes with the metadata provided by the smartphone
+ (like: time, position...) and with valuable information given by the user
+ whom can describe the violation.
+ More pictures of the same violation will be connected crossing the spacial
+ and time information so that more viewing angles will be available.
+\end_layout
+
+\begin_layout Standard
+To ensure the chain of custody, the backend infrastructure will run an AI
+ algorithm to ensure the quality of the data given (e.g.
+ no edited picture) before considering them valuable.
+ 
+\end_layout
+
+\begin_layout Standard
+Authorities have access to all the data provided by the users, plus: 
+\end_layout
+
+\begin_layout Itemize
+Suggestions from the system on ways the municipality can improve the safety
+ of the streets, directly from their dashboard.
+ These are computed by crossing SafeStreets reports with the municipality
+ accident and traffic tickets data;
+\end_layout
+
+\begin_layout Itemize
+Automatic acquisition of reports to produce traffic tickets from the data
+ collected;
+\end_layout
+
+\begin_layout Itemize
+Maps of the less safe roads in the city;
+\end_layout
+
+\begin_layout Itemize
+Vehicles that commit the most violations and other statistics for their
+ municipality.
+\end_layout
+
+\begin_layout Subsection
+Goals
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Goals"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+[G1] Allow citizens to register providing basic information that certifies
+ their identities and become certified users;
+\end_layout
+
+\begin_layout Itemize
+[G2] Allow authorities to register through a verification procedure;
+\end_layout
+
+\begin_layout Itemize
+Enable certified users to:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[G3] report new traffic or parking violations;
+\end_layout
+
+\begin_layout Itemize
+[G4] see their own past reports;
+\end_layout
+
+\begin_layout Itemize
+[G5] access the map showing the most reported streets.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Enable authorities to:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[G6] access all certified users services;
+\end_layout
+
+\begin_layout Itemize
+[G7] access all report data (including data about the user who created it);
+\end_layout
+
+\begin_layout Itemize
+[G8] acquire report data in their own systems to generate tickets;
+\end_layout
+
+\begin_layout Itemize
+[G9] access data analysis results with suggestions.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Enable administrators to:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+[G10] certify authorities;
+\end_layout
+
+\begin_layout Itemize
+[G11] block or remove users;
+\end_layout
+
+\begin_layout Itemize
+[G12] assign roles to users.
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Definitions, Acronyms, Abbreviations
+\end_layout
+
+\begin_layout Subsection
+Definitions
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Violation
+\emph default
+: illegal behaviour executed by the Offender
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Violation report / Report:
+\emph default
+ information regarding a single violation, sent by a Registered User through
+ SafeStreets
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Server:
+\emph default
+ SafeStreets server which elaborates the reports and communicates to municipalit
+y through custom APIs
+\end_layout
+
+\begin_layout Standard
+Please refer to the RASD 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "RASD"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ for the definitions of actor such as Offender and Registered User.
+\end_layout
+
+\begin_layout Subsection
+Acronyms
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+GDPR:
+\emph default
+ General Data Protection Regulation
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+API:
+\emph default
+ Application Programming Interface
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+GPS:
+\emph default
+ Global Positioning System
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+UI:
+\emph default
+ User Interface
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+ID:
+\emph default
+ Identification Document
+\end_layout
+
+\begin_layout Itemize
+SLA: Service Level Agreement
+\end_layout
+
+\begin_layout Subsection
+Abbreviations
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+[Gn]:
+\emph default
+ Goal 
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+[Dn]:
+\emph default
+ domain assumption 
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+[Rn]: 
+\emph default
+Requirement 
+\begin_inset Formula $n$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -309,8 +599,59 @@ literal "false"
 
 \end_layout
 
+\begin_layout Itemize
+\begin_inset CommandInset label
+LatexCommand label
+name "RASD"
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "SafeStreets RASD"
+target "https://github.com/EliaBattiston/AspesiBattistonCarabelli/blob/introduction/DeliveryFolder/RASD1.pdf"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Document structure
+\end_layout
+
+\begin_layout Standard
+This document consists of the following parts:
+\end_layout
+
+\begin_layout Enumerate
+Brief description of this document, its nomenclature and the description
+ of the project.
+\end_layout
+
+\begin_layout Enumerate
+Description of the architecture of the system to be developed, focusing
+ on its component, their dependencies and interactions, how they will be
+ deployed.
+\end_layout
+
+\begin_layout Enumerate
+Specification of the system's user interfaces.
+\end_layout
+
+\begin_layout Enumerate
+Maps components of the system to the requirements they fulfill.
+\end_layout
+
+\begin_layout Enumerate
+Description of the order in which various parts of the system will be developed
+ based on dependencies and importance.
+\end_layout
+
+\begin_layout Enumerate
+Reporting of the time spent by each team member while redacting the document.
 \end_layout
 
 \begin_layout Standard
@@ -703,6 +1044,48 @@ database stores data received form the municipality’s systems to be used
  results contained by the 
 \emph on
 Safety&Suggestions database
+\end_layout
+
+\begin_layout Subsubsection
+Entity Relationship diagram
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/Databases/MainER.svg
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Database ER diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
