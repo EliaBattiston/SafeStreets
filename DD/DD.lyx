@@ -586,6 +586,14 @@ SDLC
 : Software Development Life-Cycle
 \end_layout
 
+\begin_layout Itemize
+
+\emph on
+BL
+\emph default
+: Business Logic
+\end_layout
+
 \begin_layout Subsection
 Abbreviations
 \end_layout
@@ -1128,6 +1136,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Images/Databases/MainER.svg
+	lyxscale 2
 	width 100text%
 
 \end_inset
@@ -1369,7 +1378,7 @@ Deployment view
 \end_layout
 
 \begin_layout Standard
-SafeStreets architecture is based on a three-tier architecture:
+The architecture of SafeStreets is based on a three-tiers:
 \end_layout
 
 \begin_layout Itemize
@@ -1378,17 +1387,18 @@ SafeStreets architecture is based on a three-tier architecture:
 Presentation Tier
 \series default
 : it is composed by the mobile application and the web application.
- It is the Tier that directly interacts with the user.
+ This is the Tier that directly interacts with the user.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Mobile App: used by any user to access the reporting features;
+Mobile App: used by any user to access reporting features;
 \end_layout
 
 \begin_layout Itemize
-Web App: used by Administrators (they can manage the accounts) and municipality
- Officers (they can see reports by users and statistical data).
+Web App: used by municipality Officers (they can see reports by users and
+ statistical data) and Administrators (they can manage accounts and use
+ all other features).
 \end_layout
 
 \end_deeper
@@ -1397,14 +1407,13 @@ Web App: used by Administrators (they can manage the accounts) and municipality
 \series bold
 Business Logic Tier: 
 \series default
-it is composed by the Apache web server, the PHP engine and the Python interpret
-er.
+it is composed by the Apache web server, the PHP and Python interpreters.
  It handles the logic on the backend side.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Handles all the RESTful APIs requests coming from the presentation tier;
+Handles all RESTful APIs requests coming from the presentation tier;
 \end_layout
 
 \begin_layout Itemize
@@ -1416,11 +1425,21 @@ Runs the
 \emph on
 Municipality APIs adapter
 \emph default
- that handles the dedicated municipality features;
+ that handles dedicated municipality features;
 \end_layout
 
 \begin_layout Itemize
-Runs in batch the 
+Runs
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+in batch
+\end_layout
+
+\end_inset
+
+ the 
 \emph on
 Safety&Suggestions engine
 \emph default
@@ -1434,16 +1453,16 @@ Safety&Suggestions engine
 Data Tier: 
 \series default
 it is composed by the database and the pictures hosting.
- It is the container of the data collected from the user.
+ This is the container of the data collected from the user.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-A RDBMS used to store the data (apart from pictures);
+A RDBMS is used to store structured data (everything but pictures);
 \end_layout
 
 \begin_layout Itemize
-A Data Storage used to manage the Pictures uploaded by the users.
+A Data Storage is used to manage pictures uploaded by users.
 \end_layout
 
 \end_deeper
@@ -1492,28 +1511,31 @@ Xamarin Forms
 \end_inset
 
 .
- The App will be developed using a shared C# codebase that can be compiled
- both for Android and for iOS native applications.
- 
+ The App will be developed using a shared C# codebase from which both Android
+ and iOS native applications can be built.
 \begin_inset Newline newline
 \end_inset
 
-It has been chosen because it has a faster implementation than the making
- of two different applications while maintaining for both the OS the same
- experience.
+Xamarin has been chosen because it makes implementation much faster than
+ making two different applications while maintaining the same experience
+ for both the OSs.
 \end_layout
 
 \begin_layout Itemize
-Web App: the web application is going to be written in PHP, HTML, CSS, JS
- & jQuery.
- The data will be served through an Ajax approach, accessing the data from
+Web App: the web application is going to be written in PHP, HTML, CSS, JS,
+ using the jQuery library and the SemanticUI development framework for its
+ frontend.
+\begin_inset Newline newline
+\end_inset
+
+The data will be served following an Ajax approach, accessing data from
  SafeStreets' APIs.
  
 \begin_inset Newline newline
 \end_inset
 
 It will be served through a secured TLS connection (HTTPS) to ensure privacy
- on the communication side.
+ and security of the communication channel.
 \begin_inset Newline newline
 \end_inset
 
@@ -1533,8 +1555,8 @@ Business Logic Tier:
 
 \begin_deeper
 \begin_layout Itemize
-Apache web server: provides capabilities to handle HTTPS requests over the
- network for both the APIs and the Web App.
+Apache web server: handles HTTPS requests over the network for both the
+ APIs and the Web App.
 \end_layout
 
 \begin_layout Itemize
@@ -1543,7 +1565,19 @@ PHP 7.4 runtime:
 
 \begin_deeper
 \begin_layout Itemize
-runs the APIs scripts, both all-users-APIs and municipality-APIs;
+runs scripts implementing the 
+\emph on
+Mobile application REST API
+\emph default
+, 
+\emph on
+Accounts REST API
+\emph default
+ and 
+\emph on
+Web client REST API
+\emph default
+;
 \end_layout
 
 \begin_layout Itemize
@@ -1556,7 +1590,7 @@ Python: runs the
 \emph on
 Safety&Suggestions engine
 \emph default
-.
+:
 \begin_inset Newline newline
 \end_inset
 
@@ -1621,7 +1655,7 @@ literal "false"
 \end_inset
 
 .
- Using AWS can save up to 80% of costs compared to similar solutions.
+ Using AWS can save up to 80% of costs compared to an on-premises solutions.
 \end_layout
 
 \begin_layout Standard
@@ -1630,16 +1664,16 @@ Apart from lower costs, AWS provides elasticity, a SLA of 99.99% and a greater
 \end_layout
 
 \begin_layout Standard
-Estimations of load and required performance brought to the deploy of these
- machines:
+Estimations of load and required performance brought to the deploy of the
+ following machines:
 \end_layout
 
 \begin_layout Itemize
-BL Tier: 8 v-cpu 32GB ram and 256GB SSD linux machine;
+BL Tier: 8 v-cpu 32GB ram and 256GB SSD Linux machine;
 \end_layout
 
 \begin_layout Itemize
-Data Tier: 8 v-cpu 64GB ram and 2TB SSD (with daily backups) linux machine.
+Data Tier: 8 v-cpu 64GB ram and 2TB SSD (with daily backups) Linux machine.
 \end_layout
 
 \begin_layout Standard
