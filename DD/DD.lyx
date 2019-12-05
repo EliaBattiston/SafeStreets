@@ -509,13 +509,81 @@ UI:
 \begin_layout Itemize
 
 \emph on
+UX
+\emph default
+: User eXperience
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
 ID:
 \emph default
  Identification Document
 \end_layout
 
 \begin_layout Itemize
-SLA: Service Level Agreement
+
+\emph on
+SLA
+\emph default
+: Service Level Agreement
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+DBMS: 
+\emph default
+DataBase Management System
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+RDBMS:
+\emph default
+ Relational DBMS
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+ER
+\emph default
+: Entity Relationship
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+REST: 
+\emph default
+REpresentational State Transfer
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+OS
+\emph default
+: Operating System
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+BLOB: 
+\emph default
+Binary Large OBject
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+SDLC
+\emph default
+: Software Development Life-Cycle
 \end_layout
 
 \begin_layout Subsection
@@ -642,7 +710,7 @@ Specification of the system's user interfaces.
 \end_layout
 
 \begin_layout Enumerate
-Maps components of the system to the requirements they fulfill.
+Maps components of the system to the requirements they fulfil.
 \end_layout
 
 \begin_layout Enumerate
@@ -1315,12 +1383,12 @@ Presentation Tier
 
 \begin_deeper
 \begin_layout Itemize
-Mobile App: used by any user to access the reporting fetures;
+Mobile App: used by any user to access the reporting features;
 \end_layout
 
 \begin_layout Itemize
 Web App: used by Administrators (they can manage the accounts) and municipality
- Officiers (they can see reports by users and statistical data).
+ Officers (they can see reports by users and statistical data).
 \end_layout
 
 \end_deeper
@@ -1410,20 +1478,28 @@ Presentation Tier:
 
 \begin_deeper
 \begin_layout Itemize
-Mobile App: the mobile application will be impemented using the cross platform
+Mobile App: the mobile application will be implemented using the cross platform
  framework 
 \emph on
-'Xamarin Forms
+
+\begin_inset Quotes eld
+\end_inset
+
+Xamarin Forms
 \emph default
-'.
+
+\begin_inset Quotes erd
+\end_inset
+
+.
  The App will be developed using a shared C# codebase that can be compiled
  both for Android and for iOS native applications.
  
 \begin_inset Newline newline
 \end_inset
 
-It has been choosen because it has a faster implementation than the making
- of two different applications while manteining for both the OS the same
+It has been chosen because it has a faster implementation than the making
+ of two different applications while maintaining for both the OS the same
  experience.
 \end_layout
 
@@ -1441,7 +1517,7 @@ It will be served through a secured TLS connection (HTTPS) to ensure privacy
 \begin_inset Newline newline
 \end_inset
 
-A Web Approach has been choosen to provide an always-available on any-platform
+A Web Approach has been chosen to provide an always-available on any-platform
  service that can be easily accessed in Offices where there are company
  PCs .
 \end_layout
@@ -1484,7 +1560,7 @@ Safety&Suggestions engine
 \begin_inset Newline newline
 \end_inset
 
-It has been choosen for its libraries on data mining, geocoding and image
+It has been chosen for its libraries on data mining, geocoding and image
  manipulations.
 \end_layout
 
@@ -1504,7 +1580,7 @@ MariaDB: Relational DBMS used to store data (apart from pictures) such as
 \begin_inset Newline newline
 \end_inset
 
-The adoption of a Relational Database has been choosen based on the type
+The adoption of a Relational Database has been chosen based on the type
  of data processed by SafeStreets.
  The SQL language is also handy to query statistical data needed by the
  
@@ -1629,7 +1705,7 @@ This sequence diagram explains the backend procedure for handling a report
 Reports
 \emph default
  DBMS, which saves the informations about the report and forwards them to
- the municipality throught the 
+ the municipality through the 
 \emph on
 Reports pusher
 \emph default
@@ -1695,7 +1771,7 @@ Reports
 \emph default
  DBMS, which retrieves the data and send them back in the chain.
  If no past reports are found, an Empty list notification is created by
- the DBMS and sent to the user throught the 
+ the DBMS and sent to the user through the 
 \emph on
 Reports module
 \emph default
@@ -1810,23 +1886,34 @@ In particular:
 \end_layout
 
 \begin_layout Itemize
-AccountsAPI interface is the interface for Accounts REST API subsystem,
- providing all methods needed for signup, login, third person account creation
- and role changing.
+
+\emph on
+Accounts API
+\emph default
+ interface is the interface for Accounts REST API subsystem, providing all
+ methods needed for signup, login, third person account creation and role
+ changing.
  The login method is used for both mobile application and web platform.
 \end_layout
 
 \begin_layout Itemize
-MobileApplicationAPI interface is the main backend interface for mobile
- platform, as it gathers all methods needed for the application functions,
- such as report sending, past reports view and provisioning of Street Safety
- elaborated data.
+
+\emph on
+Mobile Application API
+\emph default
+ interface is the main backend interface for mobile platform, as it gathers
+ all methods needed for the application functions, such as report sending,
+ past reports view and provisioning of Street Safety elaborated data.
  It provides all methods from Mobile Application REST API subsystem.
 \end_layout
 
 \begin_layout Itemize
-WebClientAPI interfaces Web Client REST API subsystem to the web application
- used by Authorities and Administrators.
+
+\emph on
+Web Client API
+\emph default
+ interfaces Web Client REST API subsystem to the web application used by
+ Authorities and Administrators.
  The interface provides methods for accounts, reports and suggestions retrieval.
  It is important to highlight that the method for accounts data retrieval
  is in the Web Client interface and not in Accounts to avoid personal data
@@ -1840,11 +1927,11 @@ Selected architectural styles and patterns
 \begin_layout Standard
 The adoption of well know architectural styles such as RESTful and three
  tier (architecture) can be seen throughout all the SDLC (software development
- lifecycle).
+ life-cycle).
 \end_layout
 
 \begin_layout Standard
-Each of them has been choosen between different options for their advantages
+Each of them has been chosen between different options for their advantages
  in the Agile project management of SafeStreets.
 \end_layout
 
@@ -1853,8 +1940,8 @@ RESTful architecture
 \end_layout
 
 \begin_layout Standard
-RESTful APIs has been choosen to grant a flexible, but still completely
- defined, endpoint for all the client-server interactions.
+RESTful APIs has been chosen to grant a flexible, but still completely defined,
+ endpoint for all the client-server interactions.
  The Mobile Application is going to be built in parallel with the APIs so
  having a predefined, shared and complete definition of them can lead to
  better results.
@@ -1862,12 +1949,12 @@ RESTful APIs has been choosen to grant a flexible, but still completely
 
 \begin_layout Standard
 The use of RESTful APIs provides also an easy-to-read implementation of
- the comunications.
+ the communications.
  APIs' responses come in form of JSON data structures.
 \end_layout
 
 \begin_layout Standard
-Another advantage is the sharing of the client-server comunication standard
+Another advantage is the sharing of the client-server communication standard
  between the Mobile App and the Web App.
  Third-parties can also get easily access, under predefined constraints,
  to our APIs in order to connect them with their systems.
@@ -1927,8 +2014,8 @@ In order to easily manage the users data, with fast and easy-to-implement
 \end_layout
 
 \begin_layout Standard
-MariaDB has been choosen as SafeStreets DBMS because it is open source,
- widely used and implements the SQL standard language.
+MariaDB has been chosen as SafeStreets DBMS because it is open source, widely
+ used and implements the SQL standard language.
 \end_layout
 
 \begin_layout Subsection
@@ -1937,13 +2024,20 @@ Thin Client
 
 \begin_layout Standard
 To create a fast Mobile Application on both new and old devices, with fast
- or slow internet connection, it has been decided to adopt a so called 'Thin
- Client' approach.
+ or slow internet connection, it has been decided to adopt a so called 
+\begin_inset Quotes eld
+\end_inset
+
+Thin Client
+\begin_inset Quotes erd
+\end_inset
+
+ approach.
 \end_layout
 
 \begin_layout Standard
-The client is developed to work only as an input/output for all the comunication
-s to the server, where the business logic is deployed.
+The client is developed to work only as an input/output for all the communicatio
+ns to the server, where the business logic is deployed.
 \end_layout
 
 \begin_layout Standard
@@ -1956,13 +2050,13 @@ Model View Controller
 \end_layout
 
 \begin_layout Standard
-The MVC approach has been choosen, for the Mobile App, to ensure division
+The MVC approach has been chosen, for the Mobile App, to ensure division
  of objective for each part of the code.
 \end_layout
 
 \begin_layout Standard
-The Model is the component that interacts with the server and retrives the
- Data through the RESTful APIs.
+The Model is the component that interacts with the server and retrieves
+ the Data through the RESTful APIs.
 \end_layout
 
 \begin_layout Standard
@@ -1987,7 +2081,7 @@ Developing Mobile Application means creating apps for both iOS and Android.
 \begin_layout Standard
 Building dedicated applications for each platforms is a good option for
  big teams.
- The costraints of the SafeStreets project brought to the adoption of a
+ The constraints of the SafeStreets project brought to the adoption of a
  cross platform approach that could decrease prices and times while giving
  dedicated UI and experiences on each platform, it is a flexible solution
  that can run flawlessly on both platforms.
@@ -2514,7 +2608,7 @@ Requirements traceability
 \end_layout
 
 \begin_layout Standard
-Objective of the Design Document is to achive, through the development,
+Objective of the Design Document is to achieve, through the development,
  the goals defined previously in the RASD.
 \end_layout
 
@@ -2591,7 +2685,15 @@ Mobile&Web App
 \emph on
 Web App
 \emph default
-: an Administrator can increase the level of a user to the 'Officer Position'.
+: an Administrator can increase the level of a user to the 
+\begin_inset Quotes eld
+\end_inset
+
+Officer Position
+\begin_inset Quotes erd
+\end_inset
+
+.
 \end_layout
 
 \end_deeper
@@ -2614,8 +2716,15 @@ Web App
 : when a request for an officer account has been received, an automatic
  email is sent to a dedicated email address (PEC email) of the Police with
  a link.
- In case the link is visited, the validity of the 'Officer Position' is
- enabled.
+ In case the link is visited, the validity of the 
+\begin_inset Quotes eld
+\end_inset
+
+Officer Position
+\begin_inset Quotes erd
+\end_inset
+
+ is enabled.
 \end_layout
 
 \end_deeper
@@ -2634,8 +2743,8 @@ Web App
 \emph on
 PHP backend
 \emph default
-: the login autenticator ensures that the user that tries to log in is registere
-d and is not suspended.
+: the login authenticator ensures that the user that tries to log in is
+ registered and is not suspended.
 \end_layout
 
 \end_deeper
@@ -2761,8 +2870,8 @@ ALL
 \emph on
 PHP backend
 \emph default
-: the login autenticator ensures that the user that tries to log in is registere
-d, not suspended and has the officer privileges.
+: the login authenticator ensures that the user that tries to log in is
+ registered, not suspended and has the officer privileges.
 \end_layout
 
 \end_deeper
@@ -2799,8 +2908,8 @@ PHP backend
 \emph on
 PHP backend
 \emph default
-: the login autenticator ensures that the user that tries to log in is registere
-d, not suspended and has the system administrator privileges.
+: the login authenticator ensures that the user that tries to log in is
+ registered, not suspended and has the system administrator privileges.
 \end_layout
 
 \end_deeper
@@ -3219,7 +3328,7 @@ Low
 \begin_inset Text
 
 \begin_layout Plain Layout
-Unsafe area analisys
+Unsafe area analysis
 \end_layout
 
 \end_inset
@@ -3311,7 +3420,7 @@ Violation reporting
 \begin_layout Enumerate
 
 \series bold
-Unsafe area analisys
+Unsafe area analysis
 \series default
 : this is a core functionality for the municipality, so it has to be implemented
  as soon as the violation reporting is implemented and tested.
@@ -3330,7 +3439,7 @@ Street Safety visualization
 : differently from the precedent functionality, these one is a little easier
  to implement because collects data only from the internal dataset.
  However it has a lower importance for the client, so it is implemented
- after Unsafe area analisys.
+ after Unsafe area analysis.
 \end_layout
 
 \begin_layout Enumerate
