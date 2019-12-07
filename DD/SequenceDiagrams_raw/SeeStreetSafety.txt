@@ -1,5 +1,3 @@
-title See Street Safety
-
 actor Registered user
 activate Registered user
 Registered user->SafeStreetsApp:StreetSafetyRequest()

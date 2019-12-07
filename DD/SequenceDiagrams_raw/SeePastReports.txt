@@ -1,4 +1,3 @@
-title See past reports
 actor Registered user
 activate Registered user
 Registered user->SafeStreetsApp:PastReportsListRequest()

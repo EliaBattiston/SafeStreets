@@ -1965,23 +1965,32 @@ Create report - sequence diagram
 \begin_layout Standard
 This sequence diagram explains the backend procedure for handling a report
  creation.
- SafeStreets App adds the user ID to the report and sends all informations
+\end_layout
+
+\begin_layout Itemize
+SafeStreets App adds the user ID to the report and sends all information
  to the
 \emph on
  Reports module
 \emph default
  Mobile application REST API.
- The latter forwards the informations to the 
+\end_layout
+
+\begin_layout Itemize
+The Reports module forwards the informations to the 
 \emph on
 Reports
 \emph default
- DBMS, which saves the informations about the report and forwards them to
+ DBMS, which saves the information about the report and forwards them to
  the municipality through the 
 \emph on
 Reports pusher
 \emph default
  Municipality APIs adapter.
- If there are missing data pieces in the request, the 
+\begin_inset Newline newline
+\end_inset
+
+If there are missing data pieces in the request, the 
 \emph on
 Reports module
 \emph default
@@ -2003,6 +2012,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename Images/SequenceDiagrams/SeePastReports.svg
+	lyxscale 20
 	width 100text%
 
 \end_inset
@@ -2028,21 +2038,30 @@ See past reports - sequence diagram
 \end_layout
 
 \begin_layout Standard
-This sequence diagram explains the backend procedure for showing user past
- sent reports.
- SafeStreets App adds the user ID to the report and sends all informations
+This sequence diagram explains the backend procedure for showing the user's
+ past reports.
+\end_layout
+
+\begin_layout Itemize
+The SafeStreets App adds the user ID to the report and sends all informations
  to the
 \emph on
  Reports module
 \emph default
  Mobile application REST API.
- The latter forwards the informations to the 
+\end_layout
+
+\begin_layout Itemize
+The Reports module forwards the informations to the 
 \emph on
 Reports
 \emph default
  DBMS, which retrieves the data and send them back in the chain.
- If no past reports are found, an Empty list notification is created by
- the DBMS and sent to the user through the 
+\begin_inset Newline newline
+\end_inset
+
+If no past reports are found, an Empty list notification is created by the
+ DBMS and sent to the user through the 
 \emph on
 Reports module
 \emph default
@@ -2091,20 +2110,29 @@ See Street Safety - sequence diagram
 \begin_layout Standard
 This sequence diagram explains the backend procedure for showing Street
  Safety information.
- SafeStreets App adds the user ID to the report and sends all informations
+\end_layout
+
+\begin_layout Itemize
+The SafeStreets App adds the user ID to the report and sends all informations
  to the
 \emph on
  Street safety module
 \emph default
  Mobile application REST API.
- The latter forwards the informations to the 
+\end_layout
+
+\begin_layout Itemize
+The Street safety module forwards the informations to the 
 \emph on
 Safety&Suggestions
 \emph default
  DBMS, which retrieves the data and send them back in the chain.
- Whenever a street is clicked, a specific request for data concerning that
- street is sent in the same way for the general information (just adding
- the street to the request).
+\end_layout
+
+\begin_layout Itemize
+Whenever a street is clicked, a specific request for data concerning that
+ street is sent in the same way, adding details about the specific street
+ to the request.
 \end_layout
 
 \begin_layout Section
@@ -2213,9 +2241,12 @@ RESTful architecture
 \begin_layout Standard
 RESTful APIs has been chosen to grant a flexible, but still completely defined
  endpoint for all the client-server interactions.
- The Mobile Application is going to be built in parallel with the APIs so
- that having a predefined, shared and complete definition of them can lead
- to better results.
+\end_layout
+
+\begin_layout Standard
+Thanks to the fact that API interfaces have been competely defined before
+ the start of developement, the Mobile Application and the API's implementation
+ can be built in parallel to save time.
 \end_layout
 
 \begin_layout Standard
@@ -2823,7 +2854,7 @@ The
 Accounts page
 \emph default
  lets Administrators manage user accounts.
- From this page,:
+ From this page:
 \end_layout
 
 \begin_layout Itemize
