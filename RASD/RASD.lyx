@@ -1056,7 +1056,15 @@ Version 1.0.1
 \begin_inset Newline newline
 \end_inset
 
-Sequence diagram graphic fixes
+Sequence diagram pictures fixes
+\end_layout
+
+\begin_layout Itemize
+Version 1.1
+\begin_inset Newline newline
+\end_inset
+
+Changes to some requirements
 \end_layout
 
 \begin_layout Section
@@ -6153,12 +6161,7 @@ Requirements
 \end_layout
 
 \begin_layout Itemize
-[R3] Every officer that wants to register is authorized by the municipality
- to register.
-\end_layout
-
-\begin_layout Itemize
-[R4] The municipality allows SafeStreets administrator to verify the belonging
+[R3] The municipality allows SafeStreets administrator to verify the belonging
  of the requesting officer to the traffic police (via an automated system
  or sending an official request).
 \end_layout
@@ -6179,20 +6182,20 @@ Requirements
 \end_layout
 
 \begin_layout Itemize
-[R5] The user has his smartphone with him, is able to login in the application
+[R4] The user has his smartphone with him, is able to login in the application
  and is not suspended.
 \end_layout
 
 \begin_layout Itemize
-[R6] The user's smartphone has Internet connection enabled and functioning.
+[R5] The user's smartphone has Internet connection enabled and functioning.
 \end_layout
 
 \begin_layout Itemize
-[R7] The user's smartphone has GPS enabled and functioning.
+[R6] The user's smartphone has GPS enabled and functioning.
 \end_layout
 
 \begin_layout Itemize
-[R8] The user is able to take at least one picture of the violation to correctly
+[R7] The user is able to take at least one picture of the violation to correctly
  choose the type of violation he is reporting.
 \end_layout
 
@@ -6224,16 +6227,16 @@ Requirements
 \end_layout
 
 \begin_layout Itemize
-[R5] The user has his smartphone with him, is able to login in the application
+[R4] The user has his smartphone with him, is able to login in the application
  and is not suspended.
 \end_layout
 
 \begin_layout Itemize
-[R6] The user's smartphone has Internet connection enabled and functioning.
+[R5] The user's smartphone has Internet connection enabled and functioning.
 \end_layout
 
 \begin_layout Itemize
-[R9] The user has already made at least one report.
+[R8] The user has already made at least one report.
 \end_layout
 
 \begin_layout Subsubsection
@@ -6242,16 +6245,12 @@ Requirements
 \end_layout
 
 \begin_layout Itemize
-[R5] The user has his smartphone with him, is able to login in the application
+[R4] The user has his smartphone with him, is able to login in the application
  and is not suspended.
 \end_layout
 
 \begin_layout Itemize
-[R6] The user's smartphone has Internet connection enabled and functioning.
-\end_layout
-
-\begin_layout Itemize
-[R10] There is at least one report in the system.
+[R5] The user's smartphone has Internet connection enabled and functioning.
 \end_layout
 
 \begin_layout Subsubsection
@@ -6259,7 +6258,7 @@ Requirements
 \end_layout
 
 \begin_layout Itemize
-[R11] The officer access has the same base functions of the basic user access,
+[R9] The officer access has the same base functions of the basic user access,
  plus specific ones.
 \end_layout
 
@@ -6269,11 +6268,7 @@ Requirements
 \end_layout
 
 \begin_layout Itemize
-[R10] There is at least one report in the system.
-\end_layout
-
-\begin_layout Itemize
-[R12] The officer has a computer with Internet access and is able to login
+[R10] The officer has a computer with Internet access and is able to login
  to the system.
 \end_layout
 
@@ -6283,11 +6278,7 @@ Requirements
 \end_layout
 
 \begin_layout Itemize
-[R10] There is at least one report in the system.
-\end_layout
-
-\begin_layout Itemize
-[R13] The municipality and/or the authorities use the provided APIs.
+[R11] The municipality and/or the authorities use the provided APIs.
 \end_layout
 
 \begin_layout Standard
@@ -6319,11 +6310,7 @@ Requirements
 \end_layout
 
 \begin_layout Itemize
-[R10] There is at least one report in the system.
-\end_layout
-
-\begin_layout Itemize
-[R12] The officer has a computer with Internet access and is able to login
+[R10] The officer has a computer with Internet access and is able to login
  to the system.
 \end_layout
 
@@ -6332,23 +6319,18 @@ Requirements
 \end_layout
 
 \begin_layout Itemize
-[R3] Every officer that wants to register is authorized by the municipality
- to register.
-\end_layout
-
-\begin_layout Itemize
-[R4] The municipality allows SafeStreets administrator to verify the belonging
+[R3] The municipality allows SafeStreets administrator to verify the belonging
  of the requesting officer to the traffic police (via an automated system
  or sending an official request).
 \end_layout
 
 \begin_layout Itemize
-[R14] The administrator has a computer with Internet access and is able
+[R12] The administrator has a computer with Internet access and is able
  to login to the system.
 \end_layout
 
 \begin_layout Itemize
-[R15] The administrator has the possibility to use an official communication
+[R13] The administrator has the possibility to use an official communication
  channel with the municipality.
 \end_layout
 
@@ -6357,12 +6339,12 @@ Requirements
 \end_layout
 
 \begin_layout Itemize
-[R14] The administrator has a computer with Internet access and is able
+[R12] The administrator has a computer with Internet access and is able
  to login to the system.
 \end_layout
 
 \begin_layout Itemize
-[R16] The administrator has received a block/removal request from the authoritie
+[R14] The administrator has received a block/removal request from the authoritie
 s.
 \end_layout
 
@@ -6371,17 +6353,17 @@ s.
 \end_layout
 
 \begin_layout Itemize
-[R14] The administrator has a computer with Internet access and is able
+[R12] The administrator has a computer with Internet access and is able
  to login to the system.
 \end_layout
 
 \begin_layout Itemize
-[R15] The administrator has the possibility to use an official communication
+[R13] The administrator has the possibility to use an official communication
  channel with the municipality.
 \end_layout
 
 \begin_layout Itemize
-[R17] The administrator has received a sign-up request from the authorities
+[R15] The administrator has received a sign-up request from the authorities
  and/or from the municipality.
 \end_layout
 
@@ -6393,7 +6375,7 @@ Traceability Matrix
 \paragraph_spacing onehalf
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="18" columns="3">
+<lyxtabular version="3" rows="16" columns="3">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="15col%">
 <column alignment="center" valignment="top" width="25col%">
@@ -6545,7 +6527,7 @@ R4
 \begin_inset Text
 
 \begin_layout Plain Layout
-G2
+G3, G4, G5
 \end_layout
 
 \end_inset
@@ -6554,7 +6536,7 @@ G2
 \begin_inset Text
 
 \begin_layout Plain Layout
-Sign up (authority)
+Login, Create a report, See past reports, See Street Safety
 \end_layout
 
 \end_inset
@@ -6585,7 +6567,7 @@ G3, G4, G5
 \begin_inset Text
 
 \begin_layout Plain Layout
-Login, Create a report, See past reports, See Street Safety
+Create a report, See past reports, See Street Safety
 \end_layout
 
 \end_inset
@@ -6607,7 +6589,7 @@ R6
 \begin_inset Text
 
 \begin_layout Plain Layout
-G3, G4, G5
+G3
 \end_layout
 
 \end_inset
@@ -6616,7 +6598,7 @@ G3, G4, G5
 \begin_inset Text
 
 \begin_layout Plain Layout
-Create a report, See past reports, See Street Safety
+Create a report
 \end_layout
 
 \end_inset
@@ -6669,37 +6651,6 @@ R8
 \begin_inset Text
 
 \begin_layout Plain Layout
-G3
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Create a report
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-R9
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 G4
 \end_layout
 
@@ -6722,38 +6673,7 @@ See past reports
 \begin_layout Plain Layout
 
 \series bold
-R10
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-G5, G7
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-See Street Safety, Access reports data
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-R11
+R9
 \end_layout
 
 \end_inset
@@ -6784,7 +6704,7 @@ Login
 \begin_layout Plain Layout
 
 \series bold
-R12
+R10
 \end_layout
 
 \end_inset
@@ -6815,7 +6735,7 @@ Login to website, Access reports data, Access analysed data
 \begin_layout Plain Layout
 
 \series bold
-R13
+R11
 \end_layout
 
 \end_inset
@@ -6848,7 +6768,7 @@ No use case provided - usage outside the system
 \begin_layout Plain Layout
 
 \series bold
-R14
+R12
 \end_layout
 
 \end_inset
@@ -6879,7 +6799,7 @@ Login to website
 \begin_layout Plain Layout
 
 \series bold
-R15
+R13
 \end_layout
 
 \end_inset
@@ -6910,7 +6830,7 @@ Registration validation (officer), Authority registration request
 \begin_layout Plain Layout
 
 \series bold
-R16
+R14
 \end_layout
 
 \end_inset
@@ -6941,7 +6861,7 @@ User suspension, User rehabilitation
 \begin_layout Plain Layout
 
 \series bold
-R17
+R15
 \end_layout
 
 \end_inset

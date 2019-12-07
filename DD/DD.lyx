@@ -549,6 +549,14 @@ RDBMS:
 \begin_layout Itemize
 
 \emph on
+VM:
+\emph default
+ Virtual Machine
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
 ER
 \emph default
 : Entity Relationship
@@ -689,6 +697,138 @@ name "SafeStreets RASD"
 target "https://github.com/EliaBattiston/AspesiBattistonCarabelli/blob/introduction/DeliveryFolder/RASD1.pdf"
 literal "false"
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+AWS services reference:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Firewall Manager: 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://aws.amazon.com/firewall-manager/"
+target "https://aws.amazon.com/firewall-manager/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Elastic Load Balancing: 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://aws.amazon.com/elasticloadbalancing/"
+target "https://aws.amazon.com/elasticloadbalancing/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+EC2: 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://aws.amazon.com/ec2/"
+target "https://aws.amazon.com/ec2/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+RDS: 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://aws.amazon.com/rds/"
+target "https://aws.amazon.com/rds/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+S3: 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://aws.amazon.com/s3/"
+target "https://aws.amazon.com/s3/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+AWS Service Level Agreement: 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://aws.amazon.com/legal/service-level-agreements/"
+target "https://aws.amazon.com/legal/service-level-agreements/"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Quotes erd
 \end_inset
 
 
@@ -1497,8 +1637,12 @@ Presentation Tier:
 
 \begin_deeper
 \begin_layout Itemize
-Mobile App: the mobile application will be implemented using the cross platform
- framework 
+
+\emph on
+Mobile App
+\emph default
+: the mobile application will be implemented using the cross platform framework
+ 
 \emph on
 
 \begin_inset Quotes eld
@@ -1522,9 +1666,12 @@ Xamarin has been chosen because it makes implementation much faster than
 \end_layout
 
 \begin_layout Itemize
-Web App: the web application is going to be written in PHP, HTML, CSS, JS,
- using the jQuery library and the SemanticUI development framework for its
- frontend.
+
+\emph on
+Web App
+\emph default
+: the web application is going to be written in PHP, HTML, CSS, JS, using
+ the jQuery library and the SemanticUI development framework for its frontend.
 \begin_inset Newline newline
 \end_inset
 
@@ -1539,7 +1686,7 @@ It will be served through a secured TLS connection (HTTPS) to ensure privacy
 \begin_inset Newline newline
 \end_inset
 
-A Web Approach has been chosen to provide an always-available on any-platform
+A Web approach has been chosen to provide an always-available on any-platform
  service that can be easily accessed in Offices where there are company
  PCs .
 \end_layout
@@ -1550,7 +1697,8 @@ A Web Approach has been chosen to provide an always-available on any-platform
 \series bold
 Business Logic Tier:
 \series default
- on a virtualized Linux x64 machine:
+ on a virtualized Linux x64 machine, potentially replicated by the Elastic
+ Load Balancer:
 \end_layout
 
 \begin_deeper
@@ -1616,12 +1764,17 @@ Maria DB on Amazon RDS: Relational DBMS used to store data (apart from pictures)
 
 The adoption of a Relational Database has been chosen based on the type
  of data processed by SafeStreets.
- The SQL language is also handy to query statistical data needed by the
- 
+ The SQL language is also useful to handle the statistical data needed by
+ the 
 \emph on
 Safety&Suggestions engine
 \emph default
 .
+\begin_inset Newline newline
+\end_inset
+
+MariaDB has been chosen because it is open source, widely used and implements
+ the SQL standard language.
 \end_layout
 
 \begin_layout Itemize
@@ -1640,12 +1793,18 @@ Infrastructure
 \end_layout
 
 \begin_layout Standard
-Our virtualized Linux x64 Machines will be deployed on AWS on EC2 instances.
- 
+Amazon AWS has been chosen as the cloud services provider for the infrastructure
+ of the system.
 \end_layout
 
 \begin_layout Standard
-Maintenance costs are calculated through the 
+Adopting this ecosystem has multiple advantages:
+\end_layout
+
+\begin_layout Itemize
+Using AWS purchase, maintenance and running (power and thermal management)
+ costs can be up to 80% less compared to an equivalent on-premises solutions.
+ Maintenance costs are calculated with 
 \begin_inset CommandInset href
 LatexCommand href
 name "awstcocalculator.com"
@@ -1654,17 +1813,37 @@ literal "false"
 
 \end_inset
 
-.
- Using AWS can save up to 80% of costs compared to an on-premises solutions.
+
+\end_layout
+
+\begin_layout Itemize
+Data replication and safety is handled by the service provider, including
+ off-site backups and almost instantaneous failure recovery
+\end_layout
+
+\begin_layout Itemize
+The Service Level Agreement of chosen components guarantees an availability
+ of 99.99%
+\end_layout
+
+\begin_layout Itemize
+Security is handled by the service provider with regular patching on most
+ of the components, since they are provided as PaaS.
+ The only exception to this are EC2 instances (IaaS) where the user has
+ to manage the software running on them
+\end_layout
+
+\begin_layout Itemize
+Choosing a single vendor for the whole cloud infrastructure guarantees ease
+ of integration between components
+\end_layout
+
+\begin_layout Subsubsection
+Virtual machines
 \end_layout
 
 \begin_layout Standard
-Elasticity is achived using the AWS Elastic Load Balancing component.
-\end_layout
-
-\begin_layout Standard
-Other AWS advantages are a SLA of 99.99% and a greater security than other
- solutions.
+Our virtualized Linux x64 Machines will be deployed on AWS on EC2 instances.
 \end_layout
 
 \begin_layout Standard
@@ -1677,8 +1856,66 @@ BL Tier: 8 v-cpu 32GB ram and 256GB SSD Linux machine;
 \end_layout
 
 \begin_layout Standard
-Thanks to the Elastic Load Balancer it is possible to adapt the servers
- to the real needs after the release.
+In cases of intense load on the system (during peak hours or unexpected
+ events), an AWS Elastic Load Balancing is used to dynamically spawn replicated
+ copies of the instance.
+ This way scalability can be easily and automatically managed by the infrastruct
+ure, and needed resources will be billed only when they are needed.
+\end_layout
+
+\begin_layout Standard
+Concurrent access of the replicated EC2 instances to the Data Tier is discussed
+ in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Storage"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Storage"
+
+\end_inset
+
+Storage
+\end_layout
+
+\begin_layout Standard
+Amazon RDS will be used instead of MariaDB running on a dedicated VM for
+ two reasons:
+\end_layout
+
+\begin_layout Itemize
+In case of replications of the Business Logic Tier, access to the database
+ will be seamless and will scale with load.
+ Otherwise, it would be be necessary to manually increase the computing
+ power of the database's host or to create multiple instances of it, making
+ it necessary to take into consideration the problem of keeping replicated
+ data consistent.
+\end_layout
+
+\begin_layout Itemize
+Resources used by a dedicated machine would be billed regardless of real
+ use of the database.
+\begin_inset Newline newline
+\end_inset
+
+By using RDS, instead, billing is evaluated on real use.
+ Thanks to this it's possible to lower the cost of the infrastructure by
+ exploiting periods of low load (e.g.
+ night-time).
+\end_layout
+
+\begin_layout Standard
+The same reasons apply to the choice of Amazon S3 for the storage of pictures.
 \end_layout
 
 \begin_layout Section
@@ -1974,24 +2211,24 @@ RESTful architecture
 \end_layout
 
 \begin_layout Standard
-RESTful APIs has been chosen to grant a flexible, but still completely defined,
+RESTful APIs has been chosen to grant a flexible, but still completely defined
  endpoint for all the client-server interactions.
  The Mobile Application is going to be built in parallel with the APIs so
- having a predefined, shared and complete definition of them can lead to
- better results.
+ that having a predefined, shared and complete definition of them can lead
+ to better results.
 \end_layout
 
 \begin_layout Standard
-The use of RESTful APIs provides also an easy-to-read implementation of
- the communications.
+The use of RESTful APIs also provides an easy to consult implementation
+ of the communication protocol.
  APIs' responses come in form of JSON data structures.
 \end_layout
 
 \begin_layout Standard
 Another advantage is the sharing of the client-server communication standard
  between the Mobile App and the Web App.
- Third-parties can also get easily access, under predefined constraints,
- to our APIs in order to connect them with their systems.
+ In future versions third-parties could also easily access our APIs, under
+ predefined constraints, in order to connect them with their systems.
 \end_layout
 
 \begin_layout Standard
@@ -2020,19 +2257,19 @@ The Three Tier Architecture is a client-server approach where presentation,
 \end_layout
 
 \begin_layout Standard
-Its key feature is the possibility to divide the data from the logical computati
-on and the user representation, so that different security measures can
- be implemented to improve the privacy of the user informations.
+Its key feature is the possibility to divide data from the logical computation
+ and the user representation, so that different security measures can be
+ implemented to improve the privacy of the user informations.
 \end_layout
 
 \begin_layout Standard
-It force the developers to work in silos where components have defined interface
-s.
+It forces developers to work on isolated modules where components have well
+ defined interfaces.
 \end_layout
 
 \begin_layout Standard
-The complexity of the system has also decreased thanks to the adoption of
- the three tier approach.
+The complexity of the system has also been decreased thanks to the adoption
+ of the three tier approach.
 \end_layout
 
 \begin_layout Subsection
@@ -2040,16 +2277,11 @@ RDBMS
 \end_layout
 
 \begin_layout Standard
-In order to easily manage the users data, with fast and easy-to-implement
- complex statistical queries, the use of a RDBMS was desirable.
- Using a non relational database could have brought better scaling-up but
- the flexible data model and the absence of the SQL language would have
- been an harder obstacle to overcome.
-\end_layout
-
-\begin_layout Standard
-MariaDB has been chosen as SafeStreets DBMS (on Amazon RDS) because it is
- open source, widely used and implements the SQL standard language.
+In order to easily manage users' data, with fast and complex but easy-to-impleme
+nt statistical queries, the use of a RDBMS was desirable.
+ Using a non relational database could have brought better scaling but the
+ flexible data model and the absence of the SQL language would have been
+ an harder obstacles to overcome.
 \end_layout
 
 \begin_layout Subsection
@@ -2057,16 +2289,9 @@ Thin Client
 \end_layout
 
 \begin_layout Standard
-To create a fast Mobile Application on both new and old devices, with fast
- or slow internet connection, it has been decided to adopt a so called 
-\begin_inset Quotes eld
-\end_inset
-
-Thin Client
-\begin_inset Quotes erd
-\end_inset
-
- approach.
+To create a lightweight Mobile Application on both new and old devices,
+ with fast or slow internet connection, it has been decided to adopt a Thin
+ Client approach.
 \end_layout
 
 \begin_layout Standard
@@ -2084,13 +2309,13 @@ Model View Controller
 \end_layout
 
 \begin_layout Standard
-The MVC approach has been chosen, for the Mobile App, to ensure division
- of objective for each part of the code.
+The MVC approach has been chosen for the development of the Mobile Application
+ to ensure the division of objectives for each part of the code.
 \end_layout
 
 \begin_layout Standard
 The Model is the component that interacts with the server and retrieves
- the Data through the RESTful APIs.
+ data through the RESTful APIs.
 \end_layout
 
 \begin_layout Standard
@@ -2099,8 +2324,8 @@ The View shows the data from the Model to the user, with native interfaces
 \end_layout
 
 \begin_layout Standard
-The Control is responsible for handling the user interactions through the
- View and works to modify the state of both the Model and the View itself.
+The Control is responsible for handling user interactions through the View
+ and to modify the state of both the Model and the View.
 \end_layout
 
 \begin_layout Subsection
@@ -2108,7 +2333,8 @@ Cross Platform
 \end_layout
 
 \begin_layout Standard
-Developing Mobile Application means creating apps for both iOS and Android.
+Developing a widespread Mobile Application requires the creation of apps
+ for both iOS and Android.
  
 \end_layout
 
@@ -2116,13 +2342,8 @@ Developing Mobile Application means creating apps for both iOS and Android.
 Building dedicated applications for each platforms is a good option for
  big teams.
  The constraints of the SafeStreets project brought to the adoption of a
- cross platform approach that could decrease prices and times while giving
- dedicated UI and experiences on each platform, it is a flexible solution
- that can run flawlessly on both platforms.
-\end_layout
-
-\begin_layout Section
-Other design decisions
+ cross platform approach that could decrease implementation price and time
+ while giving dedicated UI and experiences on each platform.
 \end_layout
 
 \begin_layout Standard
@@ -2643,17 +2864,14 @@ Requirements traceability
 
 \begin_layout Standard
 Objective of the Design Document is to achieve, through the development,
- the goals defined previously in the RASD.
+ the goals previously defined in the RASD with different requirements for
+ each of them.
 \end_layout
 
 \begin_layout Standard
-In this part of the DD is defined how each goal is going to be reached throughou
-t the implementation of the different software components of the SafeStreets
- infrastructure.
-\end_layout
-
-\begin_layout Standard
-For each Goal there is one or more requirements to be fulfilled:
+This part of the document defines how each requirement is going to be satisfied
+ throughout the implementation of the different software components of the
+ SafeStreets infrastructure:
 \end_layout
 
 \begin_layout Itemize
@@ -2696,7 +2914,7 @@ PHP backend
 \begin_layout Itemize
 
 \emph on
-Mobile&Web App
+Mobile & Web App
 \emph default
 : the input text field (using a regex) ensures the email is in a valid format.
  An automatic email is sent with a verification link to the user, to enable
@@ -2708,33 +2926,6 @@ Mobile&Web App
 
 \series bold
 [R3]
-\series default
- Every officer that wants to register is authorized by the municipality
- to register:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\emph on
-Web App
-\emph default
-: an Administrator can increase the level of a user to the 
-\begin_inset Quotes eld
-\end_inset
-
-Officer Position
-\begin_inset Quotes erd
-\end_inset
-
-.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-
-\series bold
-[R4]
 \series default
  The municipality allows SafeStreets administrator to verify the belonging
  of the requesting officer to the traffic police (via an automated system
@@ -2765,7 +2956,7 @@ Officer Position
 \begin_layout Itemize
 
 \series bold
-[R5]
+[R4]
 \series default
  The user has his smartphone with him, is able to login in the application
  and is not suspended:
@@ -2785,7 +2976,7 @@ PHP backend
 \begin_layout Itemize
 
 \series bold
-[R6]
+[R5]
 \series default
  The user's smartphone has Internet connection enabled and functioning:
 \end_layout
@@ -2796,17 +2987,17 @@ PHP backend
 \emph on
 Mobile App
 \emph default
-: in case requests to SafeStreets servers are not served, the Mobile App
- tries to connect to Google.
- If the connection can be established, the internet connection of the user
- is working while our systems are down.
+: in case requests to SafeStreets servers fail, the Mobile App tries to
+ ping two well known DNS servers.
+ If one of the connections can be established, the internet connection of
+ the user is working while our systems are down.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 
 \series bold
-[R7]
+[R6]
 \series default
  The user's smartphone has GPS enabled and functioning:
 \end_layout
@@ -2817,17 +3008,17 @@ Mobile App
 \emph on
 Mobile App
 \emph default
-: the Mobile App trigger a request to the user to grant access to the GPS
+: the Mobile App triggers a request to the user to grant access to the GPS
  for the application.
- Every time the position is needed, control first that the data are still
- accessible to the app and updated.
+ Every time the position is needed, it first checks that data is updated
+ and still accessible to the app.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 
 \series bold
-[R8]
+[R7]
 \series default
  The user is able to take at least one picture of the violation to correctly
  choose the type of violation he is reporting:
@@ -2847,14 +3038,15 @@ Mobile App
 \emph on
 Mobile App
 \emph default
-: suggest a group of possible violations to the user to choose in.
+: suggest a group of possible violations between which the user chooses
+ the correct one.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 
 \series bold
-[R9]
+[R8]
 \series default
  The user has already made at least one report:
 \end_layout
@@ -2872,7 +3064,7 @@ PHP backend
 \begin_layout Itemize
 
 \series bold
-[R11]
+[R9]
 \series default
  The officer access has the same base functions of the basic user access,
  plus specific ones:
@@ -2885,14 +3077,14 @@ PHP backend
 ALL
 \emph default
 : the officer can access all the normal user's functionalities through the
- Mobile&Web Apps.
+ Mobile & Web Apps.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 
 \series bold
-[R12]
+[R10]
 \series default
  The officer has a computer with Internet access and is able to login to
  the system:
@@ -2905,14 +3097,14 @@ ALL
 PHP backend
 \emph default
 : the login authenticator ensures that the user that tries to log in is
- registered, not suspended and has the officer privileges.
+ registered, not suspended and has the Officer role.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 
 \series bold
-[R13]
+[R11]
 \series default
  The municipality and/or the authorities use the provided APIs:
 \end_layout
@@ -2930,7 +3122,7 @@ PHP backend
 \begin_layout Itemize
 
 \series bold
-[R14]
+[R12]
 \series default
  The administrator has a computer with Internet access and is able to login
  to the system:
@@ -2943,14 +3135,14 @@ PHP backend
 PHP backend
 \emph default
 : the login authenticator ensures that the user that tries to log in is
- registered, not suspended and has the system administrator privileges.
+ registered, not suspended and has the Administrator role.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 
 \series bold
-[R15]
+[R13]
 \series default
  The administrator has the possibility to use an official communication
  channel with the municipality:
@@ -2969,7 +3161,7 @@ WebApp
 \begin_layout Itemize
 
 \series bold
-[R16]
+[R14]
 \series default
  The administrator has received a block/removal request from the authorities:
 \end_layout
@@ -2985,14 +3177,14 @@ PHP backend
 / Web App
 \emph default
 : tracks the block/removal requests coming from the authorities and give
- the administrator the possibility to change a user status.
+ the Administrator the possibility to change a user status.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 
 \series bold
-[R17]
+[R15]
 \series default
  The administrator has received a sign-up request from the authorities and/or
  from the municipality:
