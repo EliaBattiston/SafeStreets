@@ -1921,6 +1921,18 @@ The same reasons apply to the choice of Amazon S3 for the storage of pictures.
 Runtime view
 \end_layout
 
+\begin_layout Standard
+In this section the main functions' sequence diagrams are reported.
+ Diagrams for common functions, like login or signup, have been omitted
+ as they follow a standard implementation.
+\end_layout
+
+\begin_layout Standard
+Each reported sequence is a more detailed explanation of the ones reported
+ in the RASD doument, as they explain the logical and functional steps behind
+ the functionalities of the system.
+\end_layout
+
 \begin_layout Subsection
 Create a report
 \end_layout
