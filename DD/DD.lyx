@@ -1929,8 +1929,8 @@ In this section the main functions' sequence diagrams are reported.
 
 \begin_layout Standard
 Each reported sequence is a more detailed explanation of the ones reported
- in the RASD doument, as they explain the logical and functional steps behind
- the functionalities of the system.
+ in the RASD document, as they explain the logical and functional steps
+ behind the functionalities of the system.
 \end_layout
 
 \begin_layout Subsection
@@ -3807,7 +3807,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0
 \end_layout
 
 \end_inset
@@ -3828,7 +3828,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+9
 \end_layout
 
 \end_inset
@@ -3849,7 +3849,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0
 \end_layout
 
 \end_inset
@@ -3870,7 +3870,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+3
 \end_layout
 
 \end_inset
@@ -3891,7 +3891,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0
 \end_layout
 
 \end_inset
@@ -3973,7 +3973,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1
 \end_layout
 
 \end_inset
@@ -3994,7 +3994,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8.5
 \end_layout
 
 \end_inset
@@ -4015,7 +4015,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.5
 \end_layout
 
 \end_inset
@@ -4036,7 +4036,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.5
 \end_layout
 
 \end_inset
@@ -4057,7 +4057,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.5
 \end_layout
 
 \end_inset
@@ -4139,7 +4139,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.5
 \end_layout
 
 \end_inset
@@ -4160,7 +4160,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8
 \end_layout
 
 \end_inset
@@ -4181,7 +4181,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.5
 \end_layout
 
 \end_inset
@@ -4202,7 +4202,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.5
 \end_layout
 
 \end_inset
@@ -4223,7 +4223,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+3
 \end_layout
 
 \end_inset

@@ -1060,7 +1060,11 @@ Sequence diagram pictures fixes
 \end_layout
 
 \begin_layout Itemize
+
+\emph on
 Version 1.1
+\emph default
+
 \begin_inset Newline newline
 \end_inset
 
