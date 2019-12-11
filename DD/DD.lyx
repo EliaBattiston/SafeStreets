@@ -658,6 +658,18 @@ Version 1.0:
 Initial release
 \end_layout
 
+\begin_layout Itemize
+
+\emph on
+Version 1.1:
+\begin_inset Newline newline
+\end_inset
+
+
+\emph default
+Fixed ER diagram to reflect implementation and graphical problems
+\end_layout
+
 \begin_layout Section
 Reference documents
 \end_layout
@@ -1274,7 +1286,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Images/Databases/MainER.svg
+	filename Images/Databases/MainER.pdf
 	lyxscale 20
 	width 100text%
 
