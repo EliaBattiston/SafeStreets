@@ -3,8 +3,16 @@ CREATE DATABASE safestreets;
 USE safestreets;
 
 CREATE TABLE roles(
-    name varchar(100) PRIMARY KEY
+    roleID INT AUTO_INCREMENT PRIMARY KEY,
+    name varchar(100) UNIQUE NOT NULL
 );
+
+INSERT INTO roles (name)
+VALUES
+    ("Regular"),
+    ("Officer"),
+    ("Administrator"),
+    ("System");
 
 CREATE TABLE users(
     fiscalCode CHAR(16) PRIMARY KEY,
@@ -16,10 +24,27 @@ CREATE TABLE users(
     suspendedTimestamp TIMESTAMP NULL DEFAULT NULL,
     acceptedTimestamp TIMESTAMP NULL DEFAULT NULL,
     accepterAdmin CHAR(16) DEFAULT NULL,
-    role varchar(100) NOT NULL,
+    role INT NOT NULL,
     FOREIGN KEY (accepterAdmin) REFERENCES users(fiscalCode) ON DELETE NO ACTION ON UPDATE CASCADE,
-    FOREIGN KEY (role) REFERENCES roles(name) ON DELETE NO ACTION ON UPDATE CASCADE
+    FOREIGN KEY (role) REFERENCES roles(roleID) ON DELETE NO ACTION ON UPDATE CASCADE
 );
+
+/*
+*   Creation of the "system" user
+*/
+INSERT INTO users (fiscalCode, firstName, lastName, username, passwordHash, suspended, acceptedTimestamp, accepterAdmin, role)
+VALUES 
+    (
+        "0000000000000000",
+        "System",
+        "Administrator",
+        "system",
+        "04f10ecfee341134444666a0193323bb260bdfe3961abf52f40ab41e0a848e67",
+        false,
+        CURRENT_TIMESTAMP,
+        "0000000000000000",
+        3
+    );
 
 /*
 CREATE TABLE suggestionTypes(
