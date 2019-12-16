@@ -109,7 +109,7 @@ CREATE TABLE streets(
 );
 
 CREATE TABLE reports(
-    reportID BIGINT PRIMARY KEY,
+    reportID BIGINT PRIMARY KEY AUTO_INCREMENT,
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     notes TEXT,
     licensePlate CHAR(7) NOT NULL,
@@ -169,3 +169,12 @@ CREATE TABLE suggestionAccidents(
     FOREIGN KEY (accidentID) REFERENCES accidents(accidentID) ON DELETE NO ACTION ON UPDATE CASCADE
 );
 */
+
+/* Useful view for queries on reports */
+CREATE VIEW pastReports AS
+(
+    SELECT users.username AS username, firstName, lastName, reportID, timestamp, streets.name AS address, licensePlate, violations.description AS violation, notes 
+    FROM reports JOIN users ON reports.user = users.fiscalCode 
+        JOIN streets ON reports.street = streets.streetID 
+        JOIN violations ON reports.violation = violations.violationID
+)
