@@ -20,6 +20,7 @@ CREATE TABLE users(
     lastName TEXT NOT NULL,
     username VARCHAR(100) UNIQUE NOT NULL,
     passwordHash CHAR(64) NOT NULL,
+    pictureID INT UNIQUE NOT NULL,
     suspended BOOLEAN DEFAULT false NOT NULL,
     suspendedTimestamp TIMESTAMP NULL DEFAULT NULL,
     acceptedTimestamp TIMESTAMP NULL DEFAULT NULL,
@@ -121,6 +122,12 @@ CREATE TABLE reports(
     FOREIGN KEY (user) REFERENCES users(fiscalCode) ON DELETE NO ACTION ON UPDATE CASCADE,
     FOREIGN KEY (violation) REFERENCES violations(violationID) ON DELETE NO ACTION ON UPDATE CASCADE,
     FOREIGN KEY (street) REFERENCES streets(streetID) ON DELETE NO ACTION ON UPDATE CASCADE
+);
+
+CREATE TABLE reportPictures(
+    reportID BIGINT,
+    pictureID INT UNIQUE NOT NULL,
+    FOREIGN KEY (reportID) REFERENCES reports(reportID) ON DELETE NO ACTION ON UPDATE CASCADE
 );
 
 /*
