@@ -1,0 +1,55 @@
+<?php
+  include_once("../../modules/reports.php");
+  include_once("../../modules/accounts.php");
+  include_once("../../config.php");
+  
+  if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    if(isset($_GET['username']) && isset($_GET['password']) && Accounts::isLoggedIn($_GET['username'], $_GET['password'])) {
+      echo json_encode(array("result" => 200, "content" => Reports::userPastReports($_GET['username'])));
+    }
+    else {
+      echo json_encode(array("result" => 503, "message" => "Missing/invalid credentials"));
+    }
+  }
+
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if(isset($_POST['username']) && isset($_POST['password']) && Accounts::isLoggedIn($_POST['username'], $_POST['password'])) {
+      if(isset($_POST['plate']) && isset($_POST['violationType']) && isset($_POST['latitude']) && isset($_POST['longitude']) && isset($_POST['pictureCount']) && intval($_POST['pictureCount']) > 0) {
+        $pictureList = [];
+        $pictureCount = intval($_POST['pictureCount']);
+        for($i = 0; $i < $pictureCount; $i = $i + 1) {
+          array_push($pictureList, $_FILES["picture-".$i]["tmp_name"]);
+        }
+
+        $reportID = Reports::createReport($_POST['username'], $_POST['plate'], $_POST['violationType'], $_POST['latitude'], $_POST['longitude'], $pictureList);
+
+        if($reportID != NULL) {
+          $target_dir = "../../reportPictures/".$reportID."/";
+          if (!file_exists($target_dir)) {
+            mkdir($target_dir, 0777, true);
+          }
+
+          $regularLoad = true;
+          for($i = 0; $i < $pictureCount; $i = $i + 1) {
+            $target_file = $target_dir . $reportID . "-pic-" . str_pad($i, 3, '0', STR_PAD_LEFT) . "." . strtolower(pathinfo($_FILES["fileToUpload"]["name"],PATHINFO_EXTENSION));
+            $regularLoad = $regularLoad && move_uploaded_file($_FILES["picture-".$i]["tmp_name"], $target_file);
+          }
+
+          if($regularLoad)
+            echo json_encode(array("result" => 200));
+          else
+            echo json_encode(array("result" => 403, "message" => "Error loading pictures"));
+        }
+        else {
+          echo json_encode(array("result" => 402, "message" => "Invalid parameters"));
+        }
+        
+      }
+      else
+        echo json_encode(array("result" => 401, "message" => "Missing parameters"));
+    }
+    else {
+      echo json_encode(array("result" => 503, "message" => "Missing/invalid credentials"));
+    }
+  }
+?>
