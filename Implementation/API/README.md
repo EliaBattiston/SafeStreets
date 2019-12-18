@@ -12,7 +12,7 @@ The value of _result_ gives information about the status of the request and the 
 
 ### Code 200
 
-If _result_ has a value of 200, the request has been elaborated.
+If _result_ has a value of 200, the request has been succesfully elaborated.
 The _content_ field will contain the results of the request.
 
 #### Example
@@ -23,30 +23,34 @@ The _content_ field will contain the results of the request.
 }
 ```
 
-### Code 400
+### Code 4x
 
-If _result_ has a value of 400, a _message_ field can be found in the root of the request.
+A value of _result_ between 400 and 499 signals the presence of an error, and a _message_ field explaining what happened can be found in the root of the request.
 The _message_ field will contain a description of the occurred error.
 
 #### Example
 ```
 {
-  "result": 400,
-  "message": "The username/password pair does not exist"
+  "result": 401,
+  "message": "The username/password pair is incorrect"
   ...
 }
 ```
 
-### Code 4xx
+#### Common error codes
 
-4xx messages signals more detailed errors, as specified in the related messages.
-Specifications about errors will be highlighted in the related APIs.
+Some error codes have a consistent interpretation in the whole API. These are reported in the following table:
 
-### Code 503
+| Code      | Error                                                   |
+|-----------|---------------------------------------------------------|
+| 400       | Generic error. Details will be provided in the message  |
+| 401       | Username/password pair is incorrect                     |
+| 402       | User suspended                                          |
 
-503 error message notifies invalid username/password or the missing of one or both parameters.
+Error codes not included in this table are code which assume a different meaning based on the method.
+Their meaning can be found in the section dedicated to the specific method.
 
----
+# Accounts API methods
 
 ## Login
 
@@ -55,10 +59,10 @@ Specifications about errors will be highlighted in the related APIs.
 POST [endpoint]/accounts/login.php
 ```
 
-| Parameter | Required |
-|-----------|----------|
-| username  |     Y    |
-| password  |     Y    |
+| Parameter | Type    | Required |
+|-----------|---------|----------|
+| username  | string  |    Y     |
+| password  | string  |    Y     |
 
 #### Successfull response
 ```
@@ -76,28 +80,28 @@ POST [endpoint]/accounts/login.php
 
 #### Specific error codes
 
-| Code      | Error                              |
-|-----------|------------------------------------|
-| 401       | Username and/or password not found |
-| 402       | User suspended                     |
+| Code      | Error                               |
+|-----------|-------------------------------------|
+| 401       | Username/password pair is incorrect |
+| 402       | User suspended                      |
 
----
+# Mobile API methods
 
 ## Reports
-Reports endpoint for user insertion and retrieval
+Reports endpoint for insertion and retrieval
 
 ### Data retrieval
-Response data are related to reports made by the caller user.
+Response data only contains reports made by the calling user.
 
 #### Endpoint and parameters
 ```
 GET [endpoint]/mobile/reports/
 ```
 
-| Parameter | Required |
-|-----------|----------|
-| username  |     Y    |
-| password  |     Y    |
+| Parameter | Type    | Required |
+|-----------|---------|----------|
+| username  | string  |    Y     |
+| password  | string  |    Y     |
 
 #### Successfull response
 ```
@@ -121,18 +125,18 @@ GET [endpoint]/mobile/reports/
 ```
 
 ### Specific report retrieval
-It is possible to retrieve only reports made by the caller user.
+The response contains detailed information about the desired report. The request is succesful only if the report has been sent by the requesting user.
 
 #### Endpoint and parameters
 ```
 GET [endpoint]/mobile/reports/report.php
 ```
 
-| Parameter | Required |
-|-----------|----------|
-| username  |     Y    |
-| password  |     Y    |
-| reportID  |     Y    |
+| Parameter | Type    | Required |
+|-----------|---------|----------|
+| username  | string  |    Y     |
+| password  | string  |    Y     |
+| reportID  | string  |    Y     |
 
 #### Successfull response
 ```
