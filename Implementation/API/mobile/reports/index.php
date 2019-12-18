@@ -51,12 +51,12 @@
             echo json_encode(array("result" => 405, "message" => "Error loading pictures"));
         }
         else {
-          echo json_encode(array("result" => 404, "message" => "Missing or invalid parameters"));
+          echo json_encode(array("result" => 404, "message" => "Invalid parameters"));
         }
         
       }
       else
-        echo json_encode(array("result" => 404, "message" => "Missing or invalid parameters"));
+        echo json_encode(array("result" => 404, "message" => "Missing parameters"));
     }
     else {
       echo json_encode(array("result" => 401, "message" => "Username/password pair is incorrect"));

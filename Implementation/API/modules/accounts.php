@@ -13,7 +13,7 @@
       $hashpassword = hash('sha256', $password."safestreets");
 
       //Prepared statement for SQL injection avoidance
-      $statement = $DBconn->prepare("SELECT fiscalCode, firstName, lastName, username, suspended FROM users WHERE username=? AND passwordHash=?");
+      $statement = $DBconn->prepare("SELECT fiscalCode, firstName, lastName, username, suspended, role AS roleCode, roles.name AS roleDesc FROM users JOIN roles ON users.role = roles.roleID WHERE username=? AND passwordHash=?");
       $statement->bind_param("ss", $username, $hashpassword);
       $statement->execute();
       $result = $statement->get_result();
