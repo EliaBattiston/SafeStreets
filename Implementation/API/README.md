@@ -8,7 +8,7 @@ The value of _result_ gives information about the status of the request and the 
 | Code | Meaning                                        |
 |------|------------------------------------------------|
 | 200  | The request was successful                     |
-| 400  | There was an error while executing the request |
+| 4xx  | There was an error while executing the request |
 
 ### Code 200
 
@@ -23,7 +23,7 @@ The _content_ field will contain the results of the request.
 }
 ```
 
-### Code 4x
+### Code 4xx
 
 A value of _result_ between 400 and 499 signals the presence of an error, and a _message_ field explaining what happened can be found in the root of the request.
 The _message_ field will contain a description of the occurred error.
@@ -46,8 +46,9 @@ Some error codes have a consistent interpretation in the whole API. These are re
 | 400       | Generic error. Details will be provided in the message  |
 | 401       | Username/password pair is incorrect                     |
 | 402       | User suspended                                          |
+| 403       | Missing or invalid parameters                           |
 
-Error codes not included in this table are code which assume a different meaning based on the method.
+Error codes not included in this table are code which assume a different meaning based on the called method.
 Their meaning can be found in the section dedicated to the specific method.
 
 # Accounts API methods
@@ -179,6 +180,4 @@ POST [endpoint]/mobile/reports/
 
 | Code      | Error                              |
 |-----------|------------------------------------|
-| 401       | Missing parameters                 |
-| 402       | Invalid parameters                 |
-| 403       | Error loading pictures             |
+| 404       | Error loading pictures             |
