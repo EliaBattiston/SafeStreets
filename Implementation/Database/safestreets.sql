@@ -33,7 +33,7 @@ CREATE TABLE users(
 /*
 *   Creation of the "system" user
 */
-INSERT INTO users (fiscalCode, firstName, lastName, username, passwordHash, suspended, acceptedTimestamp, accepterAdmin, role)
+INSERT INTO users (fiscalCode, firstName, lastName, username, passwordHash, pictureID, suspended, acceptedTimestamp, accepterAdmin, role)
 VALUES 
     (
         "0000000000000000",
@@ -41,10 +41,11 @@ VALUES
         "Administrator",
         "system",
         "04f10ecfee341134444666a0193323bb260bdfe3961abf52f40ab41e0a848e67",
+        0,
         false,
         CURRENT_TIMESTAMP,
         "0000000000000000",
-        3
+        4
     );
 
 /*
@@ -87,7 +88,7 @@ CREATE TABLE suggestions(
 */
 
 CREATE TABLE violations(
-    violationID INT AUTO_INCREMENT PRIMARY KEY,
+    violationID INT PRIMARY KEY AUTO_INCREMENT,
     description TEXT NOT NULL
 );
 
@@ -105,7 +106,7 @@ VALUES
     ("Parking on bicycle or walkable lane");
 
 CREATE TABLE streets(
-    streetID BIGINT AUTO_INCREMENT PRIMARY KEY,
+    streetID BIGINT PRIMARY KEY AUTO_INCREMENT,
     name TEXT NOT NULL
 );
 
