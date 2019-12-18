@@ -9,5 +9,5 @@ Tables needed for the _suggestions_ advanced functionality are included but comm
 
 ## [API](API)
 
-RESTufl APIs for Accounts, Mobile application and Web client are developed with PHP and tested with PHPUnit.
-Full documentation on endpoint, parameters and return codes can be found in the folder's [README](API/README.md) file.
+RESTful APIs for Accounts, Mobile application and Web client are developed in PHP and tested with PHPUnit.
+Full documentation on endpoints, parameters and return codes can be found in the folder's [README](API/README.md) file.
