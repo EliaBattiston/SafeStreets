@@ -75,7 +75,9 @@ POST [endpoint]/accounts/login.php
     "firstName":"FirstName",
     "lastName":"LastName",
     "username":"username",
-    "suspended":0
+    "suspended":0,
+    "roleCode":1,
+    "roleDesc":"Regular"
   }
 }
 ```
