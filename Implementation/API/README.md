@@ -46,7 +46,8 @@ Some error codes have a consistent interpretation in the whole API. These are re
 | 400       | Generic error. Details will be provided in the message  |
 | 401       | Username/password pair is incorrect                     |
 | 402       | User suspended                                          |
-| 403       | Missing or invalid parameters                           |
+| 403       | User not authorized                                     |
+| 404       | Missing or invalid parameters                           |
 
 Error codes not included in this table are code which assume a different meaning based on the called method.
 Their meaning can be found in the section dedicated to the specific method.
@@ -183,4 +184,74 @@ POST [endpoint]/mobile/reports/
 
 | Code      | Error                              |
 |-----------|------------------------------------|
-| 404       | Error loading pictures             |
+| 405       | Error loading pictures             |
+
+# Officer web API methods
+
+## Reports
+Officer reports endpoint for retrieval of the whole data about users made reports.
+
+### Data retrieval
+
+#### Endpoint and parameters
+```
+GET [endpoint]/web/reports/
+```
+
+| Parameter | Type    | Required |
+|-----------|---------|----------|
+| username  | string  |    Y     |
+| password  | string  |    Y     |
+
+#### Successfull response
+```
+{
+  "result":200,
+  "content": [
+    {
+      "username":"reporterUsername",
+      "firstName":"reporterFirstName",
+      "lastName":"reporterLastName",
+      "reportID":1,
+      "timestamp":"2000-01-01 00:00:01",
+      "address":"address",
+      "licensePlate":"AA000AA",
+      "violation":"violation",
+      "notes":"notes"
+    },
+    ...
+  ]
+}
+```
+
+### Specific report retrieval
+The response contains detailed information about the desired report.
+
+#### Endpoint and parameters
+```
+GET [endpoint]/mobile/reports/
+```
+
+| Parameter | Type    | Required |
+|-----------|---------|----------|
+| username  | string  |    Y     |
+| password  | string  |    Y     |
+| reportID  | string  |    Y     |
+
+#### Successfull response
+```
+{
+  "result":200,
+  "content": {
+    "username":"reporterUsername",
+    "firstName":"reporterFirstName",
+    "lastName":"reporterLastName",
+    "reportID":1,
+    "timestamp":"2000-01-01 00:00:01",
+    "address":"address",
+    "licensePlate":"AA000AA",
+    "violation":"violation",
+    "notes":"notes"
+  }
+}
+```
