@@ -130,7 +130,7 @@ The response contains detailed information about the desired report. The request
 
 #### Endpoint and parameters
 ```
-GET [endpoint]/mobile/reports/report.php
+GET [endpoint]/mobile/reports/
 ```
 
 | Parameter | Type    | Required |
@@ -158,7 +158,10 @@ GET [endpoint]/mobile/reports/report.php
 ```
 
 ### Insertion
-Pictures will be saved in ^/reportPictures/_reportID_/_reportID_-pic-_progressive number_
+Pictures will be saved in
+```
+[endpoint]/reportPictures/<reportID>/<reportID>-pic-<progressive number>
+```
 
 #### Endpoint and parameters
 ```

@@ -17,6 +17,6 @@
     }
   }
   else {
-    echo json_encode(array("result" => 400, "message" => "Invalid parameters"));
+    echo json_encode(array("result" => 403, "message" => "Missing or invalid parameters"));
   }
 ?>
