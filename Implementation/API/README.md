@@ -174,7 +174,7 @@ POST [endpoint]/mobile/reports/
 | pictureCount      | integer |     Y    |
 | pictures          | string  |     Y    |
 
-_pictures_ parameter is a json-formatted string representing an array of base64-encoded pictures.
+The _pictures_ parameter is a string representing a json array of base64-encoded `.jpg` pictures.
 
 
 #### Specific error codes

@@ -70,7 +70,7 @@
 
         $regularLoad = true;
         for($i = 0; $i < $pictureCount; $i = $i + 1) {
-          $target_file = $target_dir . $reportID . "-pic-" . str_pad($i, 3, '0', STR_PAD_LEFT) . ".png";
+          $target_file = $target_dir . $reportID . "-pic-" . str_pad($i, 3, '0', STR_PAD_LEFT) . ".jpg";
           $regularLoad = $regularLoad && file_put_contents($target_file, base64_decode($pictureList[$i]));
         }
 
