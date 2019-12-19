@@ -46,6 +46,71 @@ final class AccountsTest extends TestCase
 
         $this->assertEquals($result["suspended"], true);        
     }
+
+    public function testFiscalCode(): void
+    {
+        $result = Accounts::userFiscalCode("regularUser");
+
+        $this->assertEquals($result, "ABCABCABCA000000");
+    }
+
+    public function testWrongFiscalCode(): void
+    {
+        $result = Accounts::userFiscalCode("wrongUser");
+
+        $this->assertNull($result);
+    }
+
+    public function testIsOfficer(): void
+    {
+        $result = Accounts::isOfficer("officerUser");
+
+        $this->assertTrue($result);
+    }
+
+    public function testIsAdmin(): void
+    {
+        $result = Accounts::isAdministrator("administratorUser");
+
+        $this->assertTrue($result);
+    }
+
+    public function testAdminIsOfficer(): void
+    {
+        $result = Accounts::isOfficer("administratorUser");
+
+        $this->assertTrue($result);
+    }
+
+    public function testIsNotOfficer(): void
+    {
+        $result = Accounts::isOfficer("regularUser");
+
+        $this->assertFalse($result);
+    }
+
+    public function testIsNotAdmin(): void
+    {
+        $result = Accounts::isAdministrator("officerUser");
+        $this->assertFalse($result);
+
+        $result = Accounts::isAdministrator("regularUser");
+        $this->assertFalse($result);
+    }
+
+    public function testWrongOfficer(): void
+    {
+        $result = Accounts::isOfficer("wrongUser");
+
+        $this->assertFalse($result);
+    }
+
+    public function testWrongAdmin(): void
+    {
+        $result = Accounts::isAdministrator("wrongUser");
+
+        $this->assertFalse($result);
+    }
 }
 
 ?>
