@@ -2,7 +2,7 @@
   include_once("streets.php");
 
   class Reports{
-    private $pastReportsSQL = "SELECT users.username AS username, firstName, lastName, reportID, timestamp, streets.name AS address, licensePlate, violations.description AS violation, notes FROM reports JOIN users ON reports.user = users.fiscalCode JOIN streets ON reports.street = streets.streetID JOIN violations ON reports.violation = violations.violationID";
+    private static $pastReportsSQL = "SELECT users.username AS username, firstName, lastName, reportID, timestamp, streets.name AS address, licensePlate, violations.description AS violation, notes FROM reports JOIN users ON reports.user = users.fiscalCode JOIN streets ON reports.street = streets.streetID JOIN violations ON reports.violation = violations.violationID";
     public static function pastReports()
     {
       global $_CONFIG;
@@ -21,7 +21,7 @@
       global $_CONFIG;
       $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
 
-      $statement = $DBconn->prepare("SELECT * FROM (".self::$pastReportsSQL.") WHERE username = ?");
+      $statement = $DBconn->prepare("SELECT * FROM (".self::$pastReportsSQL.") userPastReports WHERE username = ?");
       $statement->bind_param("s", $username);
       $statement->execute();
       $result = $statement->get_result();
@@ -35,7 +35,7 @@
       global $_CONFIG;
       $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
 
-      $statement = $DBconn->prepare("SELECT * FROM (".self::$pastReportsSQL.") WHERE username = ? and reportID = ?");
+      $statement = $DBconn->prepare("SELECT * FROM (".self::$pastReportsSQL.") userPastReportDetails WHERE username = ? and reportID = ?");
       $statement->bind_param("ss", $username, $reportID);
       $statement->execute();
       $result = $statement->get_result();
@@ -49,7 +49,7 @@
       global $_CONFIG;
       $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
 
-      $statement = $DBconn->prepare("SELECT * FROM (".self::$pastReportsSQL.") WHERE reportID = ?");
+      $statement = $DBconn->prepare("SELECT * FROM (".self::$pastReportsSQL.") pastReports WHERE reportID = ?");
       $statement->bind_param("s", $reportID);
       $statement->execute();
       $result = $statement->get_result();
