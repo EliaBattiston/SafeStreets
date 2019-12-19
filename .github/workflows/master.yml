@@ -1,7 +1,11 @@
-on: push
-name: API Tests
+on:
+  push:
+    branches:
+      - master
+name: API Deploy
 jobs:
   phpunit:
+    name: Test and upload
     runs-on: ubuntu-latest
     steps:
       - name: Get repository files
@@ -18,3 +22,12 @@ jobs:
       - name: Run tests
         run: |
           sudo phpunit --testdox Implementation/API/tests/accounts.php
+      - name: Deploy on FTP server
+        uses: SamKirkland/FTP-Deploy-Action@2.0.0
+        env:
+          FTP_SERVER: ftp.safestreets.altervista.org
+          FTP_USERNAME: safestreets
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          ARGS: --delete --exclude 'config.php' --exclude 'README.md' --exclude 'tests.*'
+          LOCAL_DIR: Implementation/API
+          REMOTE_DIR: api
