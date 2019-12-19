@@ -1,6 +1,7 @@
 <?php
   include_once("../../modules/reports.php");
   include_once("../../modules/accounts.php");
+  include_once("../../modules/common.php");
   include_once("../../config.php");
   
   if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -24,39 +25,65 @@
 
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if(isset($_POST['username']) && isset($_POST['password']) && Accounts::isLoggedIn($_POST['username'], $_POST['password'])) {
-      if(isset($_POST['plate']) && isset($_POST['violationType']) && isset($_POST['latitude']) && isset($_POST['longitude']) && isset($_POST['pictureCount']) && intval($_POST['pictureCount']) > 0) {
-        $pictureList = [];
-        $pictureCount = intval($_POST['pictureCount']);
-        for($i = 0; $i < $pictureCount; $i = $i + 1) {
-          array_push($pictureList, $_FILES["picture-".$i]["tmp_name"]);
-        }
 
-        $reportID = Reports::createReport($_POST['username'], $_POST['plate'], $_POST['violationType'], $_POST['latitude'], $_POST['longitude'], $pictureList);
-
-        if($reportID != NULL) {
-          $target_dir = "../../reportPictures/".$reportID."/";
-          if (!file_exists($target_dir)) {
-            mkdir($target_dir, 0777, true);
-          }
-
-          $regularLoad = true;
-          for($i = 0; $i < $pictureCount; $i = $i + 1) {
-            $target_file = $target_dir . $reportID . "-pic-" . str_pad($i, 3, '0', STR_PAD_LEFT) . "." . strtolower(pathinfo($_FILES["fileToUpload"]["name"],PATHINFO_EXTENSION));
-            $regularLoad = $regularLoad && move_uploaded_file($_FILES["picture-".$i]["tmp_name"], $target_file);
-          }
-
-          if($regularLoad)
-            echo json_encode(array("result" => 200));
-          else
-            echo json_encode(array("result" => 405, "message" => "Error loading pictures"));
-        }
-        else {
-          echo json_encode(array("result" => 404, "message" => "Invalid parameters"));
-        }
-        
+      if(!checkParameter($_POST["plate"], "string"))
+      {
+        echo json_encode(array("result" => 404, "message" => "Missing/invalid parameter plate"));
+        die();
       }
-      else
-        echo json_encode(array("result" => 404, "message" => "Missing parameters"));
+      if(!checkParameter(intval($_POST["violationType"]), "integer"))
+      {
+        echo json_encode(array("result" => 404, "message" => "Missing/invalid parameter violationType"));
+        die();
+      }
+      if(!checkParameter(doubleval($_POST["latitude"]), "double"))
+      {
+        echo json_encode(array("result" => 404, "message" => "Missing/invalid parameter latitude"));
+        die();
+      }
+      if(!checkParameter(doubleval($_POST["longitude"]), "double"))
+      {
+        echo json_encode(array("result" => 404, "message" => "Missing/invalid parameter longitude"));
+        die();
+      }
+      if(!checkParameter($_POST["pictures"], "string"))
+      {
+        echo json_encode(array("result" => 404, "message" => "Missing/invalid parameter pictures"));
+        die();
+      }
+      if(!checkParameter(intval($_POST["pictureCount"]), "integer"))
+      {
+        echo json_encode(array("result" => 404, "message" => "Missing/invalid parameter pictureCount"));
+        die();
+      }
+      $pictureCount = intval($_POST['pictureCount']);
+      $pictureList = str_replace(" ","+" , json_decode($_POST['pictures'], true));
+      $fiscalCode = Accounts::userFiscalCode($_POST['username']);
+
+      $reportID = Reports::createReport($fiscalCode, $_POST['plate'], $_POST['violationType'], $_POST['latitude'], $_POST['longitude'], $pictureList);
+
+      if($reportID != NULL) {
+        $target_dir = "../../reportPictures/".$reportID."/";
+        if (!file_exists($target_dir)) {
+          mkdir($target_dir, 0777, true);
+        }
+
+        $regularLoad = true;
+        for($i = 0; $i < $pictureCount; $i = $i + 1) {
+          $target_file = $target_dir . $reportID . "-pic-" . str_pad($i, 3, '0', STR_PAD_LEFT) . ".png";
+          $regularLoad = $regularLoad && file_put_contents($target_file, base64_decode($pictureList[$i]));
+        }
+
+        if($regularLoad)
+          echo json_encode(array("result" => 200));
+        else {
+          Reports::deleteReport($reportID);
+          echo json_encode(array("result" => 405, "message" => "Error loading pictures"));
+        }
+      }
+      else {
+        echo json_encode(array("result" => 404, "message" => "Invalid parameters"));
+      }
     }
     else {
       echo json_encode(array("result" => 401, "message" => "Username/password pair is incorrect"));

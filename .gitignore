@@ -1,3 +1,4 @@
 #Temporary LyX files
 *.lyx~
 *.lyx#
+**/reportPictures

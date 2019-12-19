@@ -172,6 +172,9 @@ POST [endpoint]/mobile/reports/
 | latitude          | float   |     Y    |
 | longitude         | float   |     Y    |
 | pictureCount      | integer |     Y    |
+| pictures          | string  |     Y    |
+
+_pictures_ parameter is a json-formatted string representing an array of base64-encoded pictures.
 
 
 #### Specific error codes

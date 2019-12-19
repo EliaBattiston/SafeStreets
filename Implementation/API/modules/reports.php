@@ -15,7 +15,7 @@
       $data = $result->fetch_all(MYSQLI_ASSOC);
       return $data;
     }
-    
+
     public static function pastReportDetails($reportID)
     {
       global $_CONFIG;
@@ -59,7 +59,7 @@
     }
 
     public static function createReport($username, $plate, $violationType, $latitude, $longitude, $pictureList) {
-      if(gettype($username) == "string" && gettype($plate == "string") && intval($violationType) > 0 
+      if(gettype($username) == "string" && gettype($plate) == "string" && intval($violationType) > 0 
           && gettype($pictureList) == "array" && count($pictureList) > 0) {
 
         $streetCode = Streets::getStreet($latitude, $longitude);
@@ -77,6 +77,15 @@
       else {
         return NULL;
       }
+    }
+
+    public static function deleteReport($reportID) {
+      global $_CONFIG;
+      $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
+
+      $statement = $DBconn->prepare("DELETE FROM reports WHERE reportID = ?");
+      $statement->bind_param("s", $reportID);
+      $statement->execute();
     }
   }
 ?>
