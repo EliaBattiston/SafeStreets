@@ -88,6 +88,22 @@ VALUES
         1
     );
 
+INSERT INTO users (fiscalCode, firstName, lastName, username, passwordHash, pictureID, suspended, suspendedTimestamp, acceptedTimestamp, accepterAdmin, role)
+VALUES
+    (
+        "ABCABCABCA000007",
+        "Name",
+        "Surname",
+        "suspendedUser",
+        "64adb780ea98d46b53605c3044c14f164f753f97f7f828888e65881a2dafc9ea",
+        8,
+        true,
+        CURRENT_TIMESTAMP,
+        CURRENT_TIMESTAMP,
+        "0000000000000000",
+        1
+    );
+
 INSERT INTO streets(name)
 VALUES
     ("Test street");

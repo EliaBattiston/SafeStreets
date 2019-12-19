@@ -1,0 +1,33 @@
+on:
+  push:
+    branches:
+      - master
+name: API Deploy
+jobs:
+  phpunit:
+    name: Test and upload
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repository files
+        uses: actions/checkout@v1
+      - name: Load test database
+        run: |
+          mysql -uroot -h127.0.0.1 -proot < Implementation/Database/safestreets.sql
+          mysql -uroot -h127.0.0.1 -proot < Implementation/Database/test.sql
+      - name: PHPUnit setup
+        run: |
+          wget https://phar.phpunit.de/phpunit.phar -O phpunit.phar
+          sudo chmod +x phpunit.phar
+          sudo mv phpunit.phar /usr/local/bin/phpunit
+      - name: Run tests
+        run: |
+          sudo phpunit --testdox Implementation/API/tests/accounts.php
+      - name: Deploy on FTP server
+        uses: SamKirkland/FTP-Deploy-Action@2.0.0
+        env:
+          FTP_SERVER: ftp.safestreets.altervista.org
+          FTP_USERNAME: safestreets
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          ARGS: --delete --exclude 'config.php' --exclude 'README.md' --exclude 'tests.*'
+          LOCAL_DIR: Implementation/API
+          REMOTE_DIR: api
