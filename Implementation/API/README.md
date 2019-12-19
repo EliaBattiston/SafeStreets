@@ -113,15 +113,10 @@ GET [endpoint]/mobile/reports/
   "result":200,
   "content": [
     {
-      "username":"reporterUsername",
-      "firstName":"reporterFirstName",
-      "lastName":"reporterLastName",
       "reportID":1,
       "timestamp":"2000-01-01 00:00:01",
       "address":"address",
-      "licensePlate":"AA000AA",
       "violation":"violation",
-      "notes":"notes"
     },
     ...
   ]
@@ -147,9 +142,6 @@ GET [endpoint]/mobile/reports/
 {
   "result":200,
   "content": {
-    "username":"reporterUsername",
-    "firstName":"reporterFirstName",
-    "lastName":"reporterLastName",
     "reportID":1,
     "timestamp":"2000-01-01 00:00:01",
     "address":"address",
@@ -188,7 +180,7 @@ POST [endpoint]/mobile/reports/
 |-----------|------------------------------------|
 | 405       | Error loading pictures             |
 
-# Officer web API methods
+# Web API methods
 
 ## Reports
 Officer reports endpoint for retrieval of the whole data about users made reports.
@@ -212,8 +204,6 @@ GET [endpoint]/web/reports/
   "content": [
     {
       "username":"reporterUsername",
-      "firstName":"reporterFirstName",
-      "lastName":"reporterLastName",
       "reportID":1,
       "timestamp":"2000-01-01 00:00:01",
       "address":"address",

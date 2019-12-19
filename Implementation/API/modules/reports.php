@@ -8,7 +8,21 @@
       global $_CONFIG;
       $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
 
-      $statement = $DBconn->prepare(self::$pastReportsSQL);
+      $statement = $DBconn->prepare("SELECT reportID, username, timestamp, violation, address, licensePlate, notes FROM (".self::$pastReportsSQL.") userPastReports");
+      $statement->execute();
+      $result = $statement->get_result();
+
+      $data = $result->fetch_all(MYSQLI_ASSOC);
+      return $data;
+    }
+    
+    public static function pastReportDetails($reportID)
+    {
+      global $_CONFIG;
+      $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
+
+      $statement = $DBconn->prepare("SELECT * FROM (".self::$pastReportsSQL.") pastReports WHERE reportID = ?");
+      $statement->bind_param("s", $reportID);
       $statement->execute();
       $result = $statement->get_result();
 
@@ -21,7 +35,7 @@
       global $_CONFIG;
       $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
 
-      $statement = $DBconn->prepare("SELECT * FROM (".self::$pastReportsSQL.") userPastReports WHERE username = ?");
+      $statement = $DBconn->prepare("SELECT reportID, violation, address, timestamp FROM (".self::$pastReportsSQL.") userPastReports WHERE username = ?");
       $statement->bind_param("s", $username);
       $statement->execute();
       $result = $statement->get_result();
@@ -35,22 +49,8 @@
       global $_CONFIG;
       $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
 
-      $statement = $DBconn->prepare("SELECT * FROM (".self::$pastReportsSQL.") userPastReportDetails WHERE username = ? and reportID = ?");
+      $statement = $DBconn->prepare("SELECT reportID, violation, address, timestamp, licensePlate, notes FROM (".self::$pastReportsSQL.") userPastReportDetails WHERE username = ? and reportID = ?");
       $statement->bind_param("ss", $username, $reportID);
-      $statement->execute();
-      $result = $statement->get_result();
-
-      $data = $result->fetch_all(MYSQLI_ASSOC);
-      return $data;
-    }
-
-    public static function pastReportDetails($reportID)
-    {
-      global $_CONFIG;
-      $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
-
-      $statement = $DBconn->prepare("SELECT * FROM (".self::$pastReportsSQL.") pastReports WHERE reportID = ?");
-      $statement->bind_param("s", $reportID);
       $statement->execute();
       $result = $statement->get_result();
 
