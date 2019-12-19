@@ -22,6 +22,7 @@ jobs:
       - name: Run tests
         run: |
           sudo phpunit --testdox Implementation/API/tests/accounts.php
+          sudo phpunit --testdox Implementation/API/tests/reports.php
       - name: Deploy on FTP server
         uses: SamKirkland/FTP-Deploy-Action@2.0.0
         env:
