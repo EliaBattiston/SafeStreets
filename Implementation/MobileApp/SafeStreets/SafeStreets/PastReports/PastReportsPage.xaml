@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SafeStreets.PastReportsPage"
+             Title="Past Reports">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="xList" ItemSelected="OnItemSelected" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="8,10,8,10" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" Orientation="Vertical">
+                                <Label Text="{Binding typology}" VerticalTextAlignment="Start" FontSize="Large"/>
+                                <Label Text="{Binding address}" VerticalTextAlignment="Start" FontSize="Medium"/>
+                                <Label Text="{Binding dateTime}" VerticalTextAlignment="Start" FontSize="Small"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

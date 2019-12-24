@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SafeStreets.MasterDetailDetail"
+             BackgroundColor="White"
+             Padding="8,10,8,0"
+             Title="Report">
+    <StackLayout>
+        <Label Text="Report information:" FontSize="Large"/>
+        <Picker Title="Report information" x:Name="xReportInformationPicker">
+            <Picker.Items>
+                <x:String>Double parking</x:String>
+                <x:String>Parking outside the lines</x:String>
+                <x:String>Parking near a STOP</x:String>
+            </Picker.Items>
+        </Picker>
+        <Entry x:Name="xNotesEntry" Placeholder="Notes"/>
+        <Label Text="Location:" FontSize="Large"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Text="Not detected yet" x:Name="xLocationLabel"/>
+            <Button Grid.Column="1" Text="Detect Location" Clicked="OnClickGeolocation"/>
+        </Grid>
+        
+        <Button Text="Send Report"/>
+    </StackLayout>
+</ContentPage>
