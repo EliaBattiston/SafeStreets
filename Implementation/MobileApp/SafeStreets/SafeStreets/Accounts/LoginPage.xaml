@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    tutti i nomi delle mie variabili di cui fare il binding iniziano con la "x" 
+    tutti i click iniziano con "On"
+-->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SafeStreets.LoginPage"
+             Padding="8,10,8,0"
+             Title="Login"
+             BackgroundColor="White"> 
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand" BackgroundColor="White">
+            <Image x:Name="xLogoImage" WidthRequest="100" HeightRequest="100"/>
+            <Entry x:Name="xUsername" Placeholder="Username" Keyboard="Plain"/>
+            <Entry x:Name="xPassword" Placeholder="Password" IsPassword="true" />
+            <Button x:Name="xLoginButton"
+                    Text="Log In"
+                    TextColor="{StaticResource ButtonTextColor}" 
+                    BackgroundColor="{StaticResource ButtonBackgroundColor}"
+                    Clicked="OnLoginButtonClicked" />
+
+            <StackLayout Padding="0,20,0,0">
+                <Button
+                    Text="Restore Credentials"
+                    TextColor="{StaticResource ButtonTextColor}" 
+                    BackgroundColor="{StaticResource ButtonBackgroundColor}"
+                    Clicked="OnRestoreCredentialClicked" />
+                <Button
+                    Text="Sign Up"
+                    TextColor="{StaticResource ButtonTextColor}" 
+                    BackgroundColor="{StaticResource ButtonBackgroundColor}"
+                    Clicked="OnSignUpClicked" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

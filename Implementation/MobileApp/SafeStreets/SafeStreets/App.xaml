@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SafeStreets.App">
+
+    <Application.Resources>
+        <Color x:Key="PageBackgroundColor">White</Color>
+        <Color x:Key="ButtonBackgroundColor">#39A9DB</Color>
+        <!-- BLU CHIARO -->
+        <Color x:Key="ButtonTextColor">White</Color>
+        <Color x:Key="InfoTextColor">#086375</Color>
+        <!-- VERDE 59CD90 VERDE CHIARO 38686A -->
+        <Color x:Key="WarningTextColor">#EE6352</Color>
+        <!-- ROSSO -->
+        <!-- ATTENZIONE A CAMBIARE ANCHE NEL C# IL COLORE DEL PULSANTE DI DISPONIBILITà-->
+        <Color x:Key="NavbarColor">#1C77C3</Color>
+        <!-- BLU SCURO -->
+        <Color x:Key="AttentionColor">#FAC05E</Color>
+        <!-- GIALLO SCURO -->
+        <!-- COLORI BELLI: VIOLA 3C1642, VERDE RUSSO 69995D-->
+        <!--<Style x:Key="LabelPageHeadingStyle" TargetType="Label">
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="TextColor" Value="{StaticResource HeadingTextColor}" />
+        </Style>-->
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="{StaticResource NavbarColor}"/>
+            <Setter Property="BarTextColor" Value="Color.White"/>
+        </Style>
+
+        <ResourceDictionary>
+            <!--Global Styles-->
+            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SafeStreets.FaqPage"
+             Title="F.A.Q."
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <ScrollView Padding="8,10,8,10" BackgroundColor="White">
+            <StackLayout>
+                <Label x:Name="xLabelDomanda" VerticalTextAlignment="Center" FontSize="Medium"/>
+                <Label x:Name="xLabelRisposta" VerticalTextAlignment="Center" FontSize="Small"/>
+                <Button 
+                    Text="E' stato utile"
+                    TextColor="{StaticResource ButtonTextColor}" 
+                    BackgroundColor="{StaticResource ButtonBackgroundColor}"
+                    Clicked="OnClickButtonUtilitaSi"/>
+                <Button 
+                    Text="Non è stato utile" 
+                    TextColor="{StaticResource ButtonTextColor}" 
+                    BackgroundColor="{StaticResource ButtonBackgroundColor}"
+                    Clicked="OnClickButtonUtilitaNo"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
