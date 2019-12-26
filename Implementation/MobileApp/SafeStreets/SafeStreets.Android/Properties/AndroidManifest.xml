@@ -1,5 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.SafeStreets">
-    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="27" />
-    <application android:label="SafeStreets.Android"></application>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.andreaaspesi.safestreets" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="27" />
+	<application android:label="SafeStreets.Android">
+		<!--<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyA1ZtjS5-4YHw-sECE5mJQPX8UvTmhLA4U" />-->
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBUrelHXj2BQQ8Uhr3TdXmSKiwWDd6VR74" />
+		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+		<!-- Necessary for apps that target Android 9.0 or higher -->
+		<uses-library android:name="org.apache.http.legacy" android:required="false" />
+	</application>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 </manifest>
