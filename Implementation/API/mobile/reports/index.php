@@ -28,62 +28,45 @@
 
       if(!checkParameter($_POST["plate"], "string"))
       {
-        echo json_encode(array("result" => 404, "message" => "Missing/invalid parameter plate"));
+        echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter plate"));
         die();
       }
       if(!checkParameter(intval($_POST["violationType"]), "integer"))
       {
-        echo json_encode(array("result" => 404, "message" => "Missing/invalid parameter violationType"));
+        echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter violationType"));
         die();
       }
       if(!checkParameter(doubleval($_POST["latitude"]), "double"))
       {
-        echo json_encode(array("result" => 404, "message" => "Missing/invalid parameter latitude"));
+        echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter latitude"));
         die();
       }
       if(!checkParameter(doubleval($_POST["longitude"]), "double"))
       {
-        echo json_encode(array("result" => 404, "message" => "Missing/invalid parameter longitude"));
+        echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter longitude"));
         die();
       }
       if(!checkParameter($_POST["pictures"], "string"))
       {
-        echo json_encode(array("result" => 404, "message" => "Missing/invalid parameter pictures"));
+        echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter pictures"));
         die();
       }
-      if(!checkParameter(intval($_POST["pictureCount"]), "integer"))
-      {
-        echo json_encode(array("result" => 404, "message" => "Missing/invalid parameter pictureCount"));
-        die();
-      }
-      $pictureCount = intval($_POST['pictureCount']);
+
       $pictureList = str_replace(" ","+" , json_decode($_POST['pictures'], true));
       $fiscalCode = Accounts::userFiscalCode($_POST['username']);
 
-      $reportID = Reports::createReport($fiscalCode, $_POST['plate'], $_POST['violationType'], $_POST['latitude'], $_POST['longitude'], $pictureList);
+      $reportResult = Reports::createReport($fiscalCode, $_POST['plate'], $_POST['violationType'], $_POST['latitude'], $_POST['longitude'], $pictureList);
 
-      if($reportID != NULL) {
-        $target_dir = "../../reportPictures/".$reportID."/";
-        if (!file_exists($target_dir)) {
-          mkdir($target_dir, 0777, true);
-        }
-
-        $regularLoad = true;
-        for($i = 0; $i < $pictureCount; $i = $i + 1) {
-          $target_file = $target_dir . $reportID . "-pic-" . str_pad($i, 3, '0', STR_PAD_LEFT) . ".jpg";
-          $regularLoad = $regularLoad && file_put_contents($target_file, base64_decode($pictureList[$i]));
-        }
-
-        if($regularLoad)
-          echo json_encode(array("result" => 200));
-        else {
-          Reports::deleteReport($reportID);
-          echo json_encode(array("result" => 405, "message" => "Error loading pictures"));
-        }
-      }
-      else {
+      if($reportResult == 404) {
         echo json_encode(array("result" => 404, "message" => "Invalid parameters"));
+        die();
       }
+      if($reportResult == 405) {
+        echo json_encode(array("result" => 405, "message" => "Error loading pictures"));
+        die();
+      }
+
+      echo json_encode(array("result" => 200));
     }
     else {
       echo json_encode(array("result" => 401, "message" => "Username/password pair is incorrect"));

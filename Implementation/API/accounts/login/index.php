@@ -1,6 +1,7 @@
 <?php
-  include_once("../modules/accounts.php");
-  include_once("../config.php");
+  include_once("../../modules/accounts.php");
+  include_once("../../modules/common.php");
+  include_once("../../config.php");
   $accounts = new Accounts;
   
   if(isset($_POST['username']) && isset($_POST['password'])) {

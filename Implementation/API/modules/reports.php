@@ -72,7 +72,30 @@
         $statement->execute();
         $result = $statement->get_result();
 
-        return $DBconn->insert_id;
+        $reportID = $DBconn->insert_id;
+
+        if($reportID == NULL) {
+          return 404;
+        }
+
+        $target_dir = "../../reportPictures/".$reportID."/";
+        if (!file_exists($target_dir)) {
+          mkdir($target_dir, 0777, true);
+        }
+
+        $regularLoad = true;
+        $pictureCount = count($pictureList);
+        for($i = 0; $i < $pictureCount; $i = $i + 1) {
+          $target_file = $target_dir . $reportID . "-pic-" . str_pad($i, 3, '0', STR_PAD_LEFT) . ".jpg";
+          $regularLoad = $regularLoad && file_put_contents($target_file, base64_decode($pictureList[$i]));
+        }
+
+        if($regularLoad)
+          return 200;
+        else {
+          self::deleteReport($reportID);
+          return 405;
+        }
       }
       else {
         return NULL;

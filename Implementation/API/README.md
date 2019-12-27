@@ -58,7 +58,7 @@ Their meaning can be found in the section dedicated to the specific method.
 
 #### Endpoint and parameters
 ```
-POST [endpoint]/accounts/login.php
+POST [endpoint]/accounts/login/
 ```
 
 | Parameter | Type    | Required |
@@ -88,6 +88,35 @@ POST [endpoint]/accounts/login.php
 |-----------|-------------------------------------|
 | 401       | Username/password pair is incorrect |
 | 402       | User suspended                      |
+
+## Signup
+
+#### Endpoint and parameters
+```
+POST [endpoint]/accounts/signup/
+```
+
+| Parameter     | Type    | Required |
+|---------------|---------|----------|
+| username      | string  |    Y     |
+| password      | string  |    Y     |
+| firstName     | string  |    Y     |
+| lastName      | string  |    Y     |
+| email         | string  |    Y     |
+| fiscalCode    | string  |    Y     |
+| documentPhoto | string  |    Y     |
+
+The _documentPhoto_ parameter is a string representing a base64-encoded `.jpg` picture.
+
+
+#### Specific error codes
+
+| Code      | Error                               |
+|-----------|-------------------------------------|
+| 405       | Fiscal code already registered      |
+| 406       | Username already in use             |
+| 407       | Error loading picture               |
+
 
 # Mobile API methods
 
@@ -171,7 +200,6 @@ POST [endpoint]/mobile/reports/
 | violationType     | integer |     Y    |
 | latitude          | float   |     Y    |
 | longitude         | float   |     Y    |
-| pictureCount      | integer |     Y    |
 | pictures          | string  |     Y    |
 
 The _pictures_ parameter is a string representing a json array of base64-encoded `.jpg` pictures.
