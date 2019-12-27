@@ -24,14 +24,14 @@ namespace SafeStreets
         {
             PastReportsAnswer answer = await JsonRequest.LoadOldReports();
 
-            if(answer.found == true)
+            if(answer.result == 200)
             {
-                xList.ItemsSource = answer.pastReports;
+                xList.ItemsSource = answer.content;
             }
             else
             {
-                string responseString = "{\"found\":true,\"pastReports\":[{\"typology\":\"-\",\"address\":\"-\",\"dateTime\":\"-\"}]}";
-                xList.ItemsSource = JsonConvert.DeserializeObject<PastReportsAnswer>(responseString).pastReports;
+                string responseString = "{ \"result\":400,\"content\": [{ \"username\":\"-\", \"firstName\":\"-\", \"lastName\":\"-\",\"reportID\":-1,\"timestamp\":\"2000-01-01 00:00:01\",\"address\":\"address\", \"licensePlate\":\"AA000AA\", \"violation\":\"none\", \"notes\":\"notes\" } ]}";
+                xList.ItemsSource = JsonConvert.DeserializeObject<PastReportsAnswer>(responseString).content;
             }
         }
 

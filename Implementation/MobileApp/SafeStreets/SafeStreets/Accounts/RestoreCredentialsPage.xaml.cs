@@ -25,7 +25,7 @@ namespace SafeStreets
             {
                 SimpleCallAnswer answer = await JsonRequest.RestoreCredentials(email);
 
-                if(answer != null && answer.done == true)
+                if(answer != null && answer.result == 200)
                     await DisplayAlert("Restored!", "A restore procedure has been sent to your email address", "Ok");
                 else
                     await DisplayAlert("Error!", "The restore procedure cannot be done.", "Ok");

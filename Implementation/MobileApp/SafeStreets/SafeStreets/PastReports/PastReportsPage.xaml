@@ -10,9 +10,9 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="8,10,8,10" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" Orientation="Vertical">
-                                <Label Text="{Binding typology}" VerticalTextAlignment="Start" FontSize="Large"/>
+                                <Label Text="{Binding violation}" VerticalTextAlignment="Start" FontSize="Large"/>
                                 <Label Text="{Binding address}" VerticalTextAlignment="Start" FontSize="Medium"/>
-                                <Label Text="{Binding dateTime}" VerticalTextAlignment="Start" FontSize="Small"/>
+                                <Label Text="{Binding timestamp}" VerticalTextAlignment="Start" FontSize="Small"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

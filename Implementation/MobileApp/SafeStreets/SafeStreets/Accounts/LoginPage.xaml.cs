@@ -32,23 +32,30 @@ namespace SafeStreets
             {
                 var answer = await JsonRequest.Login(username, pass);
 
-                if (answer != null && answer.done)
+                if (answer != null)
                 {
-                    App.username = username;
-                    App.pass = pass;
-                    try
+                    if(answer.result == 200)
                     {
-                        await SecureStorage.SetAsync("username", username);
-                        await SecureStorage.SetAsync("pass", pass);
-                    }
-                    catch (Exception ex)
-                    {
-                        // Possible that device doesn't support secure storage on device.
-                    }
+                        App.username = username;
+                        App.pass = pass;
+                        try
+                        {
+                            await SecureStorage.SetAsync("username", username);
+                            await SecureStorage.SetAsync("pass", pass);
+                        }
+                        catch (Exception ex)
+                        {
+                            // Possible that device doesn't support secure storage on device.
+                        }
 
-                    //Apro la MasterDetailPage
-                    App.LoginDone();
-                    return;//per sicurezza
+                        //Apro la MasterDetailPage
+                        App.LoginDone();
+                        return;//per sicurezza
+                    }
+                    else
+                    {
+                        await DisplayAlert("Error " + answer.result, answer.message, "Ok");
+                    }
                 }
                 else
                 {

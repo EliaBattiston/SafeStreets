@@ -13,22 +13,32 @@ namespace SafeStreets
 {
     public class JsonRequest
     {
-        public static string startUrl = "http://";
+        public static string startUrl = "https://safestreets.altervista.org/api";
 
         public static async Task<SimpleCallAnswer> Login(string user, string pass)
         {
             try
             {
-                /*var response = await App.Client.GetAsync(startUrl + "mocky.io/v2/5df66bb33400002900e5a59b?user=" + user + "&pass=" + pass);
+                var values = new Dictionary<string, string>
+                    {
+                       { "username", user },
+                       { "password", pass }
+                    };
+
+                var content = new FormUrlEncodedContent(values);
+
+                var response = await App.Client.PostAsync(startUrl + "/accounts/login/", content);
 
                 string responseString = await response.Content.ReadAsStringAsync();
 
+                /*
                 responseString.Replace("\\", "");
 
                 responseString = System.Net.WebUtility.HtmlDecode(responseString);//Decodificare cose come &nbsp
 
                 */
-                SimpleCallAnswer answer = JsonConvert.DeserializeObject<SimpleCallAnswer>("{\"done\":true}");
+                SimpleCallAnswer answer = JsonConvert.DeserializeObject<SimpleCallAnswer>(responseString);
+                //SimpleCallAnswer answer = JsonConvert.DeserializeObject<SimpleCallAnswer>("{\"result\":200, \"otherstuffnocare\": 320}");
 
                 return answer;
             }
@@ -39,20 +49,20 @@ namespace SafeStreets
             }
         }
 
-        public static async Task<SimpleCallAnswer> Registration(string email, string username, string firstName, string lastName, string fiscalCode)
+        public static async Task<SimpleCallAnswer> Registration(string email, string username, string firstName, string lastName, string fiscalCode, string password, string documentPhoto)
         {
             try
             {
-                /*var response = await App.Client.GetAsync(startUrl + "mocky.io/v2/5df66bb33400002900e5a59b?user=" + user + "&pass=" + pass);
+                var values = "username=" + username + "&password=" + password + "&firstName=" + firstName + "&lastName=" + lastName + "&email=" + email +
+                       "&fiscalCode=" + fiscalCode + "&documentPhoto=" + documentPhoto;
+
+                var content = new StringContent(values, null, "application/x-www-form-urlencoded");
+
+                var response = await App.Client.PostAsync(startUrl + "/accounts/signup/", content);
 
                 string responseString = await response.Content.ReadAsStringAsync();
 
-                responseString.Replace("\\", "");
-
-                responseString = System.Net.WebUtility.HtmlDecode(responseString);//Decodificare cose come &nbsp
-
-                */
-                SimpleCallAnswer answer = JsonConvert.DeserializeObject<SimpleCallAnswer>("{\"done\":true}");
+                SimpleCallAnswer answer = JsonConvert.DeserializeObject<SimpleCallAnswer>(responseString);
 
                 return answer;
             }
@@ -76,7 +86,32 @@ namespace SafeStreets
                 responseString = System.Net.WebUtility.HtmlDecode(responseString);//Decodificare cose come &nbsp
 
                 */
-                SimpleCallAnswer answer = JsonConvert.DeserializeObject<SimpleCallAnswer>("{\"done\":true}");
+                SimpleCallAnswer answer = JsonConvert.DeserializeObject<SimpleCallAnswer>("{\"result\":200}");
+
+                return answer;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public static async Task<SimpleCallAnswer> SendNewReport(string username, string password, string plate, int violationType, double latitude, double longitude, List<String> imagesBase64)
+        {
+            try
+            {
+                string pictures = "[\"" + string.Join("\",\"", imagesBase64) + "\"]";
+                var values = "username=" + username + "&password=" + password + "&plate=" + plate + "&violationType=" + violationType + "&latitude=" + latitude +
+                       "&longitude=" + longitude + "&pictures=" + pictures;
+
+                var content = new StringContent(values, null, "application/x-www-form-urlencoded");
+
+                var response = await App.Client.PostAsync(startUrl + "/mobile/reports/", content);
+
+                string responseString = await response.Content.ReadAsStringAsync();
+
+                SimpleCallAnswer answer = JsonConvert.DeserializeObject<SimpleCallAnswer>(responseString);
 
                 return answer;
             }
@@ -91,15 +126,16 @@ namespace SafeStreets
         {
             try
             {
-                /* var response = await App.Client.GetAsync(startUrl + "mocky.io/v2/5df648df3400004f00e5a571?user=" + App.username + "&pass=" + App.pass);
+                var response = await App.Client.GetAsync(startUrl + "/mobile/reports/?username=" + App.username + "&password=" + App.pass);
 
-                 string responseString = await response.Content.ReadAsStringAsync();
+                string responseString = await response.Content.ReadAsStringAsync();
 
-                 responseString.Replace("\\", "");
+                responseString.Replace("\\", "");
 
-                 responseString = System.Net.WebUtility.HtmlDecode(responseString);//Decodificare cose come &nbsp*/
+                responseString = System.Net.WebUtility.HtmlDecode(responseString);//Decodificare cose come &nbsp
 
-                string responseString = "{\"found\":true,\"pastReports\":[{\"typology\":\"Double Parking\",\"address\":\"Via Rossi 1, Milano\",\"dateTime\":\"12/10/2018 16:30\"}]}";
+                //string responseString = "{\"found\":true,\"pastReports\":[{\"typology\":\"Double Parking\",\"address\":\"Via Rossi 1, Milano\",\"dateTime\":\"12/10/2018 16:30\"}]}";
+                //string responseString = "{ \"result\":200,\"content\": [{ \"username\":\"reporterUsername\", \"latitude\":\"45.08\", \"longitude\":\"8.04\",\"reportID\":1,\"timestamp\":\"2000-01-01 00:00:01\",\"address\":\"address\", \"licensePlate\":\"AA000AA\", \"violation\":\"violation\", \"notes\":\"notes\", \"pictures\": [\"https://upload.wikimedia.org/wikipedia/commons/c/c6/Georg_Carabelli.jpg\", \"https://upload.wikimedia.org/wikipedia/commons/c/c6/Georg_Carabelli.jpg\"] } ]}";
 
                 PastReportsAnswer answer = JsonConvert.DeserializeObject<PastReportsAnswer>(responseString);
 
@@ -113,25 +149,11 @@ namespace SafeStreets
         }
 
 
-
-
-
-
-
-
-
-        /**
-         
-             Il Cubo
-
-
-             */
-
-        public static async Task<OpportunitaRoot> GetOpportunita(string idU, string pass)
+        public static async Task<StreetSafetyPins> StreetSafety(string user, string pass)
         {
             try
             {
-                var response = await App.Client.GetAsync(startUrl + "opportunita/opportunita_ottieni_lista_o_rispondi.php?idU=" + idU + "&pass=" + pass);
+                var response = await App.Client.GetAsync(startUrl + "/mobile/streetSafety/?username=" + App.username + "&password=" + App.pass);
 
                 string responseString = await response.Content.ReadAsStringAsync();
 
@@ -139,269 +161,8 @@ namespace SafeStreets
 
                 responseString = System.Net.WebUtility.HtmlDecode(responseString);//Decodificare cose come &nbsp
 
-                OpportunitaRoot off = JsonConvert.DeserializeObject<OpportunitaRoot>(responseString);
-                
-                return off;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                return null;
-            }
-        }
-
-        public static async Task<ModuliRoot> GetModuliPrenotaLezioni(string idU, string pass)
-        {
-            try
-            {
-                var response = await App.Client.GetAsync(startUrl + "prenota_lezioni/moduli_ottieni_lista.php?idU=" + idU + "&pass=" + pass);
-
-                string responseString = await response.Content.ReadAsStringAsync();
-
-                responseString.Replace("\\", "");
-
-                ModuliRoot mod = JsonConvert.DeserializeObject<ModuliRoot>(responseString);
-
-                return mod;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                return null;
-            }
-        }
-
-        public static async Task<bool> SegnalaRinnovoModuloPrenotaLezioni(string idU, string idF)
-        {
-            try
-            {
-                var response = await App.Client.GetAsync(startUrl + "prenota_lezioni/modulo_segnala_rinnovo.php?idU=" + idU + "&idF=" + idF);
-
-                string responseString = await response.Content.ReadAsStringAsync();
-
-                responseString.Replace("\\", "");
-
-                bool done = JsonConvert.DeserializeObject<bool>(responseString);
-
-                return done;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                return false;
-            }
-        }
-
-        public static async Task<DatiPerCompilaModulo> GetInfoPerCompilazioneModulo(string idU, string pass, string idP)
-        {
-            try
-            {
-                var response = await App.Client.GetAsync(startUrl + "prenota_lezioni/modulo_info_per_compilazione.php?idU=" + idU + "&pass=" + pass + "&idP=" + idP);
-
-                string responseString = await response.Content.ReadAsStringAsync();
-
-                responseString.Replace("\\", "");
-
-                DatiPerCompilaModulo compMod = JsonConvert.DeserializeObject<DatiPerCompilaModulo>(responseString);
-
-                return compMod;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                return null;
-            }
-        }
-
-        public static async Task<RispostaInserisciModulo> InserisciNuovoModulo(string idU, string pass, string dataScelta, string oraInizio, string oreDaSvolgere, DatiPerCompilaModulo compilaModuliToShow)
-        {
-            try
-            {
-                //Debug.WriteLine("IDU: " + App.idU);
-                var values = new Dictionary<string, string>
-                    {
-                       { "giorno", dataScelta },
-                       { "orain", oraInizio },
-                       { "ore", oreDaSvolgere },
-                       { "idU", idU},
-                       { "pass", pass},
-                       { "nome", compilaModuliToShow.nome },
-                       { "cognome", compilaModuliToShow.cognome },
-                       { "da", compilaModuliToShow.nome_famiglia },
-                       { "idP", compilaModuliToShow.idP }
-                    };
-
-                var content = new FormUrlEncodedContent(values);
-
-                var response = await App.Client.PostAsync(startUrl + "prenota_lezioni/modulo_inserimento.php", content);
-
-                string responseString = await response.Content.ReadAsStringAsync();
-
-                RispostaInserisciModulo answer = JsonConvert.DeserializeObject<RispostaInserisciModulo>(responseString);
-                return answer;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                return null;
-            }
-        }
-
-        public static async Task<RootElementiAreaPrenotazioni> RichiestaDatiConfermaModificaLezioni(string idU, string pass)
-        {
-            try
-            {
-                var values = new Dictionary<string, string>
-                    {
-                       { "idU", idU },
-                       { "pass", pass}
-                    };
-
-                var content = new FormUrlEncodedContent(values);
-
-                Debug.WriteLine(content.ToString());
-
-                var response = await App.Client.PostAsync(startUrl + "conferma_modifica_lezioni/lezioni_conferma_modifica_lista.php", content);
-
-                string responseString = await response.Content.ReadAsStringAsync();
-
-                RootElementiAreaPrenotazioni answer = JsonConvert.DeserializeObject<RootElementiAreaPrenotazioni>(responseString); ;
-                return answer;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                return null;
-            }
-        }
-
-        public static async Task<Boolean> LezioneModificaStatoNotifica(string id)
-        {
-            try
-            {
-                var values = new Dictionary<string, string>
-                    {
-                       { "id", id }
-                    };
-
-                var content = new FormUrlEncodedContent(values);
-
-                Debug.WriteLine(content.ToString());
-
-                var response = await App.Client.PostAsync(startUrl + "conferma_modifica_lezioni/lezioni_notifica.php", content);
-
-                string responseString = await response.Content.ReadAsStringAsync();
-
-                return (responseString=="0" || responseString == "1")?true:false;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                return false;
-            }
-        }
-
-        public static async Task<RispostaModLezione> LezioneModifica(string idU, string pass, string dataScelta, string oraInizio, string oreDaSvolgere, string idM)
-        {
-            try
-            {
-                var values = new Dictionary<string, string>
-                    {
-                       { "idU", idU },
-                       { "pass", pass},
-                       { "giorno", dataScelta },
-                       { "orain", oraInizio },
-                       { "ore", oreDaSvolgere },
-                       { "idM" , idM}
-                    };
-
-                var content = new FormUrlEncodedContent(values);
-
-                Debug.WriteLine(content.ToString());
-
-                var response = await App.Client.PostAsync(startUrl + "conferma_modifica_lezioni/lezione_modifica.php", content);
-
-                string responseString = await response.Content.ReadAsStringAsync();
-
-                RispostaModLezione answer = JsonConvert.DeserializeObject<RispostaModLezione>(responseString); ;
-                return answer;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                return null;
-            }
-        }
-
-        public static async Task<RispostaConfermaLezione> LezioneConferma(string idU, string pass, string idM, string materia, string argomento)
-        {
-            try
-            {
-                var values = new Dictionary<string, string>
-                    {
-                       { "idU", idU},
-                       { "pass", pass},
-                       { "idM" , idM},
-                       { "materia" , materia},
-                       { "argomento" , argomento}
-                    };
-
-                var content = new FormUrlEncodedContent(values);
-
-                //Debug.WriteLine(content.ToString());
-
-                var response = await App.Client.PostAsync(startUrl + "conferma_modifica_lezioni/lezione_conferma.php", content);
-
-                string responseString = await response.Content.ReadAsStringAsync();
-
-                RispostaConfermaLezione answer = JsonConvert.DeserializeObject<RispostaConfermaLezione>(responseString); ;
-                return answer;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                return null;
-            }
-        }
-
-        public static async Task<RootGiorniDisponibilita> RichiestaDisponibilitaCollaboratore(string idU, string pass, string idP)
-        {
-            try
-            {
-                var values = new Dictionary<string, string>
-                    {
-                       { "idU", idU},
-                       { "pass", pass},
-                       { "idP" , idP}
-                    };
-
-                var content = new FormUrlEncodedContent(values);
-                
-                var response = await App.Client.PostAsync(startUrl + "disponibilita_collaboratore/disponibilita_lista_richieste.php", content);
-
-                string responseString = await response.Content.ReadAsStringAsync();
-
-                RootGiorniDisponibilita answer = JsonConvert.DeserializeObject<RootGiorniDisponibilita>(responseString);
-                return answer;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine("Errore richiesta modulo" + ex);
-                return null;
-            }
-        }
-
-        public static async Task<GoogleMapsApiAnswer> GetDatiGoogleMaps(string url)
-        {
-            try
-            {
-                var response = await App.Client.GetAsync(url);
-
-                string responseString = await response.Content.ReadAsStringAsync();
-
-                responseString.Replace("\\", "");
-
-                GoogleMapsApiAnswer answer = JsonConvert.DeserializeObject<GoogleMapsApiAnswer>(responseString);
+                StreetSafetyPins answer = JsonConvert.DeserializeObject<StreetSafetyPins>(responseString);
+                //StreetSafetyPins answer = JsonConvert.DeserializeObject<StreetSafetyPins>("{ \"result\":200,  \"content\": [{\"address\":\"address\",  \"latitude\": 45.000000,\"longitude\": 8.000000,\"severity\":\"High\",\"content\":\"violationDetails\" }, {\"address\":\"address2\",  \"latitude\": 45.002000,\"longitude\": 8.002000,\"severity\":\"Low\",\"content\":\"violationDetails\" } ]}");
 
                 return answer;
             }
@@ -412,166 +173,7 @@ namespace SafeStreets
             }
         }
 
-        public static async Task<List<FAQStructure>> GetFAQ()//GET
-        {
-            try
-            {
-                var response = await App.Client.GetAsync(startUrl + "faq/faq_ottieni_lista.php");
 
-                string responseString = await response.Content.ReadAsStringAsync();
-
-                responseString = System.Net.WebUtility.HtmlDecode(responseString);//Decodificare cose come &nbsp
-
-                List<FAQStructure> answer = JsonConvert.DeserializeObject<List<FAQStructure>>(responseString);
-
-                return answer;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                return null;
-            }
-        }
-
-        /**
-         * Attenzione: non pulisce le stringhe coi link in risposta
-         */
-        public static async Task<string[]> GetLoSapevi()//GET
-        {
-            try
-            {
-                var response = await App.Client.GetAsync(startUrl + "lo_sapevi.php");
-
-                string responseString = await response.Content.ReadAsStringAsync();
-
-                string[] loSapeviAnswer = JsonConvert.DeserializeObject<string[]>(responseString);
-
-                return loSapeviAnswer;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                return null;
-            }
-        }
-
-        public static async Task<List<Rendicontazione>> GetRendicontazioni(string idU, string pass)
-        {
-            try
-            {
-                var response = await App.Client.GetAsync(startUrl + "rendicontazioni/rendicontazioni.php?idU=" + idU + "&pass=" + pass);
-
-                string responseString = await response.Content.ReadAsStringAsync();
-
-                responseString.Replace("\\", "");
-
-                responseString = System.Net.WebUtility.HtmlDecode(responseString);//Decodificare cose come &nbsp
-
-                List<Rendicontazione> rend = JsonConvert.DeserializeObject<List<Rendicontazione>>(responseString);
-
-                return rend;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                return null;
-            }
-        }
-
-        public static async Task<RendicontazioneFirma> FirmaRendicontazione(string idU, string pass, string idCedola)
-        {
-            try
-            {
-                var response = await App.Client.GetAsync(startUrl + "rendicontazioni/rendicontazioni_firma_digitale.php?idU=" + idU + "&pass=" + pass + "&idC=" + idCedola);
-
-                string responseString = await response.Content.ReadAsStringAsync();
-
-                responseString.Replace("\\", "");
-
-                responseString = System.Net.WebUtility.HtmlDecode(responseString);//Decodificare cose come &nbsp
-
-                RendicontazioneFirma rendFirma = JsonConvert.DeserializeObject<RendicontazioneFirma>(responseString);
-
-                return rendFirma;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                return null;
-            }
-        }
-
-        //public static async Task<bool> UploadFirmaUtente() -> fatto tutto nel codice della pagina di upload
-
-        public static async Task<ProfiloUtente> GetProfiloUtente(string idU, string pass)
-        {
-            try
-            {
-                var response = await App.Client.GetAsync(startUrl + "profilo_utente.php?idU=" + idU + "&pass=" + pass);
-
-                string responseString = await response.Content.ReadAsStringAsync();
-
-                responseString.Replace("\\", "");
-
-                responseString = System.Net.WebUtility.HtmlDecode(responseString);//Decodificare cose come &nbsp
-
-                ProfiloUtente answer = JsonConvert.DeserializeObject<ProfiloUtente>(responseString);
-
-                return answer;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                return null;
-            }
-        }
-
-        //achievements
-        public static async Task<List<RootAchievement>> GetAchievements(string idU, string pass)
-        {
-            try
-            {
-                var response = await App.Client.GetAsync(startUrl + "achievements/achievements.php?idU=" + idU + "&pass=" + pass);
-
-                string responseString = await response.Content.ReadAsStringAsync();
-
-                responseString.Replace("\\", "");
-
-                responseString = System.Net.WebUtility.HtmlDecode(responseString);//Decodificare cose come &nbsp
-
-                List<RootAchievement> answer = JsonConvert.DeserializeObject<List<RootAchievement>>(responseString);
-
-                return answer;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                return null;
-            }
-        }
-
-        public static async Task<PremioAchievement> RichiediPremioAchievement(string idU, string pass, string idAchievement)
-        {
-            try
-            {
-                var response = await App.Client.GetAsync(startUrl + "achievements/achievements.php?idU=" + idU + "&pass=" + pass + "&idAchievement=" + idAchievement);
-
-                string responseString = await response.Content.ReadAsStringAsync();
-
-                responseString.Replace("\\", "");
-
-                responseString = System.Net.WebUtility.HtmlDecode(responseString);//Decodificare cose come &nbsp
-
-                PremioAchievement answer = JsonConvert.DeserializeObject<PremioAchievement>(responseString);
-
-                return answer;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                return null;
-            }
-        }
 
 
         /**
@@ -634,7 +236,7 @@ namespace SafeStreets
             catch (Exception ex)
             {
                 Debug.WriteLine(ex);
-                return default (T);
+                return default(T);
             }
         }
     }

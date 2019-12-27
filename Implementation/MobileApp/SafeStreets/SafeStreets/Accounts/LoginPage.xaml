@@ -1,36 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!--
-    tutti i nomi delle mie variabili di cui fare il binding iniziano con la "x" 
-    tutti i click iniziano con "On"
--->
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SafeStreets.LoginPage"
              Padding="8,10,8,0"
-             Title="Login"
+             Title="SafeStreets"
              BackgroundColor="White"> 
     <ContentPage.Content>
-        <StackLayout VerticalOptions="StartAndExpand" BackgroundColor="White">
-            <Image x:Name="xLogoImage" WidthRequest="100" HeightRequest="100"/>
+        <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="White">
+            <Image x:Name="xLogoImage" WidthRequest="200" HeightRequest="200"/>
             <Entry x:Name="xUsername" Placeholder="Username" Keyboard="Plain"/>
             <Entry x:Name="xPassword" Placeholder="Password" IsPassword="true" />
             <Button x:Name="xLoginButton"
                     Text="Log In"
                     TextColor="{StaticResource ButtonTextColor}" 
                     BackgroundColor="{StaticResource ButtonBackgroundColor}"
-                    Clicked="OnLoginButtonClicked" />
+                    Clicked="OnLoginButtonClicked" 
+                    CornerRadius="10"/>
 
-            <StackLayout Padding="0,20,0,0">
+            <StackLayout VerticalOptions="EndAndExpand" Padding="0,10,0,20">
                 <Button
                     Text="Restore Credentials"
                     TextColor="{StaticResource ButtonTextColor}" 
                     BackgroundColor="{StaticResource ButtonBackgroundColor}"
-                    Clicked="OnRestoreCredentialClicked" />
+                    Clicked="OnRestoreCredentialClicked" 
+                    CornerRadius="10"/>
                 <Button
                     Text="Sign Up"
                     TextColor="{StaticResource ButtonTextColor}" 
                     BackgroundColor="{StaticResource ButtonBackgroundColor}"
-                    Clicked="OnSignUpClicked" />
+                    Clicked="OnSignUpClicked" 
+                    CornerRadius="10"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

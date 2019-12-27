@@ -15,15 +15,28 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Fill the form to sign up:" FontSize="Large" FontAttributes="Bold"/>
-            <Entry Placeholder="Email" x:Name="xEmailEntry"/>
-            <Entry Placeholder="Username" x:Name="xUsernameEntry"/>
-            <Entry Placeholder="First Name" x:Name="xFirstNameEntry"/>
-            <Entry Placeholder="Last Name" x:Name="xLastNameEntry"/>
-            <Entry Placeholder="Fiscal Code" x:Name="xFiscalCodeEntry"/>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Fill the form to sign up:" FontSize="Large" FontAttributes="Bold"/>
+                <Entry Placeholder="Email" x:Name="xEmailEntry"/>
+                <Entry Placeholder="Username" x:Name="xUsernameEntry"/>
+                <Entry Placeholder="Fiscal Code" x:Name="xFiscalCodeEntry"/>
+                <Entry Placeholder="First Name" x:Name="xFirstNameEntry"/>
+                <Entry Placeholder="Last Name" x:Name="xLastNameEntry"/>
+                <Entry Placeholder="Password" x:Name="xPasswordEntry" IsPassword="True"/>
 
-            <Button Text="Sign Up" Clicked="OnSignUpClicked" BackgroundColor="Blue"/>
-        </StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Image x:Name="PhotoImage" />
+                    <Button x:Name="CameraButton" Text="Take Photo" Grid.Row="1" Clicked="CameraButton_Clicked"/>
+                </Grid>
+
+                <Button Text="Sign Up" Clicked="OnSignUpClicked" BackgroundColor="{StaticResource ButtonBackgroundColor}" TextColor="White"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
