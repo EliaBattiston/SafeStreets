@@ -20,7 +20,6 @@ CREATE TABLE users(
     lastName TEXT NOT NULL,
     username VARCHAR(100) UNIQUE NOT NULL,
     passwordHash CHAR(64) NOT NULL,
-    pictureID INT UNIQUE NOT NULL,
     suspended BOOLEAN DEFAULT false NOT NULL,
     suspendedTimestamp TIMESTAMP NULL DEFAULT NULL,
     acceptedTimestamp TIMESTAMP NULL DEFAULT NULL,
@@ -33,7 +32,7 @@ CREATE TABLE users(
 /*
 *   Creation of the "system" user
 */
-INSERT INTO users (fiscalCode, firstName, lastName, username, passwordHash, pictureID, suspended, acceptedTimestamp, accepterAdmin, role)
+INSERT INTO users (fiscalCode, firstName, lastName, username, passwordHash, suspended, acceptedTimestamp, accepterAdmin, role)
 VALUES 
     (
         "0000000000000000",
@@ -41,7 +40,6 @@ VALUES
         "Administrator",
         "system",
         "04f10ecfee341134444666a0193323bb260bdfe3961abf52f40ab41e0a848e67",
-        0,
         false,
         CURRENT_TIMESTAMP,
         "0000000000000000",
@@ -56,20 +54,16 @@ CREATE TABLE suggestionTypes(
 );
 */
 
-/*
 CREATE TABLE severities(
     severityID INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) UNIQUE NOT NULL
 );
-*/
 
-/*
 INSERT INTO severities (name)
 VALUES
     ("Low"),
     ("Medium"),
     ("High");
-*/
 
 /*
 *   The suggestions feature will not be implemented since only one of the advances functionalities
@@ -123,13 +117,6 @@ CREATE TABLE reports(
     FOREIGN KEY (user) REFERENCES users(fiscalCode) ON DELETE NO ACTION ON UPDATE CASCADE,
     FOREIGN KEY (violation) REFERENCES violations(violationID) ON DELETE NO ACTION ON UPDATE CASCADE,
     FOREIGN KEY (street) REFERENCES streets(streetID) ON DELETE NO ACTION ON UPDATE CASCADE
-);
-
-CREATE TABLE reportPictures(
-    reportID BIGINT,
-    pictureID INT NOT NULL,
-    PRIMARY KEY (reportID, pictureID),
-    FOREIGN KEY (reportID) REFERENCES reports(reportID) ON DELETE NO ACTION ON UPDATE CASCADE
 );
 
 /*

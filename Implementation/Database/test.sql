@@ -1,7 +1,7 @@
 USE safestreets;
 
 /* The password for all test users is "test" */
-INSERT INTO users (fiscalCode, firstName, lastName, username, passwordHash, pictureID, suspended, acceptedTimestamp, accepterAdmin, role)
+INSERT INTO users (fiscalCode, firstName, lastName, username, passwordHash, suspended, acceptedTimestamp, accepterAdmin, role)
 VALUES
     (
         "ABCABCABCA000000",
@@ -9,7 +9,6 @@ VALUES
         "Surname",
         "regularUser",
         "64adb780ea98d46b53605c3044c14f164f753f97f7f828888e65881a2dafc9ea",
-        1,
         false,
         CURRENT_TIMESTAMP,
         "0000000000000000",
@@ -21,7 +20,6 @@ VALUES
         "Surname",
         "officerUser",
         "64adb780ea98d46b53605c3044c14f164f753f97f7f828888e65881a2dafc9ea",
-        2,
         false,
         CURRENT_TIMESTAMP,
         "0000000000000000",
@@ -33,7 +31,6 @@ VALUES
         "Surname",
         "administratorUser",
         "64adb780ea98d46b53605c3044c14f164f753f97f7f828888e65881a2dafc9ea",
-        3,
         false,
         CURRENT_TIMESTAMP,
         "0000000000000000",
@@ -45,7 +42,6 @@ VALUES
         "Surname",
         "systemUser",
         "64adb780ea98d46b53605c3044c14f164f753f97f7f828888e65881a2dafc9ea",
-        4,
         false,
         CURRENT_TIMESTAMP,
         "0000000000000000",
@@ -57,7 +53,6 @@ VALUES
         "Surname",
         "userWithReports1",
         "64adb780ea98d46b53605c3044c14f164f753f97f7f828888e65881a2dafc9ea",
-        5,
         false,
         CURRENT_TIMESTAMP,
         "0000000000000000",
@@ -69,7 +64,6 @@ VALUES
         "Surname",
         "userWithReports2",
         "64adb780ea98d46b53605c3044c14f164f753f97f7f828888e65881a2dafc9ea",
-        6,
         false,
         CURRENT_TIMESTAMP,
         "0000000000000000",
@@ -81,14 +75,13 @@ VALUES
         "Surname",
         "userWithoutReports",
         "64adb780ea98d46b53605c3044c14f164f753f97f7f828888e65881a2dafc9ea",
-        7,
         false,
         CURRENT_TIMESTAMP,
         "0000000000000000",
         1
     );
 
-INSERT INTO users (fiscalCode, firstName, lastName, username, passwordHash, pictureID, suspended, suspendedTimestamp, acceptedTimestamp, accepterAdmin, role)
+INSERT INTO users (fiscalCode, firstName, lastName, username, passwordHash, suspended, suspendedTimestamp, acceptedTimestamp, accepterAdmin, role)
 VALUES
     (
         "ABCABCABCA000007",
@@ -96,7 +89,6 @@ VALUES
         "Surname",
         "suspendedUser",
         "64adb780ea98d46b53605c3044c14f164f753f97f7f828888e65881a2dafc9ea",
-        8,
         true,
         CURRENT_TIMESTAMP,
         CURRENT_TIMESTAMP,

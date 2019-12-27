@@ -2,8 +2,10 @@
   include_once("streets.php");
 
   class Reports{
+    //Generic SQL query for reports data retrieval
     private static $pastReportsSQL = "SELECT users.username AS username, firstName, lastName, reportID, timestamp, streets.name AS address, licensePlate, violations.description AS violation, notes FROM reports JOIN users ON reports.user = users.fiscalCode JOIN streets ON reports.street = streets.streetID JOIN violations ON reports.violation = violations.violationID";
 
+    //Retrieval of an array containing links to the pictures related to parameter's report ID
     private static function reportPictures($reportID) {
       $directory = "../../reportPictures/".$reportID."/";
       $pictures = scandir($directory, SCANDIR_SORT_ASCENDING);
@@ -12,7 +14,6 @@
       foreach($pictures as $pic) {
         if(strpos($pic, "jpg") != FALSE || strpos($pic, "png") != FALSE) {
           array_push($pictureList, $_SERVER['HTTP_HOST']."/reportPictures/".$reportID."/".$pic);
-          //array_push($pictureList, base64_encode(file_get_contents("../../reportPictures/".$reportID."/".$pic)));
         }
       }
       
@@ -67,10 +68,7 @@
 
       foreach($data as &$record) {
         $record['pictures'] = self::reportPictures($record['reportID']);
-      }
-
-      echo var_dump($data)."<br><br>";
-      
+      }      
 
       return $data;
     }
