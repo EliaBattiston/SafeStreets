@@ -3,14 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SafeStreets.LogoutPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout VerticalOptions="Center">
             <Label Text="Logout from the application?"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand"
+                   FontSize="Large"
+                   TextColor="Black"/>
 
             <Button Text="Logout"
-                    BackgroundColor="DarkRed"
-                    Clicked="OnBtnLogoutClicked"/>
+                    BackgroundColor="{StaticResource AttentionColor}"
+                    Clicked="OnBtnLogoutClicked"
+                    Margin="20"
+                    CornerRadius="10"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -5,7 +5,7 @@
 
     <Application.Resources>
         <Color x:Key="PageBackgroundColor">White</Color>
-        <Color x:Key="ButtonBackgroundColor">#39A9DB</Color>
+        <Color x:Key="ButtonBackgroundColor">#336699</Color>
         <!-- BLU CHIARO -->
         <Color x:Key="ButtonTextColor">White</Color>
         <Color x:Key="InfoTextColor">#086375</Color>
@@ -13,7 +13,7 @@
         <Color x:Key="WarningTextColor">#EE6352</Color>
         <!-- ROSSO -->
         <!-- ATTENZIONE A CAMBIARE ANCHE NEL C# IL COLORE DEL PULSANTE DI DISPONIBILITà-->
-        <Color x:Key="NavbarColor">#1C77C3</Color>
+        <Color x:Key="NavbarColor">#0C8346</Color>
         <!-- BLU SCURO -->
         <Color x:Key="AttentionColor">#FAC05E</Color>
         <!-- GIALLO SCURO -->
@@ -30,7 +30,7 @@
 
         <ResourceDictionary>
             <!--Global Styles-->
-            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Color x:Key="NavigationPrimary">#0C8346</Color>
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
                 <Setter Property="BarTextColor" Value="White" />

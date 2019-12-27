@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
 
 namespace SafeStreets
@@ -16,9 +17,26 @@ namespace SafeStreets
 		{
 			InitializeComponent ();
 
-            xTypologyLabel.Text = report.typology;
+            xTypologyLabel.Text = report.violation;
             xAddressLabel.Text = report.address;
-            xDateTimeLabel.Text = report.dateTime;
+            xDateTimeLabel.Text = report.timestamp;
+            xLicensePlateLabel.Text = report.licensePlate;
+            xNotesLabel.Text = report.notes;
+
+			xCarouselView.ItemsSource = report.pictures;
+
+			Position position = new Position(report.latitude, report.longitude);
+			MapSpan mapSpan = MapSpan.FromCenterAndRadius(position, Xamarin.Forms.Maps.Distance.FromKilometers(0.5));
+			xDetailReportMap.MoveToRegion(mapSpan);
+
+			Pin reportPos = new Pin
+			{
+				Position = position,
+				Label = "Titolo",
+				Address = "StoriellaBellaBella",
+				Type = PinType.SavedPin
+			};
+			xDetailReportMap.Pins.Add(reportPos);
 		}
 
         //tolbar closeModal button handler

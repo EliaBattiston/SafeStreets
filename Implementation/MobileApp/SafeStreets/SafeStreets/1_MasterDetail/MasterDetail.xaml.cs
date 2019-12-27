@@ -77,19 +77,6 @@ namespace SafeStreets
             Detail.Navigation.PushAsync((Page)Activator.CreateInstance(page));
             IsPresented = false;
         }*/
-
-        private async Task<OpportunitaRoot> CreateOpportunitaPage()
-        {
-            //OpportunitaRoot offerteToShow = await JsonRequest.GetOpportunita(App.idU, App.pass);
-
-            //offerteToShow = await Shared.calcolaDistanzaOpportunita(offerteToShow);
-
-            //if (App.ordinaPerMateria)
-            //    offerteToShow = Shared.ordinaPerMateria(offerteToShow);
-
-            //return offerteToShow;
-            return null;
-        }
         
     }
 }

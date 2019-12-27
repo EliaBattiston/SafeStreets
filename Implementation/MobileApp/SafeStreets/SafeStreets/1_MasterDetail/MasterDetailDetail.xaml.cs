@@ -1,19 +1,55 @@
-﻿using System;
+﻿using Plugin.Media;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
 
 namespace SafeStreets
 {
-    //Esempio di pagina richiamata
+    public class ReportInfo
+    {
+        public string text { get; set; }
+        public int code { get; set; }
+
+        public ReportInfo(string text, int code)
+        {
+            this.text = text;
+            this.code = code;
+        }
+    }
 
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MasterDetailDetail : ContentPage
     {
+        private List<String> imagesBase64;
+        private List<ImageSource> images;
+        private double latitude = double.NaN;
+        private double longitude = double.NaN;
+
         public MasterDetailDetail()
         {
             InitializeComponent();
+
+            List<ReportInfo> rf = new List<ReportInfo>();
+
+            rf.Add(new ReportInfo("Other", 1));
+            rf.Add(new ReportInfo("Double parking", 2));
+            rf.Add(new ReportInfo("Parking in no parking area", 3));
+            rf.Add(new ReportInfo("Traffic obstruction", 4));
+            rf.Add(new ReportInfo("Parking disk over time", 5));
+            rf.Add(new ReportInfo("Parking in paid area without receipt", 6));
+            rf.Add(new ReportInfo("Abandoned car", 7));
+            rf.Add(new ReportInfo("Left rear view mirror damaged or missing", 8));
+            rf.Add(new ReportInfo("Parking on sidewalk", 9));
+            rf.Add(new ReportInfo("Parking on bicycle or walkable lane", 10));
+
+            xReportInformationPicker.ItemsSource = rf;
+
+            imagesBase64 = new List<string>();
+            images = new List<ImageSource>();
         }
 
         protected override void OnAppearing()
@@ -21,49 +57,96 @@ namespace SafeStreets
             base.OnAppearing();
         }
 
-        //async void LoadSuggerimenti()
-        //{
-        //    loSapeviStrings = await JsonRequest.GetLoSapevi();
-            
-        //    loadLoSapeviText();
-
-        //    var tapGestureRecognizer = new TapGestureRecognizer();
-        //    tapGestureRecognizer.Tapped += (s, e) => {
-        //        loadLoSapeviText();
-        //    };
-        //    xLoSapeviStackLayout.GestureRecognizers.Add(tapGestureRecognizer);
-        //}
-
-        
-
-        //async void LoadDisponibilita()
-        //{
-        //    disponibilitaToShow = await JsonRequest.RichiestaDisponibilitaCollaboratore(App.username, App.pass, "");
-
-        //    if (disponibilitaToShow != null)
-        //    {
-        //        disponibilitaCaricate = true;
-
-        //        if (!disponibilitaToShow.error)
-        //            xDisponibilitaButton.BackgroundColor = Color.FromHex("#EE6352"); /*OLD: #d54d49*/
-        //    }
-        //    else
-        //        await DisplayAlert("Attenzione", "Sembra non sia attiva la tua connessione ad internet. La maggior parte delle funzionalità dell'app non funzionerà.", "OK");
-
-        //    Debug.WriteLine("Disp finito");
-        //}
 
         async void OnClickGeolocation(object sender, EventArgs e)
         {
-            string latlng = await MyGeolocator.GetLatLngAsString();
+            Position locality = await MyGeolocator.GetActualPosition();
+            latitude = locality.Latitude;
+            longitude = locality.Longitude;
 
-            if(latlng != null)
+            string placeName = await MyGeolocator.GetPlaceName(locality);
+
+            if(placeName != null)
             {
-                xLocationLabel.Text = latlng;
+                xLocationLabel.Text = placeName;
             }
             else
             {
                 xLocationLabel.Text = "Couldn't find position";
+            }
+        }
+
+        private async void CameraButton_Clicked(object sender, EventArgs e)
+        {
+            await CrossMedia.Current.Initialize();
+
+            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            {
+                await DisplayAlert("No Camera", "No camera available.", "OK");
+                return;
+            }
+
+            var photo = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions()
+            {
+                Directory = "SafeStreets",
+            });
+
+            if (photo != null)
+            {
+                images.Add(photo.Path);
+                xCarouselViewNewReport.ItemsSource = null;
+                xCarouselViewNewReport.ItemsSource = images;
+
+                byte[] b = System.IO.File.ReadAllBytes(photo.Path);
+                imagesBase64.Add(Convert.ToBase64String(b));
+
+                xCarouselViewNewReport.IsVisible = true;
+            }
+        }
+
+        private async void OnClickSendReport(object sender, EventArgs e)
+        {
+            ReportInfo rInfo = (ReportInfo)xReportInformationPicker.SelectedItem;
+            string plate = xPlateEntry.Text;
+            string note = xNotesEntry.Text;
+
+            if (rInfo != null && Utils.HasText(plate) && Utils.HasText(note))
+            {
+                if(latitude != double.NaN && longitude != double.NaN)
+                {
+                    if(imagesBase64.Count > 0)
+                    {
+                        var answer = await JsonRequest.SendNewReport(App.username, App.pass, plate, rInfo.code, latitude, longitude, imagesBase64);
+
+                        if (answer != null)
+                        {
+                            if(answer.result == 200)
+                            {
+                                await DisplayAlert("Sent!", "Your report has been sent!", "Ok");
+                            }
+                            else
+                            {
+                                await DisplayAlert("Error " + answer.result, answer.message, "Ok");
+                            }
+                        }
+                        else
+                        {
+                            await DisplayAlert("Error", "Error contacting the server", "Ok");
+                        }
+                    }
+                    else
+                    {
+                        await DisplayAlert("Attention!", "Insert at least one image of the accident!", "Ok");
+                    }
+                }
+                else
+                {
+                    await DisplayAlert("Attention!", "Request your position before sending the report!", "Ok");
+                }
+            }
+            else
+            {
+                await DisplayAlert("Attention!", "Insert the report information!", "Ok");
             }
         }
     }

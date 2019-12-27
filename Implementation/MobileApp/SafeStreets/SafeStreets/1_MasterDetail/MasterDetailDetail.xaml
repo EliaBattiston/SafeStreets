@@ -3,28 +3,48 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SafeStreets.MasterDetailDetail"
              BackgroundColor="White"
-             Padding="8,10,8,0"
              Title="Report">
-    <StackLayout>
-        <Label Text="Report information:" FontSize="Large"/>
-        <Picker Title="Report information" x:Name="xReportInformationPicker">
-            <Picker.Items>
-                <x:String>Double parking</x:String>
-                <x:String>Parking outside the lines</x:String>
-                <x:String>Parking near a STOP</x:String>
-            </Picker.Items>
-        </Picker>
-        <Entry x:Name="xNotesEntry" Placeholder="Notes"/>
-        <Label Text="Location:" FontSize="Large"/>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="6*"/>
-                <ColumnDefinition Width="4*"/>
-            </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Text="Not detected yet" x:Name="xLocationLabel"/>
-            <Button Grid.Column="1" Text="Detect Location" Clicked="OnClickGeolocation"/>
-        </Grid>
-        
-        <Button Text="Send Report"/>
-    </StackLayout>
+    <ScrollView Padding="8,10,8,10">
+        <StackLayout>
+            <Label Text="Report information:" FontSize="Large" TextColor="Black"/>
+            <Picker Title="Report information" x:Name="xReportInformationPicker" ItemDisplayBinding="{Binding text}"/>
+            <Entry x:Name="xPlateEntry" Placeholder="Plate"/>
+            <Editor x:Name="xNotesEntry" Placeholder="Notes" AutoSize="TextChanges" />
+            <Label Text="Location:" FontSize="Large" TextColor="Black"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="4*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Text="Not detected yet" x:Name="xLocationLabel" VerticalTextAlignment="Center" FontSize="Medium"/>
+                <Button Grid.Column="1" Text="Detect Location" Clicked="OnClickGeolocation" BackgroundColor="{StaticResource AttentionColor}" CornerRadius="10"/>
+            </Grid>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <CarouselView PeekAreaInsets="20" x:Name="xCarouselViewNewReport" HeightRequest="300" IsVisible="False">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Frame BorderColor="{StaticResource ButtonBackgroundColor}" Margin="10" HasShadow="False" HeightRequest="200" CornerRadius="10" VerticalOptions="CenterAndExpand" WidthRequest="200">
+                                    <StackLayout>
+                                        <Image Source="{Binding .}" HeightRequest="200"/>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                <Button x:Name="CameraButton" Text="Take Photo" Grid.Row="1" Clicked="CameraButton_Clicked"/>
+            </Grid>
+
+            <StackLayout Padding="0,20,0,0">
+                <Button Text="Send Report" BackgroundColor="{StaticResource ButtonBackgroundColor}" TextColor="White" CornerRadius="10" Clicked="OnClickSendReport"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
