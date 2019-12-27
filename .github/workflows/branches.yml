@@ -24,3 +24,4 @@ jobs:
       - name: Run tests
         run: |
           sudo phpunit --testdox Implementation/API/tests/accounts.php
+          sudo phpunit --testdox Implementation/API/tests/reports.php
