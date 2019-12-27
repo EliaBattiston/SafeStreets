@@ -33,6 +33,40 @@
       return $address;
     }
 
+    //Retrieval of geographic coordinates of the street from human-readable address
+    public static function getStreetCoordinates($address)
+    {
+      $curl = curl_init();
+
+      $address = str_replace(" ", "+", $address);
+
+      //GET request to Google Geocoding APIs
+      curl_setopt_array($curl, array(
+        CURLOPT_URL => "https://maps.googleapis.com/maps/api/geocode/json?address=".$address."&key=AIzaSyBa6W0ZackhaU-LpREjigObsqtm_r0ZUQM",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "GET",
+        CURLOPT_HTTPHEADER => array(
+          "cache-control: no-cache"
+        ),
+      ));
+
+      $response = curl_exec($curl);
+      $err = curl_error($curl);
+
+      curl_close($curl);
+
+      //Decoding of geocoding answer, filtering of the address
+      $response = json_decode($response, true);
+
+      $result = [];
+      $result['lat'] = $response['results'][0]['geometry']['location']['lat'];
+      $result['lng'] = $response['results'][0]['geometry']['location']['lng'];
+      
+      return $result;
+    }
+
     //Retrieval of the assigned SafeStreets street encoding from human-readable address
     private static function getStreetID($streetAddress) {
       global $_CONFIG;

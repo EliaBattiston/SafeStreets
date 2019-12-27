@@ -148,9 +148,61 @@
       global $_CONFIG;
       $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
 
-      $statement = $DBconn->prepare("DELETE FROM reports WHERE reportID = ?");
-      $statement->bind_param("s", $reportID);
+      $statement = $DBconn->prepare("
+        SELECT name, reportsNum, accidentsNum, trafficticketsNum
+        FROM streets 
+        LEFT JOIN
+        (
+          SELECT count(*) AS reportsNum, street
+          FROM reports
+          GROUP by street
+        ) AS reportsCount ON streets.streetID = reportsCount.street
+        LEFT JOIN 
+        (
+          SELECT count(*) AS accidentsNum, street 
+          FROM accidents
+          GROUP by street
+        ) AS accidentsCount ON streets.streetID = accidentsCount.street
+        LEFT JOIN 
+        (
+          SELECT count(*) AS trafficticketsNum, street 
+          FROM traffictickets
+          GROUP by street
+        ) AS trafficTicketsCount ON streets.streetID = trafficTicketsCount.street
+      ");
       $statement->execute();
+      $result = $statement->get_result();
+      $reportsCount = $result->fetch_all(MYSQLI_ASSOC);
+
+      $elaboratedData = [];
+      for($i = 0; $i < count($reportsCount); $i++) {
+        $report = $reportsCount[$i];
+        $elaboratedData[$i] = [];
+        $elaboratedData[$i]['address'] = $report['name'];
+        $coordinates = Streets::getStreetCoordinates($report['name']);
+        $elaboratedData[$i]['latitude'] = $coordinates['lat'];
+        $elaboratedData[$i]['longitude'] = $coordinates['lng'];
+
+        $reports = $report['reportsNum'] == NULL ? 0 : $report['reportsNum'];
+        $accidents = $report['accidentsNum'] == NULL ? 0 : $report['accidentsNum'];
+        $tickets = $report['trafficticketsNum'] == NULL ? 0 : $report['trafficticketsNum'];
+        $elaboratedData[$i]['content'] = "SafeStreets reports: ".$reports."\nAccidents: ".$accidents."\nEmitted traffic tickets: ".$tickets;
+
+        $sum = $reports + $accidents + $tickets;
+        if($sum >= 4) {
+          $elaboratedData[$i]['severity'] = "High";
+        }
+        else {
+          if($sum >= 3) {
+            $elaboratedData[$i]['severity'] = "Medium";
+          }
+          else {
+            $elaboratedData[$i]['severity'] = "Low";
+          }
+        }
+      }
+
+      return $elaboratedData;
     }
   }
 ?>

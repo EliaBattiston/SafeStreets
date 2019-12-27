@@ -96,9 +96,24 @@ VALUES
         1
     );
 
-INSERT INTO streets(name)
+INSERT INTO streets (streetID, name) 
 VALUES
-    ("Test street");
+    (
+        1, 
+        'via Monte Bernasco, Varese'
+    ),
+    (
+        2, 
+        'via Dante Alighieri, Samarate'
+    ),
+    (
+        3, 
+        'via Bonacalza, Oggiona con Santo Stefano'
+    ),
+    (
+        4, 
+        'via Saffi, Varese'
+    );
 
 INSERT INTO reports (notes, licensePlate, latitude, longitude, user, violation, street)
 VALUES
@@ -137,4 +152,51 @@ VALUES
         "ABCABCABCA000005",
         1,
         1
+    );
+
+INSERT INTO accidents (`accidentID`, `licensePlate`, `timestamp`, `street`) 
+VALUES
+    (
+        1, 
+        'AA000BB', 
+        '2019-12-27 16:01:51', 
+        2
+    ),
+    (
+        2, 
+        'EN741VD', 
+        '2019-12-27 16:02:01',
+        4
+    ),
+    (
+        47, 
+        'CZ123BC', 
+        '2019-12-27 16:47:17', 
+        3
+    );
+
+INSERT INTO traffictickets (ticketID, licensePlate, violation, street) VALUES
+    (
+        10, 
+        'FN597PK', 
+        7, 
+        3
+    ),
+    (
+        11, 
+        'BF819ML', 
+        9, 
+        4
+    ),
+    (
+        21, 
+        'CC111DD', 
+        1, 
+        3
+    ),
+    (
+        22, 
+        'BB333EE', 
+        3, 
+        3
     );

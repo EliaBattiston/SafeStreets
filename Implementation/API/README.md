@@ -227,6 +227,31 @@ The _pictures_ parameter is a string representing a json array of base64-encoded
 |-----------|------------------------------------|
 | 405       | Error loading pictures             |
 
+## StreetSafety
+The endpoint provides data about Street Safety.
+
+#### Endpoint and parameters
+```
+GET [endpoint]/mobile/streetSafety/
+```
+
+#### Successfull response
+```
+{
+  "result":200,
+  "content": [
+    {
+      "address":"address",
+      "latitude": 45.000000,
+      "longitude": 8.000000,
+      "severity":"High",
+      "content":"violationDetails"
+    },
+    ...
+  ]
+}
+```
+
 # Web API methods
 
 ## Reports
