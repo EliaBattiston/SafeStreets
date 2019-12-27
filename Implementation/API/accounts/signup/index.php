@@ -56,8 +56,8 @@
 
     $creationCheck = Accounts::signup($username, $_POST["password"], $_POST["firstName"], $_POST["lastName"], $fiscalCode, $documentPhoto);
 
-    if($creationCheck == 400) {
-      echo json_encode(array("result" => 400, "message" => "Generic error in insertion, retry"));
+    if($creationCheck == 200) {
+      echo json_encode(array("result" => 200));
       die();
     }
     if($creationCheck == 404) {
@@ -69,7 +69,7 @@
       die();
     }
 
-    echo json_encode(array("result" => 200));
+    echo json_encode(array("result" => 400, "message" => "Generic error in insertion, retry"));
 
   }
 ?>

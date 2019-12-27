@@ -12,6 +12,7 @@
       if (!file_exists($target_dir)) {
         mkdir($target_dir, 0777, true);
       }
+
       $target_file = $target_dir . $fiscalCode . ".jpg";
       $regularLoad = file_put_contents($target_file, base64_decode($documentPhoto));
 
