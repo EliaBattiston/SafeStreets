@@ -54,7 +54,7 @@ namespace SafeStreets
             try
             {
                 var values = "username=" + username + "&password=" + password + "&firstName=" + firstName + "&lastName=" + lastName + "&email=" + email +
-                       "&fiscalCode=" + fiscalCode + "&documentPhoto=" + documentPhoto;
+                       "&fiscalCode=" + fiscalCode + "&documentPhoto=\"" + documentPhoto + "\"";
 
                 var content = new StringContent(values, null, "application/x-www-form-urlencoded");
 
