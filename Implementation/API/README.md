@@ -142,10 +142,19 @@ GET [endpoint]/mobile/reports/
   "result":200,
   "content": [
     {
+      "username":"reporterUsername",
       "reportID":1,
       "timestamp":"2000-01-01 00:00:01",
       "address":"address",
+      "latitude": 45.000000,
+      "longitude": 8.000000,
+      "licensePlate":"AA000AA",
       "violation":"violation",
+      "notes":"notes",
+      "pictures": [
+        "https://safestreets.altervista.org/...",
+        ...
+      ]
     },
     ...
   ]
@@ -171,12 +180,19 @@ GET [endpoint]/mobile/reports/
 {
   "result":200,
   "content": {
+    "username":"reporterUsername",
     "reportID":1,
     "timestamp":"2000-01-01 00:00:01",
     "address":"address",
+    "latitude": 45.000000,
+    "longitude": 8.000000,
     "licensePlate":"AA000AA",
     "violation":"violation",
-    "notes":"notes"
+    "notes":"notes",
+      "pictures": [
+        "https://safestreets.altervista.org/...",
+        ...
+      ]
   }
 }
 ```
@@ -240,7 +256,11 @@ GET [endpoint]/web/reports/
       "address":"address",
       "licensePlate":"AA000AA",
       "violation":"violation",
-      "notes":"notes"
+      "notes":"notes",
+      "pictures": [
+        "https://safestreets.altervista.org/...",
+        ...
+      ]
     },
     ...
   ]
@@ -272,9 +292,15 @@ GET [endpoint]/mobile/reports/
     "reportID":1,
     "timestamp":"2000-01-01 00:00:01",
     "address":"address",
+    "latitude": 45.000000,
+    "longitude": 8.000000,
     "licensePlate":"AA000AA",
     "violation":"violation",
-    "notes":"notes"
+    "notes":"notes",
+      "pictures": [
+        "https://safestreets.altervista.org/...",
+        ...
+      ]
   }
 }
 ```

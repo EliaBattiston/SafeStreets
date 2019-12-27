@@ -8,7 +8,7 @@
         return 404;
 
       //document photo load is made before the creation of the user so that every problem in loading odesn't influence DB integrity
-      $target_dir = "../../userDocumentPhotos/";
+      $target_dir = __DIR__."/../userDocumentPhotos/";
       if (!file_exists($target_dir)) {
         mkdir($target_dir, 0777, true);
       }
