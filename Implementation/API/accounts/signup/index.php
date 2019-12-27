@@ -1,7 +1,7 @@
 <?php
-  include_once("../../modules/accounts.php");
-  include_once("../../modules/common.php");
-  include_once("../../config.php");
+  include_once(__DIR__."/../../modules/accounts.php");
+  include_once(__DIR__."/../../modules/common.php");
+  include_once(__DIR__."/../../config.php");
   $accounts = new Accounts;
   
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {

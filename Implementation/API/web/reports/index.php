@@ -1,7 +1,7 @@
 <?php
-  include_once("../../modules/reports.php");
-  include_once("../../modules/accounts.php");
-  include_once("../../config.php");
+  include_once(__DIR__."/../../modules/reports.php");
+  include_once(__DIR__."/../../modules/accounts.php");
+  include_once(__DIR__."/../../config.php");
   
   if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if(isset($_GET['username']) && isset($_GET['password']) && Accounts::isLoggedIn($_GET['username'], $_GET['password'])) {

@@ -1,5 +1,5 @@
 <?php
-  include_once("streets.php");
+  include_once(__DIR__."/streets.php");
 
   class Reports{
     //Generic SQL query for reports data retrieval
