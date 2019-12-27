@@ -166,10 +166,11 @@
         LEFT JOIN 
         (
           SELECT count(*) AS trafficticketsNum, street 
-          FROM traffictickets
+          FROM trafficTickets
           GROUP by street
         ) AS trafficTicketsCount ON streets.streetID = trafficTicketsCount.street
       ");
+      
       $statement->execute();
       $result = $statement->get_result();
       $reportsCount = $result->fetch_all(MYSQLI_ASSOC);
@@ -186,7 +187,7 @@
         $reports = $report['reportsNum'] == NULL ? 0 : $report['reportsNum'];
         $accidents = $report['accidentsNum'] == NULL ? 0 : $report['accidentsNum'];
         $tickets = $report['trafficticketsNum'] == NULL ? 0 : $report['trafficticketsNum'];
-        $elaboratedData[$i]['content'] = "SafeStreets reports: ".$reports."\nAccidents: ".$accidents."\nEmitted traffic tickets: ".$tickets;
+        $elaboratedData[$i]['content'] = "SafeStreets reports: ".$reports.", accidents: ".$accidents.", emitted traffic tickets: ".$tickets;
 
         $sum = $reports + $accidents + $tickets;
         if($sum >= 4) {
