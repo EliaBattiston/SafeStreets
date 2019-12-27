@@ -175,7 +175,7 @@ VALUES
         3
     );
 
-INSERT INTO traffictickets (ticketID, licensePlate, violation, street) VALUES
+INSERT INTO trafficTickets (ticketID, licensePlate, violation, street) VALUES
     (
         10, 
         'FN597PK', 
