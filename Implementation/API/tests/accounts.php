@@ -1,50 +1,82 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-include_once( "config.php" );
-include_once( dirname(__DIR__) . "/modules/accounts.php" );
+include_once( __DIR__ . "/config.php" );
+include_once( __DIR__ . "/helpers.php" );
+include_once( __DIR__ . "/../modules/accounts.php" );
 
 final class AccountsTest extends TestCase
 {
-    public function testLogin(): void
+    public function testCorrectLogin(): void
     {
-        $result = Accounts::login("regularUser", "test");
+        $_SERVER["REQUEST_METHOD"] = "POST";
+        unset($_POST);
+        $_POST["username"] = "regularUser";
+        $_POST["password"] = "test";
+        $response = json_decode(executePHP(__DIR__ . "/../accounts/login/index.php"));
 
-        $this->assertNotNull($result);
+        $this->assertEquals($response->result, 200);
     }
 
     public function testWrongPassword(): void
     {
-        $result = Accounts::login("regularUser", "wrong");
+        $_SERVER["REQUEST_METHOD"] = "POST";
+        unset($_POST);
+        $_POST["username"] = "regularUser";
+        $_POST["password"] = "wrong";
+        $response = json_decode(executePHP(__DIR__ . "/../accounts/login/index.php"));
 
-        $this->assertNull($result);
+        $this->assertEquals($response->result, 401);
     }
 
     public function testNonExistentUser(): void
     {
-        $result = Accounts::login("wrongUser", "test");
+        $_SERVER["REQUEST_METHOD"] = "POST";
+        unset($_POST);
+        $_POST["username"] = "wrongUser";
+        $_POST["password"] = "test";
+        $response = json_decode(executePHP(__DIR__ . "/../accounts/login/index.php"));
 
-        $this->assertNull($result);
+        $this->assertEquals($response->result, 401);
     }
 
     public function testCorrectUserData(): void
     {
-        $result = Accounts::login("regularUser", "test");
-
-        $this->assertEquals($result["fiscalCode"], "ABCABCABCA000000");
-        $this->assertEquals($result["firstName"], "Name");
-        $this->assertEquals($result["lastName"], "Surname");
-        $this->assertEquals($result["username"], "regularUser");
-        $this->assertEquals($result["suspended"], false);
-        $this->assertEquals($result["roleCode"], 1);
-        $this->assertEquals($result["roleDesc"], "Regular");
+        $_SERVER["REQUEST_METHOD"] = "POST";
+        unset($_POST);
+        $_POST["username"] = "regularUser";
+        $_POST["password"] = "test";
+        $response = json_decode(executePHP(__DIR__ . "/../accounts/login/index.php"));
+        
+        $this->assertEquals($response->result, 200);
+        $content = $response->content;
+        $this->assertEquals($content->fiscalCode, "ABCABCABCA000000");
+        $this->assertEquals($content->firstName, "Name");
+        $this->assertEquals($content->lastName, "Surname");
+        $this->assertEquals($content->username, "regularUser");
+        $this->assertEquals($content->suspended, false);
+        $this->assertEquals($content->roleCode, 1);
+        $this->assertEquals($content->roleDesc, "Regular");
     }
 
     public function testSuspendedUser(): void
     {
-        $result = Accounts::login("suspendedUser", "test");
+        $_SERVER["REQUEST_METHOD"] = "POST";
+        unset($_POST);
+        $_POST["username"] = "suspendedUser";
+        $_POST["password"] = "test";
+        $response = json_decode(executePHP(__DIR__ . "/../accounts/login/index.php"));
 
-        $this->assertEquals($result["suspended"], true);        
+        $this->assertEquals($response->result, 402);  
+    }
+
+    public function testMissingParameters(): void
+    {
+        $_SERVER["REQUEST_METHOD"] = "POST";
+        unset($_POST);
+        $response = json_decode(executePHP(__DIR__ . "/../accounts/login/index.php"));
+
+        $this->assertEquals($response->result, 404);
     }
 
     public function testFiscalCode(): void

@@ -16,11 +16,6 @@ jobs:
         run: |
           mysql -uroot -h127.0.0.1 -proot < Implementation/Database/safestreets.sql
           mysql -uroot -h127.0.0.1 -proot < Implementation/Database/test.sql
-      - name: PHPUnit setup
-        run: |
-          wget https://phar.phpunit.de/phpunit.phar -O phpunit.phar
-          sudo chmod +x phpunit.phar
-          sudo mv phpunit.phar /usr/local/bin/phpunit
       - name: Run tests
         run: |
           sudo phpunit --testdox Implementation/API/tests/accounts.php
