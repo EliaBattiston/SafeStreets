@@ -2,10 +2,10 @@ on:
   push:
     branches:
       - master
-name: API Deploy
+name: API & WebClient Deploy
 jobs:
-  phpunit:
-    name: Test and upload
+  api:
+    name: Test and upload APIs
     runs-on: ubuntu-latest
     steps:
       - name: Get repository files
@@ -18,7 +18,7 @@ jobs:
         run: |
           sudo phpunit --testdox Implementation/API/tests/accounts.php
           sudo phpunit --testdox Implementation/API/tests/reports.php
-      - name: Deploy on FTP server
+      - name: Deploy API on FTP server
         uses: SamKirkland/FTP-Deploy-Action@2.0.0
         env:
           FTP_SERVER: ftp.safestreets.altervista.org
@@ -27,3 +27,18 @@ jobs:
           ARGS: --delete --exclude 'config.php' --exclude 'README.md' --exclude 'tests.*'
           LOCAL_DIR: Implementation/API
           REMOTE_DIR: api
+    webclient:
+      name: Upload WebClient
+      runs-on: ubuntu-latest
+      steps:
+        - name: Get repository files
+          uses: actions/checkout@v1
+        - name: Deploy WebClient on FTP server
+          uses: SamKirkland/FTP-Deploy-Action@2.0.0
+          env:
+            FTP_SERVER: ftp.safestreets.altervista.org
+            FTP_USERNAME: safestreets
+            FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+            ARGS: --delete --exclude '.*config.php' --exclude 'README.md' --exclude 'tests.*'
+            LOCAL_DIR: Implementation/WebClient
+            REMOTE_DIR: web

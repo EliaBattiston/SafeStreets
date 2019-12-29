@@ -7,7 +7,7 @@ on:
 name: API Tests
 jobs:
   phpunit:
-    name: PHPUnit
+    name: Test APIs
     runs-on: ubuntu-latest
     steps:
       - name: Get repository files

@@ -19,3 +19,8 @@ APIs are tested with [PHPUnit](https://phpunit.de/).
 All tests can be found in the [API/tests](API/tests) folder. Their results are checked with Github Actions (Github's CI/CD platform) every time new commits are pushed and can be found [here](https://github.com/EliaBattiston/AspesiBattistonCarabelli/actions).
 
 If all tests are succesful the commit's version of the APIs is deployed to the `https://safestreets.altervista.org/api` endpoint.
+
+## [Web client](WebClient)
+The SafeStreets Web client is developed using the SemanticUI font-end development framework, jQuery and PHP.
+
+The last commit's version of the Web client is automatically deployed to `https://safestreets.altervista.org/web`.
