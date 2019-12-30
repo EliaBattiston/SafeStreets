@@ -370,17 +370,15 @@ The _documentPhoto_ parameter is a string representing a base64-encoded `.jpg` p
 
 #### Payload example
 ```
-{
-  "username":"officerUsername",
-  "password":"officerPassword",
-  "newusername":"newUserUsername",
-  "newpassword":"newUserPassword",
-  "firstName":"newUserFirstName",
-  "lastName":"newUserLastName",
-  "email":"newUserEmail@provider.com",
-  "fiscalCode":"ABCDEF12G34H567I",
-  "documentPhoto":"base64 encoded photo"
-}
+username=officerUsername
+  &password=officerPassword
+  &newusername=newUserUsername
+  &newpassword=newUserPassword
+  &firstName=newUserFirstName
+  &lastName=newUserLastName
+  &email=newUserEmail@provider.com
+  &fiscalCode=ABCDEF12G34H567I
+  &documentPhoto=base64 encoded photo
 ```
 
 
@@ -436,7 +434,7 @@ This API can be used only by users with Officer or Administrator access level
 
 #### Endpoint and parameters
 ```
-GET [endpoint]/web/accounts/suspension.php
+GET [endpoint]/web/accounts/suspension/
 ```
 
 | Parameter     | Type    | Required |
@@ -454,7 +452,6 @@ _action_ parameter must be *suspend* in case of suspention or *restore* for rest
 {
   "result":200,
   "content": NULL
-  ]
 }
 ```
 
@@ -465,7 +462,7 @@ This API can be used only by users with Officer or Administrator access level
 
 #### Endpoint and parameters
 ```
-GET [endpoint]/web/accounts/acceptance.php
+GET [endpoint]/web/accounts/acceptance/
 ```
 
 | Parameter     | Type    | Required |
@@ -481,6 +478,5 @@ _accepterUser_ parameter is the username of the user who has to be accepted.
 {
   "result":200,
   "content": NULL
-  ]
 }
 ```
