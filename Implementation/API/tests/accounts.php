@@ -143,6 +143,54 @@ final class AccountsTest extends TestCase
 
         $this->assertFalse($result);
     }
+
+    public function testUserDataRetrieval(): void
+    {
+      $result = Accounts::userList();
+
+      $this->assertEquals(count($result), 9);
+    }
+
+    public function testUserRoleChanging(): void
+    {
+      $username = "regularUser";
+      $this->assertTrue(Accounts::modifyUserRole($username, 4));
+
+      $userData = Accounts::userData(Accounts::userFiscalCode($username));
+      $this->assertTrue($userData['roleCode'] == 4);
+
+      $this->assertTrue(Accounts::modifyUserRole($username, 1));
+
+      $userData = Accounts::userData(Accounts::userFiscalCode($username));
+      $this->assertTrue($userData['roleCode'] == 1);
+    }
+
+    public function testUserAcceptance(): void
+    {
+      $username = "regularUser";
+      $administrator = "administratorUser";
+      $this->assertTrue(Accounts::acceptUser($username, $administrator));
+
+      $userData = Accounts::userData(Accounts::userFiscalCode($username));
+      $this->assertEquals($userData['accepterAdminFiscalCode'], Accounts::userFiscalCode($administrator));
+      $this->assertTrue($userData['acceptedTimestamp'] != NULL);
+    }
+
+    public function testUserSuspension(): void
+    {
+      $username = "regularUser";
+      $this->assertTrue(Accounts::suspendUser($username));
+
+      $userData = Accounts::userData(Accounts::userFiscalCode($username));
+      $this->assertTrue($userData['suspended'] == 1);
+      $this->assertTrue($userData['suspendedTimestamp'] != NULL);
+
+      $this->assertTrue(Accounts::restoreUser($username));
+
+      $userData = Accounts::userData(Accounts::userFiscalCode($username));
+      $this->assertTrue($userData['suspended'] == 0);
+      $this->assertTrue($userData['suspendedTimestamp'] == NULL);
+    }
 }
 
 ?>

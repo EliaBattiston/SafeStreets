@@ -49,7 +49,7 @@
       $hashpassword = hash('sha256', $password."safestreets");
 
       //Prepared statement for SQL injection avoidance
-      $statement = $DBconn->prepare("SELECT fiscalCode, firstName, lastName, username, suspended, role AS roleCode, roles.name AS roleDesc FROM users JOIN roles ON users.role = roles.roleID WHERE username=? AND passwordHash=?");
+      $statement = $DBconn->prepare("SELECT fiscalCode, firstName, lastName, username, suspended, suspendedTimestamp, role AS roleCode, roles.name AS roleDesc FROM users JOIN roles ON users.role = roles.roleID WHERE username=? AND passwordHash=?");
       $statement->bind_param("ss", $username, $hashpassword);
       $statement->execute();
       $result = $statement->get_result();
@@ -72,7 +72,7 @@
       $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
 
       //Prepared statement for SQL injection avoidance
-      $statement = $DBconn->prepare("SELECT fiscalCode, firstName, lastName, username, suspended, role AS roleCode, roles.name AS roleDesc FROM users JOIN roles ON users.role = roles.roleID WHERE fiscalCode = ?");
+      $statement = $DBconn->prepare("SELECT fiscalCode, firstName, lastName, username, suspended, suspendedTimestamp, role AS roleCode, roles.name AS roleDesc, accepterAdmin AS accepterAdminFiscalCode, acceptedTimestamp FROM users JOIN roles ON users.role = roles.roleID WHERE fiscalCode = ?");
       $statement->bind_param("s", $fiscalCode);
       $statement->execute();
       $result = $statement->get_result();
@@ -82,6 +82,22 @@
       }else{
         $data = mysqli_fetch_assoc($result);
         return $data;
+      }
+    }
+
+    public static function userList() {
+      global $_CONFIG;
+      $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
+
+      //Prepared statement for SQL injection avoidance
+      $statement = $DBconn->prepare("SELECT fiscalCode, firstName, lastName, username, suspended, suspendedTimestamp, role AS roleCode, roles.name AS roleDesc FROM users JOIN roles ON users.role = roles.roleID");
+      $statement->execute();
+      $result = $statement->get_result();
+
+      if($result->num_rows == 0){
+        return NULL;
+      }else{
+        return $result->fetch_all(MYSQLI_ASSOC);
       }
     }
 
@@ -129,6 +145,75 @@
       }else{
         $data = mysqli_fetch_assoc($result);
         return $data['role'] >= $level;
+      }
+    }
+
+    public static function modifyUserRole($username, $roleCode) {
+      $fiscalCode = self::userFiscalCode($username);
+
+      if($fiscalCode != NULL) {
+        global $_CONFIG;
+        $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
+
+        $statement = $DBconn->prepare("UPDATE users SET role = ? WHERE fiscalCode = ?");
+        $statement->bind_param("is", intval($roleCode), $fiscalCode);
+        $statement->execute();
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+
+    public static function acceptUser($username, $administratorUsername) {
+      $fiscalCode = self::userFiscalCode($username);
+      $adminFiscalCode = self::userFiscalCode($administratorUsername);
+
+      if($fiscalCode != NULL && $adminFiscalCode != NULL) {
+        global $_CONFIG;
+        $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
+
+        $statement = $DBconn->prepare("UPDATE users SET accepterAdmin = ?, acceptedTimestamp = CURRENT_TIMESTAMP WHERE fiscalCode = ?");
+        $statement->bind_param("ss", $adminFiscalCode, $fiscalCode);
+        $statement->execute();
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+
+    public static function suspendUser($username) {
+      $fiscalCode = self::userFiscalCode($username);
+
+      if($fiscalCode != NULL) {
+        global $_CONFIG;
+        $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
+
+        $statement = $DBconn->prepare("UPDATE users SET suspended = 1, suspendedTimestamp = CURRENT_TIMESTAMP WHERE fiscalCode = ?");
+        $statement->bind_param("s", $fiscalCode);
+        $statement->execute();
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+
+    public static function restoreUser($username) {
+      $fiscalCode = self::userFiscalCode($username);
+
+      if($fiscalCode != NULL) {
+        global $_CONFIG;
+        $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
+
+        $statement = $DBconn->prepare("UPDATE users SET suspended = 0, suspendedTimestamp = NULL WHERE fiscalCode = ?");
+        $statement->bind_param("s", $fiscalCode);
+        $statement->execute();
+        return true;
+      }
+      else {
+        return false;
       }
     }
   }
