@@ -5,7 +5,7 @@
 
 <!--Sytlesheets-->
 <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css" />
-<link rel="shortcut icon" type="image/png" href="TotoroFavicon.png" />
+<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
 
 <!--Scripts-->
 <script src="jquery-3.3.1.min.js"></script>
