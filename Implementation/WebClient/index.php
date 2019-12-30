@@ -116,7 +116,7 @@
             </form>
 
             <div class="ui message">
-                Need an institutional account? <a href="#">Contact us</a>
+                Need an institutional account? <a href="mailto:elia.battiston@mail.polimi.it">Contact us</a>
             </div>
         </div>
     </div>

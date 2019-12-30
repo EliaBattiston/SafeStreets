@@ -20,8 +20,6 @@
     $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close ($ch);
 
-    echo $httpcode;
-
     if($httpcode < 400)
     {
         if($response->result == 200)

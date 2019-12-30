@@ -1,3 +1,3 @@
 <?php
-    $endpoint = "http://localhost/API"
+    $endpoint = "http://localhost/API";
 ?>
