@@ -109,6 +109,19 @@ POST [endpoint]/accounts/signup/
 The _documentPhoto_ parameter is a string representing a base64-encoded `.jpg` picture.
 
 
+#### Payload example
+```
+{
+  "username":"newUserUsername",
+  "password":"newUserPassword",
+  "firstName":"newUserFirstName",
+  "lastName":"newUserLastName",
+  "email":"newUserEmail@provider.com",
+  "fiscalCode":"ABCDEF12G34H567I",
+  "documentPhoto":"_base64 encoded photo_"
+}
+```
+
 #### Specific error codes
 
 | Code      | Error                               |
@@ -128,7 +141,7 @@ Response data only contains reports made by the calling user.
 
 #### Endpoint and parameters
 ```
-GET [endpoint]/mobile/reports/
+GET [endpoint]/web/reports/
 ```
 
 | Parameter | Type    | Required |
@@ -327,5 +340,143 @@ GET [endpoint]/mobile/reports/
         ...
       ]
   }
+}
+```
+
+## User creation
+
+#### Limitations
+This API can be used only by users with Officer or Administrator access level
+
+#### Endpoint and parameters
+```
+POST [endpoint]/web/accounts/
+```
+
+| Parameter     | Type    | Required |
+|---------------|---------|----------|
+| username      | string  |    Y     |
+| password      | string  |    Y     |
+| newusername   | string  |    Y     |
+| newpassword   | string  |    Y     |
+| firstName     | string  |    Y     |
+| lastName      | string  |    Y     |
+| email         | string  |    Y     |
+| fiscalCode    | string  |    Y     |
+| documentPhoto | string  |    Y     |
+
+While _newusername_ and _newpassword_ are related to new new user, _username_ and _password_ parameters refers to the Officer/Administrator who is creating the user.
+The _documentPhoto_ parameter is a string representing a base64-encoded `.jpg` picture.
+
+#### Payload example
+```
+username=officerUsername
+&password=officerPassword
+&newusername=newUserUsername
+&newpassword=newUserPassword
+&firstName=newUserFirstName
+&lastName=newUserLastName
+&email=newUserEmail@provider.com
+&fiscalCode=ABCDEF12G34H567I
+&documentPhoto="abc123v3be... (base64_encoded_photo)"
+```
+
+
+#### Specific error codes
+
+| Code      | Error                               |
+|-----------|-------------------------------------|
+| 405       | Fiscal code already registered      |
+| 406       | Username already in use             |
+| 407       | Error loading picture               |
+
+
+## Users data retrieval
+
+#### Limitations
+This API can be used only by users with Officer or Administrator access level
+
+#### Endpoint and parameters
+```
+GET [endpoint]/web/accounts/
+```
+
+| Parameter | Type    | Required |
+|-----------|---------|----------|
+| username  | string  |    Y     |
+| password  | string  |    Y     |
+
+#### Successfull response
+```
+{
+  "result":200,
+  "content": [
+    {
+      "fiscalCode":"userFiscalCode",
+      "firstName":"userFirstName",
+      "lastName":"userLastName",
+      "username":"userUsername",
+      "suspended":"false",
+      "suspendedTimestamp":"2000-01-01 00:00:01",
+      "role":"userRoleCode",
+      "roleDesc":"userRoleDescription"
+    },
+    ...
+  ]
+}
+```
+
+
+## User suspension/restore
+
+#### Limitations
+This API can be used only by users with Officer or Administrator access level
+
+#### Endpoint and parameters
+```
+POST [endpoint]/web/accounts/suspension/
+```
+
+| Parameter     | Type    | Required |
+|---------------|---------|----------|
+| username      | string  |    Y     |
+| password      | string  |    Y     |
+| suspendedUser | string  |    Y     |
+| action        | string* |    Y     |
+
+_suspendedUser_ parameter is the username of the user who has to be suspended or restored.
+_action_ parameter must be *suspend* in case of suspention or *restore* for restoral.
+
+#### Successfull response
+```
+{
+  "result":200,
+  "content": NULL
+}
+```
+
+## User acceptance
+
+#### Limitations
+This API can be used only by users with Officer or Administrator access level
+
+#### Endpoint and parameters
+```
+POST [endpoint]/web/accounts/acceptance/
+```
+
+| Parameter     | Type    | Required |
+|---------------|---------|----------|
+| username      | string  |    Y     |
+| password      | string  |    Y     |
+| acceptedUser  | string  |    Y     |
+
+_acceptedUser_ parameter is the username of the user who has to be accepted.
+
+#### Successfull response
+```
+{
+  "result":200,
+  "content": NULL
 }
 ```

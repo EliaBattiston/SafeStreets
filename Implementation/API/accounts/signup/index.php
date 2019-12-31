@@ -8,37 +8,37 @@
     if(!checkParameter($_POST["username"], "string"))
     {
       echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter username"));
-      die();
+      return;
     }
     if(!checkParameter($_POST["password"], "string"))
     {
       echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter password"));
-      die();
+      return;
     }
     if(!checkParameter($_POST["firstName"], "string"))
     {
       echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter firstName"));
-      die();
+      return;
     }
     if(!checkParameter($_POST["lastName"], "string"))
     {
       echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter lastName"));
-      die();
+      return;
     }
     if(!checkParameter($_POST["email"], "string"))
     {
       echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter email"));
-      die();
+      return;
     }
     if(!checkParameter($_POST["fiscalCode"], "string"))
     {
       echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter fiscalCode"));
-      die();
+      return;
     }
     if(!checkParameter($_POST["documentPhoto"], "string"))
       {
         echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter documentPhoto"));
-        die();
+        return;
       }
 
     $documentPhoto = str_replace(" ","+" , json_decode($_POST['documentPhoto'], true));
@@ -47,26 +47,26 @@
 
     if(Accounts::userData($fiscalCode) != NULL) {
       echo json_encode(array("result" => 405, "message" => "Fiscal code already registered"));
-      die();
+      return;
     }
     if(Accounts::userFiscalCode($username) != NULL) {
       echo json_encode(array("result" => 406, "message" => "Username already in use"));
-      die();
+      return;
     }
 
     $creationCheck = Accounts::signup($username, $_POST["password"], $_POST["firstName"], $_POST["lastName"], $fiscalCode, $documentPhoto);
 
     if($creationCheck == 200) {
       echo json_encode(array("result" => 200));
-      die();
+      return;
     }
     if($creationCheck == 404) {
       echo json_encode(array("result" => 404, "message" => "Invalid parameters"));
-      die();
+      return;
     }
     if($creationCheck == 407) {
       echo json_encode(array("result" => 407, "message" => "Error loading pictures"));
-      die();
+      return;
     }
 
     echo json_encode(array("result" => 400, "message" => "Generic error in insertion, retry"));
