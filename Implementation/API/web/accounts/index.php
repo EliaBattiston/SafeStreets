@@ -12,11 +12,21 @@
 
 
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-      $usersData = Accounts::userList();
+
+      if(isset($_GET['userFiscalCode'])) {
+        $userData = Accounts::userData($_GET['userFiscalCode']);
+        if($userData != NULL)
+          echo json_encode(array("result" => 200, "content" => $userData));
+        else
+          echo json_encode(array("result" => 400, "message" => "User not found"));
+      }
+      else {
+        $usersData = Accounts::userList();
         if($usersData != NULL)
           echo json_encode(array("result" => 200, "content" => $usersData));
         else
           echo json_encode(array("result" => 400, "message" => "No users found in system"));
+      }
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {

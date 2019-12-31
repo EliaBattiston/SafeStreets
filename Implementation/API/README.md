@@ -415,14 +415,54 @@ GET [endpoint]/web/accounts/
       "fiscalCode":"userFiscalCode",
       "firstName":"userFirstName",
       "lastName":"userLastName",
+      "email":"userEmail@provider.com",
       "username":"userUsername",
+      "acceptedTimestamp":"2000-01-01 00:00:01",
       "suspended":"false",
       "suspendedTimestamp":"2000-01-01 00:00:01",
       "role":"userRoleCode",
-      "roleDesc":"userRoleDescription"
+      "roleDesc":"userRoleDescription",
+      "documentPhoto":"https://safestreets.altervista.org/..."
     },
     ...
   ]
+}
+```
+
+## Single user data retrieval
+
+#### Limitations
+This API can be used only by users with Officer or Administrator access level
+
+#### Endpoint and parameters
+```
+GET [endpoint]/web/accounts/
+```
+
+| Parameter      | Type    | Required |
+|----------------|---------|----------|
+| username       | string  |    Y     |
+| password       | string  |    Y     |
+| userFiscalCode | string  |    Y     |
+
+#### Successfull response
+```
+{
+  "result":200,
+  "content": {
+    "fiscalCode":"userFiscalCode",
+    "firstName":"userFirstName",
+    "lastName":"userLastName",
+    "email":"userEmail@provider.com",
+    "username":"userUsername",
+    "suspended":"false",
+    "suspendedTimestamp":"2000-01-01 00:00:01",
+    "role":"userRoleCode",
+    "roleDesc":"userRoleDescription",
+    "accepterAdminFiscalCode":"adminFiscalCode",
+    "acceptedTimestamp":"2000-01-01 00:00:01",
+    "documentPhoto":"https://safestreets.altervista.org/..."
+  }
 }
 ```
 

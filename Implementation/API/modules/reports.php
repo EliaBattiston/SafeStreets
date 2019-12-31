@@ -3,7 +3,7 @@
 
   class Reports{
     //Generic SQL query for reports data retrieval
-    private static $pastReportsSQL = "SELECT users.username AS username, reportID, timestamp, streets.name AS address, latitude, longitude, licensePlate, violations.description AS violation, notes FROM reports JOIN users ON reports.user = users.fiscalCode JOIN streets ON reports.street = streets.streetID JOIN violations ON reports.violation = violations.violationID";
+    private static $pastReportsSQL = "SELECT users.username AS username, firstName, lastName, reportID, timestamp, streets.name AS address, latitude, longitude, licensePlate, violations.description AS violation, notes FROM reports JOIN users ON reports.user = users.fiscalCode JOIN streets ON reports.street = streets.streetID JOIN violations ON reports.violation = violations.violationID";
 
     //Retrieval of an array containing links to the pictures related to parameter's report ID
     private static function reportPictures($reportID) {
@@ -60,7 +60,7 @@
       global $_CONFIG;
       $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
 
-      $statement = $DBconn->prepare("SELECT * FROM (".self::$pastReportsSQL.") userPastReportDetails WHERE username = ?");
+      $statement = $DBconn->prepare("SELECT username, reportID, timestamp, address, latitude, longitude, licensePlate, violation, notes FROM (".self::$pastReportsSQL.") userPastReportDetails WHERE username = ?");
       $statement->bind_param("s", $username);
       $statement->execute();
       $result = $statement->get_result();
@@ -79,7 +79,7 @@
       global $_CONFIG;
       $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
 
-      $statement = $DBconn->prepare("SELECT * FROM (".self::$pastReportsSQL.") userPastReportDetails WHERE username = ? and reportID = ?");
+      $statement = $DBconn->prepare("SELECT username, reportID, timestamp, address, latitude, longitude, licensePlate, violation, notes FROM (".self::$pastReportsSQL.") userPastReportDetails WHERE username = ? and reportID = ?");
       $statement->bind_param("ss", $username, $reportID);
       $statement->execute();
       $result = $statement->get_result();

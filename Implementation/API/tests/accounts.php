@@ -151,6 +151,14 @@ final class AccountsTest extends TestCase
       $this->assertEquals(count($result), 9);
     }
 
+    public function testSingleUserDataRetrieval(): void
+    {
+      $user = "ABCABCABCA000004";
+      $result = Accounts::userData($user);
+
+      $this->assertEquals($result["username"], "userWithReports1");
+    }
+
     public function testUserRoleChanging(): void
     {
       $username = "regularUser";
@@ -227,6 +235,20 @@ final class AccountsTest extends TestCase
 
         $this->assertEquals($response->result, 200);
         $this->assertCount(9, $response->content);
+    }
+
+    public function testWebUserDetail(): void
+    {
+        $_SERVER["REQUEST_METHOD"] = "GET";
+        unset($_POST);
+        unset($_GET);
+        $_GET["username"] = "officerUser";
+        $_GET["password"] = "test";
+        $_GET["userFiscalCode"] = "ABCABCABCA000000";
+        $response = json_decode(executePHP(__DIR__ . "/../web/accounts/index.php"));
+
+        $this->assertEquals($response->result, 200);
+        $this->assertEquals("regularUser", $response->content->username);
     }
 
     public function testWebSuspensionWrongLogin(): void
