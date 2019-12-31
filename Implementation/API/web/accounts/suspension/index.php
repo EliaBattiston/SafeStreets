@@ -1,30 +1,29 @@
 <?php
-  include_once(__DIR__."/../../modules/accounts.php");
-  include_once(__DIR__."/../../modules/common.php");
-  include_once(__DIR__."/../../config.php");
-  $accounts = new Accounts;
+  include_once(__DIR__."/../../../modules/accounts.php");
+  include_once(__DIR__."/../../../modules/common.php");
+  include_once(__DIR__."/../../../config.php");
   
-  if(isset($_GET['username']) && isset($_GET['password']) && Accounts::isLoggedIn($_GET['username'], $_GET['password'])) {
-    if(!(Accounts::isOfficer($_GET['username']) || Accounts::isAdministrator($_GET['username']))) {
+  if(isset($_POST['username']) && isset($_POST['password']) && Accounts::isLoggedIn($_POST['username'], $_POST['password'])) {
+    if(!Accounts::isAdministrator($_POST['username'])) {
       echo json_encode(array("result" => 403, "message" => "User not authorized"));
-      die();
+      return;
     }
 
-    if(!checkParameter($_GET['suspenderUser'], "string")) {
-      echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter suspenderUser"));
-      die();
+    if(!checkParameter($_POST['suspendedUser'], "string")) {
+      echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter suspendedUser"));
+      return;
     }
 
-    if(!checkParameter($_GET['action'], "string") || ($_GET['action'] != "suspend" && $_GET['action'] != "restore")) {
+    if(!checkParameter($_POST['action'], "string") || ($_POST['action'] != "suspend" && $_POST['action'] != "restore")) {
       echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter action"));
-      die();
+      return;
     }
 
-    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-      $suspend = $_GET['action'] == "suspend" ? true : false;
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $suspend = $_POST['action'] == "suspend" ? true : false;
 
       if($suspend) {
-        if(Accounts::suspendUser($_GET['suspenderUser'])) {
+        if(Accounts::suspendUser($_POST['suspendedUser'])) {
           echo json_encode(array("result" => 200, "content" => NULL));
         }
         else {
@@ -32,7 +31,7 @@
         }
       }
       else {
-        if(Accounts::restoreUser($_GET['suspenderUser'])) {
+        if(Accounts::restoreUser($_POST['suspendedUser'])) {
           echo json_encode(array("result" => 200, "content" => NULL));
         }
         else {
@@ -40,5 +39,9 @@
         }
       }
     }
+  }
+  else
+  {
+    echo json_encode(array("result" => 401, "message" => "Username and/or password not found"));
   }
 ?>

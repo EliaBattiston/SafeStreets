@@ -141,7 +141,7 @@ Response data only contains reports made by the calling user.
 
 #### Endpoint and parameters
 ```
-GET [endpoint]/mobile/reports/
+GET [endpoint]/web/reports/
 ```
 
 | Parameter | Type    | Required |
@@ -371,14 +371,14 @@ The _documentPhoto_ parameter is a string representing a base64-encoded `.jpg` p
 #### Payload example
 ```
 username=officerUsername
-  &password=officerPassword
-  &newusername=newUserUsername
-  &newpassword=newUserPassword
-  &firstName=newUserFirstName
-  &lastName=newUserLastName
-  &email=newUserEmail@provider.com
-  &fiscalCode=ABCDEF12G34H567I
-  &documentPhoto=base64 encoded photo
+&password=officerPassword
+&newusername=newUserUsername
+&newpassword=newUserPassword
+&firstName=newUserFirstName
+&lastName=newUserLastName
+&email=newUserEmail@provider.com
+&fiscalCode=ABCDEF12G34H567I
+&documentPhoto="abc123v3be... (base64_encoded_photo)"
 ```
 
 
@@ -434,17 +434,17 @@ This API can be used only by users with Officer or Administrator access level
 
 #### Endpoint and parameters
 ```
-GET [endpoint]/web/accounts/suspension/
+POST [endpoint]/web/accounts/suspension/
 ```
 
 | Parameter     | Type    | Required |
 |---------------|---------|----------|
 | username      | string  |    Y     |
 | password      | string  |    Y     |
-| suspenderUser | string  |    Y     |
+| suspendedUser | string  |    Y     |
 | action        | string* |    Y     |
 
-_suspenderUser_ parameter is the username of the user who has to be suspended or restored.
+_suspendedUser_ parameter is the username of the user who has to be suspended or restored.
 _action_ parameter must be *suspend* in case of suspention or *restore* for restoral.
 
 #### Successfull response
@@ -462,16 +462,16 @@ This API can be used only by users with Officer or Administrator access level
 
 #### Endpoint and parameters
 ```
-GET [endpoint]/web/accounts/acceptance/
+POST [endpoint]/web/accounts/acceptance/
 ```
 
 | Parameter     | Type    | Required |
 |---------------|---------|----------|
 | username      | string  |    Y     |
 | password      | string  |    Y     |
-| accepterUser  | string  |    Y     |
+| acceptedUser  | string  |    Y     |
 
-_accepterUser_ parameter is the username of the user who has to be accepted.
+_acceptedUser_ parameter is the username of the user who has to be accepted.
 
 #### Successfull response
 ```

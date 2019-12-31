@@ -29,27 +29,27 @@
       if(!checkParameter($_POST["plate"], "string"))
       {
         echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter plate"));
-        die();
+        return;
       }
       if(!checkParameter(intval($_POST["violationType"]), "integer"))
       {
         echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter violationType"));
-        die();
+        return;
       }
       if(!checkParameter(doubleval($_POST["latitude"]), "double"))
       {
         echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter latitude"));
-        die();
+        return;
       }
       if(!checkParameter(doubleval($_POST["longitude"]), "double"))
       {
         echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter longitude"));
-        die();
+        return;
       }
       if(!checkParameter($_POST["pictures"], "string"))
       {
         echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter pictures"));
-        die();
+        return;
       }
 
       $pictureList = str_replace(" ","+" , json_decode($_POST['pictures'], true));
@@ -59,11 +59,11 @@
 
       if($reportResult == 404) {
         echo json_encode(array("result" => 404, "message" => "Invalid parameters"));
-        die();
+        return;
       }
       if($reportResult == 405) {
         echo json_encode(array("result" => 405, "message" => "Error loading pictures"));
-        die();
+        return;
       }
 
       echo json_encode(array("result" => 200));
