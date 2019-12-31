@@ -10,8 +10,8 @@
 <body>
     <?php include("components/menu.php") ?>
 
-    <div class="ui container">
-        <div class="ui red segment" style="margin-top: 50px;">
+    <div class="ui container" style="padding-top:90px;">
+        <div class="ui red segment">
             <h3>Via Roma, Via Colombo</h3>
             <b>Severity:</b> High
             <br>
