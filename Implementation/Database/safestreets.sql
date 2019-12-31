@@ -18,6 +18,7 @@ CREATE TABLE users(
     fiscalCode CHAR(16) PRIMARY KEY,
     firstName TEXT NOT NULL,
     lastName TEXT NOT NULL,
+    email TEXT UNIQUE DEFAULT NULL,
     username VARCHAR(100) UNIQUE NOT NULL,
     passwordHash CHAR(64) NOT NULL,
     suspended BOOLEAN DEFAULT false NOT NULL,

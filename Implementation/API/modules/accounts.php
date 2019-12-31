@@ -72,7 +72,7 @@
       $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
 
       //Prepared statement for SQL injection avoidance
-      $statement = $DBconn->prepare("SELECT fiscalCode, firstName, lastName, username, suspended, suspendedTimestamp, role AS roleCode, roles.name AS roleDesc, accepterAdmin AS accepterAdminFiscalCode, acceptedTimestamp FROM users JOIN roles ON users.role = roles.roleID WHERE fiscalCode = ?");
+      $statement = $DBconn->prepare("SELECT fiscalCode, firstName, lastName, username, email, suspended, suspendedTimestamp, role AS roleCode, roles.name AS roleDesc, accepterAdmin AS accepterAdminFiscalCode, acceptedTimestamp FROM users JOIN roles ON users.role = roles.roleID WHERE fiscalCode = ?");
       $statement->bind_param("s", $fiscalCode);
       $statement->execute();
       $result = $statement->get_result();
@@ -81,6 +81,7 @@
         return NULL;
       }else{
         $data = mysqli_fetch_assoc($result);
+        $data['documentPhoto'] = __DIR__ . "/../userDocumentPhotos/".$data['fiscalCode'].".jpg";
         return $data;
       }
     }
@@ -90,14 +91,18 @@
       $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
 
       //Prepared statement for SQL injection avoidance
-      $statement = $DBconn->prepare("SELECT fiscalCode, firstName, lastName, username, suspended, suspendedTimestamp, role AS roleCode, roles.name AS roleDesc FROM users JOIN roles ON users.role = roles.roleID");
+      $statement = $DBconn->prepare("SELECT fiscalCode, firstName, lastName, username, email, acceptedTimestamp, suspended, suspendedTimestamp, role AS roleCode, roles.name AS roleDesc FROM users JOIN roles ON users.role = roles.roleID");
       $statement->execute();
       $result = $statement->get_result();
 
       if($result->num_rows == 0){
         return NULL;
       }else{
-        return $result->fetch_all(MYSQLI_ASSOC);
+        $data = $result->fetch_all(MYSQLI_ASSOC);
+        foreach($data as &$record) {
+          $record['documentPhoto'] = __DIR__ . "/../userDocumentPhotos/".$record['fiscalCode'].".jpg";
+        }
+        return $data;
       }
     }
 
