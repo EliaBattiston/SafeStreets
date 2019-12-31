@@ -237,6 +237,20 @@ final class AccountsTest extends TestCase
         $this->assertCount(9, $response->content);
     }
 
+    public function testWebUserDetail(): void
+    {
+        $_SERVER["REQUEST_METHOD"] = "GET";
+        unset($_POST);
+        unset($_GET);
+        $_GET["username"] = "officerUser";
+        $_GET["password"] = "test";
+        $_GET["userFiscalCode"] = "ABCABCABCA000000";
+        $response = json_decode(executePHP(__DIR__ . "/../web/accounts/index.php"));
+
+        $this->assertEquals($response->result, 200);
+        $this->assertEquals("regularUser", $response->content->username);
+    }
+
     public function testWebSuspensionWrongLogin(): void
     {
         $_SERVER["REQUEST_METHOD"] = "POST";

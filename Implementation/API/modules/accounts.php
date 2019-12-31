@@ -81,7 +81,7 @@
         return NULL;
       }else{
         $data = mysqli_fetch_assoc($result);
-        $data['documentPhoto'] = __DIR__ . "/../userDocumentPhotos/".$data['fiscalCode'].".jpg";
+        $data['documentPhoto'] = "https://safestreets.altervista.org/api/userDocumentPhotos/".$data['fiscalCode'].".jpg";
         return $data;
       }
     }
@@ -92,6 +92,9 @@
 
       //Prepared statement for SQL injection avoidance
       $statement = $DBconn->prepare("SELECT fiscalCode, firstName, lastName, username, email, acceptedTimestamp, suspended, suspendedTimestamp, role AS roleCode, roles.name AS roleDesc FROM users JOIN roles ON users.role = roles.roleID");
+      if(!$statement){
+        echo "Prepare failed: (". $DBconn->errno.") ".$DBconn->error."<br>";
+      }
       $statement->execute();
       $result = $statement->get_result();
 
@@ -100,7 +103,7 @@
       }else{
         $data = $result->fetch_all(MYSQLI_ASSOC);
         foreach($data as &$record) {
-          $record['documentPhoto'] = __DIR__ . "/../userDocumentPhotos/".$record['fiscalCode'].".jpg";
+          $record['documentPhoto'] = "https://safestreets.altervista.org/api/userDocumentPhotos/".$record['fiscalCode'].".jpg";
         }
         return $data;
       }
