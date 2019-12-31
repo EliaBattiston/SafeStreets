@@ -151,6 +151,14 @@ final class AccountsTest extends TestCase
       $this->assertEquals(count($result), 9);
     }
 
+    public function testSingleUserDataRetrieval(): void
+    {
+      $user = "ABCABCABCA000004";
+      $result = Accounts::userData($user);
+
+      $this->assertEquals($result["username"], "userWithReports1");
+    }
+
     public function testUserRoleChanging(): void
     {
       $username = "regularUser";
