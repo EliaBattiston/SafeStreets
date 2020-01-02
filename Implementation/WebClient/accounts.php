@@ -64,15 +64,15 @@
                 {
                     foreach($response->content as $user)
                     {
-                        echo "<tr>";
+                        echo "<tr><a name='".$user->fiscalCode."'>";
                         echo "<td>".$user->username."</td>";
                         echo "<td>".$user->fiscalCode."</td>";
                         echo "<td>".$user->firstName."</td>";
                         echo "<td>".$user->lastName."</td>";
-                        echo '<td class="center aligned"><a class="ui blue icon button" href="#"><i class="linkify icon"></i></a></td>';
+                        echo '<td class="center aligned"><a class="ui blue icon button" href="'.$user->documentPhoto.'"><i class="linkify icon"></i></a></td>';
                         echo "<td>".$user->roleDesc."</td>";
-                        echo '<td class="center aligned"><a class="ui labeled icon button" href="editUser.php?name='. $user->username .'"><i class="edit icon"></i>Edit</a></td>';
-                        echo "</tr>";
+                        echo '<td class="center aligned"><a class="ui labeled icon button" href="editUser.php?fc='. $user->fiscalCode .'"><i class="edit icon"></i>Edit</a></td>';
+                        echo "</a></tr>";
                     }
                 }
             ?>

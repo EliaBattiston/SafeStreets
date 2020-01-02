@@ -20,6 +20,14 @@
             </h3>
         <?php } ?>
 
+        <?php if(isset($_COOKIE["admin"])) { ?>
+            <h3 class="ui header item <?php if($filename == "create") echo "active" ?>">
+                <a href="create.php">
+                    User creation
+                </a>
+            </h3>
+        <?php } ?>
+
         <!--<h3 class="ui header item <?php if($filename == "stats") echo "active" ?>">
             <a href="stats.php">
                 Unsafe Areas

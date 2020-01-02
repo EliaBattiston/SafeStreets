@@ -51,12 +51,20 @@
 
                     <div class="ui segment">
                         <h3 class="ui header">
-                            Report 0001
+                            Report <?php echo $content->reportID; ?>
                         </h3>
                         <table class="ui definition table" style="margin-top: 10px;">
                             <tr>
                                 <td>Username</td>
                                 <td><?php echo $content->username; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Fist name</td>
+                                <td><?php echo $content->firstName; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Last name</td>
+                                <td><?php echo $content->lastName; ?></td>
                             </tr>
                             <tr>
                                 <td>Timestamp</td>
