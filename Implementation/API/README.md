@@ -520,3 +520,31 @@ _acceptedUser_ parameter is the username of the user who has to be accepted.
   "content": NULL
 }
 ```
+
+## User role changing
+
+#### Limitations
+This API can be used only by users with Officer or Administrator access level
+
+#### Endpoint and parameters
+```
+POST [endpoint]/web/accounts/role/
+```
+
+| Parameter     | Type    | Required |
+|---------------|---------|----------|
+| username      | string  |    Y     |
+| password      | string  |    Y     |
+| roleUsername  | string  |    Y     |
+| roleLevel     | integer |    Y     |
+
+_acceptedUser_ parameter is the username of the user whose role has to be changed.
+_roleLevel_ parameter is the new role level.
+
+#### Successfull response
+```
+{
+  "result":200,
+  "content": NULL
+}
+```
