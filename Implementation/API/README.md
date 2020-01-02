@@ -394,7 +394,7 @@ username=officerUsername
 ## Users data retrieval
 
 #### Limitations
-This API can be used only by users with Officer or Administrator access level
+This API can be used only by users with Administrator access level
 
 #### Endpoint and parameters
 ```
@@ -432,7 +432,7 @@ GET [endpoint]/web/accounts/
 ## Single user data retrieval
 
 #### Limitations
-This API can be used only by users with Officer or Administrator access level
+This API can be used only by users with Administrator access level
 
 #### Endpoint and parameters
 ```
@@ -470,7 +470,7 @@ GET [endpoint]/web/accounts/
 ## User suspension/restore
 
 #### Limitations
-This API can be used only by users with Officer or Administrator access level
+This API can be used only by users with Administrator access level
 
 #### Endpoint and parameters
 ```
@@ -498,7 +498,7 @@ _action_ parameter must be *suspend* in case of suspention or *restore* for rest
 ## User acceptance
 
 #### Limitations
-This API can be used only by users with Officer or Administrator access level
+This API can be used only by users with Administrator access level
 
 #### Endpoint and parameters
 ```
@@ -524,7 +524,7 @@ _acceptedUser_ parameter is the username of the user who has to be accepted.
 ## User role changing
 
 #### Limitations
-This API can be used only by users with Officer or Administrator access level
+This API can be used only by users with Administrator access level
 
 #### Endpoint and parameters
 ```

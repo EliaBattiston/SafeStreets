@@ -361,6 +361,70 @@ final class AccountsTest extends TestCase
 
         $this->assertEquals($response->result, 200);
     }
+
+    public function testWebRoleChangeWrongLogin() : void {
+        $_SERVER["REQUEST_METHOD"] = "POST";
+        unset($_POST);
+        unset($_GET);
+        $_POST["username"] = "administratorUser";
+        $_POST["password"] = "wrong";
+        $_POST["roleUsername"] = "regularUser";
+        $_POST["roleLevel"] = "3";
+        $response = json_decode(executePHP(__DIR__ . "/../web/accounts/role/index.php"));
+
+        $this->assertEquals($response->result, 401);
+    }
+
+    public function testWebRoleChangeMissingParameter() : void {
+        $_SERVER["REQUEST_METHOD"] = "POST";
+        unset($_POST);
+        unset($_GET);
+        $_POST["username"] = "administratorUser";
+        $_POST["password"] = "test";
+        $_POST["roleUsername"] = NULL;
+        $_POST["roleLevel"] = "3";
+        $response = json_decode(executePHP(__DIR__ . "/../web/accounts/role/index.php"));
+
+        $this->assertEquals($response->result, 404);
+    }
+
+    public function testWebRoleChangeUnauthorized() : void {
+        $_SERVER["REQUEST_METHOD"] = "POST";
+        unset($_POST);
+        unset($_GET);
+        $_POST["username"] = "officerUser";
+        $_POST["password"] = "test";
+        $_POST["roleUsername"] = "regularUser";
+        $_POST["roleLevel"] = "3";
+        $response = json_decode(executePHP(__DIR__ . "/../web/accounts/role/index.php"));
+
+        $this->assertEquals($response->result, 403);
+    }
+
+    public function testWebRoleChange() : void {
+        $_SERVER["REQUEST_METHOD"] = "POST";
+        unset($_POST);
+        unset($_GET);
+        $_POST["username"] = "administratorUser";
+        $_POST["password"] = "test";
+        $_POST["roleUsername"] = "regularUser";
+        $_POST["roleLevel"] = "3";
+        $response = json_decode(executePHP(__DIR__ . "/../web/accounts/role/index.php"));
+
+        $this->assertEquals($response->result, 200);
+
+        $userData = Accounts::userData(Accounts::userFiscalCode("regularUser"));
+        $this->assertEquals($userData['roleCode'], 3);
+
+        //Change it back
+        $_POST["roleLevel"] = "1";
+        $response = json_decode(executePHP(__DIR__ . "/../web/accounts/role/index.php"));
+
+        $this->assertEquals($response->result, 200);
+
+        $userData = Accounts::userData(Accounts::userFiscalCode("regularUser"));
+        $this->assertEquals($userData['roleCode'], 1);
+    }
 }
 
 ?>
