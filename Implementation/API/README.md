@@ -394,7 +394,7 @@ username=officerUsername
 ## Users data retrieval
 
 #### Limitations
-This API can be used only by users with Officer or Administrator access level
+This API can be used only by users with Administrator access level
 
 #### Endpoint and parameters
 ```
@@ -432,7 +432,7 @@ GET [endpoint]/web/accounts/
 ## Single user data retrieval
 
 #### Limitations
-This API can be used only by users with Officer or Administrator access level
+This API can be used only by users with Administrator access level
 
 #### Endpoint and parameters
 ```
@@ -470,7 +470,7 @@ GET [endpoint]/web/accounts/
 ## User suspension/restore
 
 #### Limitations
-This API can be used only by users with Officer or Administrator access level
+This API can be used only by users with Administrator access level
 
 #### Endpoint and parameters
 ```
@@ -498,7 +498,7 @@ _action_ parameter must be *suspend* in case of suspention or *restore* for rest
 ## User acceptance
 
 #### Limitations
-This API can be used only by users with Officer or Administrator access level
+This API can be used only by users with Administrator access level
 
 #### Endpoint and parameters
 ```
@@ -512,6 +512,34 @@ POST [endpoint]/web/accounts/acceptance/
 | acceptedUser  | string  |    Y     |
 
 _acceptedUser_ parameter is the username of the user who has to be accepted.
+
+#### Successfull response
+```
+{
+  "result":200,
+  "content": NULL
+}
+```
+
+## User role changing
+
+#### Limitations
+This API can be used only by users with Administrator access level
+
+#### Endpoint and parameters
+```
+POST [endpoint]/web/accounts/role/
+```
+
+| Parameter     | Type    | Required |
+|---------------|---------|----------|
+| username      | string  |    Y     |
+| password      | string  |    Y     |
+| roleUsername  | string  |    Y     |
+| roleLevel     | integer |    Y     |
+
+_acceptedUser_ parameter is the username of the user whose role has to be changed.
+_roleLevel_ parameter is the new role level.
 
 #### Successfull response
 ```
