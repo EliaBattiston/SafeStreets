@@ -103,7 +103,6 @@
         $statement = $DBconn->prepare("INSERT INTO reports (user, violation, licensePlate, street, latitude, longitude) VALUES (?, ?, ?, ?, ?, ?)");
         $statement->bind_param("sisidd", $username, intval($violationType), $plate, $streetCode, floatval($latitude), floatval($longitude));
         $statement->execute();
-        $result = $statement->get_result();
 
         $reportID = $DBconn->insert_id;
 
@@ -131,7 +130,7 @@
         }
       }
       else {
-        return NULL;
+        return 404;
       }
     }
 

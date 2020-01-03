@@ -226,7 +226,6 @@ final class ReportsTest extends TestCase
         $this->assertEquals($response->result, 400);
     }
 
-    /*
     public function testMobileCreateReport(): void
     {
         $_SERVER["REQUEST_METHOD"] = "POST";
@@ -238,7 +237,7 @@ final class ReportsTest extends TestCase
         $_POST["violationType"] = "1";
         $_POST["latitude"] = 45.4312;
         $_POST["longitude"] = 9.12584;
-        $_POST["pictures"] = "[\"dummypicture\"]";
+        $_POST["pictures"] = "[\"dummypicture\", \"dummypicture\"]";
         $response = json_decode(executePHP(__DIR__ . "/../mobile/reports/index.php"));
         
         $this->assertEquals($response->result, 200);
@@ -249,7 +248,7 @@ final class ReportsTest extends TestCase
         unset($_POST);
         $_GET["username"] = "userWithReports1";
         $_GET["password"] = "test";
-        $_GET["reportID"] = "6";
+        $_GET["reportID"] = "5";
         $response = json_decode(executePHP(__DIR__ . "/../mobile/reports/index.php"));
 
         $this->assertEquals($response->result, 200);
@@ -258,7 +257,6 @@ final class ReportsTest extends TestCase
         $this->assertNotNull($content);
         $this->assertEquals($content->licensePlate, "AA111AA");
     }
-    */
 }
 
 ?>

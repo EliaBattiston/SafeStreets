@@ -455,6 +455,23 @@ final class AccountsTest extends TestCase
         $userData = Accounts::userData(Accounts::userFiscalCode("regularUser"));
         $this->assertEquals($userData['roleCode'], 1);
     }
+
+    public function testCorrectSignup() : void {
+      $_SERVER["REQUEST_METHOD"] = "POST";
+      unset($_POST);
+      $_POST["username"] = "testInsertedUser";
+      $_POST["password"] = "test";
+      $_POST["firstName"] = "John";
+      $_POST["lastName"] = "Doe";
+      $_POST["email"] = "johndoe@mymail.here";
+      $_POST["fiscalCode"] = "JHNDEO11A45F711H";
+      $_POST["documentPhoto"] = "\"dummyphoto\"";
+      $response = json_decode(executePHP(__DIR__ . "/../accounts/signup/index.php"));
+      
+      $this->assertEquals($response->result, 200);
+      $this->assertEquals(Accounts::userFiscalCode("testInsertedUser"), "JHNDEO11A45F711H");
+      $this->assertTrue(is_file( __DIR__ . "/../userDocumentPhotos/JHNDEO11A45F711H.jpg"));
+    }
 }
 
 ?>

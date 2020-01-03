@@ -35,10 +35,10 @@
       return;
     }
     if(!checkParameter($_POST["documentPhoto"], "string"))
-      {
-        echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter documentPhoto"));
-        return;
-      }
+    {
+      echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter documentPhoto"));
+      return;
+    }
 
     $documentPhoto = str_replace(" ","+" , json_decode($_POST['documentPhoto'], true));
     $fiscalCode = $_POST["fiscalCode"];
