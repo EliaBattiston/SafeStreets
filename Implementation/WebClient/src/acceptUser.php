@@ -8,23 +8,22 @@
         exit;
     }
 
-    if(!isset($_POST["roleUsername"]) || !isset($_POST["roleLevel"]) || !isset($_POST["fc"]))
+    if(!isset($_GET["username"]))
     {
-        header("location: ../accounts.php");
+        header("location: ../accpetance.php");
         exit;
     }
 
     $ch = curl_init();
 
-    curl_setopt($ch, CURLOPT_URL, $endpoint."/web/accounts/role/");
+    curl_setopt($ch, CURLOPT_URL, $endpoint."/web/accounts/acceptance/");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, 
         http_build_query(
             array(
                 "username" => $_COOKIE["username"],
                 "password" => $_COOKIE["password"],
-                "roleUsername" => $_POST["roleUsername"],
-                "roleLevel" => $_POST["roleLevel"]
+                "acceptedUser" => $_GET["username"]
             )
         )
     );
@@ -39,18 +38,18 @@
     {
         if($response->result==200)
         {
-            header("location: ../editUser.php?fc=".$_POST["fc"]."&saved");
+            header("location: ../acceptance.php");
             exit;
         }
         else
         {
-            header("location: ../editUser.php?fc=".$_POST["fc"]."&error=".$response->result."&cause=API&action=role");
+            header("location: ../acceptance.php?error=".$response->result."&cause=API");
             exit; 
         }
     }
     else
     {
-        header("location: ../editUser.php?fc=".$_POST["fc"]."&error=".$httpcode."&cause=HTTP&action=role");
+        header("location: ../acceptance.php?error=".$httpcode."&cause=HTTP");
         exit;
     }
 

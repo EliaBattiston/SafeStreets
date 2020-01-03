@@ -8,7 +8,13 @@
         exit;
     }
 
-    if(!isset($_POST["roleUsername"]) || !isset($_POST["roleLevel"]) || !isset($_POST["fc"]))
+    if(!isset($_GET["username"]) || !isset($_GET["action"]))
+    {
+        header("location: ../editUser.php");
+        exit;
+    }
+
+    if(!isset($_GET["fc"]))
     {
         header("location: ../accounts.php");
         exit;
@@ -16,15 +22,15 @@
 
     $ch = curl_init();
 
-    curl_setopt($ch, CURLOPT_URL, $endpoint."/web/accounts/role/");
+    curl_setopt($ch, CURLOPT_URL, $endpoint."/web/accounts/suspension/");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, 
         http_build_query(
             array(
                 "username" => $_COOKIE["username"],
                 "password" => $_COOKIE["password"],
-                "roleUsername" => $_POST["roleUsername"],
-                "roleLevel" => $_POST["roleLevel"]
+                "suspendedUser" => $_GET["username"],
+                "action" => $_GET["action"]
             )
         )
     );
@@ -39,18 +45,18 @@
     {
         if($response->result==200)
         {
-            header("location: ../editUser.php?fc=".$_POST["fc"]."&saved");
+            header("location: ../editUser.php?fc=".$_GET["fc"]);
             exit;
         }
         else
         {
-            header("location: ../editUser.php?fc=".$_POST["fc"]."&error=".$response->result."&cause=API&action=role");
+            header("location: ../editUser.php?fc=".$_GET["fc"]."&error=".$response->result."&cause=API&action=suspend");
             exit; 
         }
     }
     else
     {
-        header("location: ../editUser.php?fc=".$_POST["fc"]."&error=".$httpcode."&cause=HTTP&action=role");
+        header("location: ../editUser.php?fc=".$_GET["fc"]."&error=".$httpcode."&cause=HTTP&action=suspend");
         exit;
     }
 

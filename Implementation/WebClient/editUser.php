@@ -106,12 +106,32 @@
                                         {
                                             echo '<i class="check circle icon"></i>';
                                             echo $content->suspendedTimestamp;
+
+                                            //Restore button
+                                            echo '<a class="ui right labeled right floated red icon button" href="src/suspendUser.php?fc='. $_GET["fc"] .'&username='. $content->username .'&action=restore"> <i class="check circle icon"></i> Restore </a>';
                                         }
                                         else
                                         {
-                                            echo '<i class="times circle icon"></i> ';
+                                            echo '<i class="times circle icon"></i>';
+
+                                            //Suspend button
+                                            echo '<a class="ui right labeled right floated red icon button" href="src/suspendUser.php?fc='. $_GET["fc"] .'&username='. $content->username .'&action=suspend"> <i class="times circle icon"></i> Suspend </a>';
                                         }
-                                        ?></td>
+                                        ?>
+                                        
+                                        <br>
+
+                                        <?php
+                                            if(isset($_GET["error"]) && isset($_GET["action"]) && $_GET["action"] == "suspend")
+                                            {
+                                                ?>
+                                            <div class="ui tertiary inverted red segment" style="margin-top: 10px;">
+                                                <?php echo $_GET["cause"] ?> error <?php echo $_GET["error"] ?> when trying to change the role
+                                            </div>
+                                        <?php
+                                            }
+                                        ?>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Accepted</td>
@@ -134,7 +154,7 @@
                                             if($content->roleCode < 4)
                                             {
                                         ?>
-                                            <select class="ui right floated selection dropdown" name="roleLevel" onchange='$("#saveBtn").attr("style", "display:none"); $("#regBtn").attr("style", "");'>
+                                            <select class="ui right floated selection dropdown" name="roleLevel" onchange='$("#savedBtn").attr("style", "display:none"); $("#regBtn").attr("style", "");'>
                                                 <option value="1" <?php if($content->roleCode == 1) echo "selected"; ?>>Regular</option>
                                                 <option value="2" <?php if($content->roleCode == 2) echo "selected"; ?>>Officer</option>
                                                 <option value="3" <?php if($content->roleCode == 3) echo "selected"; ?>>Administrator</option>
@@ -160,7 +180,7 @@
                                         <br>
 
                                         <?php
-                                            if(isset($_GET["error"]))
+                                            if(isset($_GET["error"]) && isset($_GET["action"]) && $_GET["action"] == "role")
                                             {
                                                 ?>
                                             <div class="ui tertiary inverted red segment" style="margin-top: 10px;">
