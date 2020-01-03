@@ -4,13 +4,13 @@
              x:Class="SafeStreets.PastReportsPage"
              Title="Past Reports">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout VerticalOptions="FillAndExpand">
             <ListView x:Name="xList" ItemSelected="OnItemSelected" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="8,10,8,10" VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" Orientation="Vertical">
-                                <Label Text="{Binding violation}" VerticalTextAlignment="Start" FontSize="Large"/>
+                                <Label Text="{Binding violation}" VerticalTextAlignment="Start" FontSize="Large" TextColor="Black"/>
                                 <Label Text="{Binding address}" VerticalTextAlignment="Start" FontSize="Medium"/>
                                 <Label Text="{Binding timestamp}" VerticalTextAlignment="Start" FontSize="Small"/>
                             </StackLayout>
@@ -18,6 +18,15 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
+            <Label x:Name="xNoPastReports"
+                   Text="No Past Reports Found!"
+                   TextColor="Black"
+                   FontSize="Large"
+                   HorizontalOptions="Center" 
+                   VerticalOptions="FillAndExpand"
+                   VerticalTextAlignment="Center"
+                   IsVisible="False"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

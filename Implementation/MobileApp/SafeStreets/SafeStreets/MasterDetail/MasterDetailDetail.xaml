@@ -17,12 +17,21 @@
                     <ColumnDefinition Width="4*"/>
                 </Grid.ColumnDefinitions>
                 <Label Grid.Column="0" Text="Not detected yet" x:Name="xLocationLabel" VerticalTextAlignment="Center" FontSize="Medium"/>
-                <Button Grid.Column="1" Text="Detect Location" Clicked="OnClickGeolocation" BackgroundColor="{StaticResource AttentionColor}" CornerRadius="10"/>
+                <Button Grid.Column="1" 
+                        Text="Detect Location" 
+                        Clicked="OnClickGeolocation" 
+                        BorderColor="{StaticResource ButtonBackgroundColor}" 
+                        BorderWidth="2" 
+                        CornerRadius="10"
+                        TextColor="{StaticResource ButtonBackgroundColor}" 
+                        BackgroundColor="White"/>
             </Grid>
 
+            <Label Text="Picures:" FontSize="Large" TextColor="Black"/>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
@@ -39,7 +48,25 @@
                         </DataTemplate>
                     </CarouselView.ItemTemplate>
                 </CarouselView>
-                <Button x:Name="CameraButton" Text="Take Photo" Grid.Row="1" Clicked="CameraButton_Clicked"/>
+                <Button x:Name="xTakePicButton" 
+                        Text="Take A New Picture" 
+                        Grid.Row="1" 
+                        Clicked="onTakePicClicked" 
+                        BorderColor="{StaticResource ButtonBackgroundColor}" 
+                        BorderWidth="2" 
+                        CornerRadius="10"
+                        TextColor="{StaticResource ButtonBackgroundColor}" 
+                        BackgroundColor="White"/>
+                <Button x:Name="xDeletePicsButton" 
+                        Text="Erase All Pictures" 
+                        Grid.Row="2" 
+                        Clicked="onDeletePicsClicked"
+                        BorderColor="{StaticResource WarningTextColor}" 
+                        BorderWidth="2" 
+                        CornerRadius="10"
+                        TextColor="{StaticResource WarningTextColor}" 
+                        BackgroundColor="White"
+                        IsVisible="False"/>
             </Grid>
 
             <StackLayout Padding="0,20,0,0">

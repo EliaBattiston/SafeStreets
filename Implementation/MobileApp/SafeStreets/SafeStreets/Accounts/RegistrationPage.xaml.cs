@@ -16,7 +16,7 @@ namespace SafeStreets
 			InitializeComponent ();
 		}
 
-        private async void CameraButton_Clicked(object sender, EventArgs e)
+        private async void onCameraButtonClicked(object sender, EventArgs e)
         {
             await CrossMedia.Current.Initialize();
 
@@ -34,7 +34,9 @@ namespace SafeStreets
 
             if (photo != null)
             {
-                PhotoImage.Source = ImageSource.FromStream(() => { return photo.GetStream(); });
+                xPhotoImage.Source = ImageSource.FromStream(() => { return photo.GetStream(); });
+                xPhotoImage.IsVisible = true;
+                xCameraButton.Text = "Change Picture";
 
                 byte[] b = System.IO.File.ReadAllBytes(photo.Path);
                 imageBase64 = Convert.ToBase64String(b);

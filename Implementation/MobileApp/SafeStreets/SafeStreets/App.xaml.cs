@@ -18,7 +18,7 @@ namespace SafeStreets
         public static HttpClient Client { get; set; }
 
         public static Page portableDetail { get; set; }
-        private static Application MyApp { get; set; } //è l'oggetto che crea l'app, mi serve il reference per cambiare la MainPage nella gestione del login
+        private static Application MyApp { get; set; } //Needed for login/logout
 
         public App()
         {

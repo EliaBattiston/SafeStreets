@@ -15,7 +15,7 @@ namespace SafeStreets
         {
             InitializeComponent();
 
-            xLogoImage.Source = ImageSource.FromResource("SafeStreets.images.logo.png");
+            xLogoImage.Source = ImageSource.FromResource("SafeStreets._Images.logo.png");
         }
 
         async void OnLoginButtonClicked(object sender, EventArgs e)
