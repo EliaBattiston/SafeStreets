@@ -173,6 +173,11 @@ GET [endpoint]/web/reports/
   ]
 }
 ```
+#### Different response codes
+
+| Code      | Error                              |
+|-----------|------------------------------------|
+| 201       | Report list is empty               |
 
 ### Specific report retrieval
 The response contains detailed information about the desired report. The request is succesful only if the report has been sent by the requesting user.
@@ -304,6 +309,11 @@ GET [endpoint]/web/reports/
   ]
 }
 ```
+#### Different response codes
+
+| Code      | Error                              |
+|-----------|------------------------------------|
+| 201       | Report list is empty               |
 
 ### Specific report retrieval
 The response contains detailed information about the desired report.

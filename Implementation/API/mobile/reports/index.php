@@ -15,7 +15,11 @@
           echo json_encode(array("result" => 400, "message" => "Report not found"));
       }
       else {
-        echo json_encode(array("result" => 200, "content" => Reports::userPastReports($_GET['username'])));
+        $reports = Reports::userPastReports($_GET['username']);
+        if(count($reports) > 0)
+          echo json_encode(array("result" => 200, "content" => $reports));
+        else
+          echo json_encode(array("result" => 201, "content" => "Report list is empty"));
       }
     }
     else {
