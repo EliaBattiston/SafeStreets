@@ -10,7 +10,7 @@ VALUES
         "regularUser",
         "64adb780ea98d46b53605c3044c14f164f753f97f7f828888e65881a2dafc9ea",
         false,
-        CURRENT_TIMESTAMP,
+        NULL,
         "0000000000000000",
         1
     ),
