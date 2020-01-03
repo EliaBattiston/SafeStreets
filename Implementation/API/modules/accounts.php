@@ -127,6 +127,61 @@
       }
     }
 
+    public static function userEmail($username) {
+      global $_CONFIG;
+      $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
+
+      //Prepared statement for SQL injection avoidance
+      $statement = $DBconn->prepare("SELECT email FROM users WHERE username=?");
+      $statement->bind_param("s", $username);
+      $statement->execute();
+      $result = $statement->get_result();
+
+      if($result->num_rows != 1){
+        return NULL;
+      }else{
+        $data = mysqli_fetch_assoc($result);
+        return $data['email'];
+      }
+    }
+
+    public static function userUpdatePassword($username, $newpassword) {
+      global $_CONFIG;
+      $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
+
+      $newhashpassword = hash('sha256', $newpassword."safestreets");
+
+      //Prepared statement for SQL injection avoidance
+      $statement = $DBconn->prepare("UPDATE users SET passwordHash = ? WHERE username=?");
+      $statement->bind_param("ss", $newhashpassword, $username);
+      $statement->execute();
+    }
+
+    private static function generateRandomString($length) {
+      $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      $charactersLength = strlen($characters);
+      $randomString = '';
+      for ($i = 0; $i < $length; $i++) {
+          $randomString .= $characters[rand(0, $charactersLength - 1)];
+      }
+      return $randomString;
+    }
+
+    public static function userAssignRandomPassword($username) {
+      global $_CONFIG;
+      $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
+
+      $newpassword = self::generateRandomString(12);
+      $newhashpassword = hash('sha256', $newpassword."safestreets");
+
+      //Prepared statement for SQL injection avoidance
+      $statement = $DBconn->prepare("UPDATE users SET passwordHash = ? WHERE username=?");
+      $statement->bind_param("ss", $newhashpassword, $username);
+      $statement->execute();
+
+      return $newpassword;
+    }
+
     public static function isOfficer($username) {
       return self::userHasRole($username, 2);
     }

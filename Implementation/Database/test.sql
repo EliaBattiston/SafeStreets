@@ -1,7 +1,7 @@
 USE safestreets;
 
 /* The password for all test users is "test" */
-INSERT INTO users (fiscalCode, firstName, lastName, username, passwordHash, suspended, acceptedTimestamp, accepterAdmin, role)
+INSERT INTO users (fiscalCode, firstName, lastName, username, passwordHash, suspended, acceptedTimestamp, accepterAdmin, role, email)
 VALUES
     (
         "ABCABCABCA000000",
@@ -12,7 +12,8 @@ VALUES
         false,
         CURRENT_TIMESTAMP,
         "0000000000000000",
-        1
+        1,
+        "regularUser@safestreets.org"
     ),
     (
         "ABCABCABCA000001",
@@ -23,7 +24,8 @@ VALUES
         false,
         CURRENT_TIMESTAMP,
         "0000000000000000",
-        2
+        2,
+        "officerUser@safestreets.org"
     ),
     (
         "ABCABCABCA000002",
@@ -34,7 +36,8 @@ VALUES
         false,
         CURRENT_TIMESTAMP,
         "0000000000000000",
-        3
+        3,
+        "administratorUser@safestreets.org"
     ),
     (
         "ABCABCABCA000003",
@@ -45,7 +48,8 @@ VALUES
         false,
         CURRENT_TIMESTAMP,
         "0000000000000000",
-        4
+        4,
+        "systemUser@safestreets.org"
     ),
     (
         "ABCABCABCA000004",
@@ -56,7 +60,8 @@ VALUES
         false,
         CURRENT_TIMESTAMP,
         "0000000000000000",
-        1
+        1,
+        NULL
     ),
     (
         "ABCABCABCA000005",
@@ -67,7 +72,8 @@ VALUES
         false,
         CURRENT_TIMESTAMP,
         "0000000000000000",
-        1
+        1,
+        NULL
     ),
     (
         "ABCABCABCA000006",
@@ -78,7 +84,8 @@ VALUES
         false,
         CURRENT_TIMESTAMP,
         "0000000000000000",
-        1
+        1,
+        NULL
     );
 
 INSERT INTO users (fiscalCode, firstName, lastName, username, passwordHash, suspended, suspendedTimestamp, acceptedTimestamp, accepterAdmin, role)

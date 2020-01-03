@@ -2,10 +2,9 @@
   include_once(__DIR__."/../../modules/accounts.php");
   include_once(__DIR__."/../../modules/common.php");
   include_once(__DIR__."/../../config.php");
-  $accounts = new Accounts;
   
   if(isset($_POST['username']) && isset($_POST['password'])) {
-    $loggedData = $accounts->login($_POST['username'], $_POST['password']);
+    $loggedData = Accounts::login($_POST['username'], $_POST['password']);
 
     if($loggedData == NULL)
       echo json_encode(array("result" => 401, "message" => "Username and/or password not found"));

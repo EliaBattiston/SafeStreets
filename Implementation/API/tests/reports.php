@@ -155,44 +155,8 @@ final class ReportsTest extends TestCase
         $_GET["password"] = "test";
         $response = json_decode(executePHP(__DIR__ . "/../mobile/reports/index.php"));
 
-        $this->assertEquals($response->result, 200);
-        $content = $response->content;
-
-        $this->assertNotNull($content);
-        $this->assertCount(0, $content);
+        $this->assertEquals($response->result, 201);
     }
-
-    /*public function testMobileCreateReport(): void
-    {
-        $_SERVER["REQUEST_METHOD"] = "POST";
-        unset($_GET);
-        unset($_POST);
-        $_POST["username"] = "userWithReports1";
-        $_POST["password"] = "test";
-        $_POST["plate"] = "AA111AA";
-        $_POST["violationType"] = "1";
-        $_POST["latitude"] = 45.4312;
-        $_POST["longitude"] = 9.12584;
-        $_POST["pictures"] = "\"dummypicture\"";
-        $response = json_decode(executePHP(__DIR__ . "/../mobile/reports/index.php"));
-        
-        $this->assertEquals($response->result, 200);
-        
-        //Check if it was correctly inserted
-        $_SERVER["REQUEST_METHOD"] = "GET";
-        unset($_GET);
-        unset($_POST);
-        $_GET["username"] = "userWithReports1";
-        $_GET["password"] = "test";
-        $_GET["reportID"] = "6";
-        $response = json_decode(executePHP(__DIR__ . "/../mobile/reports/index.php"));
-
-        $this->assertEquals($response->result, 200);
-        $content = $response->content;
-
-        $this->assertNotNull($content);
-        $this->assertEquals($content->licensePlate, "AA111AA");
-    }*/
 
     public function testWebWrongCredentials(): void
     {
@@ -261,6 +225,40 @@ final class ReportsTest extends TestCase
 
         $this->assertEquals($response->result, 400);
     }
+
+    /*
+    public function testMobileCreateReport(): void
+    {
+        $_SERVER["REQUEST_METHOD"] = "POST";
+        unset($_GET);
+        unset($_POST);
+        $_POST["username"] = "userWithReports1";
+        $_POST["password"] = "test";
+        $_POST["plate"] = "AA111AA";
+        $_POST["violationType"] = "1";
+        $_POST["latitude"] = 45.4312;
+        $_POST["longitude"] = 9.12584;
+        $_POST["pictures"] = "[\"dummypicture\"]";
+        $response = json_decode(executePHP(__DIR__ . "/../mobile/reports/index.php"));
+        
+        $this->assertEquals($response->result, 200);
+        
+        //Check if it was correctly inserted
+        $_SERVER["REQUEST_METHOD"] = "GET";
+        unset($_GET);
+        unset($_POST);
+        $_GET["username"] = "userWithReports1";
+        $_GET["password"] = "test";
+        $_GET["reportID"] = "6";
+        $response = json_decode(executePHP(__DIR__ . "/../mobile/reports/index.php"));
+
+        $this->assertEquals($response->result, 200);
+        $content = $response->content;
+
+        $this->assertNotNull($content);
+        $this->assertEquals($content->licensePlate, "AA111AA");
+    }
+    */
 }
 
 ?>
