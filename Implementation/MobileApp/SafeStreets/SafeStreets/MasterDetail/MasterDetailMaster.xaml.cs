@@ -23,6 +23,8 @@ namespace SafeStreets
 
             BindingContext = new MasterDetailMasterViewModel();
             ListView = MenuItemsListView;
+
+            xLogoImage.Source = ImageSource.FromResource("SafeStreets._Images.logoMasterDetail.png");
         }
 
         class MasterDetailMasterViewModel : INotifyPropertyChanged

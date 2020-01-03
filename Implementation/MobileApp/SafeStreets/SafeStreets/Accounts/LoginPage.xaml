@@ -20,16 +20,20 @@
             <StackLayout VerticalOptions="EndAndExpand" Padding="0,10,0,20">
                 <Button
                     Text="Restore Credentials"
-                    TextColor="{StaticResource ButtonTextColor}" 
-                    BackgroundColor="{StaticResource ButtonBackgroundColor}"
                     Clicked="OnRestoreCredentialClicked" 
-                    CornerRadius="10"/>
+                    BorderColor="{StaticResource ButtonBackgroundColor}" 
+                    BorderWidth="2" 
+                    CornerRadius="10"
+                    TextColor="{StaticResource ButtonBackgroundColor}" 
+                    BackgroundColor="White"/>
                 <Button
                     Text="Sign Up"
-                    TextColor="{StaticResource ButtonTextColor}" 
-                    BackgroundColor="{StaticResource ButtonBackgroundColor}"
                     Clicked="OnSignUpClicked" 
-                    CornerRadius="10"/>
+                    BorderColor="{StaticResource ButtonBackgroundColor}" 
+                    BorderWidth="2" 
+                    CornerRadius="10"
+                    TextColor="{StaticResource ButtonBackgroundColor}" 
+                    BackgroundColor="White"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

@@ -10,10 +10,11 @@
                    TextColor="Black"/>
 
             <Button Text="Logout"
-                    BackgroundColor="{StaticResource AttentionColor}"
                     Clicked="OnBtnLogoutClicked"
                     Margin="20"
-                    CornerRadius="10"/>
+                    CornerRadius="10"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource WarningTextColor}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -76,7 +76,7 @@ namespace SafeStreets
             }
         }
 
-        private async void CameraButton_Clicked(object sender, EventArgs e)
+        private async void onTakePicClicked(object sender, EventArgs e)
         {
             await CrossMedia.Current.Initialize();
 
@@ -101,6 +101,21 @@ namespace SafeStreets
                 imagesBase64.Add(Convert.ToBase64String(b));
 
                 xCarouselViewNewReport.IsVisible = true;
+                xDeletePicsButton.IsVisible = true;
+            }
+        }
+
+        private async void onDeletePicsClicked(object sender, EventArgs e)
+        {
+            var confirm = await DisplayAlert("Erase Pictures", "Delete all the pictures?", "Delete", "Keep");
+
+            if (confirm)
+            {
+                xCarouselViewNewReport.ItemsSource = null;
+                images.Clear();
+                imagesBase64.Clear();
+                xCarouselViewNewReport.IsVisible = false;
+                xDeletePicsButton.IsVisible = false;
             }
         }
 

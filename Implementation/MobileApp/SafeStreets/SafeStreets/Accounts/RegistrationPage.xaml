@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SafeStreets.RegistrationPage"
-             Title="Registration"
-             Padding="10">
+             Title="Registration">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
@@ -16,8 +15,8 @@
     
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <Label Text="Fill the form to sign up:" FontSize="Large" FontAttributes="Bold"/>
+            <StackLayout Padding="10">
+                <Label Text="Fill the form to sign up:" FontSize="Large" FontAttributes="Bold" TextColor="Black"/>
                 <Entry Placeholder="Email" x:Name="xEmailEntry"/>
                 <Entry Placeholder="Username" x:Name="xUsernameEntry"/>
                 <Entry Placeholder="Fiscal Code" x:Name="xFiscalCodeEntry"/>
@@ -25,17 +24,23 @@
                 <Entry Placeholder="Last Name" x:Name="xLastNameEntry"/>
                 <Entry Placeholder="Password" x:Name="xPasswordEntry" IsPassword="True"/>
 
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
+                <Label Text="ID Picture:" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+                <Image x:Name="xPhotoImage" HeightRequest="300" IsVisible="False"/>
+                <Button x:Name="xCameraButton"
+                        Text="Take Picture" 
+                        Clicked="onCameraButtonClicked"
+                        BorderColor="{StaticResource ButtonBackgroundColor}" 
+                        BorderWidth="2" 
+                        CornerRadius="10"
+                        TextColor="{StaticResource ButtonBackgroundColor}" 
+                        BackgroundColor="White"/>
 
-                    <Image x:Name="PhotoImage" />
-                    <Button x:Name="CameraButton" Text="Take Photo" Grid.Row="1" Clicked="CameraButton_Clicked"/>
-                </Grid>
-
-                <Button Text="Sign Up" Clicked="OnSignUpClicked" BackgroundColor="{StaticResource ButtonBackgroundColor}" TextColor="White"/>
+                <Button Text="Sign Up" 
+                        Clicked="OnSignUpClicked" 
+                        BackgroundColor="{StaticResource ButtonBackgroundColor}" 
+                        TextColor="White" 
+                        Margin="0,15,0,0"
+                        CornerRadius="10"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

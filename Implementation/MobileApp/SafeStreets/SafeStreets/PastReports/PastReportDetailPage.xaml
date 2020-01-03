@@ -17,12 +17,13 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Violation!" x:Name="xTypologyLabel" FontSize="Large" FontAttributes="Bold"/>
+            <Label Text="Violation!" x:Name="xTypologyLabel" FontSize="Large" FontAttributes="Bold" TextColor="Black"/>
             <Label Text="Address!" x:Name="xAddressLabel"/>
             <Label Text="Datetime!" x:Name="xDateTimeLabel" />  
             <Label Text="LicensePlate!" x:Name="xLicensePlateLabel" />
             <Label Text="Notes!" x:Name="xNotesLabel" />
-            <CarouselView PeekAreaInsets="20" x:Name="xCarouselView" HeightRequest="300" >
+            <Label Text="Pictures:" TextColor="Black" FontSize="Medium"/>
+            <CarouselView PeekAreaInsets="20" x:Name="xCarouselView" HeightRequest="250" >
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>

@@ -10,11 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="images\logo.png" />
+    <None Remove="_Images\logo.png" />
+    <None Remove="_Images\logoMasterDetail.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="images\logo.png" />
+    <EmbeddedResource Include="_Images\logoMasterDetail.png" />
+    <EmbeddedResource Include="_Images\logo.png" />
   </ItemGroup>
 
   <ItemGroup>
