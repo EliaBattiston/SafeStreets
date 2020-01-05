@@ -2,7 +2,6 @@
   include_once(__DIR__."/../../modules/accounts.php");
   include_once(__DIR__."/../../modules/common.php");
   include_once(__DIR__."/../../config.php");
-  $accounts = new Accounts;
   
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if(!checkParameter($_POST["username"], "string"))
@@ -36,10 +35,10 @@
       return;
     }
     if(!checkParameter($_POST["documentPhoto"], "string"))
-      {
-        echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter documentPhoto"));
-        return;
-      }
+    {
+      echo json_encode(array("result" => 404, "message" => "Missing or invalid parameter documentPhoto"));
+      return;
+    }
 
     $documentPhoto = str_replace(" ","+" , json_decode($_POST['documentPhoto'], true));
     $fiscalCode = $_POST["fiscalCode"];

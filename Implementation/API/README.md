@@ -130,6 +130,47 @@ The _documentPhoto_ parameter is a string representing a base64-encoded `.jpg` p
 | 406       | Username already in use             |
 | 407       | Error loading picture               |
 
+#### Specific error codes
+
+| Code      | Error                               |
+|-----------|-------------------------------------|
+| 401       | Username/password pair is incorrect |
+
+
+## Password change (manual insertion)
+API for setting a new password for the related username.
+The new password is created by the user.
+
+#### Endpoint and parameters
+```
+POST [endpoint]/accounts/restorePassword/
+```
+
+| Parameter     | Type    | Required |
+|---------------|---------|----------|
+| username      | string  |    Y     |
+| password      | string  |    Y     |
+| newPassword   | string  |    Y     |
+
+## Password change (system email)
+API for setting a new password for the related username.
+The new password is created by the system and emailed to the user.
+Eligible in case of forgotten password.
+
+#### Endpoint and parameters
+```
+GET [endpoint]/accounts/restorePassword/
+```
+
+| Parameter     | Type    | Required |
+|---------------|---------|----------|
+| username      | string  |    Y     |
+
+#### Specific error codes
+
+| Code      | Error                               |
+|-----------|-------------------------------------|
+| 401       | Username not found in system        |
 
 # Mobile API methods
 
@@ -173,6 +214,11 @@ GET [endpoint]/web/reports/
   ]
 }
 ```
+#### Different response codes
+
+| Code      | Error                              |
+|-----------|------------------------------------|
+| 201       | Report list is empty               |
 
 ### Specific report retrieval
 The response contains detailed information about the desired report. The request is succesful only if the report has been sent by the requesting user.
@@ -304,6 +350,11 @@ GET [endpoint]/web/reports/
   ]
 }
 ```
+#### Different response codes
+
+| Code      | Error                              |
+|-----------|------------------------------------|
+| 201       | Report list is empty               |
 
 ### Specific report retrieval
 The response contains detailed information about the desired report.
