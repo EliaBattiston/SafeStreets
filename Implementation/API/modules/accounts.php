@@ -9,8 +9,12 @@
 
       //document photo load is made before the creation of the user so that every problem in loading odesn't influence DB integrity
       $target_dir = __DIR__."/../userDocumentPhotos/";
+      umask(0);
       if (!file_exists($target_dir)) {
         mkdir($target_dir, 0777, true);
+      }
+      if(!is_writable($target_dir)) {
+        chmod($target_dir, 0777);
       }
 
       $target_file = $target_dir . $fiscalCode . ".jpg";
