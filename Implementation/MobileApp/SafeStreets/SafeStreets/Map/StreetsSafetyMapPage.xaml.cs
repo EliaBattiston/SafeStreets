@@ -33,7 +33,7 @@ namespace SafeStreets
 		{
 			StreetSafetyPins data = await JsonRequest.StreetSafety(App.username, App.pass);
 
-			if(data.result == 200)
+			if(data != null && data.result == 200)
 			{
 				foreach(var pin in data.content)
 				{
@@ -49,7 +49,7 @@ namespace SafeStreets
 			}
 			else
 			{
-				await DisplayAlert("Error", "Error asking for pins", "Ok");
+				await DisplayAlert("Information", "No information about Street Safety has been found!", "Ok");
 			}
 			
 		}

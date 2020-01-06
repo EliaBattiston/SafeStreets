@@ -19,20 +19,25 @@ namespace SafeStreets
 
         private async void OnRestoreClicked(object sender, EventArgs e)
         {
-            string email = xEmailEntry.Text;
+            string user = xUsernameEntry.Text;
 
-            if (email != String.Empty)
+            if (Utils.HasText(user))
             {
-                SimpleCallAnswer answer = await JsonRequest.RestoreCredentials(email);
+                SimpleCallAnswer answer = await JsonRequest.RestoreCredentials(user);
 
-                if(answer != null && answer.result == 200)
-                    await DisplayAlert("Restored!", "A restore procedure has been sent to your email address", "Ok");
+                if(answer != null)
+                {
+                    if (answer.result == 200)
+                        await DisplayAlert("Restored!", "A restore procedure has been sent to your email address", "Ok");
+                    else
+                        await DisplayAlert("Error!", answer.message, "Ok");
+                }
                 else
                     await DisplayAlert("Error!", "The restore procedure cannot be done.", "Ok");
             }
             else
             {
-                await DisplayAlert("Attention!", "Insert a valid email address to continue.", "Ok");
+                await DisplayAlert("Attention!", "Insert a valid username to continue.", "Ok");
             }
         }
 

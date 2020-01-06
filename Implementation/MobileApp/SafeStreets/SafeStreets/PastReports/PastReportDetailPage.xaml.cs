@@ -23,7 +23,10 @@ namespace SafeStreets
             xLicensePlateLabel.Text = report.licensePlate;
             xNotesLabel.Text = report.notes;
 
-			xCarouselView.ItemsSource = report.pictures;
+			if (report.pictures.Count > 0)
+				xCarouselView.ItemsSource = report.pictures;
+			else
+				xNoPicAvailable.IsVisible = true;
 
 			Position position = new Position(report.latitude, report.longitude);
 			MapSpan mapSpan = MapSpan.FromCenterAndRadius(position, Xamarin.Forms.Maps.Distance.FromKilometers(0.5));

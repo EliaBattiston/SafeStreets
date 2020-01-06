@@ -73,11 +73,11 @@ namespace SafeStreets
             }
         }
 
-        public static async Task<SimpleCallAnswer> RestoreCredentials(string email)
+        public static async Task<SimpleCallAnswer> RestoreCredentials(string user)
         {
             try
             {
-                /*var response = await App.Client.GetAsync(startUrl + "mocky.io/v2/5df66bb33400002900e5a59b?user=" + user + "&pass=" + pass);
+                var response = await App.Client.GetAsync(startUrl + "/accounts/restorePassword/?username=" + user);
 
                 string responseString = await response.Content.ReadAsStringAsync();
 
@@ -85,8 +85,33 @@ namespace SafeStreets
 
                 responseString = System.Net.WebUtility.HtmlDecode(responseString);//Decodificare cose come &nbsp
 
-                */
-                SimpleCallAnswer answer = JsonConvert.DeserializeObject<SimpleCallAnswer>("{\"result\":200}");
+                SimpleCallAnswer answer = JsonConvert.DeserializeObject<SimpleCallAnswer>(responseString);
+
+                return answer;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                return null;
+            }
+        }
+
+        public static async Task<SimpleCallAnswer> ChangePassword(string user, string oldPass, string newPass)
+        {
+            try
+            {
+                var values = "username=" + user + "&password=" + oldPass + "&newPassword=" + newPass;
+                var content = new StringContent(values, null, "application/x-www-form-urlencoded");
+
+                var response = await App.Client.PostAsync(startUrl + "/accounts/restorePassword/", content);
+
+                string responseString = await response.Content.ReadAsStringAsync();
+
+                responseString.Replace("\\", "");
+
+                responseString = System.Net.WebUtility.HtmlDecode(responseString);//Decodificare cose come &nbsp
+
+                SimpleCallAnswer answer = JsonConvert.DeserializeObject<SimpleCallAnswer>(responseString);
 
                 return answer;
             }

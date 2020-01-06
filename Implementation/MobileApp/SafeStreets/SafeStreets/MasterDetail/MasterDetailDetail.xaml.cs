@@ -89,6 +89,7 @@ namespace SafeStreets
             var photo = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions()
             {
                 Directory = "SafeStreets",
+                CompressionQuality = 50
             });
 
             if (photo != null)
@@ -105,17 +106,22 @@ namespace SafeStreets
             }
         }
 
+        private void EreasePics()
+        {
+            xCarouselViewNewReport.ItemsSource = null;
+            images.Clear();
+            imagesBase64.Clear();
+            xCarouselViewNewReport.IsVisible = false;
+            xDeletePicsButton.IsVisible = false;
+        }
+
         private async void onDeletePicsClicked(object sender, EventArgs e)
         {
             var confirm = await DisplayAlert("Erase Pictures", "Delete all the pictures?", "Delete", "Keep");
 
             if (confirm)
             {
-                xCarouselViewNewReport.ItemsSource = null;
-                images.Clear();
-                imagesBase64.Clear();
-                xCarouselViewNewReport.IsVisible = false;
-                xDeletePicsButton.IsVisible = false;
+                EreasePics();
             }
         }
 
@@ -131,13 +137,24 @@ namespace SafeStreets
                 {
                     if(imagesBase64.Count > 0)
                     {
+                        xNewReportLayout.IsVisible = false;
+                        xLoader.IsVisible = true;
+
                         var answer = await JsonRequest.SendNewReport(App.username, App.pass, plate, rInfo.code, latitude, longitude, imagesBase64);
+
+                        xNewReportLayout.IsVisible = true;
+                        xLoader.IsVisible = false;
 
                         if (answer != null)
                         {
                             if(answer.result == 200)
                             {
                                 await DisplayAlert("Sent!", "Your report has been sent!", "Ok");
+
+                                xReportInformationPicker.SelectedIndex = -1;
+                                xPlateEntry.Text = "";
+                                xNotesEntry.Text = "";
+                                EreasePics();
                             }
                             else
                             {

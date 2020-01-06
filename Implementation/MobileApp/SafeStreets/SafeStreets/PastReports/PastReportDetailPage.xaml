@@ -23,6 +23,7 @@
             <Label Text="LicensePlate!" x:Name="xLicensePlateLabel" />
             <Label Text="Notes!" x:Name="xNotesLabel" />
             <Label Text="Pictures:" TextColor="Black" FontSize="Medium"/>
+            <Label Text="No picture available" x:Name="xNoPicAvailable" IsVisible="False"/>
             <CarouselView PeekAreaInsets="20" x:Name="xCarouselView" HeightRequest="250" >
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
