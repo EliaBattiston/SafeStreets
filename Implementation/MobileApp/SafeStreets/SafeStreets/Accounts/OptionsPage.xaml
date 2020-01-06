@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SafeStreets.OptionsPage"
+             Title="Account Options"
+             Padding="10">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <Label Text="Change Password"
+                   FontSize="Large"
+                   TextColor="Black"/>
+            <Entry x:Name="xOldPwd" Placeholder="Old Password" IsPassword="True" />
+            <Entry x:Name="xNewPwd" Placeholder="New Password" IsPassword="True" />
+            <Button Text="Change Password"
+                    Clicked="OnBtnChangePasswordClicked"
+                    Margin="20"
+                    BorderColor="{StaticResource ButtonBackgroundColor}" 
+                    BorderWidth="2" 
+                    CornerRadius="10"
+                    TextColor="{StaticResource ButtonBackgroundColor}" 
+                    BackgroundColor="White"/>
+
+            <Button Text="Logout"
+                    Clicked="OnBtnLogoutClicked"
+                    Margin="10,50,10,20"
+                    CornerRadius="10"
+                    TextColor="White"
+                    VerticalOptions="EndAndExpand"
+                    BackgroundColor="{StaticResource WarningTextColor}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

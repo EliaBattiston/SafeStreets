@@ -29,7 +29,8 @@ namespace SafeStreets
             var photo = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions() 
             {
                 Directory = "SafeStreets",
-                Name = "id.jpg"
+                Name = "id.jpg",
+                CompressionQuality = 50
             });
 
             if (photo != null)
@@ -58,7 +59,14 @@ namespace SafeStreets
             {
                 if (Utils.HasText(imageBase64))
                 {
+                    xLoader.IsVisible = true;
+                    xForm.IsVisible = false;
+                    
+
                     SimpleCallAnswer answer = await JsonRequest.Registration(email, username, firstName, lastName, fiscalCode, password, imageBase64);
+
+                    xLoader.IsVisible = false;
+                    xForm.IsVisible = true;
 
                     if (answer != null)
                     {
@@ -91,7 +99,10 @@ namespace SafeStreets
         //tolbar closeModal button handler
         async void OnCloseModalClicked(object sender, System.EventArgs e)
         {
-            await Navigation.PopModalAsync();
+            if (xLoader.IsVisible == false)
+                await Navigation.PopModalAsync();
+            else
+                await DisplayAlert("Loading...", "We are uploading your ID picture. Please wait a while!", "Ok");
         }
     }
 }

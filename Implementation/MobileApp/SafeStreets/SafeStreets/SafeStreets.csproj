@@ -28,7 +28,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Accounts\LogoutPage.xaml">
+    <Compile Update="Accounts\OptionsPage.xaml.cs">
+      <DependentUpon>OptionsPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Accounts\OptionsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="PastReports\PastReportDetailPage.xaml">

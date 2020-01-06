@@ -25,7 +25,8 @@
                     BorderWidth="2" 
                     CornerRadius="10"
                     TextColor="{StaticResource ButtonBackgroundColor}" 
-                    BackgroundColor="White"/>
+                    BackgroundColor="White"
+                    HeightRequest="40"/>
                 <Button
                     Text="Sign Up"
                     Clicked="OnSignUpClicked" 
@@ -33,7 +34,8 @@
                     BorderWidth="2" 
                     CornerRadius="10"
                     TextColor="{StaticResource ButtonBackgroundColor}" 
-                    BackgroundColor="White"/>
+                    BackgroundColor="White"
+                    HeightRequest="40"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

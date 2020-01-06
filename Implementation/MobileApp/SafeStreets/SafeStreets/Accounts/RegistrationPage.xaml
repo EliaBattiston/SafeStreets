@@ -12,10 +12,16 @@
             Priority="0"
             Text="Close" />
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Padding="10">
+            <StackLayout>
+                <StackLayout x:Name="xLoader" IsVisible="False" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label Text="Loading..." FontSize="Large" FontAttributes="Bold"/>
+                    <ActivityIndicator Color="{StaticResource ButtonBackgroundColor}" IsRunning="True"/>
+                </StackLayout>
+                
+                <StackLayout x:Name="xForm" Padding="10" IsVisible="True">
                 <Label Text="Fill the form to sign up:" FontSize="Large" FontAttributes="Bold" TextColor="Black"/>
                 <Entry Placeholder="Email" x:Name="xEmailEntry"/>
                 <Entry Placeholder="Username" x:Name="xUsernameEntry"/>
@@ -41,6 +47,7 @@
                         TextColor="White" 
                         Margin="0,15,0,0"
                         CornerRadius="10"/>
+            </StackLayout>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -6,49 +6,56 @@
              Title="Report">
     <ScrollView Padding="8,10,8,10">
         <StackLayout>
-            <Label Text="Report information:" FontSize="Large" TextColor="Black"/>
-            <Picker Title="Report information" x:Name="xReportInformationPicker" ItemDisplayBinding="{Binding text}"/>
-            <Entry x:Name="xPlateEntry" Placeholder="Plate"/>
-            <Editor x:Name="xNotesEntry" Placeholder="Notes" AutoSize="TextChanges" />
-            <Label Text="Location:" FontSize="Large" TextColor="Black"/>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="6*"/>
-                    <ColumnDefinition Width="4*"/>
-                </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Text="Not detected yet" x:Name="xLocationLabel" VerticalTextAlignment="Center" FontSize="Medium"/>
-                <Button Grid.Column="1" 
+            <StackLayout x:Name="xLoader" IsVisible="False" VerticalOptions="Center" HorizontalOptions="Center">
+                <Label Text="Loading..." FontSize="Large" FontAttributes="Bold"/>
+                <ActivityIndicator Color="{StaticResource ButtonBackgroundColor}" IsRunning="True"/>
+            </StackLayout>
+
+            <StackLayout x:Name="xNewReportLayout" IsVisible="True">
+                <Label Text="New Report:" FontSize="Large" TextColor="Black"/>
+                <Picker Title="Violation type" x:Name="xReportInformationPicker" ItemDisplayBinding="{Binding text}"/>
+                <Entry x:Name="xPlateEntry" Placeholder="Plate"/>
+                <Editor x:Name="xNotesEntry" Placeholder="Notes" AutoSize="TextChanges" />
+                <Label Text="Location:" FontSize="Large" TextColor="Black"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Not detected yet" x:Name="xLocationLabel" VerticalTextAlignment="Center" FontSize="Medium"/>
+                    <Button Grid.Column="1" 
                         Text="Detect Location" 
                         Clicked="OnClickGeolocation" 
                         BorderColor="{StaticResource ButtonBackgroundColor}" 
                         BorderWidth="2" 
                         CornerRadius="10"
                         TextColor="{StaticResource ButtonBackgroundColor}" 
-                        BackgroundColor="White"/>
-            </Grid>
+                        BackgroundColor="White"
+                        HeightRequest="40"/>
+                </Grid>
 
-            <Label Text="Picures:" FontSize="Large" TextColor="Black"/>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
+                <Label Text="Picures:" FontSize="Large" TextColor="Black"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
 
-                <CarouselView PeekAreaInsets="20" x:Name="xCarouselViewNewReport" HeightRequest="300" IsVisible="False">
-                    <CarouselView.ItemTemplate>
-                        <DataTemplate>
-                            <StackLayout>
-                                <Frame BorderColor="{StaticResource ButtonBackgroundColor}" Margin="10" HasShadow="False" HeightRequest="200" CornerRadius="10" VerticalOptions="CenterAndExpand" WidthRequest="200">
-                                    <StackLayout>
-                                        <Image Source="{Binding .}" HeightRequest="200"/>
-                                    </StackLayout>
-                                </Frame>
-                            </StackLayout>
-                        </DataTemplate>
-                    </CarouselView.ItemTemplate>
-                </CarouselView>
-                <Button x:Name="xTakePicButton" 
+                    <CarouselView PeekAreaInsets="20" x:Name="xCarouselViewNewReport" HeightRequest="300" IsVisible="False">
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout>
+                                    <Frame BorderColor="{StaticResource ButtonBackgroundColor}" Margin="10" HasShadow="False" HeightRequest="200" CornerRadius="10" VerticalOptions="CenterAndExpand" WidthRequest="200">
+                                        <StackLayout>
+                                            <Image Source="{Binding .}" HeightRequest="200"/>
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                    <Button x:Name="xTakePicButton" 
                         Text="Take A New Picture" 
                         Grid.Row="1" 
                         Clicked="onTakePicClicked" 
@@ -57,7 +64,7 @@
                         CornerRadius="10"
                         TextColor="{StaticResource ButtonBackgroundColor}" 
                         BackgroundColor="White"/>
-                <Button x:Name="xDeletePicsButton" 
+                    <Button x:Name="xDeletePicsButton" 
                         Text="Erase All Pictures" 
                         Grid.Row="2" 
                         Clicked="onDeletePicsClicked"
@@ -67,10 +74,11 @@
                         TextColor="{StaticResource WarningTextColor}" 
                         BackgroundColor="White"
                         IsVisible="False"/>
-            </Grid>
+                </Grid>
 
-            <StackLayout Padding="0,20,0,0">
-                <Button Text="Send Report" BackgroundColor="{StaticResource ButtonBackgroundColor}" TextColor="White" CornerRadius="10" Clicked="OnClickSendReport"/>
+                <StackLayout Padding="0,20,0,0">
+                    <Button Text="Send Report" BackgroundColor="{StaticResource ButtonBackgroundColor}" TextColor="White" CornerRadius="10" Clicked="OnClickSendReport"/>
+                </StackLayout>
             </StackLayout>
         </StackLayout>
     </ScrollView>
