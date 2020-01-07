@@ -3,8 +3,8 @@
   class Accounts{
 
     //Checks for already registered fiscal code and/or username has aleady been made outside this function
-    public static function signup($username, $password, $firstName, $lastName, $fiscalCode, $documentPhoto) {
-      if(!is_string($username) || !is_string($password) || !is_string($firstName) || !is_string($lastName) || !is_string($fiscalCode))
+    public static function signup($username, $password, $firstName, $lastName, $fiscalCode, $documentPhoto, $email) {
+      if(!is_string($username) || !is_string($password) || !is_string($firstName) || !is_string($lastName) || !is_string($fiscalCode) || !is_string($email))
         return 404;
 
       //document photo load is made before the creation of the user so that every problem in loading odesn't influence DB integrity
@@ -30,8 +30,8 @@
       $hashpassword = hash('sha256', $password."safestreets");
 
       //Prepared statement for SQL injection avoidance
-      $statement = $DBconn->prepare("INSERT INTO users (fiscalCode, firstName, lastName, username, passwordHash, role) VALUES (?, ?, ?, ?, ?, 1)");
-      $statement->bind_param("sssss", $fiscalCode, $firstName, $lastName, $username, $hashpassword);
+      $statement = $DBconn->prepare("INSERT INTO users (fiscalCode, firstName, lastName, username, passwordHash, role, email) VALUES (?, ?, ?, ?, ?, 1, ?)");
+      $statement->bind_param("ssssss", $fiscalCode, $firstName, $lastName, $username, $hashpassword, $email);
       $statement->execute();
       
       if($DBconn->error != NULL) {

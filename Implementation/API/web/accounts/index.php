@@ -90,7 +90,7 @@
         return;
       }
 
-      $creationCheck = Accounts::signup($username, $_POST["newpassword"], $_POST["firstName"], $_POST["lastName"], $fiscalCode, $documentPhoto);
+      $creationCheck = Accounts::signup($username, $_POST["newpassword"], $_POST["firstName"], $_POST["lastName"], $fiscalCode, $documentPhoto, $_POST["email"]);
 
       if($creationCheck == 200) {
         echo json_encode(array("result" => 200));
