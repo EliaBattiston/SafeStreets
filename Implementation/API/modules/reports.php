@@ -179,30 +179,34 @@
       $reportsCount = $result->fetch_all(MYSQLI_ASSOC);
 
       $elaboratedData = [];
-      for($i = 0; $i < count($reportsCount); $i++) {
+      for($i = 0, $j = 0; $i < count($reportsCount); $i++) {
         $report = $reportsCount[$i];
-        $elaboratedData[$i] = [];
-        $elaboratedData[$i]['address'] = $report['name'];
         $coordinates = Streets::getStreetCoordinates($report['name']);
-        $elaboratedData[$i]['latitude'] = $coordinates['lat'];
-        $elaboratedData[$i]['longitude'] = $coordinates['lng'];
+        if($coordinates['lat'] != NULL && $coordinates['lng'] != NULL) {
+          $elaboratedData[$j] = [];
+          $elaboratedData[$j]['address'] = $report['name'];
+          
+          $elaboratedData[$j]['latitude'] = $coordinates['lat'];
+          $elaboratedData[$j]['longitude'] = $coordinates['lng'];
 
-        $reports = $report['reportsNum'] == NULL ? 0 : $report['reportsNum'];
-        $accidents = $report['accidentsNum'] == NULL ? 0 : $report['accidentsNum'];
-        $tickets = $report['trafficticketsNum'] == NULL ? 0 : $report['trafficticketsNum'];
-        $elaboratedData[$i]['content'] = "SafeStreets reports: ".$reports.", accidents: ".$accidents.", emitted traffic tickets: ".$tickets;
+          $reports = $report['reportsNum'] == NULL ? 0 : $report['reportsNum'];
+          $accidents = $report['accidentsNum'] == NULL ? 0 : $report['accidentsNum'];
+          $tickets = $report['trafficticketsNum'] == NULL ? 0 : $report['trafficticketsNum'];
+          $elaboratedData[$j]['content'] = "SafeStreets reports: ".$reports.", accidents: ".$accidents.", emitted traffic tickets: ".$tickets;
 
-        $sum = $reports + $accidents + $tickets;
-        if($sum >= 4) {
-          $elaboratedData[$i]['severity'] = "High";
-        }
-        else {
-          if($sum >= 3) {
-            $elaboratedData[$i]['severity'] = "Medium";
+          $sum = $reports + $accidents + $tickets;
+          if($sum >= 4) {
+            $elaboratedData[$j]['severity'] = "High";
           }
           else {
-            $elaboratedData[$i]['severity'] = "Low";
+            if($sum >= 3) {
+              $elaboratedData[$j]['severity'] = "Medium";
+            }
+            else {
+              $elaboratedData[$j]['severity'] = "Low";
+            }
           }
+          $j++;
         }
       }
 

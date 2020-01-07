@@ -75,7 +75,9 @@ POST [endpoint]/accounts/login/
     "firstName":"FirstName",
     "lastName":"LastName",
     "username":"username",
+    "acceptedTimestamp":"2000-01-01 00:00:01",
     "suspended":0,
+    "suspendedTimestamp":"2000-01-01 00:00:01",
     "roleCode":1,
     "roleDesc":"Regular"
   }
@@ -88,6 +90,7 @@ POST [endpoint]/accounts/login/
 |-----------|-------------------------------------|
 | 401       | Username/password pair is incorrect |
 | 402       | User suspended                      |
+| 403       | User not authorized by admin        |
 
 ## Signup
 
