@@ -1,0 +1,1401 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\date{}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{chngcntr}
+\counterwithin*{section}{part}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language british
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "lmodern" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_author "Elia Battiston"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation 0mm
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 0 0 15 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\paragraph_spacing double
+\align right
+\begin_inset Graphics
+	filename Images/PoliMi.svg
+	lyxscale 20
+	width 30text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+newpage
+\backslash
+relax
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+\begin_inset Graphics
+	filename Images/SafeStreetsLogo.svg
+	lyxscale 20
+	width 20text%
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+SafeStreets - ITPD
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+small Politecnico di Milano - A.Y.
+ 2019/20120}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Andrea Aspesi - 
+\begin_inset CommandInset href
+LatexCommand href
+name "andrea.aspesi@mail.polimi.it"
+target "andrea.aspesi@mail.polimi.it"
+type "mailto:"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Elia Battiston - 
+\begin_inset CommandInset href
+LatexCommand href
+name "elia.battiston@mail.polimi.it"
+target "elia.battiston@mail.polimi.it"
+type "mailto:"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Alessandro Carabelli - 
+\begin_inset CommandInset href
+LatexCommand href
+name "alessandro2.carabelli@mail.polimi.it"
+target "alessandro2.carabelli@mail.polimi.it"
+type "mailto:"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Introduction
+\end_layout
+
+\begin_layout Section
+Purpose
+\end_layout
+
+\begin_layout Standard
+This is the Integration Test Plan Document of the SafeStreets project.
+\end_layout
+
+\begin_layout Section
+Scope
+\end_layout
+
+\begin_layout Section
+Definitions, Acronyms, Abbreviations
+\end_layout
+
+\begin_layout Section
+Revision history
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Version 1.0:
+\begin_inset Newline newline
+\end_inset
+
+
+\emph default
+Initial release
+\end_layout
+
+\begin_layout Section
+Reference documents
+\end_layout
+
+\begin_layout Itemize
+SafeStreets specification document: 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "SafeStreets Mandatory Project Assignment"
+target "https://beep.metid.polimi.it/documents/121843524/6b7a0cd3-49cd-4898-95ca-090e5eeac5df"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Implementation assignment document: 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Implementation and Testing project assignment"
+target "https://beep.metid.polimi.it/documents/121843524/f3001b03-4a19-4bfe-b92c-e7c132d071b1"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset label
+LatexCommand label
+name "RASD"
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "SafeStreets RASD"
+target "https://github.com/EliaBattiston/AspesiBattistonCarabelli/blob/introduction/DeliveryFolder/RASD1.pdf"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset label
+LatexCommand label
+name "DD"
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "SafeStreets DD"
+target "https://github.com/EliaBattiston/AspesiBattistonCarabelli/blob/introduction/DeliveryFolder/DD1.pdf"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Document structure
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Implemented requirements & functions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Adopted development frameworks
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Source code structure
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Testing
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Installation instructions
+\end_layout
+
+\begin_layout Standard
+The following instructions include all the steps needed to deploy the SafeStreet
+s solution or one of its modular components.
+\end_layout
+
+\begin_layout Standard
+The source code of the system can be found in the GitHub repository at 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/EliaBattiston/AspesiBattistonCarabelli
+\end_layout
+
+\end_inset
+
+.
+ In particular, folders referenced in the following sections will be found
+ in its 
+\begin_inset CommandInset href
+LatexCommand href
+name "Implementation"
+target "https://github.com/EliaBattiston/AspesiBattistonCarabelli/tree/master/Implementation"
+literal "false"
+
+\end_inset
+
+ folder.
+\end_layout
+
+\begin_layout Section
+Database installation
+\end_layout
+
+\begin_layout Subsection
+Requirements
+\end_layout
+
+\begin_layout Itemize
+The SafeStreets database does not depend on any other component, so it can
+ be installed as the first module of the system.
+\end_layout
+
+\begin_layout Itemize
+A relational DBMS with the ability of importing 
+\family typewriter
+.sql
+\family default
+ files is needed
+\end_layout
+
+\begin_layout Subsection
+Steps
+\end_layout
+
+\begin_layout Enumerate
+Import 
+\family typewriter
+Database/safestreets.sql
+\family default
+ in the desired DBMS.
+\begin_inset Newline newline
+\end_inset
+
+The SQL file includes the definition of the database schema and data needed
+ to start running the solution, for example the 
+\family typewriter
+system
+\family default
+ user.
+\end_layout
+
+\begin_layout Section
+APIs installation
+\end_layout
+
+\begin_layout Subsection
+Requirements
+\end_layout
+
+\begin_layout Itemize
+APIs depend on the deployment of the SafeStreets database, so it has to
+ be installed first to be able to correctly configure and run APIs
+\end_layout
+
+\begin_layout Itemize
+A web server with PHP support is needed to run and serve the API
+\end_layout
+
+\begin_layout Subsection
+Steps
+\end_layout
+
+\begin_layout Itemize
+Place the contents of the 
+\family typewriter
+API
+\family default
+ folder in a directory served by your web server.
+\begin_inset Newline newline
+\end_inset
+
+From now on, the URL at which the API is served will be called 
+\emph on
+endpoint
+\emph default
+, and the folder where the files have been placed will be called 
+\emph on
+endpoint directory
+\end_layout
+
+\begin_layout Itemize
+Make sure that PHP and the web server have write permissions to the 
+\family typewriter
+reportPictures
+\family default
+ and 
+\family typewriter
+userDocumentPhotos
+\family default
+ folders in the endpoint directory
+\end_layout
+
+\begin_layout Itemize
+Change the values in the included 
+\family typewriter
+config.php
+\family default
+ file to configure access to your deployed database
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="middle" width="90text%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Value to be set
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+$_CONFIG['host']
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name of the host where the database is set
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+$_CONFIG['user']
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Username of the database account to access the database
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+$_CONFIG['pass']
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Password of the account
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+$_CONFIG['dbname']
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name of the deployed database.
+\end_layout
+
+\begin_layout Plain Layout
+Ff the database 
+\family typewriter
+.sql
+\family default
+ file is imported correctly, this value should be set to 
+\begin_inset Quotes eld
+\end_inset
+
+
+\family typewriter
+safestreets
+\family default
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Database configuration parameters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Web Client installation
+\end_layout
+
+\begin_layout Subsection
+Requirements
+\end_layout
+
+\begin_layout Itemize
+The web client depends on a functioning deployment of the SafeStreets APIs,
+ so they have to be installed first to be able to correctly configure and
+ run the client
+\end_layout
+
+\begin_layout Itemize
+A web server with PHP support is needed to run and serve the web client
+\end_layout
+
+\begin_layout Subsection
+Steps
+\end_layout
+
+\begin_layout Itemize
+Place the contents of the 
+\family typewriter
+WebClient
+\family default
+ folder in a directory served by your web server.
+\begin_inset Newline newline
+\end_inset
+
+From now on, the URL at which the client is served will be called 
+\emph on
+website
+\emph default
+, and the folder where the files have been placed will be called 
+\emph on
+website directory
+\end_layout
+
+\begin_layout Itemize
+Change the values in the included 
+\family typewriter
+config.php
+\family default
+ file to configure access to deployed APIs
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="middle" width="90text%">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Value to be set
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family typewriter
+$endpoint
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+URL of the deployed APIs endpoint.
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+
+\begin_inset Quotes eld
+\end_inset
+
+https://safestreets.altervista.org/api
+\begin_inset Quotes eld
+\end_inset
+
+
+\family default
+, automatically deployed from the repository, can be used.
+\end_layout
+
+\begin_layout Plain Layout
+The value 
+\series bold
+must not have
+\series default
+ a trailing slash.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+API configuration parameters
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part
+Effort spent
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Part
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Hours
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.
+ Introduction
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.
+ Architectural design
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.
+ User interface design
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.
+ Requirement traceability
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.
+ Implementation, integration and test plan
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Andrea Aspesi's effort spent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Part
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Hours
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.
+ Introduction
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.
+ Architectural design
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.
+ User interface design
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.
+ Requirement traceability
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.
+ Implementation, integration and test plan
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Elia Battiston's effort spent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Part
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Hours
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.
+ Introduction
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.
+ Architectural design
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.
+ User interface design
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.
+ Requirement traceability
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.
+ Implementation, integration and test plan
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Alessandro Carabelli's effort spent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
