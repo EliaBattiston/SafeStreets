@@ -113,10 +113,10 @@
         $target_dir = __DIR__ . "/../reportPictures/".$reportID."/";
         umask(0);
         if (!file_exists($target_dir)) {
-          mkdir($target_dir, 0777, true);
+          mkdir($target_dir, 0775, true);
         }
         if(!is_writable($target_dir)) {
-          chmod($target_dir, 0777);
+          chmod($target_dir, 0775);
         }
 
         $regularLoad = true;

@@ -10,7 +10,7 @@ for($i=1; $i<=4; $i++)
 {
     $target_dir = __DIR__ . "/../reportPictures/". $i ."/";
     if (!file_exists($target_dir)) {
-        mkdir($target_dir, 0777, true);
+        mkdir($target_dir, 0775, true);
       }
 }
 
