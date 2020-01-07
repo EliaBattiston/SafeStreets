@@ -472,6 +472,17 @@ final class AccountsTest extends TestCase
       $this->assertEquals(Accounts::userFiscalCode("testInsertedUser"), "JHNDEO11A45F711H");
       $this->assertTrue(is_file( __DIR__ . "/../userDocumentPhotos/JHNDEO11A45F711H.jpg"));
     }
+
+    public function testNotAuthorizedLogin(): void
+    {
+        $_SERVER["REQUEST_METHOD"] = "POST";
+        unset($_POST);
+        $_POST["username"] = "testInsertedUser";
+        $_POST["password"] = "test";
+        $response = json_decode(executePHP(__DIR__ . "/../accounts/login/index.php"));
+
+        $this->assertEquals($response->result, 403);
+    }
 }
 
 ?>

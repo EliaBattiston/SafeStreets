@@ -12,6 +12,8 @@
     else {
       if($loggedData["suspended"] == true)
         echo json_encode(array("result" => 402, "message" => "User suspended"));
+      else if($loggedData['acceptedTimestamp'] == NULL)
+        echo json_encode(array("result" => 403, "message" => "User not authorized"));
       else
         echo json_encode(array("result" => 200, "content" => $loggedData));
     }
