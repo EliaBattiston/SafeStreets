@@ -47,7 +47,7 @@
                     </div>
                     <div class="eight wide field">
                         <label>Password</label>
-                        <div class="ui input" style="width: 100%;"> <input type="text" name="password" required> </div>
+                        <div class="ui input" style="width: 100%;"> <input type="password" name="password" required> </div>
                     </div>
                 </div>
                 <div class="fields">
