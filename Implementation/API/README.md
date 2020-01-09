@@ -297,6 +297,11 @@ The endpoint provides data about Street Safety.
 GET [endpoint]/mobile/streetSafety/
 ```
 
+| Parameter     | Type    | Required |
+|---------------|---------|----------|
+| username      | string  |    Y     |
+| password      | string  |    Y     |
+
 #### Successfull response
 ```
 {
