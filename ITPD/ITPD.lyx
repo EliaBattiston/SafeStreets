@@ -272,6 +272,22 @@ Scope
 Definitions, Acronyms, Abbreviations
 \end_layout
 
+\begin_layout Itemize
+
+\emph on
+DBMS: 
+\emph default
+DataBase Management System
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+RDBMS:
+\emph default
+ Relational DBMS
+\end_layout
+
 \begin_layout Section
 Revision history
 \end_layout
@@ -374,6 +390,33 @@ literal "false"
 
 \begin_layout Section
 Document structure
+\end_layout
+
+\begin_layout Enumerate
+Brief description of this document, its nomenclature and its purpose.
+\end_layout
+
+\begin_layout Enumerate
+Summary of which functions of the system were actually developed in for
+ this prototype.
+\end_layout
+
+\begin_layout Enumerate
+Description of the development tools and frameworks used to implement the
+ system.
+\end_layout
+
+\begin_layout Enumerate
+Structure of the prototype source code in the repository.
+\end_layout
+
+\begin_layout Enumerate
+Information on how testing was performed, which test cases were considered
+ and the tools used to test the prototype.
+\end_layout
+
+\begin_layout Enumerate
+Reporting of the time spent by each team member while redacting the document.
 \end_layout
 
 \begin_layout Standard
@@ -874,6 +917,19 @@ API configuration parameters
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Add mobile application intallation instructions
 \end_layout
 
 \end_inset
