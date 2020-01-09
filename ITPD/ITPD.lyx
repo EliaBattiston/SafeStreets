@@ -442,6 +442,188 @@ Adopted development frameworks
 \end_layout
 
 \begin_layout Standard
+To develop a client-server application a variety of frameworks can be adopted
+ to ensure a more reliable, updatable and efficent outcome.
+\end_layout
+
+\begin_layout Standard
+SafeStreets can be divided in three main components, each developed using
+ dedicated technologies:
+\end_layout
+
+\begin_layout Itemize
+Mobile Application (Android & iOS)
+\end_layout
+
+\begin_layout Itemize
+Web Application
+\end_layout
+
+\begin_layout Itemize
+Backend
+\end_layout
+
+\begin_layout Paragraph
+Mobile Application
+\end_layout
+
+\begin_layout Standard
+The mobile application has been developed using the cross platform framework
+ “Xamarin Forms”.
+ 
+\end_layout
+
+\begin_layout Standard
+The code is written in a shared C# codebase from which both Android and
+ iOS native applications can be built.
+ The UI is written in XAML, a dedicated language that, thanks to the newes
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Hot Reload
+\begin_inset Quotes erd
+\end_inset
+
+ feature, can be injected in the app while debugging, consisting in a much
+ faster process of interface development.
+\end_layout
+
+\begin_layout Standard
+Xamarin has been chosen in a competition where multiple frameworks could
+ fit the objective.
+ It's strengths are:
+\end_layout
+
+\begin_layout Itemize
+Thanks to a shared codebase it makes implementation much faster than making
+ two different applications (one per platform);
+\end_layout
+
+\begin_layout Itemize
+It maintains the same experience for both the OSs;
+\end_layout
+
+\begin_layout Itemize
+It can be compiled for even more OS (Windows & MacOS) giving more possibilities
+ for the future;
+\end_layout
+
+\begin_layout Itemize
+It is widely used, common problems and procedures are well documented;
+\end_layout
+
+\begin_layout Standard
+On the other end, other choices had other strenghts:
+\end_layout
+
+\begin_layout Itemize
+Native: (PRO) faster, (PRO) more documentation, (CONS) time required;
+\end_layout
+
+\begin_layout Itemize
+React Native: (PRO) faster, (CONS) js, (CONS) updates that break the code,
+\end_layout
+
+\begin_layout Standard
+We also calculated that, for SafeStreets, making a single application that
+ can run on both platforms, will decrease the time spent on the mobile applicati
+on side up to 35%.
+\end_layout
+
+\begin_layout Standard
+In the end, the use of C#, the great documentation and the development time
+ requested where the points that make us choose Xamarin over it's competitors
+\end_layout
+
+\begin_layout Paragraph
+Web Application
+\end_layout
+
+\begin_layout Standard
+The web application is written in PHP, HTML, CSS, JS, using the jQuery library
+ and the SemanticUI development framework for its frontend.
+\end_layout
+
+\begin_layout Standard
+while HTML, CSS, JS are forced choices in a web development, the adoption
+ of PHP, jQuery and SemanticUI has been made for choice.
+\end_layout
+
+\begin_layout Itemize
+PHP: PHP has been choosen as backend script language because it's well known,
+ provides great documentation and it's multithreaded;
+\end_layout
+
+\begin_layout Itemize
+jQuery: plane JS is nowadays easy to use but for Ajax requests nothing is
+ better than jQuery and it's methods;
+\end_layout
+
+\begin_layout Itemize
+SemanticUI: the semplicity, cleanliness and speed of SemanticUI made it
+ the right choice against plain html/css/js (required more time and design
+ skills) and CMS (like Wordpress or Joomla) (lack of speed and personalization
+ to the core).
+ More information at SemanticUI's website
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://semantic-ui.com/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The data will be served following an Ajax approach, accessing data from
+ SafeStreets’ APIs.
+\end_layout
+
+\begin_layout Standard
+The WebApp like the APIs are served through a secured TLS connection (HTTPS)
+ to ensure privacy and security of the communication channel.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Backend
+\end_layout
+
+\begin_layout Standard
+The backend is on a LAMP web service stack.
+\end_layout
+
+\begin_layout Itemize
+PHP: as for the Web App.
+ The version 7.4 has been choosen because it's the actual available version
+ that will be supported longher;
+\end_layout
+
+\begin_layout Itemize
+Apache Web Server: it has been choosen over nginx becouse it handles every
+ request as a different thread;
+\end_layout
+
+\begin_layout Itemize
+Maria DB: the adoption of a Relational Database has been chosen based on
+ the type of data processed by SafeStreets.
+ The SQL language is also useful to handle the statistical data needed by
+ the Safety&Suggestions engine.
+ MariaDB has been chosen because it is open source, widely used and implements
+ the SQL standard language
+\end_layout
+
+\begin_layout Itemize
+Linux has been choosen over Windows.
+ Some of it's PROs are: is free, open source, highly costumizable, faster.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
 
