@@ -81,8 +81,7 @@
       $statement->bind_param("s", $streetAddress);
       $statement->execute();
       $result = $statement->get_result();
-      $streetID = mysqli_fetch_assoc($result)['streetID'];
-      if($streetID != NULL) {
+      if($result != NULL && ($streetID = mysqli_fetch_assoc($result)['streetID']) != NULL) {
         return $streetID;
       }
       else {
