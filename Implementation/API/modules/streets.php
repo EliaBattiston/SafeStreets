@@ -26,7 +26,7 @@
       //Decoding of geocoding answer, filtering of the address
       $response = json_decode($response, true);
       $address = $response['results'][0]['formatted_address'];
-      
+
       //Removal of the street number retrieved from the reverse geocoding
       $address = preg_replace("/(.*)(, \w+,)(.*)/", "$1,$3", $address);
       
@@ -59,6 +59,11 @@
 
       //Decoding of geocoding answer, filtering of the address
       $response = json_decode($response, true);
+
+      if($response['results'][0] == NULL) {
+        echo $address."<br>";
+        var_dump($response);
+      }
 
       $result = [];
       $result['lat'] = $response['results'][0]['geometry']['location']['lat'];

@@ -1,0 +1,7 @@
+Fiscal code: 
+Plate: AA111AA
+Violation type: 1
+Latitude: 45.4312
+Longitude: 9.12584Pictures: 
+
+["dummypicture","dummypicture"]

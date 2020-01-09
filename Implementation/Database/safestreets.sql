@@ -131,7 +131,7 @@ CREATE TABLE suggestionReports(
 */
 
 CREATE TABLE trafficTickets(
-    ticketID BIGINT PRIMARY KEY,
+    ticketID BIGINT AUTO_INCREMENT PRIMARY KEY,
     licensePlate CHAR(7) NOT NULL,
     violation INT NOT NULL,
     street BIGINT NOT NULL,
@@ -150,7 +150,7 @@ CREATE TABLE suggestionTickets(
 */
 
 CREATE TABLE accidents(
-    accidentID BIGINT PRIMARY KEY,
+    accidentID BIGINT AUTO_INCREMENT PRIMARY KEY,
     licensePlate CHAR(7) NOT NULL,
     timestamp TIMESTAMP NOT NULL,
     street BIGINT NOT NULL,
