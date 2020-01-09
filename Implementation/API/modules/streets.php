@@ -81,13 +81,16 @@
       $statement->bind_param("s", $streetAddress);
       $statement->execute();
       $result = $statement->get_result();
-      if($result != NULL && ($streetID = mysqli_fetch_assoc($result)['streetID']) != NULL) {
-        return $streetID;
+      if($result != NULL) {
+        $result_fetch = mysqli_fetch_assoc($result);
+        if($result_fetch != NULL) {
+          $streetID = $result_fetch['streetID'];
+          if($streetID != NULL)
+            return $streetID;
+        }
       }
-      else {
-        //If record is missing creation of the record and retrieval of the created code
-        return self::createStreet($streetAddress);
-      }
+      //If record is missing creation of the record and retrieval of the created code
+      return self::createStreet($streetAddress);
     }
 
     //Insertion of a street in SafeStreets database
