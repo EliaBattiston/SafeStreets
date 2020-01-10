@@ -457,6 +457,99 @@ Automatic check generation
  advanced function discarding the Data analysis and notification one.
 \end_layout
 
+\begin_layout Subsection
+Signup
+\end_layout
+
+\begin_layout Standard
+Users can register providing personal informations and a valid email, choosing
+ a username and a picture of a personal ID.
+ Before granting access, an administrator has to revise the sign-up request.
+\end_layout
+
+\begin_layout Standard
+The request is made through the dedicated form in the mobile app.
+\end_layout
+
+\begin_layout Standard
+Users can also be directly created by an administrator, for example in case
+ of municipality request.
+\end_layout
+
+\begin_layout Subsection
+Report creation
+\end_layout
+
+\begin_layout Standard
+Every enabled user can send a report, choosing the related option in the
+ mobile application.
+\end_layout
+
+\begin_layout Standard
+The application then asks for infraction type (drop-down menu), plate number,
+ notes about the infraction and at least one picture.
+ The position is GPS-retrieved clicking on the related button.
+\end_layout
+
+\begin_layout Standard
+Once filled the form, the user can send the report clicking on the 
+\begin_inset Quotes eld
+\end_inset
+
+Send report
+\begin_inset Quotes erd
+\end_inset
+
+ button.
+\end_layout
+
+\begin_layout Subsection
+Past reports list
+\end_layout
+
+\begin_layout Standard
+As for report creation, users can access the functionality in the mobile
+ application menu.
+\end_layout
+
+\begin_layout Standard
+In there the list of past sent reports is provided, with the possibility
+ to access detailed informations about the report.
+\end_layout
+
+\begin_layout Subsection
+Street Safety
+\end_layout
+
+\begin_layout Standard
+As last function of the mobile application, a map with information about
+ reports, accidents and emitted traffic tickets is available.
+\end_layout
+
+\begin_layout Standard
+Data about accidents and emitted tickets are also retrieved through a dedicated
+ endpoint provided by the municipality.
+\end_layout
+
+\begin_layout Subsection
+Automatic reports sending to police officers
+\end_layout
+
+\begin_layout Standard
+At every report submission the backend automatically associates data about
+ the user who created the report with the report itself and sends the whole
+ data to the municipality endpoint for ticket generation by the police officers.
+\end_layout
+
+\begin_layout Subsection
+User handling
+\end_layout
+
+\begin_layout Standard
+Administrators can access the web backend for user management and eventual
+ suspension/rehabilitation, in addition to new user validation.
+\end_layout
+
 \begin_layout Section
 External Interface
 \end_layout
