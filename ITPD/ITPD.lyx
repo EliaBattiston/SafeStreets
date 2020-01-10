@@ -431,6 +431,200 @@ Implemented requirements & functions
 \end_layout
 
 \begin_layout Standard
+In this part it is exposed which requirements and functions have been developed
+ in the project implementation.
+\end_layout
+
+\begin_layout Standard
+For a better clarity, the order of presentation follows the one used in
+ the RASD document.
+\end_layout
+
+\begin_layout Section
+Implemented functions
+\end_layout
+
+\begin_layout Standard
+All the basic functions have been implemented, as required.
+\end_layout
+
+\begin_layout Standard
+In addition to the basic functions our group has decided to develop the
+ 
+\emph on
+Automatic check generation
+\emph default
+ advanced function discarding the Data analysis and notification one.
+\end_layout
+
+\begin_layout Section
+External Interface
+\end_layout
+
+\begin_layout Subsection
+User interfaces
+\end_layout
+
+\begin_layout Standard
+User interfaces implementation follows the specifications of the RASD mockups
+ and constraints, as planned during the analysis phase.
+\end_layout
+
+\begin_layout Subsubsection
+Mobile application
+\end_layout
+
+\begin_layout Standard
+The mobile application is deployed for Android and iOS platforms, with a
+ total of six pages.
+\end_layout
+
+\begin_layout Standard
+User managing such as password change and logout are collected in the Account
+ Options page (slightly differentiating from the mockups, which designed
+ the options directly in the lateral menu).
+\end_layout
+
+\begin_layout Standard
+Login, Signup, Report and Past Reports are implemented exactly as the mockups,
+ with some minor graphic improvements.
+\end_layout
+
+\begin_layout Standard
+Street Safety page is implemented over a dynamic map as in the related mockup,
+ but due to Xamarin map NuGet limitation it hasn't been possible to highlight
+ the streets with related data in addition to the pointer.
+\end_layout
+
+\begin_layout Standard
+The Report Details page has been added, with more details about the past
+ made report than the reports' list.
+\end_layout
+
+\begin_layout Subsubsection
+Web backend
+\end_layout
+
+\begin_layout Standard
+Web backend implementation follows the mockups provided in the RASD document,
+ just moving the menu bar from the left to the top of the page.
+\end_layout
+
+\begin_layout Standard
+All the required sections have been developed; moreover, a 
+\emph on
+User acceptance
+\emph default
+ section has been added to highlight users waiting for identification and
+ enabling.
+\end_layout
+
+\begin_layout Standard
+It has also been added a page for direct creation of a user and a page with
+ single report details (as for the application).
+\end_layout
+
+\begin_layout Subsection
+Hardware & Software interfaces
+\end_layout
+
+\begin_layout Standard
+As reported in the RASD document, the project doesn't include the development
+ of such interfaces as they are not needed.
+\end_layout
+
+\begin_layout Section
+Functional requirements
+\end_layout
+
+\begin_layout Standard
+All references to requirement codes (marked between square brackets) starting
+ with G (ex.
+ [G1]) refers to requirements of section 2.5 of the RASD document.
+\end_layout
+
+\begin_layout Subsection
+Visitor
+\end_layout
+
+\begin_layout Standard
+As expected, visitors are allowed to download the app through the related
+ app stores and sign-up.
+\end_layout
+
+\begin_layout Paragraph
+Requirements traceability
+\end_layout
+
+\begin_layout Standard
+The function satisfies requirements [G1] and [G2].
+\end_layout
+
+\begin_layout Subsection
+User
+\end_layout
+
+\begin_layout Standard
+The user is enabled to use all the expected functions (Login, Send report,
+ See past reports, See Street Safety) through the mobile app.
+ During login phase, the backend verifies the user acceptance and eventual
+ suspension before allowing access.
+ Every active and validated user can login and use the functionalities of
+ the application regardless of the role.
+\end_layout
+
+\begin_layout Paragraph
+Requirements traceability
+\end_layout
+
+\begin_layout Standard
+The function satisfies requirements [G3], [G4], [G5] and [G6].
+\end_layout
+
+\begin_layout Subsection
+Authority
+\end_layout
+
+\begin_layout Standard
+The authority, as mentioned above, can access and use all the functionalities
+ of a normal user.
+ In addition, the web backend access is granted for whole reports' data
+ access.
+\end_layout
+
+\begin_layout Standard
+The system is also designed to automatically send new report information
+ to the municipality through the municipality provided API with the aim
+ of traffic tickets generation.
+\end_layout
+
+\begin_layout Paragraph
+Requirements traceability
+\end_layout
+
+\begin_layout Standard
+The function satisfies requirements [G6], [G7] and [G8].
+\end_layout
+
+\begin_layout Subsection
+Administrator
+\end_layout
+
+\begin_layout Standard
+Administrator web backend access grants the possibility to vision the user
+ list, to eventually change a user role or suspend a user, and to filter
+ and accept new user requests.
+\end_layout
+
+\begin_layout Paragraph
+Requirements traceability
+\end_layout
+
+\begin_layout Standard
+The function satisfies requirements [G10], [G11], and [G12].
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
 
