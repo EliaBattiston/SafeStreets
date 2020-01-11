@@ -5,6 +5,7 @@
 
 <!--Sytlesheets-->
 <link rel="stylesheet" type="text/css" href="semantic/semantic.min.css" />
+<link rel="stylesheet" type="text/css" href="semantic/semantic-responsive.css" />
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.semanticui.min.css" />
 <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
 
