@@ -1216,6 +1216,60 @@ MobileApp
 \end_layout
 
 \begin_layout Standard
+This folder contains all the code used to implement the SafeStreets Mobile
+ Application.
+\end_layout
+
+\begin_layout Standard
+The Solution file placed in the root of the folder, define the project in
+ Visual Studio.
+\end_layout
+
+\begin_layout Subsection
+SafeStreets folder
+\end_layout
+
+\begin_layout Standard
+The structure of the folder is defined by Visual Studio for a Xamarin Forms
+ Project.
+\end_layout
+
+\begin_layout Subsubsection
+SafeStreets folder
+\end_layout
+
+\begin_layout Standard
+This folder contains the shared C# and XAML code that compiles into the
+ pages of the mobile application.
+\end_layout
+
+\begin_layout Subsubsection
+SafeStreets.Android folder
+\end_layout
+
+\begin_layout Standard
+This folder contains the entry point for the Android application, the Applicatio
+n icons, the Android theme definition and the Android project settings.
+\end_layout
+
+\begin_layout Subsubsection
+SafeStreets.iOS
+\end_layout
+
+\begin_layout Standard
+This folder contains the entry point for the iOS application, the iOS theme
+ definition and the iOS project settings.
+\end_layout
+
+\begin_layout Subsection
+KeystoreAndroid folder
+\end_layout
+
+\begin_layout Standard
+Contains the keystore used for signing the application for Android.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
 
