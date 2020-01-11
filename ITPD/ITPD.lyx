@@ -1144,8 +1144,8 @@ This folder contains all the code used to implement the SafeStreets Web
 \end_layout
 
 \begin_layout Standard
-In the root of the folder, the PHP files which define the layout of every
- page of the client can be found.
+In the root of the folder, the PHP files which define layout and logic of
+ every page of the client can be found.
 \end_layout
 
 \begin_layout Subsection
@@ -1221,8 +1221,8 @@ This folder contains all the code used to implement the SafeStreets Mobile
 \end_layout
 
 \begin_layout Standard
-The Solution file placed in the root of the folder, define the project in
- Visual Studio.
+The Solution file placed in the root of the folder can be opened with Visual
+ Studio.
 \end_layout
 
 \begin_layout Subsection
@@ -1266,7 +1266,8 @@ KeystoreAndroid folder
 \end_layout
 
 \begin_layout Standard
-Contains the keystore used for signing the application for Android.
+Contains the keystore used for signing the application when building and
+ packaging it for Android.
 \end_layout
 
 \begin_layout Standard
