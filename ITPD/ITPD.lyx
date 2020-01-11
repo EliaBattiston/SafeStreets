@@ -264,8 +264,85 @@ Purpose
 This is the Integration Test Plan Document of the SafeStreets project.
 \end_layout
 
+\begin_layout Standard
+The objective of this document is to provide a detailed analysis of the
+ system that has been implemented based on the RASD and on the DD documents.
+\end_layout
+
+\begin_layout Standard
+The description of the architecture of the system, the components it is
+ made of and their interactions, are completely described with the purpose
+ of guiding a developer in the comprehnsion of the implementation of the
+ project.
+\end_layout
+
+\begin_layout Standard
+The addressees of this document are developers looking for a documentation
+ of the development and the testing.
+ Adressees of this document are also users of the platform.
+\end_layout
+
+\begin_layout Standard
+come dev, come test, come uso
+\end_layout
+
 \begin_layout Section
 Scope
+\end_layout
+
+\begin_layout Standard
+Scope of this document is to describe the implementation of a prototype
+ of the SafeStreets system.
+\end_layout
+
+\begin_layout Subsection
+Goal
+\end_layout
+
+\begin_layout Standard
+Goal of the prototype is to mantain all the core functionalities described
+ in the RASD and in the DD.
+ 
+\end_layout
+
+\begin_layout Standard
+Semplifications of the Backend have been made in order to decrease the time-to-m
+arket while maintaining the end-user functionalities
+\end_layout
+
+\begin_layout Subsection
+Changes in deployment
+\end_layout
+
+\begin_layout Standard
+In order to develop the prototype of the SafeStreets system, some changes
+ in the backend has been made.
+ While keeping its user functionalities.
+\end_layout
+
+\begin_layout Standard
+AWS has been completely replaced with an hosting on the Altervista platform.
+\end_layout
+
+\begin_layout Itemize
+Amazon RDS has been replaced with Altervista's default DB;
+\end_layout
+
+\begin_layout Itemize
+Amazon S3 has been replaced with Altervista's storage;
+\end_layout
+
+\begin_layout Itemize
+Amazon EC2 (and its components: the Apache Web Server and the PHP Engine)
+ has been replaced with Altervista's dedicated functionalities;
+\end_layout
+
+\begin_layout Itemize
+Amazon Elastic Load hasn't been replaced;
+\end_layout
+
+\begin_layout Itemize
+Amazon Firewall Manager hasn't been replaced.
 \end_layout
 
 \begin_layout Section
