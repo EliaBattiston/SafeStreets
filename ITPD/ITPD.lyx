@@ -738,7 +738,7 @@ The user is enabled to use all the expected functions (Login, Send report,
  the application regardless of the role.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Requirements traceability
 \end_layout
 
@@ -762,7 +762,7 @@ The system is also designed to automatically send new report information
  of traffic tickets generation.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Requirements traceability
 \end_layout
 
@@ -780,7 +780,7 @@ Administrator web backend access grants the possibility to vision the user
  and accept new user requests.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Requirements traceability
 \end_layout
 
