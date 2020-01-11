@@ -17,7 +17,20 @@
       }
       if($_GET['type'] == "trafficTickets") {
         $tickets = [];
-        $qty = rand(3, 8);
+
+        $pastReports = json_decode(file_get_contents(__DIR__.'/data.txt'), true);
+        if(is_array($pastReports)) {
+          foreach($pastReports as $pastreport) {
+            $ticket = array('plate' => $pastreport['plate'], 'location' => ['lat' => $pastreport['lat'], 'lon' => $pastreport['lon']], 'type' => $pastreport['violation']);
+            if(rand(1, 10) >= 4)
+              array_push($tickets, $ticket);
+          }        
+          file_put_contents(__DIR__.'/data.txt', "");
+        }
+
+
+        $tickets = [];
+        $qty = rand(1, 5);
         for($i = 0; $i < $qty; $i++) {
           $ticket = array('plate' => $plates[rand(0, count($plates) - 1)], 'location' => $locations[rand(0, count($locations) - 1)], 'type' => rand(1, 10));
           array_push($tickets, $ticket);
@@ -56,7 +69,15 @@
       http_response_code(422);
     }
 
-    $data = "Fiscal code: ".$_POST['userFiscalCode']."\nPlate: ".$_POST['plate']."\nViolation type: ".$_POST['violationType']."\nLatitude: ".$_POST['latitude']."\nLongitude: ".$_POST['longitude']."Pictures: \n\n".$_POST['pictures'];
-    file_put_contents(__DIR__.'/data.txt', $data);
+    $pastReports = json_decode(file_get_contents(__DIR__.'/data.txt'), true);
+    if($pastReports == NULL || $pastReports == "") {
+      $pastReports = [];
+    }
+
+    $data = array("fiscal code" => $_POST['userFiscalCode'], "plate" => $_POST['plate'], "violation" => $_POST['violationType'], "lat" => $_POST['latitude'], "lon" => $_POST['longitude']);
+    
+    array_push($pastReports, $data);
+    
+    file_put_contents(__DIR__.'/data.txt', json_encode($pastReports));
   }
 ?>
