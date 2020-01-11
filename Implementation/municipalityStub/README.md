@@ -40,6 +40,11 @@ GET [municipality endpoint]/
   ...
 ]
 ```
+
+### Reports ticket generation
+Reports acquired from SafeStreets can concur in ticket generation.
+At every data request, past received reports are elaborated and included in the tickets list with a probability of 70%.
+
 #### Specific error codes
 
 | Code      | Error                              |
@@ -67,7 +72,8 @@ POST [municipality endpoint]/
 The _pictures_ parameter is a string representing a json array of base64-encoded `.jpg` pictures.
 
 #### Endpoint work control
-For proper function control, parameters passed to the last request to the API are written into _data.txt_ file.
+For proper function control, data about the report are saved into _data.txt_ file (except for the encoded pictures).
+Every time data are acquired from SafeStreets for Street Safety computation, data about past reports are inserted in the traffic ticket part (with a probability of 70% to be included in the tickests list) and the file is cleaned.
 
 
 #### Specific error codes

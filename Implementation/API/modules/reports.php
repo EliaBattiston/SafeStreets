@@ -132,7 +132,7 @@
           //Sending data to municipality
           $_SERVER["REQUEST_METHOD"] = "POST";
           unset($_POST);
-          $_POST["userFiscalCode"] = Accounts::userFiscalCode($username);
+          $_POST["userFiscalCode"] = $username;
           $_POST["plate"] = $plate;
           $_POST["violationType"] = $violationType;
           $_POST["latitude"] = $latitude;
