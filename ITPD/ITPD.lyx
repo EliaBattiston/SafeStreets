@@ -264,8 +264,85 @@ Purpose
 This is the Integration Test Plan Document of the SafeStreets project.
 \end_layout
 
+\begin_layout Standard
+The objective of this document is to provide a detailed analysis of the
+ system that has been implemented based on the RASD and on the DD documents.
+\end_layout
+
+\begin_layout Standard
+The description of the architecture of the system, the components it is
+ made of and their interactions, are completely described with the purpose
+ of guiding a developer in the comprehnsion of the implementation of the
+ project.
+\end_layout
+
+\begin_layout Standard
+The addressees of this document are developers looking for a documentation
+ of the development and the testing.
+ Adressees of this document are also users of the platform.
+\end_layout
+
+\begin_layout Standard
+come dev, come test, come uso
+\end_layout
+
 \begin_layout Section
 Scope
+\end_layout
+
+\begin_layout Standard
+Scope of this document is to describe the implementation of a prototype
+ of the SafeStreets system.
+\end_layout
+
+\begin_layout Subsection
+Goal
+\end_layout
+
+\begin_layout Standard
+Goal of the prototype is to mantain all the core functionalities described
+ in the RASD and in the DD.
+ 
+\end_layout
+
+\begin_layout Standard
+Semplifications of the Backend have been made in order to decrease the time-to-m
+arket while maintaining the end-user functionalities
+\end_layout
+
+\begin_layout Subsection
+Changes in deployment
+\end_layout
+
+\begin_layout Standard
+In order to develop the prototype of the SafeStreets system, some changes
+ in the backend has been made.
+ While keeping its user functionalities.
+\end_layout
+
+\begin_layout Standard
+AWS has been completely replaced with an hosting on the Altervista platform.
+\end_layout
+
+\begin_layout Itemize
+Amazon RDS has been replaced with Altervista's default DB;
+\end_layout
+
+\begin_layout Itemize
+Amazon S3 has been replaced with Altervista's storage;
+\end_layout
+
+\begin_layout Itemize
+Amazon EC2 (and its components: the Apache Web Server and the PHP Engine)
+ has been replaced with Altervista's dedicated functionalities;
+\end_layout
+
+\begin_layout Itemize
+Amazon Elastic Load hasn't been replaced;
+\end_layout
+
+\begin_layout Itemize
+Amazon Firewall Manager hasn't been replaced.
 \end_layout
 
 \begin_layout Section
@@ -439,6 +516,193 @@ Implemented requirements & functions
 
 \begin_layout Part
 Adopted development frameworks
+\end_layout
+
+\begin_layout Standard
+To develop a client-server application a variety of frameworks can be adopted
+ to ensure a more reliable, updatable and efficent outcome.
+\end_layout
+
+\begin_layout Standard
+SafeStreets can be divided in three main components, each developed using
+ dedicated technologies:
+\end_layout
+
+\begin_layout Itemize
+Mobile Application (Android & iOS)
+\end_layout
+
+\begin_layout Itemize
+Web Application
+\end_layout
+
+\begin_layout Itemize
+Backend
+\end_layout
+
+\begin_layout Paragraph
+Mobile Application
+\end_layout
+
+\begin_layout Standard
+The mobile application has been developed using the cross platform framework
+ “Xamarin Forms”.
+ 
+\end_layout
+
+\begin_layout Standard
+The code is written in a shared C# codebase from which both Android and
+ iOS native applications can be built.
+ The UI is written in XAML, a language created for this purpose that, thanks
+ to the newest 
+\begin_inset Quotes eld
+\end_inset
+
+Hot Reload
+\begin_inset Quotes erd
+\end_inset
+
+ feature, can show changes in the UI while the app is running in debug mode,
+ consisting in a much faster process of interface development.
+\end_layout
+
+\begin_layout Standard
+Xamarin has been chosen in a competition where multiple frameworks could
+ fit the objective.
+ Its strengths are:
+\end_layout
+
+\begin_layout Itemize
+Thanks to a shared codebase it makes implementation much faster than making
+ two different applications (one per platform);
+\end_layout
+
+\begin_layout Itemize
+It maintains the same experience for both the OSs;
+\end_layout
+
+\begin_layout Itemize
+It can be compiled for even more OSs (Windows & MacOS) giving more possibilities
+ for the future;
+\end_layout
+
+\begin_layout Itemize
+It is widely used, common problems and procedures are well documented.
+\end_layout
+
+\begin_layout Standard
+On the other end, other choices had other strenghts:
+\end_layout
+
+\begin_layout Itemize
+Native: (PRO) faster, (PRO) more documentation, (CONS) time required;
+\end_layout
+
+\begin_layout Itemize
+React Native: (PRO) faster, (CONS) js, (CONS) updates that break the code.
+\end_layout
+
+\begin_layout Standard
+We also calculated that, for SafeStreets, making a single application that
+ can run on both platforms, will decrease the time spent on the mobile applicati
+on side up to 35%.
+\end_layout
+
+\begin_layout Standard
+In the end, the use of C#, the great documentation and the development time
+ requested where the points that make us choose Xamarin over its competitors
+\end_layout
+
+\begin_layout Paragraph
+Web Application
+\end_layout
+
+\begin_layout Standard
+The web application is written in PHP, HTML, CSS, JS, using the jQuery library
+ and the SemanticUI development framework for its frontend.
+\end_layout
+
+\begin_layout Standard
+While HTML, CSS, JS are forced choices in web development, the adoption
+ of PHP, jQuery and SemanticUI has been choosen for the following reasons:
+\end_layout
+
+\begin_layout Itemize
+PHP: PHP has been choosen as the backend script language because it's widely
+ used, well known by the developers, provides great documentation and it's
+ multithreaded;
+\end_layout
+
+\begin_layout Itemize
+jQuery: plain JS is nowadays easy to use but for Ajax requests nothing is
+ better than jQuery and its methods;
+\end_layout
+
+\begin_layout Itemize
+SemanticUI: the semplicity, cleanliness and speed of SemanticUI made it
+ the right choice against plain html/css/js (required more time and design
+ skills) and CMSs like Wordpress or Joomla lack of speed and personalization
+ to the core.
+\begin_inset Newline newline
+\end_inset
+
+Its most useful feature is the ability to express complex UI layouts just
+ by appending natural language-like attributes to HTML entities.
+\begin_inset Newline newline
+\end_inset
+
+More information at SemanticUI's website
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://semantic-ui.com/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The WebApp like the APIs are served through a secured TLS connection (HTTPS)
+ to ensure privacy and security of the communication channel.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Backend
+\end_layout
+
+\begin_layout Standard
+The backend is on a LAMP web service stack.
+\end_layout
+
+\begin_layout Itemize
+PHP: as for the Web App.
+ The version 7.4 has been choosen because it's the actual available version
+ that will be supported longer;
+\end_layout
+
+\begin_layout Itemize
+Apache Web Server: it has been chosen over nginx because it handles every
+ request as a different thread;
+\end_layout
+
+\begin_layout Itemize
+Maria DB: the adoption of a Relational Database has been chosen based on
+ the type of data processed by SafeStreets.
+ The SQL language is also useful to handle the statistical data needed by
+ the Safety&Suggestions engine.
+ MariaDB has been chosen because it is open source, widely used and implements
+ the SQL standard language
+\end_layout
+
+\begin_layout Itemize
+Linux has been choosen over Windows.
+ Some of its PROs are: it is free, open source, highly costumizable and
+ faster.
 \end_layout
 
 \begin_layout Standard

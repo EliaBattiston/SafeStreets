@@ -260,11 +260,11 @@
           $elaboratedData[$j]['content'] = "SafeStreets reports: ".$reports.", accidents: ".$accidents.", emitted traffic tickets: ".$tickets;
 
           $sum = $reports + $accidents + $tickets;
-          if($sum >= 4) {
+          if($sum >= 25) {
             $elaboratedData[$j]['severity'] = "High";
           }
           else {
-            if($sum >= 3) {
+            if($sum >= 12) {
               $elaboratedData[$j]['severity'] = "Medium";
             }
             else {
