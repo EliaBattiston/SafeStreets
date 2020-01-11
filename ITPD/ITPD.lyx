@@ -282,10 +282,6 @@ The addressees of this document are developers looking for a documentation
  Adressees of this document are also users of the platform.
 \end_layout
 
-\begin_layout Standard
-come dev, come test, come uso
-\end_layout
-
 \begin_layout Section
 Scope
 \end_layout
@@ -307,7 +303,7 @@ Goal of the prototype is to mantain all the core functionalities described
 
 \begin_layout Standard
 Semplifications of the Backend have been made in order to decrease the time-to-m
-arket while maintaining the end-user functionalities
+arket while maintaining the end-user functionalities.
 \end_layout
 
 \begin_layout Subsection
@@ -316,8 +312,7 @@ Changes in deployment
 
 \begin_layout Standard
 In order to develop the prototype of the SafeStreets system, some changes
- in the backend has been made.
- While keeping its user functionalities.
+ in the backend has been made while keeping its user functionalities.
 \end_layout
 
 \begin_layout Standard
@@ -520,7 +515,7 @@ Adopted development frameworks
 
 \begin_layout Standard
 To develop a client-server application a variety of frameworks can be adopted
- to ensure a more reliable, updatable and efficent outcome.
+ to ensure a more reliable, updatable and efficient outcome.
 \end_layout
 
 \begin_layout Standard
@@ -591,7 +586,7 @@ It is widely used, common problems and procedures are well documented.
 \end_layout
 
 \begin_layout Standard
-On the other end, other choices had other strenghts:
+On the other end, other choices had other strengths:
 \end_layout
 
 \begin_layout Itemize
@@ -624,11 +619,11 @@ The web application is written in PHP, HTML, CSS, JS, using the jQuery library
 
 \begin_layout Standard
 While HTML, CSS, JS are forced choices in web development, the adoption
- of PHP, jQuery and SemanticUI has been choosen for the following reasons:
+ of PHP, jQuery and SemanticUI has been chosen for the following reasons:
 \end_layout
 
 \begin_layout Itemize
-PHP: PHP has been choosen as the backend script language because it's widely
+PHP: PHP has been chosen as the backend script language because it's widely
  used, well known by the developers, provides great documentation and it's
  multithreaded;
 \end_layout
@@ -639,8 +634,8 @@ jQuery: plain JS is nowadays easy to use but for Ajax requests nothing is
 \end_layout
 
 \begin_layout Itemize
-SemanticUI: the semplicity, cleanliness and speed of SemanticUI made it
- the right choice against plain html/css/js (required more time and design
+SemanticUI: the simplicity, cleanliness and speed of SemanticUI made it
+ the right choice against plain HTML/CSS/JS (required more time and design
  skills) and CMSs like Wordpress or Joomla lack of speed and personalization
  to the core.
 \begin_inset Newline newline
