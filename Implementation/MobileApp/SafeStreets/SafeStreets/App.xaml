@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SafeStreets.App">
+
+    <Application.Resources>
+        <Color x:Key="PageBackgroundColor">White</Color>
+        <Color x:Key="ButtonBackgroundColor">#336699</Color>
+        <Color x:Key="ButtonTextColor">White</Color>
+        <Color x:Key="InfoTextColor">#086375</Color>
+        <Color x:Key="WarningTextColor">#EE6352</Color>
+        <Color x:Key="NavbarColor">#0C8346</Color>
+        <Color x:Key="AttentionColor">#FAC05E</Color>
+        
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="{StaticResource NavbarColor}"/>
+            <Setter Property="BarTextColor" Value="Color.White"/>
+        </Style>
+
+        <ResourceDictionary>
+            <!--Global Styles-->
+            <Color x:Key="NavigationPrimary">#0C8346</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

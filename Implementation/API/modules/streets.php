@@ -26,7 +26,7 @@
       //Decoding of geocoding answer, filtering of the address
       $response = json_decode($response, true);
       $address = $response['results'][0]['formatted_address'];
-      
+
       //Removal of the street number retrieved from the reverse geocoding
       $address = preg_replace("/(.*)(, \w+,)(.*)/", "$1,$3", $address);
       
@@ -60,6 +60,11 @@
       //Decoding of geocoding answer, filtering of the address
       $response = json_decode($response, true);
 
+      if($response['results'][0] == NULL) {
+        echo $address."<br>";
+        var_dump($response);
+      }
+
       $result = [];
       $result['lat'] = $response['results'][0]['geometry']['location']['lat'];
       $result['lng'] = $response['results'][0]['geometry']['location']['lng'];
@@ -76,14 +81,16 @@
       $statement->bind_param("s", $streetAddress);
       $statement->execute();
       $result = $statement->get_result();
-      $streetID = mysqli_fetch_assoc($result)['streetID'];
-      if($streetID != NULL) {
-        return $streetID;
+      if($result != NULL) {
+        $result_fetch = mysqli_fetch_assoc($result);
+        if($result_fetch != NULL) {
+          $streetID = $result_fetch['streetID'];
+          if($streetID != NULL)
+            return $streetID;
+        }
       }
-      else {
-        //If record is missing creation of the record and retrieval of the created code
-        return self::createStreet($streetAddress);
-      }
+      //If record is missing creation of the record and retrieval of the created code
+      return self::createStreet($streetAddress);
     }
 
     //Insertion of a street in SafeStreets database

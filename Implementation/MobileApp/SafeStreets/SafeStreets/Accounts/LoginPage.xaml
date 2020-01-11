@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SafeStreets.LoginPage"
+             Padding="8,10,8,0"
+             Title="SafeStreets"
+             BackgroundColor="White"> 
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="White">
+            <Image x:Name="xLogoImage" WidthRequest="200" HeightRequest="200"/>
+            <Entry x:Name="xUsername" Placeholder="Username" Keyboard="Plain"/>
+            <Entry x:Name="xPassword" Placeholder="Password" IsPassword="true" />
+            <Button x:Name="xLoginButton"
+                    Text="Log In"
+                    TextColor="{StaticResource ButtonTextColor}" 
+                    BackgroundColor="{StaticResource ButtonBackgroundColor}"
+                    Clicked="OnLoginButtonClicked" 
+                    CornerRadius="10"/>
+
+            <StackLayout VerticalOptions="EndAndExpand" Padding="0,10,0,20">
+                <Button
+                    Text="Restore Credentials"
+                    Clicked="OnRestoreCredentialClicked" 
+                    BorderColor="{StaticResource ButtonBackgroundColor}" 
+                    BorderWidth="2" 
+                    CornerRadius="10"
+                    TextColor="{StaticResource ButtonBackgroundColor}" 
+                    BackgroundColor="White"
+                    HeightRequest="40"/>
+                <Button
+                    Text="Sign Up"
+                    Clicked="OnSignUpClicked" 
+                    BorderColor="{StaticResource ButtonBackgroundColor}" 
+                    BorderWidth="2" 
+                    CornerRadius="10"
+                    TextColor="{StaticResource ButtonBackgroundColor}" 
+                    BackgroundColor="White"
+                    HeightRequest="40"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

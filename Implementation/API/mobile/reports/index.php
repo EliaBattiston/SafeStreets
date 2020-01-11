@@ -59,7 +59,7 @@
       $pictureList = str_replace(" ","+" , json_decode($_POST['pictures'], true));
       $fiscalCode = Accounts::userFiscalCode($_POST['username']);
 
-      $reportResult = Reports::createReport($fiscalCode, $_POST['plate'], $_POST['violationType'], $_POST['latitude'], $_POST['longitude'], $pictureList);
+      $reportResult = Reports::createReport($fiscalCode, $_POST['plate'], $_POST['violationType'], str_replace(",", ".", $_POST['latitude']), str_replace(",", ".", $_POST['longitude']), $pictureList);
 
       if($reportResult == 404) {
         echo json_encode(array("result" => 404, "message" => "Invalid parameters"));

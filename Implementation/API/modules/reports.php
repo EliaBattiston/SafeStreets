@@ -1,5 +1,6 @@
 <?php
   include_once(__DIR__."/streets.php");
+  include_once(__DIR__."/accounts.php");
 
   class Reports{
     //Generic SQL query for reports data retrieval
@@ -126,8 +127,26 @@
           $regularLoad = $regularLoad && file_put_contents($target_file, base64_decode($pictureList[$i]));
         }
 
-        if($regularLoad)
+        if($regularLoad) {
+
+          //Sending data to municipality
+          $_SERVER["REQUEST_METHOD"] = "POST";
+          unset($_POST);
+          $_POST["userFiscalCode"] = $username;
+          $_POST["plate"] = $plate;
+          $_POST["violationType"] = $violationType;
+          $_POST["latitude"] = $latitude;
+          $_POST["longitude"] = $longitude;
+          $_POST["pictures"] = json_encode($pictureList);
+          ob_start();
+          
+          //For real deployment substitute the string with the municipality endpoint
+          $url = __DIR__."/../../municipalityStub/index.php";
+          require($url);
+          ob_get_clean();
+
           return 200;
+        }
         else {
           self::deleteReport($reportID);
           return 405;
@@ -147,9 +166,55 @@
       $statement->execute();
     }
 
+    private static function executeMunicipalityCall($type){
+      $_SERVER["REQUEST_METHOD"] = "GET";
+      unset($_GET);
+      $_GET["type"] = $type;
+      ob_start();
+      
+      //For real deployment substitute the string with the municipality endpoint
+      $url = __DIR__."/../../municipalityStub/index.php";
+
+      require($url);
+      return json_decode(ob_get_clean(), true);
+    }
+
+    private static function getAccidentsFromMunicipality() {
+      global $_CONFIG;
+      $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
+
+      $statement = $DBconn->prepare("INSERT INTO accidents (licensePlate, street) VALUES (?, ?)");
+
+      $municipalityData = self::executeMunicipalityCall("accidents");
+
+      foreach($municipalityData as $datum) {
+        $streetCode = Streets::getStreet($datum['location']['lat'], $datum['location']['lon']);
+        $statement->bind_param("ss", $datum['plate'], $streetCode);
+        $statement->execute();
+      }
+    }
+
+    private static function getTrafficTicketsFromMunicipality() {
+      global $_CONFIG;
+      $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
+
+      $statement = $DBconn->prepare("INSERT INTO trafficTickets (licensePlate, street, violation) VALUES (?, ?, ?)");
+
+      $municipalityData = self::executeMunicipalityCall("trafficTickets");
+
+      foreach($municipalityData as $datum) {
+        $streetCode = Streets::getStreet($datum['location']['lat'], $datum['location']['lon']);
+        $statement->bind_param("sss", $datum['plate'], $streetCode, $datum['type']);
+        $statement->execute();
+      }
+    }
+
     public static function streetSafety() {
       global $_CONFIG;
       $DBconn = new mysqli($_CONFIG['host'], $_CONFIG['user'], $_CONFIG['pass'], $_CONFIG['dbname']) or die('Connection error');
+
+      self::getAccidentsFromMunicipality();
+      self::getTrafficTicketsFromMunicipality();
 
       $statement = $DBconn->prepare("
         SELECT name, reportsNum, accidentsNum, trafficticketsNum
@@ -179,30 +244,34 @@
       $reportsCount = $result->fetch_all(MYSQLI_ASSOC);
 
       $elaboratedData = [];
-      for($i = 0; $i < count($reportsCount); $i++) {
+      for($i = 0, $j = 0; $i < count($reportsCount); $i++) {
         $report = $reportsCount[$i];
-        $elaboratedData[$i] = [];
-        $elaboratedData[$i]['address'] = $report['name'];
         $coordinates = Streets::getStreetCoordinates($report['name']);
-        $elaboratedData[$i]['latitude'] = $coordinates['lat'];
-        $elaboratedData[$i]['longitude'] = $coordinates['lng'];
+        if($coordinates['lat'] != NULL && $coordinates['lng'] != NULL) {
+          $elaboratedData[$j] = [];
+          $elaboratedData[$j]['address'] = $report['name'];
+          
+          $elaboratedData[$j]['latitude'] = $coordinates['lat'];
+          $elaboratedData[$j]['longitude'] = $coordinates['lng'];
 
-        $reports = $report['reportsNum'] == NULL ? 0 : $report['reportsNum'];
-        $accidents = $report['accidentsNum'] == NULL ? 0 : $report['accidentsNum'];
-        $tickets = $report['trafficticketsNum'] == NULL ? 0 : $report['trafficticketsNum'];
-        $elaboratedData[$i]['content'] = "SafeStreets reports: ".$reports.", accidents: ".$accidents.", emitted traffic tickets: ".$tickets;
+          $reports = $report['reportsNum'] == NULL ? 0 : $report['reportsNum'];
+          $accidents = $report['accidentsNum'] == NULL ? 0 : $report['accidentsNum'];
+          $tickets = $report['trafficticketsNum'] == NULL ? 0 : $report['trafficticketsNum'];
+          $elaboratedData[$j]['content'] = "SafeStreets reports: ".$reports.", accidents: ".$accidents.", emitted traffic tickets: ".$tickets;
 
-        $sum = $reports + $accidents + $tickets;
-        if($sum >= 4) {
-          $elaboratedData[$i]['severity'] = "High";
-        }
-        else {
-          if($sum >= 3) {
-            $elaboratedData[$i]['severity'] = "Medium";
+          $sum = $reports + $accidents + $tickets;
+          if($sum >= 25) {
+            $elaboratedData[$j]['severity'] = "High";
           }
           else {
-            $elaboratedData[$i]['severity'] = "Low";
+            if($sum >= 12) {
+              $elaboratedData[$j]['severity'] = "Medium";
+            }
+            else {
+              $elaboratedData[$j]['severity'] = "Low";
+            }
           }
+          $j++;
         }
       }
 

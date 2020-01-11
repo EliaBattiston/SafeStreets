@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SafeStreets.PastReportDetailPage"
+             Title="Report Details"
+             Padding="10"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Name="CloseModalItem"
+            Activated="OnCloseModalClicked"
+            Order="Primary"
+            Priority="0"
+            Text="Close" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Violation!" x:Name="xTypologyLabel" FontSize="Large" FontAttributes="Bold" TextColor="Black"/>
+            <Label Text="Address!" x:Name="xAddressLabel"/>
+            <Label Text="Datetime!" x:Name="xDateTimeLabel" />  
+            <Label Text="LicensePlate!" x:Name="xLicensePlateLabel" />
+            <Label Text="Notes!" x:Name="xNotesLabel" />
+            <Label Text="Pictures:" TextColor="Black" FontSize="Medium"/>
+            <Label Text="No picture available" x:Name="xNoPicAvailable" IsVisible="False"/>
+            <CarouselView PeekAreaInsets="20" x:Name="xCarouselView" HeightRequest="250" >
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame BorderColor="{StaticResource ButtonBackgroundColor}" Margin="10" HasShadow="False" HeightRequest="200" CornerRadius="10" VerticalOptions="CenterAndExpand" WidthRequest="200">
+                                <StackLayout>
+                                    <Image Source="{Binding .}" HeightRequest="200"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <maps:Map x:Name="xDetailReportMap" MapType="Street"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

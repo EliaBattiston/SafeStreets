@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SafeStreets.RegistrationPage"
+             Title="Registration">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Name="CloseModalItem"
+            Activated="OnCloseModalClicked"
+            Order="Primary"
+            Priority="0"
+            Text="Close" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout x:Name="xLoader" IsVisible="False" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label Text="Loading..." FontSize="Large" FontAttributes="Bold"/>
+                    <ActivityIndicator Color="{StaticResource ButtonBackgroundColor}" IsRunning="True"/>
+                </StackLayout>
+                
+                <StackLayout x:Name="xForm" Padding="10" IsVisible="True">
+                <Label Text="Fill the form to sign up:" FontSize="Large" FontAttributes="Bold" TextColor="Black"/>
+                <Entry Placeholder="Email" x:Name="xEmailEntry"/>
+                <Entry Placeholder="Username" x:Name="xUsernameEntry"/>
+                <Entry Placeholder="Fiscal Code" x:Name="xFiscalCodeEntry"/>
+                <Entry Placeholder="First Name" x:Name="xFirstNameEntry"/>
+                <Entry Placeholder="Last Name" x:Name="xLastNameEntry"/>
+                <Entry Placeholder="Password" x:Name="xPasswordEntry" IsPassword="True"/>
+
+                <Label Text="ID Picture:" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+                <Image x:Name="xPhotoImage" HeightRequest="300" IsVisible="False"/>
+                <Button x:Name="xCameraButton"
+                        Text="Take Picture" 
+                        Clicked="onCameraButtonClicked"
+                        BorderColor="{StaticResource ButtonBackgroundColor}" 
+                        BorderWidth="2" 
+                        CornerRadius="10"
+                        TextColor="{StaticResource ButtonBackgroundColor}" 
+                        BackgroundColor="White"/>
+
+                <Button Text="Sign Up" 
+                        Clicked="OnSignUpClicked" 
+                        BackgroundColor="{StaticResource ButtonBackgroundColor}" 
+                        TextColor="White" 
+                        Margin="0,15,0,0"
+                        CornerRadius="10"/>
+            </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
