@@ -36,7 +36,7 @@ namespace SafeStreets
                 //lista dei pulsanti che devo vedere sul menu
                 MenuItems = new ObservableCollection<MasterDetailMenuItem>(new[]
                 {
-                    new MasterDetailMenuItem { Id = 0, Title = "🧾 Report", TargetType = typeof(MasterDetailDetail) },
+                    new MasterDetailMenuItem { Id = 0, Title = "🏠 Report", TargetType = typeof(MasterDetailDetail) },
                     new MasterDetailMenuItem { Id = 1, Title = "🗓️ Past Reports", TargetType = typeof(PastReportsPage) },
                     new MasterDetailMenuItem { Id = 2, Title = "🛣️ Streets Safety", TargetType = typeof(StreetsSafetyMapPage) },
                     new MasterDetailMenuItem { Id = 3, Title = "⚙️ Account Options", TargetType = typeof(OptionsPage) },

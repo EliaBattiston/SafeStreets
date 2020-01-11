@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="2" android:versionName="1.1" package="com.andreaaspesi.safestreets" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="3" android:versionName="1.1.1" package="com.andreaaspesi.safestreets" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="18" android:targetSdkVersion="27" />
 	<application android:label="SafeStreets.Android" android:icon="@drawable/icon" android:roundIcon="@drawable/icon">
 		<!--<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyA1ZtjS5-4YHw-sECE5mJQPX8UvTmhLA4U" />-->

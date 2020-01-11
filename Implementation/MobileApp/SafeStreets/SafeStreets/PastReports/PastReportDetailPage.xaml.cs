@@ -35,8 +35,8 @@ namespace SafeStreets
 			Pin reportPos = new Pin
 			{
 				Position = position,
-				Label = "Titolo",
-				Address = "StoriellaBellaBella",
+				Label = report.violation,
+				Address = report.address,
 				Type = PinType.SavedPin
 			};
 			xDetailReportMap.Pins.Add(reportPos);
