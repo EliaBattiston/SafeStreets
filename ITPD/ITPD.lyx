@@ -796,6 +796,12 @@ The function satisfies requirements [G10], [G11], and [G12].
 \end_layout
 
 \begin_layout Part
+\begin_inset CommandInset label
+LatexCommand label
+name "part:Adopted-development-frameworks"
+
+\end_inset
+
 Adopted development frameworks
 \end_layout
 
@@ -998,6 +1004,218 @@ Source code structure
 \end_layout
 
 \begin_layout Standard
+The source code, placed in the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Implementation"
+target "https://github.com/EliaBattiston/AspesiBattistonCarabelli/tree/master/Implementation"
+literal "false"
+
+\end_inset
+
+ folder of the repository, is split in different folders which reflect the
+ component the code belongs to.
+\end_layout
+
+\begin_layout Section
+Database
+\end_layout
+
+\begin_layout Standard
+This folder contains the files which define SafeStreet's database structure
+ (
+\family typewriter
+safestreets.sql
+\family default
+) and data used in test cases (
+\family typewriter
+test.sql
+\family default
+).
+\end_layout
+
+\begin_layout Section
+API
+\end_layout
+
+\begin_layout Standard
+This folder contains all the code which implements SafeStreets APIs.
+\end_layout
+
+\begin_layout Standard
+In its root, 
+\family typewriter
+config.php
+\family default
+ can be used to set the database settings to be used.
+ For more information, see the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "part:Installation-instructions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ part.
+\end_layout
+
+\begin_layout Subsection
+Modules folder
+\end_layout
+
+\begin_layout Standard
+This folder contains PHP files which define the classes used to manage access
+ to database data in a standardized way across APIs.
+\end_layout
+
+\begin_layout Subsection
+Actual APIs folders
+\end_layout
+
+\begin_layout Standard
+The 
+\family typewriter
+accounts
+\family default
+, 
+\family typewriter
+mobile
+\family default
+ and 
+\family typewriter
+web
+\family default
+ folders contain PHP files which will be accessible through the APIs endpoint
+ and implement the endpoint functionality.
+\end_layout
+
+\begin_layout Subsection
+Tests folder
+\end_layout
+
+\begin_layout Standard
+This folder contains PHP files implementing every API test with the support
+ of PHPUnit.
+ For more information see the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "part:Testing"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ part.
+\end_layout
+
+\begin_layout Section
+MunicipalityStub
+\end_layout
+
+\begin_layout Standard
+This folder contains the single PHP file used to simulate the endpoint of
+ the municipality APIs, used for testing purposes.
+\end_layout
+
+\begin_layout Standard
+For more information see the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Municipality-Stub"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ section.
+\end_layout
+
+\begin_layout Section
+WebClient
+\end_layout
+
+\begin_layout Standard
+This folder contains all the code used to implement the SafeStreets Web
+ client backend.
+\end_layout
+
+\begin_layout Standard
+In the root of the folder, the PHP files which define the layout of every
+ page of the client can be found.
+\end_layout
+
+\begin_layout Subsection
+Components folder
+\end_layout
+
+\begin_layout Standard
+This folder contains PHP files implementing recurrent layout or logic elements
+ to be included by several client pages.
+\end_layout
+
+\begin_layout Standard
+For example, 
+\family typewriter
+header.php
+\family default
+ defines the content of the 
+\family typewriter
+header
+\family default
+ element for all the pages, which includes CSS and JS files.
+\end_layout
+
+\begin_layout Subsection
+Images folder
+\end_layout
+
+\begin_layout Standard
+This folder contains images used in the web client pages
+\end_layout
+
+\begin_layout Subsection
+Semantic folder
+\end_layout
+
+\begin_layout Standard
+This folder contains the CSS and JS libraries of the SemanticUI framework,
+ used to define the pages structures.
+\end_layout
+
+\begin_layout Standard
+For more information see the 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "part:Adopted-development-frameworks"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ part.
+\end_layout
+
+\begin_layout Subsection
+Src folder
+\end_layout
+
+\begin_layout Standard
+This folder contains PHP files implementing the execution of actions from
+ the pages of the web client.
+ These pages will try to execute the requested actions by contacting the
+ APIs and redirect the request accordingly.
+\end_layout
+
+\begin_layout Section
+MobileApp
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
 
@@ -1005,6 +1223,12 @@ Source code structure
 \end_layout
 
 \begin_layout Part
+\begin_inset CommandInset label
+LatexCommand label
+name "part:Testing"
+
+\end_inset
+
 Testing
 \end_layout
 
@@ -11092,6 +11316,12 @@ All data regarding the user's credential is deleted from local storage (cookies)
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Municipality-Stub"
+
+\end_inset
+
 Municipality Stub
 \end_layout
 
@@ -11147,6 +11377,12 @@ https://safestreets.altervista.org/municipalityStub/index.php
 \end_layout
 
 \begin_layout Part
+\begin_inset CommandInset label
+LatexCommand label
+name "part:Installation-instructions"
+
+\end_inset
+
 Installation instructions
 \end_layout
 
@@ -11883,7 +12119,7 @@ Hours
 
 \begin_layout Plain Layout
 1.
- Introduction
+ API development
 \end_layout
 
 \end_inset
@@ -11892,7 +12128,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0
 \end_layout
 
 \end_inset
@@ -11904,7 +12140,7 @@ Hours
 
 \begin_layout Plain Layout
 2.
- Architectural design
+ Web client development
 \end_layout
 
 \end_inset
@@ -11913,7 +12149,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0
 \end_layout
 
 \end_inset
@@ -11925,7 +12161,7 @@ Hours
 
 \begin_layout Plain Layout
 3.
- User interface design
+ Mobile application development
 \end_layout
 
 \end_inset
@@ -11934,7 +12170,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+15
 \end_layout
 
 \end_inset
@@ -11946,7 +12182,7 @@ Hours
 
 \begin_layout Plain Layout
 4.
- Requirement traceability
+ DevOps
 \end_layout
 
 \end_inset
@@ -11955,7 +12191,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0
 \end_layout
 
 \end_inset
@@ -11967,7 +12203,7 @@ Hours
 
 \begin_layout Plain Layout
 5.
- Implementation, integration and test plan
+ Document
 \end_layout
 
 \end_inset
@@ -11976,7 +12212,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+3
 \end_layout
 
 \end_inset
@@ -12049,7 +12285,7 @@ Hours
 
 \begin_layout Plain Layout
 1.
- Introduction
+ API development
 \end_layout
 
 \end_inset
@@ -12058,7 +12294,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+9
 \end_layout
 
 \end_inset
@@ -12070,7 +12306,7 @@ Hours
 
 \begin_layout Plain Layout
 2.
- Architectural design
+ Web client development
 \end_layout
 
 \end_inset
@@ -12079,7 +12315,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+11
 \end_layout
 
 \end_inset
@@ -12091,7 +12327,7 @@ Hours
 
 \begin_layout Plain Layout
 3.
- User interface design
+ Mobile application development
 \end_layout
 
 \end_inset
@@ -12100,7 +12336,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0
 \end_layout
 
 \end_inset
@@ -12112,7 +12348,7 @@ Hours
 
 \begin_layout Plain Layout
 4.
- Requirement traceability
+ DevOps
 \end_layout
 
 \end_inset
@@ -12121,7 +12357,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+3
 \end_layout
 
 \end_inset
@@ -12133,7 +12369,7 @@ Hours
 
 \begin_layout Plain Layout
 5.
- Implementation, integration and test plan
+ Document
 \end_layout
 
 \end_inset
@@ -12142,7 +12378,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+4.5
 \end_layout
 
 \end_inset
@@ -12215,7 +12451,7 @@ Hours
 
 \begin_layout Plain Layout
 1.
- Introduction
+ API development
 \end_layout
 
 \end_inset
@@ -12224,7 +12460,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+12
 \end_layout
 
 \end_inset
@@ -12236,7 +12472,7 @@ Hours
 
 \begin_layout Plain Layout
 2.
- Architectural design
+ Web client development
 \end_layout
 
 \end_inset
@@ -12245,7 +12481,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0
 \end_layout
 
 \end_inset
@@ -12257,7 +12493,7 @@ Hours
 
 \begin_layout Plain Layout
 3.
- User interface design
+ Mobile application development
 \end_layout
 
 \end_inset
@@ -12266,7 +12502,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0
 \end_layout
 
 \end_inset
@@ -12278,7 +12514,7 @@ Hours
 
 \begin_layout Plain Layout
 4.
- Requirement traceability
+ DevOps
 \end_layout
 
 \end_inset
@@ -12287,7 +12523,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1
 \end_layout
 
 \end_inset
@@ -12299,7 +12535,7 @@ Hours
 
 \begin_layout Plain Layout
 5.
- Implementation, integration and test plan
+ Document
 \end_layout
 
 \end_inset
@@ -12308,7 +12544,7 @@ Hours
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2
 \end_layout
 
 \end_inset
