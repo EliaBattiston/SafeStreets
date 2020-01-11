@@ -476,8 +476,8 @@ The mobile application has been developed using the cross platform framework
 \begin_layout Standard
 The code is written in a shared C# codebase from which both Android and
  iOS native applications can be built.
- The UI is written in XAML, a dedicated language that, thanks to the newes
- 
+ The UI is written in XAML, a language created for this purpose that, thanks
+ to the newest 
 \begin_inset Quotes eld
 \end_inset
 
@@ -485,14 +485,14 @@ Hot Reload
 \begin_inset Quotes erd
 \end_inset
 
- feature, can be injected in the app while debugging, consisting in a much
- faster process of interface development.
+ feature, can show changes in the UI while the app is running in debug mode,
+ consisting in a much faster process of interface development.
 \end_layout
 
 \begin_layout Standard
 Xamarin has been chosen in a competition where multiple frameworks could
  fit the objective.
- It's strengths are:
+ Its strengths are:
 \end_layout
 
 \begin_layout Itemize
@@ -505,12 +505,12 @@ It maintains the same experience for both the OSs;
 \end_layout
 
 \begin_layout Itemize
-It can be compiled for even more OS (Windows & MacOS) giving more possibilities
+It can be compiled for even more OSs (Windows & MacOS) giving more possibilities
  for the future;
 \end_layout
 
 \begin_layout Itemize
-It is widely used, common problems and procedures are well documented;
+It is widely used, common problems and procedures are well documented.
 \end_layout
 
 \begin_layout Standard
@@ -522,7 +522,7 @@ Native: (PRO) faster, (PRO) more documentation, (CONS) time required;
 \end_layout
 
 \begin_layout Itemize
-React Native: (PRO) faster, (CONS) js, (CONS) updates that break the code,
+React Native: (PRO) faster, (CONS) js, (CONS) updates that break the code.
 \end_layout
 
 \begin_layout Standard
@@ -533,7 +533,7 @@ on side up to 35%.
 
 \begin_layout Standard
 In the end, the use of C#, the great documentation and the development time
- requested where the points that make us choose Xamarin over it's competitors
+ requested where the points that make us choose Xamarin over its competitors
 \end_layout
 
 \begin_layout Paragraph
@@ -546,26 +546,35 @@ The web application is written in PHP, HTML, CSS, JS, using the jQuery library
 \end_layout
 
 \begin_layout Standard
-while HTML, CSS, JS are forced choices in a web development, the adoption
- of PHP, jQuery and SemanticUI has been made for choice.
+While HTML, CSS, JS are forced choices in web development, the adoption
+ of PHP, jQuery and SemanticUI has been choosen for the following reasons:
 \end_layout
 
 \begin_layout Itemize
-PHP: PHP has been choosen as backend script language because it's well known,
- provides great documentation and it's multithreaded;
+PHP: PHP has been choosen as the backend script language because it's widely
+ used, well known by the developers, provides great documentation and it's
+ multithreaded;
 \end_layout
 
 \begin_layout Itemize
-jQuery: plane JS is nowadays easy to use but for Ajax requests nothing is
- better than jQuery and it's methods;
+jQuery: plain JS is nowadays easy to use but for Ajax requests nothing is
+ better than jQuery and its methods;
 \end_layout
 
 \begin_layout Itemize
 SemanticUI: the semplicity, cleanliness and speed of SemanticUI made it
  the right choice against plain html/css/js (required more time and design
- skills) and CMS (like Wordpress or Joomla) (lack of speed and personalization
- to the core).
- More information at SemanticUI's website
+ skills) and CMSs like Wordpress or Joomla lack of speed and personalization
+ to the core.
+\begin_inset Newline newline
+\end_inset
+
+Its most useful feature is the ability to express complex UI layouts just
+ by appending natural language-like attributes to HTML entities.
+\begin_inset Newline newline
+\end_inset
+
+More information at SemanticUI's website
 \begin_inset Flex URL
 status open
 
@@ -577,11 +586,6 @@ https://semantic-ui.com/
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-The data will be served following an Ajax approach, accessing data from
- SafeStreets’ APIs.
 \end_layout
 
 \begin_layout Standard
@@ -601,11 +605,11 @@ The backend is on a LAMP web service stack.
 \begin_layout Itemize
 PHP: as for the Web App.
  The version 7.4 has been choosen because it's the actual available version
- that will be supported longher;
+ that will be supported longer;
 \end_layout
 
 \begin_layout Itemize
-Apache Web Server: it has been choosen over nginx becouse it handles every
+Apache Web Server: it has been chosen over nginx because it handles every
  request as a different thread;
 \end_layout
 
@@ -620,7 +624,8 @@ Maria DB: the adoption of a Relational Database has been chosen based on
 
 \begin_layout Itemize
 Linux has been choosen over Windows.
- Some of it's PROs are: is free, open source, highly costumizable, faster.
+ Some of its PROs are: it is free, open source, highly costumizable and
+ faster.
 \end_layout
 
 \begin_layout Standard
