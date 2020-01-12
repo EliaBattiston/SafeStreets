@@ -102,20 +102,23 @@
                                 <tr>
                                     <td>Suspended</td>
                                     <td><?php
-                                        if($content->suspended)
+                                        if($content->roleCode < 4)
                                         {
-                                            echo '<i class="check circle icon"></i>';
-                                            echo $content->suspendedTimestamp;
+                                            if($content->suspended)
+                                            {
+                                                echo '<i class="check circle icon"></i>';
+                                                echo $content->suspendedTimestamp;
 
-                                            //Restore button
-                                            echo '<a class="ui right labeled right floated red icon button" href="src/suspendUser.php?fc='. $_GET["fc"] .'&username='. $content->username .'&action=restore"> <i class="check circle icon"></i> Restore </a>';
-                                        }
-                                        else
-                                        {
-                                            echo '<i class="times circle icon"></i>';
+                                                //Restore button
+                                                echo '<a class="ui right labeled right floated red icon button" href="src/suspendUser.php?fc='. $_GET["fc"] .'&username='. $content->username .'&action=restore"> <i class="check circle icon"></i> Restore </a>';
+                                            }
+                                            else
+                                            {
+                                                echo '<i class="times circle icon"></i>';
 
-                                            //Suspend button
-                                            echo '<a class="ui right labeled right floated red icon button" href="src/suspendUser.php?fc='. $_GET["fc"] .'&username='. $content->username .'&action=suspend"> <i class="times circle icon"></i> Suspend </a>';
+                                                //Suspend button
+                                                echo '<a class="ui right labeled right floated red icon button" href="src/suspendUser.php?fc='. $_GET["fc"] .'&username='. $content->username .'&action=suspend"> <i class="times circle icon"></i> Suspend </a>';
+                                            }
                                         }
                                         ?>
                                         
