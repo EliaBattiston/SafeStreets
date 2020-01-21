@@ -39,6 +39,6 @@ jobs:
           FTP_SERVER: ftp.safestreets.altervista.org
           FTP_USERNAME: safestreets
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          ARGS: --delete --exclude '.*config.php' --exclude 'README.md' --exclude 'tests.*'
+          ARGS: --exclude '.*config.php' --exclude 'README.md' --exclude 'tests.*' 
           LOCAL_DIR: Implementation/WebClient
           REMOTE_DIR: web
